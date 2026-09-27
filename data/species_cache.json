@@ -1,0 +1,282 @@
+{
+  "Pipistrellus pygmaeus": {
+    "sci": "Pipistrellus pygmaeus",
+    "gbifKey": 5707150,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Mammalia",
+    "order": "Chiroptera",
+    "family": "Vespertilionidae",
+    "genus": "Pipistrellus",
+    "dyntaxaId": 205995,
+    "sv": "Dvärgpipistrell",
+    "wiki": {
+      "lang": "sv",
+      "title": "Dvärgpipistrell",
+      "extract": "Dvärgpipistrell eller dvärgfladdermus är en fladdermusart i familjen läderlappar (Vespertilionidae).",
+      "url": "https://sv.wikipedia.org/wiki/Dv%C3%A4rgpipistrell"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Pipistrellus_pygmaeus01.jpg/500px-Pipistrellus_pygmaeus01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Pipistrellus_pygmaeus01.jpg",
+      "artist": "Evgeniy Yakhontov",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Pipistrellus_pygmaeus01.jpg"
+    },
+    "gbifSE": 49379,
+    "gbifNear25km": 10516
+  },
+  "Aves sp.": {
+    "sci": "Aves sp.",
+    "gbifKey": 212,
+    "rank": "class",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": null,
+    "family": null,
+    "genus": null,
+    "dyntaxaId": 4000104,
+    "sv": "Fåglar (obestämd art)",
+    "wiki": {
+      "lang": "sv",
+      "title": "Fåglar",
+      "extract": "Fåglar är en klass tvåbenta, endoterma (jämnvarma), äggläggande ryggradsdjur med näbb, vingar och fjädrar. De flesta fåglar kan flyga, men inte alla. Det finns idag över 10 000 olika fågelarter i världen, vilket gör dem till de mest skiftande landryggradsdjuren. De bebor ekosystem över hela jordklotet, från Arktis till Antarktis. Fåglar varierar i storlek från den 5 centimeter stora bikolibrin till den 2,7 meter stora strutsen. Fossilfynd tyder på att fåglarna utvecklades från dinosaurier under juraperioden, för omkring 150–200 miljoner år sedan. Under 1900-talet började de flesta paleontologer betrakta fåglarna som den enda kladen av dinosaurier som överlevde krita/tertiär-utdöendet för ungefär 65,5 miljoner år sedan, och klassen fåglar definierades som alla ättlingar till den gemensamma stamfadern för Archaeopteryx och nu levande fåglar. Upptäckten av befjädrade dinosaurier har gjort att man på 2000-talet börjat avgränsa förhistoriska fåglar till dem som är närmare besläktade med nu levande fåglar än med Archaeopteryx.",
+      "url": "https://sv.wikipedia.org/wiki/F%C3%A5glar"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Pieni_2_0622.jpg/500px-Pieni_2_0622.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Pieni_2_0622.jpg",
+      "artist": "Pieni Tietosanakirja",
+      "license": "Public domain",
+      "page": "https://commons.wikimedia.org/wiki/File:Pieni_2_0622.jpg"
+    },
+    "gbifSE": 101654012,
+    "gbifNear25km": 6069786
+  },
+  "Leptophyes punctatissima": {
+    "sci": "Leptophyes punctatissima",
+    "gbifKey": 1688020,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Arthropoda",
+    "class": "Insecta",
+    "order": "Orthoptera",
+    "family": "Tettigoniidae",
+    "genus": "Leptophyes",
+    "dyntaxaId": 101194,
+    "sv": "Lövvårtbitare",
+    "wiki": {
+      "lang": "sv",
+      "title": "Lövvårtbitare",
+      "extract": "Lövvårtbitare är en art i insektsordningen hopprätvingar som tillhör familjen vårtbitare.",
+      "url": "https://sv.wikipedia.org/wiki/L%C3%B6vv%C3%A5rtbitare"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Leptophyes_punctatissima_fg06.jpg/500px-Leptophyes_punctatissima_fg06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Leptophyes_punctatissima_fg06.jpg",
+      "artist": "Fritz Geller-Grimm",
+      "license": "CC BY-SA 2.5",
+      "page": "https://commons.wikimedia.org/wiki/File:Leptophyes_punctatissima_fg06.jpg"
+    },
+    "gbifSE": 3228,
+    "gbifNear25km": 152
+  },
+  "Pholidoptera griseoaptera": {
+    "sci": "Pholidoptera griseoaptera",
+    "gbifKey": 1695297,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Arthropoda",
+    "class": "Insecta",
+    "order": "Orthoptera",
+    "family": "Tettigoniidae",
+    "genus": "Pholidoptera",
+    "dyntaxaId": 200011,
+    "sv": "Buskvårtbitare",
+    "wiki": {
+      "lang": "sv",
+      "title": "Buskvårtbitare",
+      "extract": "Buskvårtbitare är en art i insektsordningen hopprätvingar som tillhör familjen vårtbitare.",
+      "url": "https://sv.wikipedia.org/wiki/Buskv%C3%A5rtbitare"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Ensifera_Wagenmoos_03.JPG/500px-Ensifera_Wagenmoos_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Ensifera_Wagenmoos_03.JPG",
+      "artist": "Simon Koopmann",
+      "license": "CC BY-SA 2.0 de",
+      "page": "https://commons.wikimedia.org/wiki/File:Ensifera_Wagenmoos_03.JPG"
+    },
+    "gbifSE": 9911,
+    "gbifNear25km": 514
+  },
+  "Sorex minutus": {
+    "sci": "Sorex minutus",
+    "gbifKey": 7571319,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Mammalia",
+    "order": "Soricomorpha",
+    "family": "Soricidae",
+    "genus": "Sorex",
+    "dyntaxaId": 205982,
+    "sv": "Dvärgnäbbmus",
+    "wiki": {
+      "lang": "sv",
+      "title": "Dvärgnäbbmus",
+      "extract": "Dvärgnäbbmus är en art i familjen näbbmöss som förekommer i stora delar av Europa och norra Asien.",
+      "url": "https://sv.wikipedia.org/wiki/Dv%C3%A4rgn%C3%A4bbmus"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Sorex_minutus.jpg/500px-Sorex_minutus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Sorex_minutus.jpg",
+      "artist": "Importé sur Commons par Salix. Sur Flikr par Polandeze",
+      "license": "CC BY 2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Sorex_minutus.jpg"
+    },
+    "gbifSE": 1178,
+    "gbifNear25km": 9
+  },
+  "Plecotus auritus": {
+    "sci": "Plecotus auritus",
+    "gbifKey": 5218507,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Mammalia",
+    "order": "Chiroptera",
+    "family": "Vespertilionidae",
+    "genus": "Plecotus",
+    "dyntaxaId": 206002,
+    "sv": "Brunlångöra",
+    "wiki": {
+      "lang": "sv",
+      "title": "Brunlångöra",
+      "extract": "Brunlångöra, tidigare även långörad fladdermus är en fladdermusart i familjen Vespertilionidae (läderlappar).",
+      "url": "https://sv.wikipedia.org/wiki/Brunl%C3%A5ng%C3%B6ra"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Plecotus_auritus_01.jpg/500px-Plecotus_auritus_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Plecotus_auritus_01.jpg",
+      "artist": "",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Plecotus_auritus_01.jpg"
+    },
+    "gbifSE": 10629,
+    "gbifNear25km": 551
+  },
+  "Nyctalus noctula": {
+    "sci": "Nyctalus noctula",
+    "gbifKey": 5218524,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Mammalia",
+    "order": "Chiroptera",
+    "family": "Vespertilionidae",
+    "genus": "Nyctalus",
+    "dyntaxaId": 100092,
+    "sv": "Större brunfladdermus",
+    "wiki": {
+      "lang": "sv",
+      "title": "Större brunfladdermus",
+      "extract": "Större brunfladdermus, i Finland samt tidigare i Sverige stor fladdermus, fladdermusart i familjen Vespertilionidae (läderlappar).",
+      "url": "https://sv.wikipedia.org/wiki/St%C3%B6rre_brunfladdermus"
+    },
+    "image": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Nyctalus_noctula.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "file": "Nyctalus_noctula.jpg",
+      "artist": "Mnolf",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Nyctalus_noctula.jpg"
+    },
+    "gbifSE": 26915,
+    "gbifNear25km": 5009
+  },
+  "Pipistrellus nathusii": {
+    "sci": "Pipistrellus nathusii",
+    "gbifKey": 5218471,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Mammalia",
+    "order": "Chiroptera",
+    "family": "Vespertilionidae",
+    "genus": "Pipistrellus",
+    "dyntaxaId": 100111,
+    "sv": "Trollpipistrell",
+    "wiki": {
+      "lang": "sv",
+      "title": "Trollpipistrell",
+      "extract": "Trollpipistrell,, fladdermusart i familjen läderlappar (Vespertilionidae). I Finland, och tidigare även i Sverige, kallas den trollfladdermus.",
+      "url": "https://sv.wikipedia.org/wiki/Trollpipistrell"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Pipistrellus_nathusii.jpg/500px-Pipistrellus_nathusii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Pipistrellus_nathusii.jpg",
+      "artist": "Mnolf",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Pipistrellus_nathusii.jpg"
+    },
+    "gbifSE": 7508,
+    "gbifNear25km": 159
+  },
+  "Vespertilio murinus": {
+    "sci": "Vespertilio murinus",
+    "gbifKey": 2432564,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Mammalia",
+    "order": "Chiroptera",
+    "family": "Vespertilionidae",
+    "genus": "Vespertilio",
+    "dyntaxaId": 206000,
+    "sv": "Gråskimlig fladdermus",
+    "wiki": {
+      "lang": "sv",
+      "title": "Gråskimlig fladdermus",
+      "extract": "Gråskimlig fladdermus är en medelstor fladdermus i familjen läderlappar (Vespertilionidae).",
+      "url": "https://sv.wikipedia.org/wiki/Gr%C3%A5skimlig_fladdermus"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Parti-coloured_bat_%28Vespertilio_murinus%29_Slovakia.jpg/500px-Parti-coloured_bat_%28Vespertilio_murinus%29_Slovakia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Parti-coloured_bat_(Vespertilio_murinus)_Slovakia.jpg",
+      "artist": "Charles J. Sharp",
+      "license": "CC BY-SA 4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Parti-coloured_bat_%28Vespertilio_murinus%29_Slovakia.jpg"
+    },
+    "gbifSE": 7723,
+    "gbifNear25km": 349
+  },
+  "Myotis brandtii": {
+    "sci": "Myotis brandtii",
+    "gbifKey": 7261875,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Mammalia",
+    "order": "Chiroptera",
+    "family": "Vespertilionidae",
+    "genus": "Myotis",
+    "dyntaxaId": 205988,
+    "sv": "Tajgafladdermus",
+    "wiki": {
+      "lang": "sv",
+      "title": "Taigafladdermus",
+      "extract": "Taigafladdermus, förr kallad Brandts fladdermus, är en fladdermusart i familjen läderlappar (Vespertilionidae), till förväxling lik mustaschfladdermusen.",
+      "url": "https://sv.wikipedia.org/wiki/Taigafladdermus"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/060809-224340_0029_Myotis_brandtii.jpg/500px-060809-224340_0029_Myotis_brandtii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "060809-224340_0029_Myotis_brandtii.jpg",
+      "artist": "Herman Lankreijer",
+      "license": "CC BY 2.5",
+      "page": "https://commons.wikimedia.org/wiki/File:060809-224340_0029_Myotis_brandtii.jpg"
+    },
+    "gbifSE": 1155,
+    "gbifNear25km": 18
+  }
+}

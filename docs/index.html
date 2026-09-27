@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nattljud – ultraljudsfynd</title>
+<meta name="description" content="Fladdermöss, vårtbitare och andra djur registrerade med ultraljudsdetektor.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>Nattljud</h1>
+    <p class="lede" id="lede">Laddar…</p>
+  </div>
+</header>
+
+<div class="filters" role="region" aria-label="Filter">
+  <div class="wrap filter-row">
+    <label class="f">
+      <span>Minsta sannolikhet <output id="probOut">0.50</output></span>
+      <input type="range" id="prob" min="0" max="0.95" step="0.05" value="0.5">
+    </label>
+    <label class="f">
+      <span>Natt</span>
+      <select id="night"></select>
+    </label>
+    <label class="f">
+      <span>Lokal</span>
+      <select id="site"></select>
+    </label>
+    <p class="hidden-note" id="hiddenNote"></p>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="tiles" id="tiles" aria-label="Översikt"></section>
+
+  <section>
+    <h2>Fyndlokaler</h2>
+    <div id="map" class="map" aria-label="Karta över fyndlokaler"></div>
+  </section>
+
+  <section>
+    <h2>Aktivitet under natten</h2>
+    <p class="sub">Antal detektioner per 15 minuter. Varje grupp har egen skala. Streckade linjer: solnedgång och soluppgång.</p>
+    <div id="activity" class="multiples"></div>
+  </section>
+
+  <section>
+    <h2>Arter i systematisk ordning</h2>
+    <p class="sub">Klass → ordning → familj. Klicka på ett kort för detaljer.</p>
+    <div id="taxonomy"></div>
+  </section>
+
+  <section>
+    <h2>Artlista och säkerhet</h2>
+    <p class="sub">Klassificerarens sannolikhet per detektion. Rutorna visar fördelningen 0–1 (mörkare = fler detektioner).</p>
+    <div class="table-wrap"><table id="table"></table></div>
+  </section>
+
+  <section class="about">
+    <h2>Om datat</h2>
+    <p>Inspelningar med ultraljudsdetektor, automatiskt artbestämda i BTO Acoustic Pipeline (<span id="classifier"></span>). Automatiska bestämningar är förslag – särskilt fynd med låg sannolikhet, sociala läten och arter som är svåra att skilja på ljud (t.ex. <i>Myotis</i>) bör verifieras manuellt i spektrogram innan de rapporteras till Artportalen.</p>
+    <p>”GBIF-fynd” är antal registrerade observationer i GBIF i Sverige respektive inom 25 km från lokalen – ett grovt mått på hur väntat fyndet är.</p>
+    <p>Artnamn för fladdermöss enligt Naturvårdsverket, övriga från svenska Wikipedia. Texter från Wikipedia (CC BY-SA). Bilder från Wikimedia Commons:</p>
+    <ul id="credits" class="credits"></ul>
+    <p class="gen" id="gen"></p>
+  </section>
+</main>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <form method="dialog"><button class="close" aria-label="Stäng">×</button></form>
+  <div id="dlgBody"></div>
+</dialog>
+
+<div id="tip" class="tip" role="tooltip" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.9.0/suncalc.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
