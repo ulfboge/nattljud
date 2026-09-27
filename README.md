@@ -42,10 +42,16 @@ och klassificerarens säkerhet.
    - `name`, `note` – visas på sidan
    - `decimals` – publik precision på webbsidan; `2` ≈ 1 km (bra för hemmet)
    - `accuracy_m` – noggrannhet i Artportalen-underlaget
-   - `metod_fladdermoss` – metod i Artportalen, t.ex. `Autobox` (inspelare som står
-     ute hela natten) eller `Ultraljudsdetektor`
+   - `utrustning` – inspelare för lokalen om filnamnet inte avgör (id i equipment.json)
+   - `metod_fladdermoss` – tvinga en viss metod i Artportalen för lokalen
 
-4. Committa och pusha – GitHub Pages publicerar `docs/`.
+4. Utrustning finns i `data/equipment.json`. Inspelaren väljs per fil via början på
+   ORIGINAL FILE NAME (t.ex. `DEV_001` → Apodemus Pippyg2), annars lokalens
+   `utrustning`, annars `default`. Lägg till en ny inspelare under `recorders` och koppla
+   dess filprefix under `devices`. Fältet `artportalen_metod_fladdermoss` styr Metod i
+   Artportalen-exporten (Pippyg2: *Autobox med höghastighetsinspelning*).
+
+5. Committa och pusha – GitHub Pages publicerar `docs/`.
 
 ## Artportalen
 
@@ -55,7 +61,8 @@ och klassificerarens säkerhet.
 Skriver `exports/artportalen_<datum>.xlsx` med samma kolumner som Artportalens
 Excelmall (version 4.17), ett blad per artgrupp:
 
-- **Fladdermöss** – Antal = antal registreringar, Enhet *Registreringar*, Aktivitet *Aktiv*
+- **Fladdermöss** – Antal = antal registreringar, Enhet *Registreringar*, Aktivitet *Aktiv*,
+  Metod från inspelaren
 - **Ryggradslösa djur** – vårtbitare, Aktivitet *Spel*, Metod *Ultraljudsdetektor*
 - **Däggdjur (exkl.fladdermöss)** – t.ex. näbbmöss (mallen saknar ultraljud som metod)
 - **Granska** – alla taxa, varför de är med eller inte, och vad som bör kontrolleras

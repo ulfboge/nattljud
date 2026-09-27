@@ -1,0 +1,22 @@
+{
+  "_info": "Inspelare. 'devices' kopplar början på ORIGINAL FILE NAME (t.ex. DEV_001) till en inspelare. 'default' används annars.",
+  "default": "pippyg2",
+  "devices": {
+    "DEV_001": "pippyg2"
+  },
+  "recorders": {
+    "pippyg2": {
+      "name": "Apodemus Pippyg2",
+      "type": "Passiv (statisk) ultraljudsinspelare",
+      "microphone": "MEMS",
+      "sample_rate": "384 kHz i fladdermusläge (48 kHz i fågelläge)",
+      "frequency_range": "600 Hz – 110 kHz",
+      "recording": "Fullspektrum",
+      "trigger": "Fladdermustrigger över 12 kHz",
+      "gps": "Ja – GPS-position, id och tid i filernas metadata",
+      "power": "3 × AA, normalt 4–7 dygn",
+      "url": "https://www.apodemus.eu/en/Apodemus-Pippyg2/00147",
+      "artportalen_metod_fladdermoss": "Autobox med höghastighetsinspelning"
+    }
+  }
+}

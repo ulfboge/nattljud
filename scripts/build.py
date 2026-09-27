@@ -34,6 +34,7 @@ CACHE = os.path.join(ROOT, "data", "species_cache.json")
 SITES = os.path.join(ROOT, "data", "sites.json")
 WEATHER = os.path.join(ROOT, "data", "weather_cache.json")
 EXPORTS = os.path.join(ROOT, "exports")
+EQUIPMENT = os.path.join(ROOT, "data", "equipment.json")
 OUT = os.path.join(ROOT, "docs", "data")
 UA = {"User-Agent": "bat-fynd/1.0 (github.com/ulfboge/bat)"}
 
@@ -246,6 +247,16 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8):
         print(f"  {sites[si]['name']}: {n} detektioner")
     json.dump(sites, open(SITES, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
+    # --- utrustning (inspelare) ---
+    eq = json.load(open(EQUIPMENT, encoding="utf-8")) if os.path.exists(EQUIPMENT) else {"recorders": {}}
+    rec_ids = list(eq.get("recorders", {}))
+    for r in rows:
+        dev = r.get("ORIGINAL FILE NAME", "").rsplit("_", 2)[0]   # DEV_001_20260925_191217.wav -> DEV_001
+        rid = eq.get("devices", {}).get(dev) or sites[r["_site"]].get("utrustning") or eq.get("default")
+        r["_rec"] = rec_ids.index(rid) if rid in rec_ids else -1
+        r["_dev"] = dev
+    recorders = [{"id": k, **v} for k, v in eq.get("recorders", {}).items()]
+
     # --- arter ---
     cache = {} if refresh or not os.path.exists(CACHE) else json.load(open(CACHE, encoding="utf-8"))
     sp_keys = OrderedDict()
@@ -281,6 +292,7 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8):
             r["CALL TYPE"].strip(),
             f"{sy}-{sm}-{sd}",
             r["ORIGINAL FILE NAME"],
+            r["_rec"],
         ])
     det.sort(key=lambda x: x[2])
     classifier = sorted({r["CLASSIFIER NAME"] for r in rows})
@@ -303,8 +315,8 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8):
         json.dump(wcache, open(WEATHER, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
     out = {"generated": time.strftime("%Y-%m-%d %H:%M"), "classifier": classifier,
-           "fields": ["species", "site", "time", "prob", "callType", "night", "file"],
-           "species": species, "sites": pub_sites, "weather": wx, "detections": det}
+           "fields": ["species", "site", "time", "prob", "callType", "night", "file", "recorder"],
+           "species": species, "sites": pub_sites, "recorders": recorders, "weather": wx, "detections": det}
     os.makedirs(OUT, exist_ok=True)
     with open(os.path.join(OUT, "data.json"), "w", encoding="utf-8") as fh:
         json.dump(out, fh, ensure_ascii=False, separators=(",", ":"))
@@ -312,7 +324,8 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8):
           f"{len({d[5] for d in det})} nätter)")
 
     if export_ap:
-        res = artportalen.export(det, species, sites, EXPORTS, min_prob=min_prob, classifier=", ".join(classifier))
+        res = artportalen.export(det, species, sites, EXPORTS, min_prob=min_prob, classifier=", ".join(classifier),
+                                 recorders=recorders)
         if res:
             print(f"Skrev {os.path.relpath(res[0], ROOT)} ({res[1]} fynd, {res[2]} rader att granska)")
 

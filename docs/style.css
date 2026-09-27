@@ -152,3 +152,10 @@ dialog .close { position: absolute; right: .5rem; top: .4rem; font-size: 1.6rem;
 @media (forced-colors: active) {
   .bar { forced-color-adjust: none; }
 }
+
+.eq { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: .75rem; }
+.eq h3 { margin: 0 0 .15rem; }
+.eq dl { display: grid; grid-template-columns: max-content 1fr; gap: .25rem 1rem; margin: .75rem 0 0; font-size: .9rem; }
+.eq dt { color: var(--ink-2); }
+.eq dd { margin: 0; }
+@media (max-width: 600px) { .eq dl { grid-template-columns: 1fr; } .eq dt { margin-top: .4rem; } }

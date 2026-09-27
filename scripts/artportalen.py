@@ -69,7 +69,7 @@ def _accuracy(m):
     return f"{min(NOGGRANNHET, key=lambda v: abs(v - (m or 50)))} m"
 
 
-def export(rows, species, sites, out_dir, min_prob=0.8, classifier=""):
+def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders=()):
     try:
         from openpyxl import Workbook
         from openpyxl.styles import Font, PatternFill
@@ -115,10 +115,14 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier=""):
         times = sorted(d[2] for d in good)
         e, n = wgs84_to_sweref99tm(site["lat"], site["lon"])
         calls = sorted({d[4] for d in good if d[4]})
+        used = [recorders[i] for i in sorted({d[7] for d in good if len(d) > 7 and d[7] >= 0})]
+        rec_txt = f" Inspelare: {', '.join(r['name'] for r in used)}." if used else ""
         rec = dict(defaults)
         if sheet == "Fladdermöss":
             rec["Antal"] = len(good)
-            rec["Metod"] = site.get("metod_fladdermoss", "Autobox")
+            rec["Metod"] = (site.get("metod_fladdermoss") or
+                            next((r.get("artportalen_metod_fladdermoss") for r in used if r.get("artportalen_metod_fladdermoss")), None)
+                            or "Autobox")
         rec.update({
             "Artnamn": sp.get("sv") or sp["sci"],
             "Lokalnamn": site["name"],
@@ -128,7 +132,7 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier=""):
             "Slutdatum": times[-1][:10], "Sluttid": times[-1][11:16],
             "Publik kommentar": (f"Ultraljud, {_n(len(good))} {_span(times)}"
                                  f"{' (' + ', '.join(CALL_SV.get(c, c) for c in calls) + ')' if calls else ''}."),
-            "Privat kommentar": f"{_n(len(dets))} totalt denna natt, median sannolikhet {_p(med)}.",
+            "Privat kommentar": f"{_n(len(dets))} totalt denna natt, median sannolikhet {_p(med)}.{rec_txt}",
             "Beskrivning artbestämning": (f"Automatisk artbestämning i BTO Acoustic Pipeline ({classifier}), "
                                           f"högsta sannolikhet {_p(max(probs))}. Ej manuellt verifierad."),
             "Externid": f"nattljud:{site['id']}:{night}:{sp['sci'].replace(' ', '_')}",

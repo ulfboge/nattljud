@@ -93,7 +93,7 @@
     const hid = all.length - pass.length;
     const hidTaxa = new Set(all.map(d => d[0])).size - new Set(pass.map(d => d[0])).size;
     $("#hiddenNote").textContent = hid ? `${fmt(hid)} detektioner under gränsen döljs${hidTaxa ? ` (${hidTaxa} taxa försvinner helt)` : ""}.` : "Inga detektioner döljs.";
-    renderLede(pass); renderTiles(pass); renderMap(pass); renderActivity(pass); renderWeather(); renderCompare(); renderTaxonomy(pass); renderTable(all);
+    renderLede(pass); renderTiles(pass); renderMap(pass); renderActivity(pass); renderWeather(); renderCompare(); renderEquipment(); renderTaxonomy(pass); renderTable(all);
   }
 
   function counts(dets) { const c = new Map(); dets.forEach(d => c.set(d[0], (c.get(d[0]) || 0) + 1)); return c; }
@@ -370,11 +370,13 @@
       const first = bats.length ? relMin(bats[0][2], night) : null;
       return { k, night, si: +si, site: D.sites[+si].name, s, sunset: w.sunset ? w.sunset.slice(11) : "–",
         bats: bats.length, batSp: batSp.size, afterSs: first != null && ss != null ? first - ss : null,
-        crick: dets.filter(d => D.species[d[0]].group === "bush-cricket").length, total: dets.length };
+        crick: dets.filter(d => D.species[d[0]].group === "bush-cricket").length, total: dets.length,
+        rec: [...new Set(D.detections.filter(d => d[5] === night && d[1] === +si).map(d => d[7]))].filter(i => i >= 0 && (D.recorders || [])[i]).map(i => D.recorders[i].name).join(", ") };
     });
     const multiSite = new Set(rows.map(r => r.si)).size > 1, multiNight = new Set(rows.map(r => r.night)).size > 1;
-    let html = `<div class="table-wrap"><table><thead><tr><th>Natt</th>${multiSite ? "<th>Lokal</th>" : ""}<th>Sol ned</th><th class="num">Temp sol ned</th><th class="num">Min temp</th><th class="num">Vind m/s</th><th class="num">Regn mm</th><th class="num">Moln %</th><th class="num">Fladdermöss</th><th class="num">Arter</th><th class="num">Första efter sol ned</th><th class="num">Vårtbitare</th></tr></thead><tbody>` +
-      rows.map(r => `<tr data-night="${r.night}" style="cursor:pointer"><td>${nightLabel(r.night)}</td>${multiSite ? `<td>${esc(r.site)}</td>` : ""}<td>${r.sunset}</td>
+    const multiRec = new Set(rows.map(r => r.rec)).size > 1;
+    let html = `<div class="table-wrap"><table><thead><tr><th>Natt</th>${multiSite ? "<th>Lokal</th>" : ""}${multiRec ? "<th>Inspelare</th>" : ""}<th>Sol ned</th><th class="num">Temp sol ned</th><th class="num">Min temp</th><th class="num">Vind m/s</th><th class="num">Regn mm</th><th class="num">Moln %</th><th class="num">Fladdermöss</th><th class="num">Arter</th><th class="num">Första efter sol ned</th><th class="num">Vårtbitare</th></tr></thead><tbody>` +
+      rows.map(r => `<tr data-night="${r.night}" style="cursor:pointer"><td>${nightLabel(r.night)}</td>${multiSite ? `<td>${esc(r.site)}</td>` : ""}${multiRec ? `<td>${esc(r.rec)}</td>` : ""}<td>${r.sunset}</td>
         <td class="num">${f1(r.s.tempSunset)}</td><td class="num">${f1(r.s.tempMin)}</td><td class="num">${f1(r.s.windMean)}</td><td class="num">${f1(r.s.precipSum)}</td><td class="num">${r.s.cloudMean ?? "–"}</td>
         <td class="num">${fmt(r.bats)}</td><td class="num">${r.batSp}</td><td class="num">${r.afterSs == null ? "–" : r.afterSs + " min"}</td><td class="num">${fmt(r.crick)}</td></tr>`).join("") + `</tbody></table></div>`;
 
@@ -422,6 +424,21 @@
       state.night = tr.dataset.night; $("#night").value = state.night; render();
       document.getElementById("weather").scrollIntoView({ behavior: "smooth", block: "start" });
     }));
+  }
+
+  // ---------- utrustning ----------
+  function renderEquipment() {
+    const recs = D.recorders || [], el = $("#equipment");
+    const used = new Map();
+    scoped().forEach(d => { const k = d[7] ?? -1; if (!used.has(k)) used.set(k, { nights: new Set(), sites: new Set(), n: 0 }); const u = used.get(k); u.nights.add(d[5]); u.sites.add(d[1]); u.n++; });
+    const rows = [...used].filter(([k]) => k >= 0 && recs[k]);
+    if (!rows.length) { el.innerHTML = `<p class="sub">Ingen inspelare angiven – lägg till i data/equipment.json.</p>`; return; }
+    const F = [["type", "Typ"], ["recording", "Inspelning"], ["sample_rate", "Samplingsfrekvens"], ["frequency_range", "Frekvensomfång"], ["microphone", "Mikrofon"], ["trigger", "Trigger"], ["gps", "GPS"], ["power", "Ström"]];
+    el.innerHTML = rows.map(([k, u]) => { const r = recs[k]; return `<div class="eq">
+      <h3>${esc(r.name)}</h3>
+      <div class="sub" style="margin:0">${fmt(u.n)} registreringar · ${u.nights.size} ${u.nights.size === 1 ? "natt" : "nätter"} · ${[...u.sites].map(i => esc(D.sites[i].name)).join(", ")}</div>
+      <dl>${F.filter(([f]) => r[f]).map(([f, l]) => `<dt>${l}</dt><dd>${esc(r[f])}</dd>`).join("")}</dl>
+      ${r.url ? `<p style="margin:.75rem 0 0"><a href="${esc(r.url)}" target="_blank" rel="noopener">Produktsida</a></p>` : ""}</div>`; }).join("");
   }
 
   function renderCredits() {
