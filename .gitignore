@@ -2,3 +2,4 @@ __pycache__/
 *.wav
 audio/
 exports/
+data/ap2_template*.xls

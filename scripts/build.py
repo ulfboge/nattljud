@@ -7,6 +7,12 @@ Bygger webbsidans data från BTO Acoustic Pipeline-exporter.
   python scripts/build.py --no-weather        # hoppa över SMHI
   python scripts/build.py --artportalen       # skriv även exports/artportalen_<datum>.xlsx
   python scripts/build.py --artportalen --min-prob 0.9
+  python scripts/build.py --add-site "Hemma" "Hildingavägen 33, Djursholm" hemma
+        # ny lokal från adress eller "lat,lon"; valfritt: mappnamn under results/ som hör dit
+
+Lokal väljs per rad i denna ordning: 1) mappen under results/ matchar en lokals
+"folders", 2) BATCH NAME matchar "batches" (jokertecken tillåtna, t.ex. "2026_25_sep_*"),
+3) närmaste lokal inom dess "radius_m" från CSV-filens koordinater, annars skapas en ny.
 
 CSV-filer läses rekursivt under results/, så de kan ligga i undermappar
 (t.ex. results/2026-09-25_stocksund/). Dubbletter (samma inspelning och art)
@@ -151,12 +157,62 @@ def site_name(lat, lon):
     return a.get("suburb") or a.get("village") or a.get("town") or a.get("city") or f"{lat}, {lon}"
 
 
+def _dist_m(lat1, lon1, lat2, lon2):
+    import math
+    return math.hypot((lat1 - lat2) * 111320, (lon1 - lon2) * 111320 * math.cos(math.radians(lat1)))
+
+
+def assign_site(r, sites):
+    """Välj lokal för en rad: 1) mappnamn, 2) batchnamn, 3) närmaste lokal inom radius_m."""
+    import fnmatch
+    parts = r.get("_folder", "").split("/")
+    for i, st in enumerate(sites):
+        if any(fnmatch.fnmatch(p, pat) for pat in st.get("folders", []) for p in parts):
+            return i
+    for i, st in enumerate(sites):
+        if any(fnmatch.fnmatch(r.get("BATCH NAME", ""), pat) for pat in st.get("batches", [])):
+            return i
+    try:
+        lat, lon = float(r["LATITUDE"]), float(r["LONGITUDE"])
+    except (TypeError, ValueError):
+        return None
+    best = min(((_dist_m(lat, lon, st["lat"], st["lon"]), i) for i, st in enumerate(sites)
+                if _dist_m(lat, lon, st["lat"], st["lon"]) <= st.get("radius_m", 100)), default=None)
+    return best[1] if best else None
+
+
+def next_site_id(sites):
+    n = 1
+    while any(st["id"] == f"L{n}" for st in sites):
+        n += 1
+    return f"L{n}"
+
+
+def add_site(name, where, folders=()):
+    """Lägg till en lokal manuellt: where = 'lat,lon' eller en adress (slås upp i OpenStreetMap)."""
+    try:
+        lat, lon = (float(v) for v in where.split(","))
+    except ValueError:
+        res = get_json("https://nominatim.openstreetmap.org/search?format=json&limit=1&q=" + urllib.parse.quote(where))
+        if not res:
+            sys.exit(f"Hittade inte adressen: {where}")
+        lat, lon = float(res[0]["lat"]), float(res[0]["lon"])
+        print("  hittade:", res[0]["display_name"])
+    sites = json.load(open(SITES, encoding="utf-8")) if os.path.exists(SITES) else []
+    st = {"id": next_site_id(sites), "name": name, "lat": round(lat, 5), "lon": round(lon, 5), "decimals": 5,
+          "accuracy_m": 50, "radius_m": 100, "folders": list(folders), "batches": [], "note": ""}
+    sites.append(st)
+    json.dump(sites, open(SITES, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print(f"  la till {st['id']} {name} ({st['lat']}, {st['lon']})" + (f", mappar: {', '.join(folders)}" if folders else ""))
+
+
 def build(refresh=False, weather=True, export_ap=False, min_prob=0.8):
     files = sorted(glob.glob(os.path.join(RESULTS, "**", "*.csv"), recursive=True))
     rows, seen, dups = [], set(), 0
     for f in files:
         with open(f, encoding="utf-8-sig", newline="") as fh:
             for r in csv.DictReader(fh):
+                r["_folder"] = os.path.relpath(os.path.dirname(f), RESULTS).replace("\\", "/")
                 k = (r["RECORDING FILE NAME"], r["ORIGINAL FILE PART"], r["SCIENTIFIC NAME"])
                 if k in seen:
                     dups += 1
@@ -167,19 +223,27 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8):
 
     # --- lokaler ---
     sites = json.load(open(SITES, encoding="utf-8")) if os.path.exists(SITES) else []
-    site_idx = {(s["lat"], s["lon"]): i for i, s in enumerate(sites)}
-    for r in rows:
-        key = (round(float(r["LATITUDE"]), 5), round(float(r["LONGITUDE"]), 5))
-        if key not in site_idx:
-            print("  ny lokal:", key)
-            site_idx[key] = len(sites)
-            sites.append({"id": f"L{len(sites)+1}", "name": site_name(*key),
-                          "lat": key[0], "lon": key[1], "decimals": 5, "accuracy_m": 50, "note": ""})
-            time.sleep(1)
     for st in sites:
         st.setdefault("decimals", 5)
         st.setdefault("accuracy_m", 50)
+        st.setdefault("radius_m", 100)
+        st.setdefault("folders", [])
+        st.setdefault("batches", [])
         st.setdefault("note", "")
+    counts = {}
+    for r in rows:
+        si = assign_site(r, sites)
+        if si is None:
+            key = (round(float(r["LATITUDE"] or 0), 5), round(float(r["LONGITUDE"] or 0), 5))
+            print("  ny lokal:", key, "– byt namn i data/sites.json vid behov")
+            sites.append({"id": next_site_id(sites), "name": site_name(*key), "lat": key[0], "lon": key[1],
+                          "decimals": 5, "accuracy_m": 50, "radius_m": 100, "folders": [], "batches": [], "note": ""})
+            time.sleep(1)
+            si = assign_site(r, sites)
+        r["_site"] = si
+        counts[si] = counts.get(si, 0) + 1
+    for si, n in sorted(counts.items()):
+        print(f"  {sites[si]['name']}: {n} detektioner")
     json.dump(sites, open(SITES, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
     # --- arter ---
@@ -209,10 +273,9 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8):
     for r in rows:
         d, mth, y = r["ACTUAL DATE"].split("/")
         sd, sm, sy = r["SURVEY DATE"].split("/")
-        key = (round(float(r["LATITUDE"]), 5), round(float(r["LONGITUDE"]), 5))
         det.append([
             sp_index[r["SCIENTIFIC NAME"].strip() or "Oidentifierad"],
-            site_idx[key],
+            r["_site"],
             f"{y}-{mth}-{d}T{r['TIME']}",
             float(r["PROBABILITY"] or 0),
             r["CALL TYPE"].strip(),
@@ -256,6 +319,10 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8):
 
 if __name__ == "__main__":
     a = sys.argv
+    if "--add-site" in a:
+        i = a.index("--add-site")
+        add_site(a[i + 1], a[i + 2], a[i + 3].split(",") if len(a) > i + 3 and not a[i + 3].startswith("--") else ())
+        sys.exit(0)
     mp = float(a[a.index("--min-prob") + 1]) if "--min-prob" in a else 0.8
     build(refresh="--refresh" in a, weather="--no-weather" not in a,
           export_ap="--artportalen" in a, min_prob=mp)

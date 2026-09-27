@@ -26,10 +26,24 @@ och klassificerarens säkerhet.
    - Väder: timvärden från SMHI:s närmaste stationer per natt och lokal,
      cachas i `data/weather_cache.json`. `--no-weather` hoppar över.
 
-3. Nya lokaler läggs till i `data/sites.json` med namn från OpenStreetMap. Fält:
+3. Lokaler finns i `data/sites.json`. Varje rad i CSV-filerna kopplas till en lokal i
+   denna ordning:
+   1. mappen under `results/` matchar lokalens `folders` (t.ex. `["hemma*"]`)
+   2. BATCH NAME matchar lokalens `batches` (t.ex. `["2026_25_sep_*"]`)
+   3. CSV-filens koordinater ligger inom lokalens `radius_m` (standard 100 m)
+   4. annars skapas en ny lokal från koordinaterna, med namn från OpenStreetMap
+
+   Lägg till en lokal manuellt – från adress eller koordinater – och koppla en mapp:
+
+       python scripts/build.py --add-site "Ängen vid ån" "59.412,18.093" angen
+       python scripts/build.py --add-site "Sommarstugan" "Storgatan 1, Norrtälje" stugan
+
+   Övriga fält per lokal:
    - `name`, `note` – visas på sidan
-   - `decimals` – publik precision; `2` ≈ 1 km om exakt position inte ska synas
-   - `accuracy_m` – noggrannhet i Artportalen-underlaget (standard 50 m)
+   - `decimals` – publik precision på webbsidan; `2` ≈ 1 km (bra för hemmet)
+   - `accuracy_m` – noggrannhet i Artportalen-underlaget
+   - `metod_fladdermoss` – metod i Artportalen, t.ex. `Autobox` (inspelare som står
+     ute hela natten) eller `Ultraljudsdetektor`
 
 4. Committa och pusha – GitHub Pages publicerar `docs/`.
 
@@ -38,16 +52,18 @@ och klassificerarens säkerhet.
     python scripts/build.py --artportalen                 # minsta sannolikhet 0,8
     python scripts/build.py --artportalen --min-prob 0.9
 
-Skriver `exports/artportalen_<datum>.xlsx`:
+Skriver `exports/artportalen_<datum>.xlsx` med samma kolumner som Artportalens
+Excelmall (version 4.17), ett blad per artgrupp:
 
-- **Fynd** – en rad per art, natt och lokal där minst en registrering når gränsen.
-  SWEREF 99 TM-koordinater, start-/sluttid, Dyntaxa-id och färdiga kommentarer
-  (antal registreringar, lätestyp, sannolikhet, klassificerare).
-- **Granska** – alla taxa med statistik, även de som inte kom med och varför.
+- **Fladdermöss** – Antal = antal registreringar, Enhet *Registreringar*, Aktivitet *Aktiv*
+- **Ryggradslösa djur** – vårtbitare, Aktivitet *Spel*, Metod *Ultraljudsdetektor*
+- **Däggdjur (exkl.fladdermöss)** – t.ex. näbbmöss (mallen saknar ultraljud som metod)
+- **Granska** – alla taxa, varför de är med eller inte, och vad som bör kontrolleras
 
-Kolumnerna följer Artportalens fält men är inte en kopia av den officiella
-importmallen (hämtas inloggad på artportalen.se/ImportSighting). Kontrollera
-fynden – särskilt enstaka registreringar och *Myotis* – innan du rapporterar.
+Import: sätt koordinatsystem *SWEREF99 TM* under Min profil i Artportalen, markera
+rubrikraden och fynden på ett blad, kopiera och klistra in på
+artportalen.se/ImportSighting. Fynden hamnar sedan under *Granska & publicera*.
+Kontrollera enstaka registreringar och *Myotis* i spektrogram innan du publicerar.
 
 ## Ljudfiler
 
