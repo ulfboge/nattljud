@@ -2,20 +2,32 @@
 """
 Bygger webbsidans data från BTO Acoustic Pipeline-exporter.
 
-  python scripts/build.py            # läs results/*.csv -> docs/data/*.json
-  python scripts/build.py --refresh  # hämta om artinfo från GBIF/Wikipedia
+  python scripts/build.py                     # results/**/*.csv -> docs/data/data.json
+  python scripts/build.py --refresh           # hämta om artinfo från GBIF/Wikipedia
+  python scripts/build.py --no-weather        # hoppa över SMHI
+  python scripts/build.py --artportalen       # skriv även exports/artportalen_<datum>.xlsx
+  python scripts/build.py --artportalen --min-prob 0.9
 
-Artinfo (taxonomi, svenska namn, bild, text, GBIF-fynd) cachas i
-data/species_cache.json så att nätet bara behövs för nya arter.
-Lokalnamn kan redigeras i data/sites.json.
+CSV-filer läses rekursivt under results/, så de kan ligga i undermappar
+(t.ex. results/2026-09-25_stocksund/). Dubbletter (samma inspelning och art)
+räknas bara en gång.
+
+Artinfo cachas i data/species_cache.json, väder i data/weather_cache.json.
+Lokalnamn, noggrannhet och publik precision redigeras i data/sites.json.
 """
 import csv, glob, json, os, sys, time, urllib.parse, urllib.request
 from collections import OrderedDict
+from datetime import date
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import smhi, artportalen  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESULTS = os.path.join(ROOT, "results")
 CACHE = os.path.join(ROOT, "data", "species_cache.json")
 SITES = os.path.join(ROOT, "data", "sites.json")
+WEATHER = os.path.join(ROOT, "data", "weather_cache.json")
+EXPORTS = os.path.join(ROOT, "exports")
 OUT = os.path.join(ROOT, "docs", "data")
 UA = {"User-Agent": "bat-fynd/1.0 (github.com/ulfboge/bat)"}
 
@@ -139,13 +151,19 @@ def site_name(lat, lon):
     return a.get("suburb") or a.get("village") or a.get("town") or a.get("city") or f"{lat}, {lon}"
 
 
-def build(refresh=False):
-    files = sorted(glob.glob(os.path.join(RESULTS, "*.csv")))
-    rows = []
+def build(refresh=False, weather=True, export_ap=False, min_prob=0.8):
+    files = sorted(glob.glob(os.path.join(RESULTS, "**", "*.csv"), recursive=True))
+    rows, seen, dups = [], set(), 0
     for f in files:
         with open(f, encoding="utf-8-sig", newline="") as fh:
-            rows += list(csv.DictReader(fh))
-    print(f"{len(files)} filer, {len(rows)} detektioner")
+            for r in csv.DictReader(fh):
+                k = (r["RECORDING FILE NAME"], r["ORIGINAL FILE PART"], r["SCIENTIFIC NAME"])
+                if k in seen:
+                    dups += 1
+                    continue
+                seen.add(k)
+                rows.append(r)
+    print(f"{len(files)} filer, {len(rows)} detektioner" + (f" ({dups} dubbletter borttagna)" if dups else ""))
 
     # --- lokaler ---
     sites = json.load(open(SITES, encoding="utf-8")) if os.path.exists(SITES) else []
@@ -156,8 +174,12 @@ def build(refresh=False):
             print("  ny lokal:", key)
             site_idx[key] = len(sites)
             sites.append({"id": f"L{len(sites)+1}", "name": site_name(*key),
-                          "lat": key[0], "lon": key[1], "decimals": 5, "note": ""})
+                          "lat": key[0], "lon": key[1], "decimals": 5, "accuracy_m": 50, "note": ""})
             time.sleep(1)
+    for st in sites:
+        st.setdefault("decimals", 5)
+        st.setdefault("accuracy_m", 50)
+        st.setdefault("note", "")
     json.dump(sites, open(SITES, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
     # --- arter ---
@@ -205,14 +227,35 @@ def build(refresh=False):
     for st in sites:
         dec = st.get("decimals", 5)
         pub_sites.append({**st, "lat": round(st["lat"], dec), "lon": round(st["lon"], dec)})
+    # --- väder per natt och lokal (SMHI) ---
+    wx = {}
+    if weather:
+        wcache = json.load(open(WEATHER, encoding="utf-8")) if os.path.exists(WEATHER) else {}
+        for night, si in sorted({(d[5], d[1]) for d in det}):
+            ck = f"{night}|{sites[si]['id']}"
+            if ck not in wcache or not wcache[ck].get("complete"):
+                print("  hämtar väder:", night, sites[si]["name"])
+                wcache[ck] = smhi.night_weather(date.fromisoformat(night), sites[si]["lat"], sites[si]["lon"])
+            wx[f"{night}|{si}"] = wcache[ck]
+        json.dump(wcache, open(WEATHER, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+
     out = {"generated": time.strftime("%Y-%m-%d %H:%M"), "classifier": classifier,
            "fields": ["species", "site", "time", "prob", "callType", "night", "file"],
-           "species": species, "sites": pub_sites, "detections": det}
+           "species": species, "sites": pub_sites, "weather": wx, "detections": det}
     os.makedirs(OUT, exist_ok=True)
     with open(os.path.join(OUT, "data.json"), "w", encoding="utf-8") as fh:
         json.dump(out, fh, ensure_ascii=False, separators=(",", ":"))
-    print(f"Skrev docs/data/data.json ({len(species)} taxa, {len(sites)} lokaler)")
+    print(f"Skrev docs/data/data.json ({len(species)} taxa, {len(sites)} lokaler, "
+          f"{len({d[5] for d in det})} nätter)")
+
+    if export_ap:
+        res = artportalen.export(det, species, sites, EXPORTS, min_prob=min_prob, classifier=", ".join(classifier))
+        if res:
+            print(f"Skrev {os.path.relpath(res[0], ROOT)} ({res[1]} fynd, {res[2]} rader att granska)")
 
 
 if __name__ == "__main__":
-    build(refresh="--refresh" in sys.argv)
+    a = sys.argv
+    mp = float(a[a.index("--min-prob") + 1]) if "--min-prob" in a else 0.8
+    build(refresh="--refresh" in a, weather="--no-weather" not in a,
+          export_ap="--artportalen" in a, min_prob=mp)

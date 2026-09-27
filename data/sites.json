@@ -5,6 +5,7 @@
     "lat": 59.40306,
     "lon": 18.07249,
     "note": "",
-    "decimals": 5
+    "decimals": 5,
+    "accuracy_m": 50
   }
 ]
