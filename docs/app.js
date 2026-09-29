@@ -10,6 +10,7 @@
     Vespertilionidae: "Läderlappar", Tettigoniidae: "Vårtbitare", Soricidae: "Näbbmöss",
     Gryllidae: "Syrsor", Muridae: "Råttdjur",
   };
+  const AP_IMPORT = "https://www.artportalen.se/ImportSighting";
   const CLASS_ORDER = ["Mammalia", "Aves", "Amphibia", "Insecta"];
   // Färg följer gruppen (entiteten), aldrig rangordningen.
   const GROUPS = [
@@ -304,6 +305,7 @@
       s.wiki && `<a href="${esc(s.wiki.url)}" target="_blank" rel="noopener">Wikipedia</a>`,
       s.gbifKey && `<a href="https://www.gbif.org/species/${s.gbifKey}" target="_blank" rel="noopener">GBIF</a>`,
       s.dyntaxaId && `<a href="https://artfakta.se/taxa/${s.dyntaxaId}" target="_blank" rel="noopener">Artfakta</a>`,
+      isSpecies(s) && `<a href="${AP_IMPORT}" target="_blank" rel="noopener">Rapportera i Artportalen</a>`,
     ].filter(Boolean).join("");
     const g = groupOf(s.group);
     $("#dlgBody").innerHTML = `${img}<div class="dlg-content">
