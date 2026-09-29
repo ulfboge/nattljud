@@ -6,6 +6,10 @@ Sidan visar fyndlokaler på karta, arter i systematisk ordning med bild och fakt
 aktivitet under natten, väder från SMHI, jämförelser mellan nätter och lokaler
 och klassificerarens säkerhet.
 
+Under *Nytt för lokalen* lyfts den senast tillkomna arten fram per lokal – arter vars
+första registrering (över vald sannolikhetsgräns) kom efter lokalens första natt.
+Samma art får en etikett *Ny* på sitt kort i artlistan.
+
 ## Lägga till nya inspelningar
 
 1. Exportera resultat-CSV från BTO Acoustic Pipeline och lägg dem under `results/`.

@@ -27,7 +27,7 @@
   const fmt = n => n.toLocaleString("sv-SE");
   const median = a => { if (!a.length) return NaN; const s = [...a].sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
 
-  let D, map, siteLayer;
+  let D, map, siteLayer, NEW = new Map();
   const state = { minProb: 0.5, night: "all", site: "all" };
 
   // ---------- tid ----------
@@ -93,7 +93,8 @@
     const hid = all.length - pass.length;
     const hidTaxa = new Set(all.map(d => d[0])).size - new Set(pass.map(d => d[0])).size;
     $("#hiddenNote").textContent = hid ? `${fmt(hid)} detektioner under gränsen döljs${hidTaxa ? ` (${hidTaxa} taxa försvinner helt)` : ""}.` : "Inga detektioner döljs.";
-    renderLede(pass); renderTiles(pass); renderMap(pass); renderActivity(pass); renderWeather(); renderCompare(); renderEquipment(); renderTaxonomy(pass); renderTable(all);
+    NEW = newBySite();
+    renderLede(pass); renderTiles(pass); renderNew(); renderMap(pass); renderActivity(pass); renderWeather(); renderCompare(); renderEquipment(); renderTaxonomy(pass); renderTable(all);
   }
 
   function counts(dets) { const c = new Map(); dets.forEach(d => c.set(d[0], (c.get(d[0]) || 0) + 1)); return c; }
@@ -122,6 +123,54 @@
     $("#tiles").innerHTML = tiles.map(([v, l]) => `<div class="tile"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
   }
 
+  // ---------- nytt för lokalen ----------
+  // Per lokal: första natten varje art registrerats (över vald gräns). Arter vars första natt är
+  // senare än lokalens första natt räknas som tillskott; den senaste av dem lyfts fram.
+  function newBySite() {
+    const out = new Map();
+    D.sites.forEach((_, i) => out.set(i, { nights: new Set(), first: new Map() }));
+    D.detections.forEach(d => {
+      const o = out.get(d[1]); o.nights.add(d[5]);
+      if (d[3] < state.minProb || !isSpecies(D.species[d[0]])) return;
+      const f = o.first.get(d[0]);
+      if (!f || d[5] < f.night) o.first.set(d[0], { night: d[5], n: 1, max: d[3] });
+      else if (d[5] === f.night) { f.n++; f.max = Math.max(f.max, d[3]); }
+    });
+    out.forEach(o => {
+      o.nights = [...o.nights].sort();
+      o.start = o.nights[0];
+      o.added = [...o.first].filter(([, f]) => f.night > o.start)
+        .map(([sp, f]) => ({ sp, ...f })).sort((a, b) => b.night.localeCompare(a.night) || b.n - a.n);
+      o.latest = o.added.length ? o.added.filter(a => a.night === o.added[0].night) : [];
+    });
+    return out;
+  }
+  const newestSpecies = () => {
+    const s = new Map();
+    NEW.forEach((o, si) => { if (state.site === "all" || si === +state.site) o.latest.forEach(a => s.has(a.sp) || s.set(a.sp, { ...a, site: si })); });
+    return s;
+  };
+
+  function renderNew() {
+    const html = [...NEW].filter(([si, o]) => (state.site === "all" || si === +state.site) && o.nights.length).map(([si, o]) => {
+      const site = D.sites[si], nSp = o.first.size;
+      const head = `<h3>${esc(site.name)}</h3><p class="sub">${o.nights.length} ${o.nights.length === 1 ? "natt" : "nätter"} · ${nSp} arter · första natten ${nightLabel(o.start)}</p>`;
+      if (o.nights.length === 1) return `<div class="new-site">${head}<p class="sub">Bara en natt hittills – nya arter visas här från nästa natt.</p></div>`;
+      if (!o.added.length) return `<div class="new-site">${head}<p class="sub">Inga nya arter sedan första natten.</p></div>`;
+      const hl = o.latest.map(a => {
+        const s = D.species[a.sp];
+        return `<button class="new-hl" data-sp="${a.sp}"><span class="thumb"${s.image ? ` style="background-image:url('${esc(s.image.src)}')"` : ""}></span>
+          <span><span class="lbl">Senast nya art</span><br><span class="nm">${esc(s.sv || s.sci)}</span> <i class="dt">${esc(s.sci)}</i><br>
+          <span class="dt">Första gången natten ${nightLabel(a.night)} · ${a.n} ${a.n === 1 ? "registrering" : "registreringar"}, högsta p ${a.max.toFixed(2)}</span></span></button>`;
+      }).join("");
+      const rest = o.added.filter(a => a.night !== o.latest[0].night);
+      const list = rest.length ? `<ul class="new-list">${rest.map(a => `<li><a data-sp="${a.sp}">${esc(D.species[a.sp].sv || D.species[a.sp].sci)}</a><span class="when">${nightLabel(a.night)}</span></li>`).join("")}</ul>` : "";
+      return `<div class="new-site">${head}${hl}${list}</div>`;
+    }).join("");
+    $("#newsp").innerHTML = html || `<p class="sub">Inga lokaler med data.</p>`;
+    $("#newsp").querySelectorAll("[data-sp]").forEach(b => b.addEventListener("click", () => openSpecies(+b.dataset.sp)));
+  }
+
   // ---------- karta ----------
   function initMap() {
     map = L.map("map", { scrollWheelZoom: false });
@@ -139,7 +188,9 @@
       const dets = pass.filter(d => d[1] === i);
       const c = [...counts(dets)].sort((a, b) => b[1] - a[1]);
       const nBat = c.filter(([k]) => D.species[k].group === "bat");
+      const lt = (NEW.get(i) || {}).latest || [];
       const html = `<b>${esc(s.name)}</b><br>${s.lat.toFixed(5)}, ${s.lon.toFixed(5)}${s.note ? `<br>${esc(s.note)}` : ""}
+        ${lt.length ? `<br><b>Senast nya art:</b> ${lt.map(a => esc(D.species[a.sp].sv || D.species[a.sp].sci)).join(", ")} (${nightLabel(lt[0].night)})` : ""}
         <br>${fmt(dets.length)} detektioner, ${nBat.length} fladdermustaxa<ul>${c.map(([k, n]) => `<li>${esc(D.species[k].sv || D.species[k].sci)}: ${fmt(n)}</li>`).join("")}</ul>`;
       L.circleMarker([s.lat, s.lon], { radius: 8 + Math.sqrt(dets.length) / 6, color: "#fff", weight: 2, fillColor: accent, fillOpacity: .85 })
         .bindPopup(html).bindTooltip(s.name).addTo(siteLayer);
@@ -202,7 +253,7 @@
 
   // ---------- systematik ----------
   function renderTaxonomy(pass) {
-    const c = counts(pass), all = counts(scoped());
+    const c = counts(pass), all = counts(scoped()), fresh = newestSpecies();
     const taxa = D.species.filter(s => isTaxon(s) && all.get(s.i));
     const tree = {};
     taxa.forEach(s => {
@@ -214,8 +265,10 @@
     const card = s => {
       const n = c.get(s.i) || 0, med = median(s.probs);
       const img = s.image ? `style="background-image:url('${esc(s.image.src)}')"` : "";
-      return `<button class="card${n ? "" : " dim"}" data-sp="${s.i}" aria-label="${esc(s.sv || s.sci)}, ${n} detektioner">
-        <div class="img" ${img} role="img" aria-label=""></div>
+      const nw = fresh.get(s.i);
+      const tag = nw ? `<span class="newtag">Ny${D.sites.length > 1 && state.site === "all" ? ` för ${esc(D.sites[nw.site].name)}` : ""} ${nightLabel(nw.night).replace(/ \d{4}$/, "")}</span>` : "";
+      return `<button class="card${n ? "" : " dim"}${nw ? " is-new" : ""}" data-sp="${s.i}" aria-label="${esc(s.sv || s.sci)}, ${n} detektioner${nw ? ", ny art för lokalen" : ""}">
+        <div class="img" ${img} role="img" aria-label="">${tag}</div>
         <div class="body"><div class="sv">${esc(s.sv || s.sci)}</div><div class="sci">${isSpecies(s) ? esc(s.sci) : "obestämd art"}</div>
         <div class="meta"><span class="cnt">${fmt(n)}</span>${med < 0.5 ? `<span class="badge">osäker bestämning</span>` : `<span>median p ${med.toFixed(2)}</span>`}</div>
         ${n ? "" : `<div class="sub" style="margin:.2rem 0 0;font-size:.75rem">${fmt(all.get(s.i))} under gränsen</div>`}</div></button>`;
@@ -257,6 +310,8 @@
       <h2 id="dlgTitle">${esc(s.sv || s.sci)}</h2>
       <div class="sub">${isSpecies(s) ? `<i>${esc(s.sci)}</i> · ` : ""}${esc(s.en)}${s.code ? ` · BTO-kod ${esc(s.code)}` : ""}</div>
       <div class="sub">${path}</div>
+      ${[...NEW].filter(([, o]) => o.first.has(i)).map(([si, o]) => { const f = o.first.get(i), isNew = f.night > o.start;
+        return `<div class="sub">${isNew ? `<span class="newtag" style="position:static">Ny</span> ` : ""}Första fynd på ${esc(D.sites[si].name)}: natten ${nightLabel(f.night)}${isNew ? "" : " (lokalens första natt)"}</div>`; }).join("")}
       ${s.dyntaxaName && s.dyntaxaName !== s.sci ? `<div class="sub">I Dyntaxa: <i>${esc(s.dyntaxaName)}</i></div>` : ""}
       ${s.wiki ? `<p>${esc(s.wiki.extract)} <a href="${esc(s.wiki.url)}" target="_blank" rel="noopener">Läs mer</a></p>` : ""}
       ${median(probs) < 0.5 ? `<p><span class="badge">osäker bestämning</span> Medianen för klassificerarens sannolikhet är under 0,5 – verifiera i spektrogram innan fyndet rapporteras.</p>` : ""}
