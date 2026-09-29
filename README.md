@@ -57,8 +57,16 @@ och klassificerarens säkerhet.
 
     python scripts/build.py --artportalen                 # minsta sannolikhet 0,8
     python scripts/build.py --artportalen --min-prob 0.9
+    python scripts/build.py --artportalen --alla          # allt, oavsett tidigare export
 
-Skriver `exports/artportalen_<datum>.xlsx` med samma kolumner som Artportalens
+Exporten tar bara med resultatfiler i `results/` som inte exporterats tidigare.
+Vilka filer som gått iväg loggas i `data/artportalen_exporterat.json` (filnamn utan
+mapp, så filerna kan flyttas till undermappar). Ta bort en post där för att exportera
+om de filerna. `--alla` tar med allt och ändrar inte loggen. Om en art redan
+rapporterats för en natt och fler inspelningar från samma natt dyker upp senare får
+det nya fyndet ett löpnummer i Externid, och Granska-bladet säger till.
+
+Skriver `exports/artportalen_<datum>_<tid>.xlsx` med samma kolumner som Artportalens
 Excelmall (version 4.17), ett blad per artgrupp:
 
 - **Fladdermöss** – Antal = antal registreringar, Enhet *Registreringar*, Aktivitet *Aktiv*,

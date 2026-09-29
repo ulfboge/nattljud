@@ -1,0 +1,80 @@
+{
+ "_info": "Resultatfiler (filnamn i results/, utan mapp) som redan exporterats till Artportalen. Ta bort en post för att exportera om.",
+ "exporter": [
+  {
+   "datum": "2026-09-27",
+   "xlsx": "exports/artportalen_2026-09-27.xlsx",
+   "min_prob": 0.8,
+   "natter": [
+    "2026-09-25"
+   ],
+   "filer": [
+    "2026_25_sep_19-results_27092026074549.csv",
+    "2026_25_sep_20-results_27092026074546.csv",
+    "2026_25_sep_21-results_27092026074543.csv",
+    "2026_25_sep_22-results_27092026074540.csv",
+    "2026_25_sep_23-results_27092026074537.csv",
+    "2026_26_sep_00-results_27092026074534.csv",
+    "2026_26_sep_01-results_27092026074531.csv",
+    "2026_26_sep_02-results_27092026074528.csv",
+    "2026_26_sep_03-results_27092026074525.csv",
+    "2026_26_sep_04-results_27092026074521.csv",
+    "2026_26_sep_05-results_27092026074517.csv",
+    "2026_26_sep_06-results_27092026074447.csv"
+   ],
+   "externid": [
+    "nattljud:L1:2026-09-25:Pipistrellus_pygmaeus",
+    "nattljud:L1:2026-09-25:Plecotus_auritus",
+    "nattljud:L1:2026-09-25:Nyctalus_noctula",
+    "nattljud:L1:2026-09-25:Myotis_brandtii",
+    "nattljud:L1:2026-09-25:Leptophyes_punctatissima",
+    "nattljud:L1:2026-09-25:Pholidoptera_griseoaptera",
+    "nattljud:L1:2026-09-25:Sorex_minutus"
+   ]
+  },
+  {
+   "datum": "2026-09-29 07:51",
+   "xlsx": "exports/artportalen_2026-09-29_0751.xlsx",
+   "min_prob": 0.8,
+   "natter": [
+    "2026-09-27",
+    "2026-09-28"
+   ],
+   "filer": [
+    "202609290745OY4UGOY4-results_29092026083143.csv",
+    "2026092907465N56J1IK-results_29092026083136.csv",
+    "20260929074671JT829D-results_29092026083130.csv",
+    "202609290746QQTXAL5Z-results_29092026083133.csv",
+    "202609290747NB7QHNI2-results_29092026083128.csv",
+    "202609290747UMXSL9PH-results_29092026083125.csv",
+    "2026092907483HR69QXX-results_29092026083116.csv",
+    "202609290748F09CMWDV-results_29092026083122.csv",
+    "202609290748FDUZ039E-results_29092026083113.csv",
+    "202609290748FQIV5E1D-results_29092026083119.csv",
+    "2026092907492ZOQRF0H-results_29092026083110.csv",
+    "202609290750HYBH4AU8-results_29092026083107.csv",
+    "202609290750JUTNA2R9-results_29092026083103.csv",
+    "202609290751S8QD7WM4-results_29092026083100.csv",
+    "202609290751WEM4VT6Y-results_29092026083057.csv",
+    "202609290752JZICNGH3-results_29092026083053.csv",
+    "202609290752M9UN6REK-results_29092026083050.csv",
+    "202609290753AM5L75VL-results_29092026083044.csv",
+    "202609290753COWOR4LS-results_29092026083047.csv",
+    "202609290755B1T5207C-results_29092026083031.csv"
+   ],
+   "externid": [
+    "nattljud:L1:2026-09-27:Nyctalus_noctula",
+    "nattljud:L1:2026-09-27:Pipistrellus_pygmaeus",
+    "nattljud:L1:2026-09-27:Leptophyes_punctatissima",
+    "nattljud:L1:2026-09-27:Pholidoptera_griseoaptera",
+    "nattljud:L1:2026-09-27:Plecotus_auritus",
+    "nattljud:L1:2026-09-28:Nyctalus_noctula",
+    "nattljud:L1:2026-09-28:Pipistrellus_pygmaeus",
+    "nattljud:L1:2026-09-28:Leptophyes_punctatissima",
+    "nattljud:L1:2026-09-28:Pholidoptera_griseoaptera",
+    "nattljud:L1:2026-09-28:Myotis_brandtii",
+    "nattljud:L1:2026-09-28:Eptesicus_nilssonii"
+   ]
+  }
+ ]
+}

@@ -5,8 +5,10 @@ Bygger webbsidans data från BTO Acoustic Pipeline-exporter.
   python scripts/build.py                     # results/**/*.csv -> docs/data/data.json
   python scripts/build.py --refresh           # hämta om artinfo från GBIF/Wikipedia
   python scripts/build.py --no-weather        # hoppa över SMHI
-  python scripts/build.py --artportalen       # skriv även exports/artportalen_<datum>.xlsx
+  python scripts/build.py --artportalen       # skriv exports/artportalen_<datum>_<tid>.xlsx med
+                                              # resultatfiler som inte exporterats tidigare
   python scripts/build.py --artportalen --min-prob 0.9
+  python scripts/build.py --artportalen --alla  # alla filer, oavsett tidigare export (loggas inte)
   python scripts/build.py --add-site "Hemma" "Hildingavägen 33, Djursholm" hemma
         # ny lokal från adress eller "lat,lon"; valfritt: mappnamn under results/ som hör dit
 
@@ -18,12 +20,15 @@ CSV-filer läses rekursivt under results/, så de kan ligga i undermappar
 (t.ex. results/2026-09-25_stocksund/). Dubbletter (samma inspelning och art)
 räknas bara en gång.
 
+Vilka resultatfiler som redan gått till Artportalen loggas i data/artportalen_exporterat.json
+(filnamn, utan mapp). Ta bort en post där för att exportera om de filerna.
+
 Artinfo cachas i data/species_cache.json, väder i data/weather_cache.json.
 Lokalnamn, noggrannhet och publik precision redigeras i data/sites.json.
 """
 import csv, glob, json, os, sys, time, urllib.parse, urllib.request
 from collections import OrderedDict
-from datetime import date
+from datetime import date, datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import smhi, artportalen  # noqa: E402
@@ -34,6 +39,7 @@ CACHE = os.path.join(ROOT, "data", "species_cache.json")
 SITES = os.path.join(ROOT, "data", "sites.json")
 WEATHER = os.path.join(ROOT, "data", "weather_cache.json")
 EXPORTS = os.path.join(ROOT, "exports")
+AP_LOG = os.path.join(ROOT, "data", "artportalen_exporterat.json")
 EQUIPMENT = os.path.join(ROOT, "data", "equipment.json")
 OUT = os.path.join(ROOT, "docs", "data")
 UA = {"User-Agent": "bat-fynd/1.0 (github.com/ulfboge/bat)"}
@@ -218,12 +224,15 @@ def add_site(name, where, folders=()):
     print(f"  la till {st['id']} {name} ({st['lat']}, {st['lon']})" + (f", mappar: {', '.join(folders)}" if folders else ""))
 
 
-def build(refresh=False, weather=True, export_ap=False, min_prob=0.8):
+def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all=False):
     files = sorted(glob.glob(os.path.join(RESULTS, "**", "*.csv"), recursive=True))
     rows, seen, dups = [], set(), 0
+    wavs_per_file = {}  # resultatfilens namn -> inspelningar i den (för Artportalen-loggen)
     for f in files:
+        wf = wavs_per_file.setdefault(os.path.basename(f), set())
         with open(f, encoding="utf-8-sig", newline="") as fh:
             for r in csv.DictReader(fh):
+                wf.add(r["ORIGINAL FILE NAME"])
                 r["_folder"] = os.path.relpath(os.path.dirname(f), RESULTS).replace("\\", "/")
                 k = (r["RECORDING FILE NAME"], r["ORIGINAL FILE PART"], r["SCIENTIFIC NAME"])
                 if k in seen:
@@ -335,10 +344,42 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8):
           f"{len({d[5] for d in det})} nätter)")
 
     if export_ap:
-        res = artportalen.export(det, species, sites, EXPORTS, min_prob=min_prob, classifier=", ".join(classifier),
-                                 recorders=recorders)
-        if res:
-            print(f"Skrev {os.path.relpath(res[0], ROOT)} ({res[1]} fynd, {res[2]} rader att granska)")
+        export_artportalen(det, species, sites, classifier, recorders, wavs_per_file, min_prob, export_all)
+
+
+def export_artportalen(det, species, sites, classifier, recorders, wavs_per_file, min_prob, export_all):
+    """Exportera bara detektioner från resultatfiler som inte exporterats tidigare, och logga dem."""
+    log = json.load(open(AP_LOG, encoding="utf-8")) if os.path.exists(AP_LOG) else {"exporter": []}
+    done = {f for e in log["exporter"] for f in e["filer"]}
+    prev_ids = {x for e in log["exporter"] for x in e.get("externid", [])}
+    new_files = sorted(wavs_per_file) if export_all else sorted(f for f in wavs_per_file if f not in done)
+    if not new_files:
+        print("Artportalen: inga nya resultatfiler sedan senaste exporten – inget skrivet.")
+        return
+    old_wavs = set() if export_all else set().union(*(wavs_per_file[f] for f in wavs_per_file if f in done))
+    sel = [d for d in det if d[6] not in old_wavs]
+    if not sel:
+        print("Artportalen: de nya filerna innehåller bara inspelningar som redan exporterats – inget skrivet.")
+        return
+    nights = sorted({d[5] for d in sel})
+    res = artportalen.export(sel, species, sites, EXPORTS, min_prob=min_prob, classifier=", ".join(classifier),
+                             recorders=recorders, prev_ids=set() if export_all else prev_ids,
+                             scope=f"{len(new_files)} resultatfiler, nätter från {', '.join(nights)}"
+                                   + (" (alla filer, --alla)" if export_all else " som inte exporterats tidigare"))
+    if not res:
+        return
+    path, n_obs, n_rev, ids = res
+    print(f"Skrev {os.path.relpath(path, ROOT)} ({n_obs} fynd, {n_rev} rader att granska; "
+          f"{len(new_files)} resultatfiler, nätter {', '.join(nights)})")
+    if export_all:
+        print("  (--alla: loggen i data/artportalen_exporterat.json ändrades inte)")
+        return
+    log["exporter"].append({"datum": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                            "xlsx": os.path.relpath(path, ROOT).replace("\\", "/"),
+                            "min_prob": min_prob, "natter": nights, "filer": new_files, "externid": ids})
+    with open(AP_LOG, "w", encoding="utf-8") as fh:
+        json.dump(log, fh, ensure_ascii=False, indent=1)
+    print(f"  {len(new_files)} resultatfiler markerade som exporterade i {os.path.relpath(AP_LOG, ROOT)}")
 
 
 if __name__ == "__main__":
@@ -349,4 +390,4 @@ if __name__ == "__main__":
         sys.exit(0)
     mp = float(a[a.index("--min-prob") + 1]) if "--min-prob" in a else 0.8
     build(refresh="--refresh" in a, weather="--no-weather" not in a,
-          export_ap="--artportalen" in a, min_prob=mp)
+          export_ap="--artportalen" in a, min_prob=mp, export_all="--alla" in a)

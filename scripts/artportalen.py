@@ -1,6 +1,6 @@
 """Artportalen-underlag enligt Artportalens Excelmall (version 4.17, gäller fr.o.m. 3 mars 2022).
 
-Skriver exports/artportalen_<datum>.xlsx med:
+Skriver exports/artportalen_<datum>_<tid>.xlsx med:
   Så här gör du        – kort instruktion
   Fladdermöss         – exakt samma kolumner som mallens blad "Fladdermöss"
   Ryggradslösa djur   – mallens blad "Ryggradslösa djur" (vårtbitare m.fl.)
@@ -69,7 +69,7 @@ def _accuracy(m):
     return f"{min(NOGGRANNHET, key=lambda v: abs(v - (m or 50)))} m"
 
 
-def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders=()):
+def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders=(), prev_ids=(), scope=""):
     try:
         from openpyxl import Workbook
         from openpyxl.styles import Font, PatternFill
@@ -84,6 +84,7 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
 
     per_sheet = {k: [] for k in SHEETS}
     granska = []
+    ids = []
     for (si, night, spi), dets in sorted(groups.items(), key=lambda kv: (kv[0][1], kv[0][0], kv[0][2])):
         sp, site = species[spi], sites[si]
         probs = [d[3] for d in dets]
@@ -107,6 +108,10 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
         if sp.get("group") == "terrestrial mammal" and good:
             stat["Att tänka på"] = (stat["Att tänka på"] + "; " if stat["Att tänka på"] else "") + \
                 "BTO varnar: alla näbbmusarter ingår inte i klassificeraren"
+        base_id = f"nattljud:{site['id']}:{night}:{sp['sci'].replace(' ', '_')}"
+        if base_id in prev_ids:
+            stat["Att tänka på"] = (stat["Att tänka på"] + "; " if stat["Att tänka på"] else "") + \
+                "Arten har redan rapporterats denna natt i en tidigare export – detta är bara nya inspelningar"
         granska.append(stat)
         if not (is_species and target and good):
             continue
@@ -135,8 +140,9 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
             "Privat kommentar": f"{_n(len(dets))} totalt denna natt, median sannolikhet {_p(med)}.{rec_txt}",
             "Beskrivning artbestämning": (f"Automatisk artbestämning i BTO Acoustic Pipeline ({classifier}), "
                                           f"högsta sannolikhet {_p(max(probs))}. Ej manuellt verifierad."),
-            "Externid": f"nattljud:{site['id']}:{night}:{sp['sci'].replace(' ', '_')}",
+            "Externid": _unique_id(base_id, prev_ids),
         })
+        ids.append(rec["Externid"])
         per_sheet[sheet].append(rec)
 
     wb = Workbook()
@@ -154,7 +160,7 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
         "",
         "Kolumnerna följer Artportalens Excelmall version 4.17. Externid gör att samma fynd går att känna igen vid ny import.",
         f"Minsta sannolikhet för att komma med: {min_prob:g}. Skapad {datetime.now():%Y-%m-%d %H:%M}.",
-    ]:
+    ] + ([f"Omfattar {scope}. Exporterade filer loggas i data/artportalen_exporterat.json."] if scope else []):
         ws.append([line])
     ws["A1"].font = Font(bold=True, size=13)
     ws.column_dimensions["A"].width = 120
@@ -191,6 +197,16 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
     ws.freeze_panes = "A2"
 
     os.makedirs(out_dir, exist_ok=True)
-    path = os.path.join(out_dir, f"artportalen_{datetime.now():%Y-%m-%d}.xlsx")
+    path = os.path.join(out_dir, f"artportalen_{datetime.now():%Y-%m-%d_%H%M}.xlsx")
     wb.save(path)
-    return path, sum(len(v) for v in per_sheet.values()), len(granska)
+    return path, sum(len(v) for v in per_sheet.values()), len(granska), ids
+
+
+def _unique_id(base, prev_ids):
+    """Samma art, natt och lokal i en senare export får ett löpnummer så att Externid förblir unikt."""
+    if base not in prev_ids:
+        return base
+    k = 2
+    while f"{base}:{k}" in prev_ids:
+        k += 1
+    return f"{base}:{k}"
