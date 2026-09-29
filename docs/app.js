@@ -257,6 +257,7 @@
       <h2 id="dlgTitle">${esc(s.sv || s.sci)}</h2>
       <div class="sub">${isSpecies(s) ? `<i>${esc(s.sci)}</i> · ` : ""}${esc(s.en)}${s.code ? ` · BTO-kod ${esc(s.code)}` : ""}</div>
       <div class="sub">${path}</div>
+      ${s.dyntaxaName && s.dyntaxaName !== s.sci ? `<div class="sub">I Dyntaxa: <i>${esc(s.dyntaxaName)}</i></div>` : ""}
       ${s.wiki ? `<p>${esc(s.wiki.extract)} <a href="${esc(s.wiki.url)}" target="_blank" rel="noopener">Läs mer</a></p>` : ""}
       ${median(probs) < 0.5 ? `<p><span class="badge">osäker bestämning</span> Medianen för klassificerarens sannolikhet är under 0,5 – verifiera i spektrogram innan fyndet rapporteras.</p>` : ""}
       <div class="facts">${facts.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("")}</div>

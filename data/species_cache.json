@@ -278,5 +278,34 @@
     },
     "gbifSE": 1155,
     "gbifNear25km": 18
+  },
+  "Eptesicus nilssonii": {
+    "sci": "Eptesicus nilssonii",
+    "gbifKey": 7261816,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Mammalia",
+    "order": "Chiroptera",
+    "family": "Vespertilionidae",
+    "genus": "Eptesicus",
+    "dyntaxaId": 205998,
+    "dyntaxaName": "Cnephaeus nilssonii",
+    "sv": "Nordfladdermus",
+    "wiki": {
+      "lang": "sv",
+      "title": "Nordfladdermus",
+      "extract": "Nordfladdermus, tidigare även nordisk fladdermus är en fladdermusart i familjen läderlappar (Vespertilionidae).",
+      "url": "https://sv.wikipedia.org/wiki/Nordfladdermus"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Eptesicus_nilssoni.jpg/500px-Eptesicus_nilssoni.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Eptesicus_nilssoni.jpg",
+      "artist": "Mnolf",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Eptesicus_nilssoni.jpg"
+    },
+    "gbifSE": 436,
+    "gbifNear25km": 6
   }
 }

@@ -93,11 +93,22 @@ def fetch_species(sci):
     # Dyntaxa-id (för länk till Artfakta) via Dyntaxas checklista på GBIF
     dy = get_json("https://api.gbif.org/v1/species/search?datasetKey=de8934f4-a136-481c-a87a-b0b202b80a31"
                   f"&q={q(name)}&limit=10") or {}
-    for r in dy.get("results", []):
+    res = [r for r in dy.get("results", []) if r.get("canonicalName") == name]
+    for r in res:
         tid = r.get("taxonID") or ""
-        if tid.startswith("urn:lsid:dyntaxa.se:Taxon:") and r.get("canonicalName") == name:
+        if tid.startswith("urn:lsid:dyntaxa.se:Taxon:"):
             info["dyntaxaId"] = int(tid.rsplit(":", 1)[1])
             break
+    else:
+        # namnet är synonym i Dyntaxa (t.ex. Eptesicus nilssonii -> Cnephaeus nilssonii): följ till accepterat taxon
+        for r in res:
+            if r.get("acceptedKey"):
+                a = get_json(f"https://api.gbif.org/v1/species/{r['acceptedKey']}") or {}
+                tid = a.get("taxonID") or ""
+                if tid.startswith("urn:lsid:dyntaxa.se:Taxon:"):
+                    info["dyntaxaId"] = int(tid.rsplit(":", 1)[1])
+                    info["dyntaxaName"] = a.get("canonicalName")
+                    break
     # svenska namn
     info["sv"] = SV_NAMES.get(name)
     if not info["sv"] and info["gbifKey"]:
