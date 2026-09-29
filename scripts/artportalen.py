@@ -199,6 +199,7 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, f"artportalen_{datetime.now():%Y-%m-%d_%H%M}.xlsx")
     wb.save(path)
+    _write_tsv(path[:-5], per_sheet, granska)
     return path, sum(len(v) for v in per_sheet.values()), len(granska), ids
 
 
@@ -210,3 +211,24 @@ def _unique_id(base, prev_ids):
     while f"{base}:{k}" in prev_ids:
         k += 1
     return f"{base}:{k}"
+
+
+def _txt(v):
+    return "" if v is None else str(v).replace("\t", " ").replace("\r", " ").replace("\n", " ")
+
+
+def _write_tsv(folder, per_sheet, granska):
+    """Samma innehåll som textfiler (tabbseparerade) – går att klistra in i Artportalen utan Excel:
+    öppna i Anteckningar, Ctrl+A, Ctrl+C, klistra in på artportalen.se/ImportSighting."""
+    os.makedirs(folder, exist_ok=True)
+    for i, (sheet, cols) in enumerate(SHEETS.items(), 1):
+        data = per_sheet[sheet]
+        if not data:
+            continue
+        lines = ["\t".join(cols)] + ["\t".join(_txt(r.get(c)) if c != "Med-observatör" else "" for c in cols) for r in data]
+        with open(os.path.join(folder, f"{i} {sheet} ({len(data)} fynd).txt"), "w", encoding="utf-8", newline="\r\n") as fh:
+            fh.write("\n".join(lines) + "\n")
+    if granska:
+        cols = list(granska[0].keys())
+        with open(os.path.join(folder, "0 Granska.txt"), "w", encoding="utf-8", newline="\r\n") as fh:
+            fh.write("\n".join(["\t".join(cols)] + ["\t".join(_txt(r.get(c)) for c in cols) for r in granska]) + "\n")

@@ -81,6 +81,10 @@ Excelmall (version 4.17), ett blad per artgrupp:
 - **Däggdjur (exkl.fladdermöss)** – t.ex. näbbmöss (mallen saknar ultraljud som metod)
 - **Granska** – alla taxa, varför de är med eller inte, och vad som bör kontrolleras
 
+Samma blad skrivs också som textfiler i mappen `exports/artportalen_<datum>_<tid>/`
+(tabbseparerade, en fil per blad). Då behövs inget Excel: öppna filen i Anteckningar,
+Ctrl+A, Ctrl+C och klistra in på importsidan.
+
 Import: sätt koordinatsystem *SWEREF99 TM* under Min profil i Artportalen, markera
 rubrikraden och fynden på ett blad, kopiera och klistra in på
 artportalen.se/ImportSighting. Fynden hamnar sedan under *Granska & publicera*.
