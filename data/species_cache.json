@@ -307,5 +307,117 @@
     },
     "gbifSE": 436,
     "gbifNear25km": 6
+  },
+  "Sorex araneus": {
+    "sci": "Sorex araneus",
+    "gbifKey": 8316400,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Mammalia",
+    "order": "Soricomorpha",
+    "family": "Soricidae",
+    "genus": "Sorex",
+    "dyntaxaId": 205981,
+    "sv": "Vanlig näbbmus",
+    "wiki": {
+      "lang": "sv",
+      "title": "Vanlig näbbmus",
+      "extract": "Vanlig näbbmus är den vanligaste arten i familjen näbbmöss, och även en av de vanligaste näbbmusen i sitt utbredningsområde. Näbbmusen är insektsätare och är närmre besläktad med äkta insektsätare, som igelkottar och mullvadar, än med möss. IUCN kategoriserar den som livskraftig (LC).",
+      "url": "https://sv.wikipedia.org/wiki/Vanlig_n%C3%A4bbmus"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Sorex_araneus2.JPG/500px-Sorex_araneus2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Sorex_araneus2.JPG",
+      "artist": "Manuel R.",
+      "license": "CC BY 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Sorex_araneus2.JPG"
+    },
+    "gbifSE": 7638,
+    "gbifNear25km": 104
+  },
+  "Myotis mystacinus": {
+    "sci": "Myotis mystacinus",
+    "gbifKey": 9754263,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Mammalia",
+    "order": "Chiroptera",
+    "family": "Vespertilionidae",
+    "genus": "Myotis",
+    "dyntaxaId": 232474,
+    "sv": "Mustaschfladdermus",
+    "wiki": {
+      "lang": "sv",
+      "title": "Mustaschfladdermus",
+      "extract": "Mustaschfladdermus är en fladdermusart i familjen läderlappar (Vespertilionidae). Den är den näst minsta fladdermusen i Europa. Bara den nyupptäckta arten nymffladdermus är ännu mindre.",
+      "url": "https://sv.wikipedia.org/wiki/Mustaschfladdermus"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Myotis_mystacinus.jpg/500px-Myotis_mystacinus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Myotis_mystacinus.jpg",
+      "artist": "",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Myotis_mystacinus.jpg"
+    },
+    "gbifSE": 801,
+    "gbifNear25km": 20
+  },
+  "Myotis bechsteinii": {
+    "sci": "Myotis bechsteinii",
+    "gbifKey": 2432427,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Mammalia",
+    "order": "Chiroptera",
+    "family": "Vespertilionidae",
+    "genus": "Myotis",
+    "dyntaxaId": 100085,
+    "sv": "Bechsteins fladdermus",
+    "wiki": {
+      "lang": "sv",
+      "title": "Bechsteins fladdermus",
+      "extract": "Bechsteins fladdermus är en fladdermusart i familjen Vespertilionidae (läderlappar). Catalogue of Life listar inga underarter.",
+      "url": "https://sv.wikipedia.org/wiki/Bechsteins_fladdermus"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Vespertilion_bechstein.jpg/500px-Vespertilion_bechstein.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Vespertilion_bechstein.jpg",
+      "artist": "Parc naturel régional des Vosges du Nord",
+      "license": "Public domain",
+      "page": "https://commons.wikimedia.org/wiki/File:Vespertilion_bechstein.jpg"
+    },
+    "gbifSE": 77,
+    "gbifNear25km": 0
+  },
+  "Rattus norvegicus": {
+    "sci": "Rattus norvegicus",
+    "gbifKey": 2439261,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Mammalia",
+    "order": "Rodentia",
+    "family": "Muridae",
+    "genus": "Rattus",
+    "dyntaxaId": 206009,
+    "sv": "Brunråtta",
+    "wiki": {
+      "lang": "sv",
+      "title": "Brunråtta",
+      "extract": "Brunråtta, eller vandringsråtta, är en gnagare i familjen råttdjur som är vanlig i stora delar av världen. Den härstammar förmodligen från Centralasien, men har med hjälp av människan spridit sig till alla kontinenter förutom Antarktis. Brunråttan har även domesticerats och kallas då tamråtta. Selektiv avel av brunråttan ligger bakom de vita råttor som används som försöksdjur vid laboratorier.",
+      "url": "https://sv.wikipedia.org/wiki/Brunr%C3%A5tta"
+    },
+    "image": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/0/01/Rattus_norvegicus_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "file": "Rattus_norvegicus_1.jpg",
+      "artist": "National Park Service",
+      "license": "Public domain",
+      "page": "https://commons.wikimedia.org/wiki/File:Rattus_norvegicus_1.jpg"
+    },
+    "gbifSE": 3508,
+    "gbifNear25km": 693
   }
 }
