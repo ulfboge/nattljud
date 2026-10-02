@@ -63,6 +63,41 @@
     "nattljud:L1:2026-09-28:Myotis_brandtii",
     "nattljud:L1:2026-09-28:Eptesicus_nilssonii"
    ]
+  },
+  {
+   "datum": "2026-10-02 07:18",
+   "xlsx": "exports/artportalen_2026-10-02_0718.xlsx",
+   "min_prob": 0.8,
+   "natter": [
+    "2026-09-29",
+    "2026-09-30",
+    "2026-10-01"
+   ],
+   "filer": [
+    "202610020748CEIG5HZW-results_02102026081251.csv",
+    "202610020748YDRCEJ3V-results_02102026081247.csv",
+    "2026100207499VNJFKYN-results_02102026081233.csv"
+   ],
+   "externid": [
+    "nattljud:L1:2026-09-29:Nyctalus_noctula",
+    "nattljud:L1:2026-09-29:Pipistrellus_pygmaeus",
+    "nattljud:L1:2026-09-29:Leptophyes_punctatissima",
+    "nattljud:L1:2026-09-29:Pholidoptera_griseoaptera",
+    "nattljud:L1:2026-09-29:Sorex_araneus",
+    "nattljud:L1:2026-09-30:Nyctalus_noctula",
+    "nattljud:L1:2026-09-30:Pipistrellus_pygmaeus",
+    "nattljud:L1:2026-09-30:Leptophyes_punctatissima",
+    "nattljud:L1:2026-09-30:Myotis_brandtii",
+    "nattljud:L1:2026-09-30:Sorex_araneus",
+    "nattljud:L1:2026-10-01:Nyctalus_noctula",
+    "nattljud:L1:2026-10-01:Pipistrellus_pygmaeus",
+    "nattljud:L1:2026-10-01:Leptophyes_punctatissima",
+    "nattljud:L1:2026-10-01:Myotis_brandtii",
+    "nattljud:L1:2026-10-01:Pipistrellus_nathusii",
+    "nattljud:L1:2026-10-01:Eptesicus_nilssonii",
+    "nattljud:L1:2026-10-01:Myotis_mystacinus",
+    "nattljud:L1:2026-10-01:Rattus_norvegicus"
+   ]
   }
  ]
 }

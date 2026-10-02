@@ -9,6 +9,7 @@ Bygger webbsidans data från BTO Acoustic Pipeline-exporter.
                                               # resultatfiler som inte exporterats tidigare
   python scripts/build.py --artportalen --min-prob 0.9
   python scripts/build.py --artportalen --alla  # alla filer, oavsett tidigare export (loggas inte)
+  python scripts/build.py --artportalen --utan "Myotis bechsteinii"  # utelämna arter (kommaseparerat)
   python scripts/build.py --add-site "Hemma" "Hildingavägen 33, Djursholm" hemma
         # ny lokal från adress eller "lat,lon"; valfritt: mappnamn under results/ som hör dit
 
@@ -224,7 +225,7 @@ def add_site(name, where, folders=()):
     print(f"  la till {st['id']} {name} ({st['lat']}, {st['lon']})" + (f", mappar: {', '.join(folders)}" if folders else ""))
 
 
-def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all=False):
+def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all=False, exclude=()):
     files = sorted(glob.glob(os.path.join(RESULTS, "**", "*.csv"), recursive=True))
     rows, seen, dups = [], set(), 0
     wavs_per_file = {}  # resultatfilens namn -> inspelningar i den (för Artportalen-loggen)
@@ -344,10 +345,10 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all
           f"{len({d[5] for d in det})} nätter)")
 
     if export_ap:
-        export_artportalen(det, species, sites, classifier, recorders, wavs_per_file, min_prob, export_all)
+        export_artportalen(det, species, sites, classifier, recorders, wavs_per_file, min_prob, export_all, exclude)
 
 
-def export_artportalen(det, species, sites, classifier, recorders, wavs_per_file, min_prob, export_all):
+def export_artportalen(det, species, sites, classifier, recorders, wavs_per_file, min_prob, export_all, exclude=()):
     """Exportera bara detektioner från resultatfiler som inte exporterats tidigare, och logga dem."""
     log = json.load(open(AP_LOG, encoding="utf-8")) if os.path.exists(AP_LOG) else {"exporter": []}
     done = {f for e in log["exporter"] for f in e["filer"]}
@@ -358,6 +359,11 @@ def export_artportalen(det, species, sites, classifier, recorders, wavs_per_file
         return
     old_wavs = set() if export_all else set().union(*(wavs_per_file[f] for f in wavs_per_file if f in done))
     sel = [d for d in det if d[6] not in old_wavs]
+    if exclude:
+        skip = {i for i, sp in enumerate(species) if sp["sci"] in exclude}
+        n0 = len(sel)
+        sel = [d for d in sel if d[0] not in skip]
+        print(f"Artportalen: utelämnar {', '.join(sorted(exclude))} ({n0 - len(sel)} detektioner)")
     if not sel:
         print("Artportalen: de nya filerna innehåller bara inspelningar som redan exporterats – inget skrivet.")
         return
@@ -390,4 +396,5 @@ if __name__ == "__main__":
         sys.exit(0)
     mp = float(a[a.index("--min-prob") + 1]) if "--min-prob" in a else 0.8
     build(refresh="--refresh" in a, weather="--no-weather" not in a,
-          export_ap="--artportalen" in a, min_prob=mp, export_all="--alla" in a)
+          export_ap="--artportalen" in a, min_prob=mp, export_all="--alla" in a,
+          exclude={x.strip() for x in a[a.index("--utan") + 1].split(",")} if "--utan" in a else ())
