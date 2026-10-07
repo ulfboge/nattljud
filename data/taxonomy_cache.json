@@ -9577,17 +9577,6 @@
 "parent":62455,
 "iconic":"Insecta"
 },
-"69193":{
-"name":"Chrysomela",
-"rank":"genus",
-"sv":"",
-"parent":510464,
-"iconic":"Insecta",
-"wiki":{
-"extract":"<i><b>Chrysomela</b></i> är ett släkte av skalbaggar som beskrevs av Carl von Linné 1758. <i>Chrysomela</i> ingår i familjen bladbaggar.",
-"url":"https://sv.wikipedia.org/wiki/Chrysomela"
-}
-},
 "176269":{
 "name":"Chrysomeloidea",
 "rank":"superfamily",
@@ -19332,13 +19321,6 @@
 "parent":7264,
 "iconic":"Aves"
 },
-"7278":{
-"name":"Aegithalos caudatus",
-"rank":"species",
-"sv":"Stjärtmes",
-"parent":7275,
-"iconic":"Aves"
-},
 "639660":{
 "name":"Hepatica nobilis",
 "rank":"species",
@@ -20203,17 +20185,6 @@
 "parent":1317273,
 "iconic":"Mammalia"
 },
-"482":{
-"name":"Fulica atra",
-"rank":"species",
-"sv":"Sothöna",
-"parent":472,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Sothöna</b> (<i>Fulica atra</i>) är en vattenlevande fågel som tillhör familjen rallar. Den har en rund kroppsform, skiffersvart fjäderdräkt och vitaktig näbb med en fjäderlös pannsköld, och nickar med huvudet när den simmar. Arten, som ofta delas upp i fyra underarter, häckar i Nordafrika, Europa och stora delar av Centralasien till Japan och söderut till Australien och Nya Zeeland. Delar av populationen är stannfåglar medan de som häckar i kallare områden flyttar söderut om vintern.",
-"url":"https://sv.wikipedia.org/wiki/Sothöna"
-}
-},
 "154":{
 "name":"Rallidae",
 "rank":"family",
@@ -20227,28 +20198,6 @@
 "sv":"Sothöns",
 "parent":154,
 "iconic":"Aves"
-},
-"3033":{
-"name":"Columba oenas",
-"rank":"species",
-"sv":"Skogsduva",
-"parent":3000,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Skogsduva</b> (<i>Columba oenas</i>) är en fågel av familjen duvor som förekommer i västra och centrala Palearktis. Merparten är flyttfåglar och de föredrar att häcka i trädhålor. Den är en ganska skygg art och den lever främst av frön. Den globala populationen är inte hotad men vissa bestånd, exempelvis den svenska, har minskat kraftigt.",
-"url":"https://sv.wikipedia.org/wiki/Skogsduva"
-}
-},
-"4356":{
-"name":"Larus canus",
-"rank":"species",
-"sv":"Fiskmås",
-"parent":4343,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Fiskmås</b> (<i>Larus canus</i>) är en fågel som tillhör familjen måsfåglar som häckar över stora delar av Europa och Asien och merparten är flyttfåglar. Den påminner om gråtruten men är betydligt mindre och slankare. Som adult i sommardräkt har den grå ovansida och är i övrigt vit, med gul näbb och ben, och svarta vingspetsar med vita slantar. Juvenilen är spräcklig och denna dräkt ruggas sedan i omgångar tills den anlägger adult dräkt under sitt tredje levnadsår.",
-"url":"https://sv.wikipedia.org/wiki/Fiskmås"
-}
 },
 "67561":{
 "name":"Charadriiformes",
@@ -20278,28 +20227,6 @@
 "parent":447155,
 "iconic":"Aves"
 },
-"4368":{
-"name":"Larus marinus",
-"rank":"species",
-"sv":"Havstrut",
-"parent":4343,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Havstrut</b> (<i>Larus marinus</i>) är en av de större arterna inom familjen måsfåglar och den största som häckar i Europa. Den förekommer även utmed Atlantkusten i östra Nordamerika.",
-"url":"https://sv.wikipedia.org/wiki/Havstrut"
-}
-},
-"4449":{
-"name":"Sterna paradisaea",
-"rank":"species",
-"sv":"Silvertärna",
-"parent":4424,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Silvertärna</b> (<i>Sterna paradisaea</i>) är en havsfågel inom familjen måsfåglar. Den är en flyttfågel som häckar i kolonier cirkumpolärt i arktiska och subarktiska områden i Europa, Asien och Nordamerika. Arten är känd för att vara det djur i världen som flyttar den längsta sträckan mellan sin häckningsplats och sina vinterkvarter, som återfinns i Antarktis. De populationer som flyttar längst förflyttar sig årligen cirka 90 000 kilometer, vilket motsvarar mer än två varv runt jorden. Tack vare dessa långa...",
-"url":"https://sv.wikipedia.org/wiki/Silvertärna"
-}
-},
 "373567":{
 "name":"Sterninae",
 "rank":"subfamily",
@@ -20314,28 +20241,6 @@
 "parent":373567,
 "iconic":"Aves"
 },
-"4450":{
-"name":"Sterna hirundo",
-"rank":"species",
-"sv":"Fisktärna",
-"parent":4424,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Fisktärna</b> (<i>Sterna hirundo</i>) är en havsfågel i familjen måsfåglar. Arten förekommer cirkumpolärt, och dess fyra underarter häckar i tempererade och subarktiska regioner i Europa, Asien och Nordamerika. Den är en långflyttare och övervintrar i tropiska eller subtropiska kustområden. I häckningsdräkt har den ljusgrå ovansida, vit till mycket ljust grå undersida, svart hätta, orangeröda ben och en small spetsig näbb. Beroende på underart så är näbben till största delen röd med svart näbbspets eller helsvart. Fisktärnans bestånd...",
-"url":"https://sv.wikipedia.org/wiki/Fisktärna"
-}
-},
-"4843":{
-"name":"Haematopus ostralegus",
-"rank":"species",
-"sv":"Strandskata",
-"parent":4837,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Strandskata</b> (<i>Haematopus ostralegus</i>) är en vadarfågel inom familjen strandskator och den mest spridda arten av strandskata inom sin familj. Merparten av den globala populationen är flyttfåglar och den häckar utmed kuster i västra Europa, centrala Eurasien samt i nordöstra Asien. Den är en stor och kompakt vadare som adult har en svart och vit fjäderdräkt och orangeröd näbb och rosafärgade ben.",
-"url":"https://sv.wikipedia.org/wiki/Strandskata"
-}
-},
 "71325":{
 "name":"Haematopodidae",
 "rank":"family",
@@ -20349,17 +20254,6 @@
 "sv":"",
 "parent":71325,
 "iconic":"Aves"
-},
-"6638":{
-"name":"Apus apus",
-"rank":"species",
-"sv":"Tornseglare",
-"parent":6611,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Tornseglare</b> (<i>Apus apus</i>) är en fågel inom familjen seglare och enda representant för familjen i norra Europa. Till formen påminner seglarna om svalorna, men de är inte närmare besläktade med dessa tättingar, utan likheterna beror på konvergent evolution. Istället är seglarna närmast besläktade med kolibrier och trädseglare. Tornseglaren har ett stort utbredningsområde och häckar över stora delar av Palearktis. Den är en flyttfågel och har sina vinterkvarter i Afrika, framför allt söder om ekvatorn.",
-"url":"https://sv.wikipedia.org/wiki/Tornseglare"
-}
 },
 "1583761":{
 "name":"Apodiformes",
@@ -20382,28 +20276,6 @@
 "parent":6544,
 "iconic":"Aves"
 },
-"6916":{
-"name":"Cygnus cygnus",
-"rank":"species",
-"sv":"Sångsvan",
-"parent":6913,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Sångsvan</b> (<i>Cygnus cygnus</i>) är en mycket stor vit andfågel som häckar i norra Europa och Asien. Från att ha varit nästan utdöd i Sverige i början av 1900-talet har den ökat explosionsartat och finns nu i stora delar av landet. Globalt anses arten vara livskraftig. Den är Finlands nationalfågel.",
-"url":"https://sv.wikipedia.org/wiki/Sångsvan"
-}
-},
-"7004":{
-"name":"Mergus merganser",
-"rank":"species",
-"sv":"Storskrake",
-"parent":6995,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Storskrake</b> (<i>Mergus merganser</i>) är en vattenlevande fågel som tillhör underfamiljen Merginae.",
-"url":"https://sv.wikipedia.org/wiki/Storskrake"
-}
-},
 "6995":{
 "name":"Mergus",
 "rank":"genus",
@@ -20411,34 +20283,12 @@
 "parent":6912,
 "iconic":"Aves"
 },
-"7089":{
-"name":"Branta canadensis",
-"rank":"species",
-"sv":"Kanadagås",
-"parent":7086,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Kanadagås</b> (<i>Branta canadensis</i>) är en fågel inom släktgruppen gäss med sin ursprungliga utbredning i Nordamerika men som genom introduktion nu har en stor population i Europa och även i Nya Zeeland. Polargåsen behandlades länge som en underart till kanadagåsen men har idag artstatus.",
-"url":"https://sv.wikipedia.org/wiki/Kanadagås"
-}
-},
 "7086":{
 "name":"Branta",
 "rank":"genus",
 "sv":"Brantagäss",
 "parent":6912,
 "iconic":"Aves"
-},
-"7347":{
-"name":"Alauda arvensis",
-"rank":"species",
-"sv":"Sånglärka",
-"parent":7346,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Sånglärka</b> (<i>Alauda arvensis</i>) är en fågel i familjen lärkor. Den förekommer i Eurasien och Nordafrika, i öppna landskap och ofta på och kring jordbruksmark. Fågeln livnär sig på insekter och frön. Den är känd för sin sång och har på svenska tidigare ofta benämnts <i>lärka</i>.",
-"url":"https://sv.wikipedia.org/wiki/Sånglärka"
-}
 },
 "7284":{
 "name":"Alaudidae",
@@ -20454,17 +20304,6 @@
 "parent":7284,
 "iconic":"Aves"
 },
-"7450":{
-"name":"Certhia familiaris",
-"rank":"species",
-"sv":"Trädkrypare",
-"parent":7449,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Trädkrypare</b> (<i>Certhia familiaris</i>) är en fågelart inom familjen trädkrypare (Certhiidae).",
-"url":"https://sv.wikipedia.org/wiki/Trädkrypare"
-}
-},
 "7448":{
 "name":"Certhiidae",
 "rank":"family",
@@ -20479,45 +20318,12 @@
 "parent":7448,
 "iconic":"Aves"
 },
-"8010":{
-"name":"Corvus corax",
-"rank":"species",
-"sv":"Korp",
-"parent":7998,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Korp</b> (<i>Corvus corax</i>) är en stor, svart kråkfågel. Den återfinns över större delen av norra halvklotet och är den mest spridda av alla kråkfåglar. Det finns åtta underarter med liten variation i utseende, men med betydande genetiska skillnader.",
-"url":"https://sv.wikipedia.org/wiki/Korp"
-}
-},
-"8088":{
-"name":"Garrulus glandarius",
-"rank":"species",
-"sv":"Nötskrika",
-"parent":8085,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Nötskrika</b> (<i>Garrulus glandarius</i>) är en fågel som tillhör familjen kråkfåglar. Den förekommer i ett vidsträckt område i den palearktiska regionen, från västra Europa och nordvästra Afrika österut till Asiens östra kust och söderut i Sydostasien. Utseendemässigt uppvisar den en mängd variationer och delas upp i ett flertal underarter. I sittande ställning syns främst den rödgrå till beigeröda kroppen men i flykten visar den upp sina starkt kontrasterande vingar och stjärt i svart och vitt med inslag...",
-"url":"https://sv.wikipedia.org/wiki/Nötskrika"
-}
-},
 "8085":{
 "name":"Garrulus",
 "rank":"genus",
 "sv":"Nötskrikor",
 "parent":7823,
 "iconic":"Aves"
-},
-"9195":{
-"name":"Emberiza citrinella",
-"rank":"species",
-"sv":"Gulsparv",
-"parent":9186,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Gulsparv</b> (<i>Emberiza citrinella</i>) är en stor och långstjärtad sparv inom familjen fältsparvar som förekommer över stora delar av Europa och i Väst- och Centralasien. Merparten av den europeiska populationen är stannfåglar medan den östra underarten delvis består av flyttfåglar som övervintrar längre söderut.",
-"url":"https://sv.wikipedia.org/wiki/Gulsparv"
-}
 },
 "559249":{
 "name":"Emberizidae",
@@ -20533,34 +20339,12 @@
 "parent":559249,
 "iconic":"Aves"
 },
-"9462":{
-"name":"Pyrrhula pyrrhula",
-"rank":"species",
-"sv":"Domherre",
-"parent":9459,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Domherre</b> (<i>Pyrrhula pyrrhula</i>) är en stor och kraftig fink som förekommer i Europa och Asien, inklusive Kamtjatka och Japan. Den lever främst i barrskog från lågland till bergsskogar, gärna i granplanteringar, men också i gles blandskog med små barrträd och rik undervegetation, eller parker och trädgårdar. Födan består främst av frön, bär och knoppar. Domherren kategoriseras inte som hotad.",
-"url":"https://sv.wikipedia.org/wiki/Domherre"
-}
-},
 "9459":{
 "name":"Pyrrhula",
 "rank":"genus",
 "sv":"Domherrar",
 "parent":9079,
 "iconic":"Aves"
-},
-"9801":{
-"name":"Coccothraustes coccothraustes",
-"rank":"species",
-"sv":"Stenknäck",
-"parent":9799,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Stenknäck</b> (<i>Coccothraustes coccothraustes</i>) är en stor fink med mycket kraftig näbb. Den beskrevs av Carl von Linné 1758. Stenknäcken häckar i lövskogsområden i stora delar av Europa och tempererade delar av Asien. De nordliga populationerna är flyttfåglar. Arten har på senare tid ökat i antal och vidgat sitt utbredningsområde. IUCN kategoriserar den som livskraftig.",
-"url":"https://sv.wikipedia.org/wiki/Stenknäck"
-}
 },
 "9799":{
 "name":"Coccothraustes",
@@ -20569,17 +20353,6 @@
 "parent":9079,
 "iconic":"Aves"
 },
-"10070":{
-"name":"Fringilla coelebs",
-"rank":"species",
-"sv":"Bofink",
-"parent":10068,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Bofink</b> (<i>Fringilla coelebs</i>) är en liten tätting som tillhör familjen finkar och som är mycket talrik i Europa.",
-"url":"https://sv.wikipedia.org/wiki/Bofink"
-}
-},
 "10068":{
 "name":"Fringilla",
 "rank":"genus",
@@ -20587,34 +20360,12 @@
 "parent":9079,
 "iconic":"Aves"
 },
-"10411":{
-"name":"Loxia curvirostra",
-"rank":"species",
-"sv":"Mindre korsnäbb",
-"parent":10410,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Mindre korsnäbb</b> (<i>Loxia curvirostra</i>) är en fågel som tillhör korsnäbbsläktet i familjen finkar. Den häckar över stora delar av barrskogsbältet som sträcker sig över norra halvklotet. Den är inte en flyttfågel men genomför vandringar, speciellt vissa år då den kan förekomma långt söder om sitt utbredningsområde. Korsnäbbarna har ett proportionellt stort huvud och en säregen näbb med korsande näbbspetsar vilket är en anpassning för att kunna plocka ut frön från kottar och andra frukter, och som...",
-"url":"https://sv.wikipedia.org/wiki/Mindre_korsnäbb"
-}
-},
 "10410":{
 "name":"Loxia",
 "rank":"genus",
 "sv":"Korsnäbbar",
 "parent":9079,
 "iconic":"Aves"
-},
-"11901":{
-"name":"Hirundo rustica",
-"rank":"species",
-"sv":"Ladusvala",
-"parent":11880,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Ladusvala</b> (<i>Hirundo rustica</i>) är den mest spridda fågelarten i familjen svalor. Ladusvalan är en tätting med ett distinkt utseende med blå ovansida, lång, djupt delad stjärt och böjda spetsiga vingar. Den förekommer i Europa, Asien, Afrika och Amerika.",
-"url":"https://sv.wikipedia.org/wiki/Ladusvala"
-}
 },
 "11853":{
 "name":"Hirundinidae",
@@ -20630,17 +20381,6 @@
 "parent":11853,
 "iconic":"Aves"
 },
-"12038":{
-"name":"Lanius collurio",
-"rank":"species",
-"sv":"Törnskata",
-"parent":12016,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Törnskata</b> (<i>Lanius collurio</i>) är en fågel av törnskatesläktet i familjen törnskator bland tättingarna.",
-"url":"https://sv.wikipedia.org/wiki/Törnskata"
-}
-},
 "12015":{
 "name":"Laniidae",
 "rank":"family",
@@ -20654,39 +20394,6 @@
 "sv":"",
 "parent":12015,
 "iconic":"Aves"
-},
-"12707":{
-"name":"Turdus pilaris",
-"rank":"species",
-"sv":"Björktrast",
-"parent":12705,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Björktrast</b> (<i>Turdus pilaris</i>) är en trast som är vanligt förekommande i sitt häckningsområde i norra Palearktis.",
-"url":"https://sv.wikipedia.org/wiki/Björktrast"
-}
-},
-"12735":{
-"name":"Turdus viscivorus",
-"rank":"species",
-"sv":"Dubbeltrast",
-"parent":12705,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Dubbeltrast</b> (<i>Turdus viscivorus</i>) är en fågel i familjen trastar.",
-"url":"https://sv.wikipedia.org/wiki/Dubbeltrast"
-}
-},
-"12971":{
-"name":"Muscicapa striata",
-"rank":"species",
-"sv":"Grå flugsnappare",
-"parent":12964,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Grå flugsnappare</b> (<i>Muscicapa striata</i>) är en liten tätting i familjen flugsnappare. Den häckar i västra Asien och stora delar av Europa, dock inte på Island. Den är en flyttfågel och övervintrar i Afrika, söder om Sahara.",
-"url":"https://sv.wikipedia.org/wiki/Grå_flugsnappare"
-}
 },
 "12704":{
 "name":"Muscicapidae",
@@ -20702,34 +20409,12 @@
 "parent":12704,
 "iconic":"Aves"
 },
-"12992":{
-"name":"Phoenicurus phoenicurus",
-"rank":"species",
-"sv":"Rödstjärt",
-"parent":12989,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Rödstjärt</b> (<i>Phoenicurus phoenicurus</i>) är en insektsätande fågel som tillhör familjen flugsnappare. Den är en flyttfågel som häckar i stora delar av Europa och Centralasien, och även i allra nordligaste Afrika. Den övervintrar främst i Centralafrika.",
-"url":"https://sv.wikipedia.org/wiki/Rödstjärt"
-}
-},
 "12989":{
 "name":"Phoenicurus",
 "rank":"genus",
 "sv":"Rödstjärtar",
 "parent":12704,
 "iconic":"Aves"
-},
-"13075":{
-"name":"Luscinia luscinia",
-"rank":"species",
-"sv":"Näktergal",
-"parent":13066,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Näktergal</b> (<i>Luscinia luscinia)</i> är en fågelart där hanen har en karakteristisk sång som den ofta framför nattetid. Den tillhör familjen flugsnappare. Fågeln häckar i norra och östra Europa österut till västra Asien. Vintertid flyttar den till Mellanöstern och nordöstra Afrika. Den i engelsk litteratur omskrivet skönsjungande <i>nightingale</i> är istället näktergalens västligare nära släkting sydnäktergalen.",
-"url":"https://sv.wikipedia.org/wiki/Näktergal"
-}
 },
 "13066":{
 "name":"Luscinia",
@@ -20738,34 +20423,12 @@
 "parent":12704,
 "iconic":"Aves"
 },
-"13094":{
-"name":"Erithacus rubecula",
-"rank":"species",
-"sv":"Rödhake",
-"parent":13093,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Rödhake</b> (<i>Erithacus rubecula</i>) är en fågel som tidigare kategoriserades tillhöra trastarna (Turdidae) men numera oftast placeras i familjen flugsnappare (Muscicapidae) som ensam art i släktet <i><b>Erithacus</b></i>. Rödhaken är en liten, knubbig tätting, omkring 12,5–14 centimeter lång, med stort huvud och kort stjärt. Den har orangerött bröst och ansikte inramat med grå till brun ovansida och vitaktig buk. Könens fjäderdräkter är lika. Rödhakens utbredning sträcker sig över hela Europa till västra Sibirien, södra Algeriet och vid Atlanten så...",
-"url":"https://sv.wikipedia.org/wiki/Rödhake"
-}
-},
 "13093":{
 "name":"Erithacus",
 "rank":"genus",
 "sv":"",
 "parent":12704,
 "iconic":"Aves"
-},
-"15282":{
-"name":"Sylvia atricapilla",
-"rank":"species",
-"sv":"Svarthätta",
-"parent":15279,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Svarthätta</b> (<i>Sylvia atricapilla</i>) är en fågel som tillhör familjen sylvior.",
-"url":"https://sv.wikipedia.org/wiki/Svarthätta"
-}
 },
 "15050":{
 "name":"Sylviidae",
@@ -20780,28 +20443,6 @@
 "sv":"",
 "parent":15050,
 "iconic":"Aves"
-},
-"15302":{
-"name":"Sylvia borin",
-"rank":"species",
-"sv":"Trädgårdssångare",
-"parent":15279,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Trädgårdssångare</b> (<i>Sylvia borin</i>) är en oansenlig brungröngrå fågel i familjen sylvior. Den häckar i större delen av Europa österut till västra Sibirien. Vintertid flyttar den till tropiska Afrika. Fågeln är talrik och IUCN kategoriserar den som livskraftig.",
-"url":"https://sv.wikipedia.org/wiki/Trädgårdssångare"
-}
-},
-"17835":{
-"name":"Dryocopus martius",
-"rank":"species",
-"sv":"Spillkråka",
-"parent":17834,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Spillkråka</b> (<i>Dryocopus martius</i>) är en stor, nästan helsvart fågel inom familjen hackspettar. Det är den enda representanten för släktet <i>Dryocopus</i> i Europa. Den häckar framförallt i grov- och högstammig skog. År 2020 finns den med på Världsnaturfondens Röda lista med hotade arter.",
-"url":"https://sv.wikipedia.org/wiki/Spillkråka"
-}
 },
 "17550":{
 "name":"Piciformes",
@@ -20838,17 +20479,6 @@
 "parent":1653312,
 "iconic":"Aves"
 },
-"17871":{
-"name":"Dendrocopos major",
-"rank":"species",
-"sv":"Större Hackspett",
-"parent":17866,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Större hackspett</b> (<i>Dendrocopos major</i>) är en fågelart inom familjen hackspettar (Picidae). Den förekommer i Europa, norra Afrika och norra Asien och merparten av världspopulationen är stannfåglar förutom de som häckar i den kallaste nordligaste delarna av utbredningsområdet.",
-"url":"https://sv.wikipedia.org/wiki/Större_hackspett"
-}
-},
 "1653311":{
 "name":"Melanerpini",
 "rank":"tribe",
@@ -20863,34 +20493,12 @@
 "parent":1653311,
 "iconic":"Aves"
 },
-"64705":{
-"name":"Delichon urbicum",
-"rank":"species",
-"sv":"Hussvala",
-"parent":11875,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Hussvala</b> (<i>Delichon urbicum</i>, tidigare <i>Delichon urbica</i>) är en fågel som tillhör familjen svalor. Den är en flyttfågel som häckar i Europa, Nordafrika och i de tempererade delarna av Asien och övervintrar i subsahariska Afrika och tropiska Asien. Hussvalan livnär sig av insekter som den fångar i flykten, och vintertid flyttar den till klimat där flygande insekter finns i rikliga mängder. Den är blå på huvud och ovansida, vit på gump och undersida och hittas både i...",
-"url":"https://sv.wikipedia.org/wiki/Hussvala"
-}
-},
 "11875":{
 "name":"Delichon",
 "rank":"genus",
 "sv":"",
 "parent":11853,
 "iconic":"Aves"
-},
-"116804":{
-"name":"Acrocephalus schoenobaenus",
-"rank":"species",
-"sv":"Sävsångare",
-"parent":6701,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Sävsångare</b> (<i>Acrocephalus schoenobaenus</i>) är en fågel som tillhör familjen rörsångare (Acrocephalidae) som tidigare var en del av den numera uppdelade familjen sångare. Fågeln förekommer i våtmarker i stora delar av Europa och vidare österut till Centralasien. Den påträffas även i fjälltrakterna där den påträffas i videsnår. Vintertid flyttar den till Afrika söder om Sahara. Globalt anses beståndet vara livskraftigt.",
-"url":"https://sv.wikipedia.org/wiki/Sävsångare"
-}
 },
 "200983":{
 "name":"Acrocephalidae",
@@ -20906,34 +20514,12 @@
 "parent":200983,
 "iconic":"Aves"
 },
-"116918":{
-"name":"Hippolais icterina",
-"rank":"species",
-"sv":"Härmsångare",
-"parent":1238,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Härmsångare</b> (<i>Hippolais icterina</i>) är en fågel som tillhör familjen rörsångare (Acrocephalidae) som tidigare ingick i familjen sångare. Den häckar från Centraleuropa och Skandinavien österut genom Asien till Altaj. Vintertid flyttar den till tropiska Afrika. Arten är mycket lik och nära släkt med den västligare polyglottsångaren. IUCN kategoriserar den som livskraftig.",
-"url":"https://sv.wikipedia.org/wiki/Härmsångare"
-}
-},
 "1238":{
 "name":"Hippolais",
 "rank":"genus",
 "sv":"",
 "parent":200983,
 "iconic":"Aves"
-},
-"117016":{
-"name":"Phylloscopus collybita",
-"rank":"species",
-"sv":"Gransångare",
-"parent":71737,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Gransångare</b> (<i>Phylloscopus collybita</i>) är en liten fågelart, en tätting, som tillhör familjen Phylloscopidae och som tidigare placerades i familjen sångare. Den är vanlig och häckar i öppen skogsmark i större delen i Europa, kring Medelhavet samt i delar av norra och centrala Asien. Denna flyttfågel övervintrar i södra och västra Europa, södra Asien och norra Afrika. Tidigare behandlades arterna kanariegransångare, iberisk gransångare och kashmirgransångare som underarter av gransångare.",
-"url":"https://sv.wikipedia.org/wiki/Gransångare"
-}
 },
 "200982":{
 "name":"Phylloscopidae",
@@ -20949,56 +20535,12 @@
 "parent":200982,
 "iconic":"Aves"
 },
-"117048":{
-"name":"Phylloscopus sibilatrix",
-"rank":"species",
-"sv":"Grönsångare",
-"parent":71737,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Grönsångare</b> (<i>Phylloscopus sibilatrix</i>) är en fågel som tillhör familjen lövsångare. Jämfört med sina släktingar är den relativt bjärt färgad med mossgrön ovansida, gult bröst och ögonbrynsstreck och vit buk. Dess karakteristiska sång har liknats vid ett mynt som roterar på en marmorskiva.",
-"url":"https://sv.wikipedia.org/wiki/Grönsångare"
-}
-},
-"117055":{
-"name":"Phylloscopus trochilus",
-"rank":"species",
-"sv":"Lövsångare",
-"parent":71737,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Lövsångare</b> (<i>Phylloscopus trochilus</i>) är en ljust gröngul fågel inom familjen lövsångare som främst observeras genom sin sång. Den häckar i norra och tempererade Europa och Asien och är där en av regionens talrikaste fågelarter. Man räknar med att det bara i Europa finns mellan 110 och 200 miljoner individer. Den är en långflyttare och merparten övervintrar söder om Sahara.",
-"url":"https://sv.wikipedia.org/wiki/Lövsångare"
-}
-},
-"144243":{
-"name":"Picus viridis",
-"rank":"species",
-"sv":"Gröngöling",
-"parent":18299,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Gröngöling</b> (<i>Picus viridis</i>) är en fågel inom familjen hackspettar. Den är en stannfågel som förekommer i västra och sydvästra Asien, samt i större delen av Europa förutom på vissa öar och i de nordligaste områdena. Den är en av de vanligaste hackspettarna i Europa. Den tillhör släktet <i>Picus</i>, vilka är hackspettarter med gröngrå fjäderdräkt.",
-"url":"https://sv.wikipedia.org/wiki/Gröngöling"
-}
-},
 "18299":{
 "name":"Picus",
 "rank":"genus",
 "sv":"Grönspettar",
 "parent":1653312,
 "iconic":"Aves"
-},
-"144510":{
-"name":"Chroicocephalus ridibundus",
-"rank":"species",
-"sv":"Skrattmås",
-"parent":144320,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Skrattmås</b> (<i>Chroicocephalus ridibundus</i>) är en fågel som tillhör familjen måsfåglar.",
-"url":"https://sv.wikipedia.org/wiki/Skrattmås"
-}
 },
 "144320":{
 "name":"Chroicocephalus",
@@ -21007,45 +20549,12 @@
 "parent":447155,
 "iconic":"Aves"
 },
-"144809":{
-"name":"Poecile palustris",
-"rank":"species",
-"sv":"Entita",
-"parent":144351,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Entita</b> (<i>Poecile palustris</i>) är en mes som förekommer i palearktis och oftast är en stationär stannfågel. Entitan placeras i släktet <i>Poecile</i> och närbesläktad med talltita och davidmes.",
-"url":"https://sv.wikipedia.org/wiki/Entita"
-}
-},
 "144351":{
 "name":"Poecile",
 "rank":"genus",
 "sv":"Titor",
 "parent":13547,
 "iconic":"Aves"
-},
-"144812":{
-"name":"Poecile montanus",
-"rank":"species",
-"sv":"Talltita",
-"parent":144351,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Talltita</b> (<i>Poecile montanus</i>) är en liten fågel som tillhör familjen mesar.",
-"url":"https://sv.wikipedia.org/wiki/Talltita"
-}
-},
-"144823":{
-"name":"Periparus ater",
-"rank":"species",
-"sv":"Svartmes",
-"parent":144352,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Svartmes</b> (<i>Periparus ater</i>) är en liten mes i släktet <i>Periparus</i>. Den förekommer över stora delar av Europa och Asien, huvudsakligen i barrskog.",
-"url":"https://sv.wikipedia.org/wiki/Svartmes"
-}
 },
 "144352":{
 "name":"Periparus",
@@ -21054,34 +20563,12 @@
 "parent":13547,
 "iconic":"Aves"
 },
-"144830":{
-"name":"Lophophanes cristatus",
-"rank":"species",
-"sv":"Tofsmes",
-"parent":144354,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Tofsmes</b> (<i>Lophophanes cristatus</i>) är en tätting som tillhör familjen mesar.",
-"url":"https://sv.wikipedia.org/wiki/Tofsmes"
-}
-},
 "144354":{
 "name":"Lophophanes",
 "rank":"genus",
 "sv":"",
 "parent":13547,
 "iconic":"Aves"
-},
-"144849":{
-"name":"Cyanistes caeruleus",
-"rank":"species",
-"sv":"Blåmes",
-"parent":144357,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Blåmes</b> (<i>Cyanistes caeruleus</i>) är en fågelart inom ordningen tättingar i familjen mesar (Paridae). Den lilla fågeln är med sin blågula fjäderdräkt rätt enkel att känna igen och mycket vanlig i stora delar av Europa. Blåmesens habitat är löv- och blandskog, men den återfinns också i parker och trädgårdar. Utöver Europa förekommer den i angränsande delar av Asien. Populationen i Nordafrika och på Kanarieöarna har tidigare kategoriserats som en underart till blåmesen, men betraktas idag oftast som...",
-"url":"https://sv.wikipedia.org/wiki/Blåmes"
-}
 },
 "144357":{
 "name":"Cyanistes",
@@ -21090,17 +20577,6 @@
 "parent":13547,
 "iconic":"Aves"
 },
-"145303":{
-"name":"Spinus spinus",
-"rank":"species",
-"sv":"Grönsiska",
-"parent":144410,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Grönsiska</b> (<i>Spinus spinus</i>) är en liten fågel i familjen finkar som förekommer i norra Europa och Asien. Arten häckar mestadels i högstammig barrskog och ses ofta vintertid i stora flockar födosökande i alar. Den placerades tidigare i släktet <i>Carduelis</i>, men lyfts numera ut till släktet <i>Spinus</i> tillsammans med himalayasiskan och en större grupp nord- och sydamerikanska siskor. Grönsiskan är talrik och anses vara livskraftig.",
-"url":"https://sv.wikipedia.org/wiki/Grönsiska"
-}
-},
 "144410":{
 "name":"Spinus",
 "rank":"genus",
@@ -21108,34 +20584,12 @@
 "parent":9079,
 "iconic":"Aves"
 },
-"145360":{
-"name":"Chloris chloris",
-"rank":"species",
-"sv":"Grönfink",
-"parent":145356,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Grönfink</b> (<i>Chloris chloris</i>) är en fågel som hör till familjen finkar och som huvudsakligen förekommer i Europa.",
-"url":"https://sv.wikipedia.org/wiki/Grönfink"
-}
-},
 "145356":{
 "name":"Chloris",
 "rank":"genus",
 "sv":"",
 "parent":9079,
 "iconic":"Aves"
-},
-"145363":{
-"name":"Troglodytes troglodytes",
-"rank":"species",
-"sv":"Gärdsmyg",
-"parent":7542,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Gärdsmyg</b> (<i>Troglodytes troglodytes</i>) är en liten brun tätting som tillhör familjen gärdsmygar och som förekommer över ett mycket stort utbredningsområde i Eurasien. Tidigare behandlades även de båda nordamerikanska arterna vintergärdsmyg och stillahavsgärdsmyg som underarter av gärdsmygen.",
-"url":"https://sv.wikipedia.org/wiki/Gärdsmyg"
-}
 },
 "15964":{
 "name":"Troglodytidae",
@@ -21151,45 +20605,12 @@
 "parent":15964,
 "iconic":"Aves"
 },
-"204455":{
-"name":"Acrocephalus scirpaceus",
-"rank":"species",
-"sv":"Rörsångare",
-"parent":6701,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Rörsångare</b> (<i>Acrocephalus scirpaceus</i>) är en fågel som tillhör familjen rörsångare (Acrocephalidae) som tidigare ingick i familjen sångare. Arten beskrevs vetenskapligt av Johann Hermann 1804. Rörsångaren är en flyttfågel som häckar i Europa, allra nordligaste Afrika och tempererade Asien, så långt österut som Kazakstan, och övervintrar i Afrika söder om Sahara. Den kategoriseras av IUCN som livskraftig (LC).",
-"url":"https://sv.wikipedia.org/wiki/Rörsångare"
-}
-},
-"204512":{
-"name":"Ficedula hypoleuca",
-"rank":"species",
-"sv":"Svartvit Flugsnappare",
-"parent":13105,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Svartvit flugsnappare</b> (<i>Ficedula hypoleuca</i>) är en fågel som tillhör familjen flugsnappare. Den är en flyttfågel som häckar i Eurasien och övervintrar i tropiska Afrika. Den adulta hanen är svartvit medan honan är mer brungrå och vit. Svartvit flugsnappare är en hålhäckare i lövskog och blandskog och den lever till största delen av insekter som den, likt namnet indikerar, snappar i luften.",
-"url":"https://sv.wikipedia.org/wiki/Svartvit_flugsnappare"
-}
-},
 "13105":{
 "name":"Ficedula",
 "rank":"genus",
 "sv":"",
 "parent":12704,
 "iconic":"Aves"
-},
-"792977":{
-"name":"Dryobates minor",
-"rank":"species",
-"sv":"Mindre hackspett",
-"parent":792976,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Mindre hackspett</b> (<i>Dryobates minor</i>) är den minsta av Europas hackspettar med sin längd på cirka 15 cm, vilket gör den jämnstor med gråsparven. Mindre hackspett har sin utbredning över hela västra och norra Palearktis till Asiens Stillahavskust. I Mellaneuropa är den en spridd men inte vanlig häckfågel. Som många små hackspettsarter söker den sin föda främst i trädkronornas yttre grenområde.",
-"url":"https://sv.wikipedia.org/wiki/Mindre_hackspett"
-}
 },
 "792976":{
 "name":"Dryobates",
@@ -21198,23 +20619,930 @@
 "parent":1653311,
 "iconic":"Aves"
 },
-"1289470":{
-"name":"Curruca communis",
-"rank":"species",
-"sv":"Törnsångare",
-"parent":1289192,
-"iconic":"Aves",
-"wiki":{
-"extract":"<b>Törnsångare</b> (<i>Curruca communis</i>) är en fågel som tillhör familjen sylvior. Den häckar allmänt i öppna landskap med buskar och snår, i stora delar av Europa, österut till bergstrakter i Centralasien samt i Marocko och Algeriet i nordvästra Afrika. Vintertid flyttar den till tropiska Afrika. Törnsångaren ökar i antal och beståndet anses vara livskraftigt.",
-"url":"https://sv.wikipedia.org/wiki/Törnsångare"
-}
-},
 "1289192":{
 "name":"Curruca",
 "rank":"genus",
 "sv":"",
 "parent":15050,
 "iconic":"Aves"
+},
+"482":{
+"name":"Fulica atra",
+"rank":"species",
+"sv":"Sothöna",
+"parent":472,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/123574818/medium.jpg",
+"artist":"(c) Wei Li Jiang, some rights reserved (CC BY-NC), uploaded by Wei Li Jiang",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/123574818"
+},
+"wiki":{
+"extract":"<b>Sothöna</b> (<i>Fulica atra</i>) är en vattenlevande fågel som tillhör familjen rallar. Den har en rund kroppsform, skiffersvart fjäderdräkt och vitaktig näbb med en fjäderlös pannsköld, och nickar med huvudet när den simmar. Arten, som ofta delas upp i fyra underarter, häckar i Nordafrika, Europa och stora delar av Centralasien till Japan och söderut till Australien och Nya Zeeland. Delar av populationen är stannfåglar medan de som häckar i kallare områden flyttar söderut om vintern.",
+"url":"https://sv.wikipedia.org/wiki/Sothöna"
+}
+},
+"3033":{
+"name":"Columba oenas",
+"rank":"species",
+"sv":"Skogsduva",
+"parent":3000,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/119807269/medium.jpg",
+"artist":"(c) Paul Lewis, some rights reserved (CC BY), uploaded by Paul Lewis",
+"license":"CC-BY",
+"page":"https://www.inaturalist.org/photos/119807269"
+},
+"wiki":{
+"extract":"<b>Skogsduva</b> (<i>Columba oenas</i>) är en fågel av familjen duvor som förekommer i västra och centrala Palearktis. Merparten är flyttfåglar och de föredrar att häcka i trädhålor. Den är en ganska skygg art och den lever främst av frön. Den globala populationen är inte hotad men vissa bestånd, exempelvis den svenska, har minskat kraftigt.",
+"url":"https://sv.wikipedia.org/wiki/Skogsduva"
+}
+},
+"4356":{
+"name":"Larus canus",
+"rank":"species",
+"sv":"Fiskmås",
+"parent":4343,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/11219295/medium.jpeg",
+"artist":"Estormiz, no known copyright restrictions (public domain)",
+"license":"PD",
+"page":"https://www.inaturalist.org/photos/11219295"
+},
+"wiki":{
+"extract":"<b>Fiskmås</b> (<i>Larus canus</i>) är en fågel som tillhör familjen måsfåglar som häckar över stora delar av Europa och Asien och merparten är flyttfåglar. Den påminner om gråtruten men är betydligt mindre och slankare. Som adult i sommardräkt har den grå ovansida och är i övrigt vit, med gul näbb och ben, och svarta vingspetsar med vita slantar. Juvenilen är spräcklig och denna dräkt ruggas sedan i omgångar tills den anlägger adult dräkt under sitt tredje levnadsår.",
+"url":"https://sv.wikipedia.org/wiki/Fiskmås"
+}
+},
+"4368":{
+"name":"Larus marinus",
+"rank":"species",
+"sv":"Havstrut",
+"parent":4343,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/179379095/medium.jpeg",
+"artist":"(c) Alex Shure, some rights reserved (CC BY-NC), uploaded by Alex Shure",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/179379095"
+},
+"wiki":{
+"extract":"<b>Havstrut</b> (<i>Larus marinus</i>) är en av de större arterna inom familjen måsfåglar och den största som häckar i Europa. Den förekommer även utmed Atlantkusten i östra Nordamerika.",
+"url":"https://sv.wikipedia.org/wiki/Havstrut"
+}
+},
+"4450":{
+"name":"Sterna hirundo",
+"rank":"species",
+"sv":"Fisktärna",
+"parent":4424,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/144056225/medium.jpg",
+"artist":"(c) Kentish Plumber, some rights reserved (CC BY-NC-ND)",
+"license":"CC-BY-NC-ND",
+"page":"https://www.inaturalist.org/photos/144056225"
+},
+"wiki":{
+"extract":"<b>Fisktärna</b> (<i>Sterna hirundo</i>) är en havsfågel i familjen måsfåglar. Arten förekommer cirkumpolärt, och dess fyra underarter häckar i tempererade och subarktiska regioner i Europa, Asien och Nordamerika. Den är en långflyttare och övervintrar i tropiska eller subtropiska kustområden. I häckningsdräkt har den ljusgrå ovansida, vit till mycket ljust grå undersida, svart hätta, orangeröda ben och en small spetsig näbb. Beroende på underart så är näbben till största delen röd med svart näbbspets eller helsvart. Fisktärnans bestånd...",
+"url":"https://sv.wikipedia.org/wiki/Fisktärna"
+}
+},
+"4843":{
+"name":"Haematopus ostralegus",
+"rank":"species",
+"sv":"Strandskata",
+"parent":4837,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/1940433/medium.jpg",
+"artist":"(c) Paul Cools, some rights reserved (CC BY-NC), uploaded by Paul Cools",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/1940433"
+},
+"wiki":{
+"extract":"<b>Strandskata</b> (<i>Haematopus ostralegus</i>) är en vadarfågel inom familjen strandskator och den mest spridda arten av strandskata inom sin familj. Merparten av den globala populationen är flyttfåglar och den häckar utmed kuster i västra Europa, centrala Eurasien samt i nordöstra Asien. Den är en stor och kompakt vadare som adult har en svart och vit fjäderdräkt och orangeröd näbb och rosafärgade ben.",
+"url":"https://sv.wikipedia.org/wiki/Strandskata"
+}
+},
+"6638":{
+"name":"Apus apus",
+"rank":"species",
+"sv":"Tornseglare",
+"parent":6611,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/40612214/medium.jpg",
+"artist":"(c) Алексей Эбель, some rights reserved (CC BY-NC), uploaded by Алексей Эбель",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/40612214"
+},
+"wiki":{
+"extract":"<b>Tornseglare</b> (<i>Apus apus</i>) är en fågel inom familjen seglare och enda representant för familjen i norra Europa. Till formen påminner seglarna om svalorna, men de är inte närmare besläktade med dessa tättingar, utan likheterna beror på konvergent evolution. Istället är seglarna närmast besläktade med kolibrier och trädseglare. Tornseglaren har ett stort utbredningsområde och häckar över stora delar av Palearktis. Den är en flyttfågel och har sina vinterkvarter i Afrika, framför allt söder om ekvatorn.",
+"url":"https://sv.wikipedia.org/wiki/Tornseglare"
+}
+},
+"6916":{
+"name":"Cygnus cygnus",
+"rank":"species",
+"sv":"Sångsvan",
+"parent":6913,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/61003700/medium.jpeg",
+"artist":"(c) Bird Explorers, some rights reserved (CC BY-NC), uploaded by Bird Explorers",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/61003700"
+},
+"wiki":{
+"extract":"<b>Sångsvan</b> (<i>Cygnus cygnus</i>) är en mycket stor vit andfågel som häckar i norra Europa och Asien. Från att ha varit nästan utdöd i Sverige i början av 1900-talet har den ökat explosionsartat och finns nu i stora delar av landet. Globalt anses arten vara livskraftig. Den är Finlands nationalfågel.",
+"url":"https://sv.wikipedia.org/wiki/Sångsvan"
+}
+},
+"7004":{
+"name":"Mergus merganser",
+"rank":"species",
+"sv":"Storskrake",
+"parent":6995,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/251363753/medium.jpg",
+"artist":"(c) brian stahls, some rights reserved (CC BY-NC), uploaded by brian stahls",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/251363753"
+},
+"wiki":{
+"extract":"<b>Storskrake</b> (<i>Mergus merganser</i>) är en vattenlevande fågel som tillhör underfamiljen Merginae.",
+"url":"https://sv.wikipedia.org/wiki/Storskrake"
+}
+},
+"7278":{
+"name":"Aegithalos caudatus",
+"rank":"species",
+"sv":"Stjärtmes",
+"parent":7275,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/115550098/medium.jpg",
+"artist":"(c) Luca Boscain, some rights reserved (CC BY-NC), uploaded by Luca Boscain",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/115550098"
+},
+"wiki":{
+"extract":"<b>Stjärtmes</b> (<i>Aegithalos caudatus</i>) är en tätting i familjen stjärtmesar.",
+"url":"https://sv.wikipedia.org/wiki/Stjärtmes"
+}
+},
+"7347":{
+"name":"Alauda arvensis",
+"rank":"species",
+"sv":"Sånglärka",
+"parent":7346,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/7408707/medium.jpeg",
+"artist":"(c) Ani Sarkisyan, some rights reserved (CC BY), uploaded by Ani Sarkisyan",
+"license":"CC-BY",
+"page":"https://www.inaturalist.org/photos/7408707"
+},
+"wiki":{
+"extract":"<b>Sånglärka</b> (<i>Alauda arvensis</i>) är en fågel i familjen lärkor. Den förekommer i Eurasien och Nordafrika, i öppna landskap och ofta på och kring jordbruksmark. Fågeln livnär sig på insekter och frön. Den är känd för sin sång och har på svenska tidigare ofta benämnts <i>lärka</i>.",
+"url":"https://sv.wikipedia.org/wiki/Sånglärka"
+}
+},
+"8010":{
+"name":"Corvus corax",
+"rank":"species",
+"sv":"Korp",
+"parent":7998,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/54389687/medium.jpg",
+"artist":"(c) arbyreed, some rights reserved (CC BY-NC-SA)",
+"license":"CC-BY-NC-SA",
+"page":"https://www.inaturalist.org/photos/54389687"
+},
+"wiki":{
+"extract":"<b>Korp</b> (<i>Corvus corax</i>) är en stor, svart kråkfågel. Den återfinns över större delen av norra halvklotet och är den mest spridda av alla kråkfåglar. Det finns åtta underarter med liten variation i utseende, men med betydande genetiska skillnader.",
+"url":"https://sv.wikipedia.org/wiki/Korp"
+}
+},
+"8088":{
+"name":"Garrulus glandarius",
+"rank":"species",
+"sv":"Nötskrika",
+"parent":8085,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/168146456/medium.jpg",
+"artist":"(c) Luc Viatour, some rights reserved (CC BY-SA)",
+"license":"CC-BY-SA",
+"page":"https://www.inaturalist.org/photos/168146456"
+},
+"wiki":{
+"extract":"<b>Nötskrika</b> (<i>Garrulus glandarius</i>) är en fågel som tillhör familjen kråkfåglar. Den förekommer i ett vidsträckt område i den palearktiska regionen, från västra Europa och nordvästra Afrika österut till Asiens östra kust och söderut i Sydostasien. Utseendemässigt uppvisar den en mängd variationer och delas upp i ett flertal underarter. I sittande ställning syns främst den rödgrå till beigeröda kroppen men i flykten visar den upp sina starkt kontrasterande vingar och stjärt i svart och vitt med inslag...",
+"url":"https://sv.wikipedia.org/wiki/Nötskrika"
+}
+},
+"9195":{
+"name":"Emberiza citrinella",
+"rank":"species",
+"sv":"Gulsparv",
+"parent":9186,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/500177041/medium.jpg",
+"artist":"(c) Diego González Dopico, some rights reserved (CC BY), uploaded by Diego González Dopico",
+"license":"CC-BY",
+"page":"https://www.inaturalist.org/photos/500177041"
+},
+"wiki":{
+"extract":"<b>Gulsparv</b> (<i>Emberiza citrinella</i>) är en stor och långstjärtad sparv inom familjen fältsparvar som förekommer över stora delar av Europa och i Väst- och Centralasien. Merparten av den europeiska populationen är stannfåglar medan den östra underarten delvis består av flyttfåglar som övervintrar längre söderut.",
+"url":"https://sv.wikipedia.org/wiki/Gulsparv"
+}
+},
+"9462":{
+"name":"Pyrrhula pyrrhula",
+"rank":"species",
+"sv":"Domherre",
+"parent":9459,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/43443143/medium.jpeg",
+"artist":"(c) Ольга Курякова, some rights reserved (CC BY-NC), uploaded by Ольга Курякова",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/43443143"
+},
+"wiki":{
+"extract":"<b>Domherre</b> (<i>Pyrrhula pyrrhula</i>) är en stor och kraftig fink som förekommer i Europa och Asien, inklusive Kamtjatka och Japan. Den lever främst i barrskog från lågland till bergsskogar, gärna i granplanteringar, men också i gles blandskog med små barrträd och rik undervegetation, eller parker och trädgårdar. Födan består främst av frön, bär och knoppar. Domherren kategoriseras inte som hotad.",
+"url":"https://sv.wikipedia.org/wiki/Domherre"
+}
+},
+"10070":{
+"name":"Fringilla coelebs",
+"rank":"species",
+"sv":"Bofink",
+"parent":10068,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/151143058/medium.jpg",
+"artist":"(c) Jonny Andrews, some rights reserved (CC BY-NC), uploaded by Jonny Andrews",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/151143058"
+},
+"wiki":{
+"extract":"<b>Bofink</b> (<i>Fringilla coelebs</i>) är en liten tätting som tillhör familjen finkar och som är mycket talrik i Europa.",
+"url":"https://sv.wikipedia.org/wiki/Bofink"
+}
+},
+"10411":{
+"name":"Loxia curvirostra",
+"rank":"species",
+"sv":"Mindre korsnäbb",
+"parent":10410,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/332346026/medium.jpeg",
+"artist":"(c) Пакалнис Дэниел, some rights reserved (CC BY-NC), uploaded by Пакалнис Дэниел",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/332346026"
+},
+"wiki":{
+"extract":"<b>Mindre korsnäbb</b> (<i>Loxia curvirostra</i>) är en fågel som tillhör korsnäbbsläktet i familjen finkar. Den häckar över stora delar av barrskogsbältet som sträcker sig över norra halvklotet. Den är inte en flyttfågel men genomför vandringar, speciellt vissa år då den kan förekomma långt söder om sitt utbredningsområde. Korsnäbbarna har ett proportionellt stort huvud och en säregen näbb med korsande näbbspetsar vilket är en anpassning för att kunna plocka ut frön från kottar och andra frukter, och som...",
+"url":"https://sv.wikipedia.org/wiki/Mindre_korsnäbb"
+}
+},
+"11901":{
+"name":"Hirundo rustica",
+"rank":"species",
+"sv":"Ladusvala",
+"parent":11880,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/122469139/medium.jpg",
+"artist":"(c) Ad Konings, some rights reserved (CC BY-NC), uploaded by Ad Konings",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/122469139"
+},
+"wiki":{
+"extract":"<b>Ladusvala</b> (<i>Hirundo rustica</i>) är den mest spridda fågelarten i familjen svalor. Ladusvalan är en tätting med ett distinkt utseende med blå ovansida, lång, djupt delad stjärt och böjda spetsiga vingar. Den förekommer i Europa, Asien, Afrika och Amerika.",
+"url":"https://sv.wikipedia.org/wiki/Ladusvala"
+}
+},
+"12038":{
+"name":"Lanius collurio",
+"rank":"species",
+"sv":"Törnskata",
+"parent":12016,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/127743790/medium.jpg",
+"artist":"(c) Анна Голубева, some rights reserved (CC BY-NC-ND), uploaded by Анна Голубева",
+"license":"CC-BY-NC-ND",
+"page":"https://www.inaturalist.org/photos/127743790"
+},
+"wiki":{
+"extract":"<b>Törnskata</b> (<i>Lanius collurio</i>) är en fågel av törnskatesläktet i familjen törnskator bland tättingarna.",
+"url":"https://sv.wikipedia.org/wiki/Törnskata"
+}
+},
+"12735":{
+"name":"Turdus viscivorus",
+"rank":"species",
+"sv":"Dubbeltrast",
+"parent":12705,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/203268068/medium.jpg",
+"artist":"(c) Luca Ghiraldi, some rights reserved (CC BY-NC), uploaded by Luca Ghiraldi",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/203268068"
+},
+"wiki":{
+"extract":"<b>Dubbeltrast</b> (<i>Turdus viscivorus</i>) är en fågel i familjen trastar.",
+"url":"https://sv.wikipedia.org/wiki/Dubbeltrast"
+}
+},
+"13075":{
+"name":"Luscinia luscinia",
+"rank":"species",
+"sv":"Näktergal",
+"parent":13066,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/211475645/medium.jpg",
+"artist":"(c) Геннадий, some rights reserved (CC BY-NC), uploaded by Геннадий",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/211475645"
+},
+"wiki":{
+"extract":"<b>Näktergal</b> (<i>Luscinia luscinia)</i> är en fågelart där hanen har en karakteristisk sång som den ofta framför nattetid. Den tillhör familjen flugsnappare. Fågeln häckar i norra och östra Europa österut till västra Asien. Vintertid flyttar den till Mellanöstern och nordöstra Afrika. Den i engelsk litteratur omskrivet skönsjungande <i>nightingale</i> är istället näktergalens västligare nära släkting sydnäktergalen.",
+"url":"https://sv.wikipedia.org/wiki/Näktergal"
+}
+},
+"15282":{
+"name":"Sylvia atricapilla",
+"rank":"species",
+"sv":"Svarthätta",
+"parent":15279,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/187041112/medium.jpg",
+"artist":"(c) Marina Ribeiro, some rights reserved (CC BY-NC), uploaded by Marina Ribeiro",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/187041112"
+},
+"wiki":{
+"extract":"<b>Svarthätta</b> (<i>Sylvia atricapilla</i>) är en fågel som tillhör familjen sylvior.",
+"url":"https://sv.wikipedia.org/wiki/Svarthätta"
+}
+},
+"17835":{
+"name":"Dryocopus martius",
+"rank":"species",
+"sv":"Spillkråka",
+"parent":17834,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/31574109/medium.jpg",
+"artist":"(c) Александр, some rights reserved (CC BY-NC-SA), uploaded by Александр",
+"license":"CC-BY-NC-SA",
+"page":"https://www.inaturalist.org/photos/31574109"
+},
+"wiki":{
+"extract":"<b>Spillkråka</b> (<i>Dryocopus martius</i>) är en stor, nästan helsvart fågel inom familjen hackspettar. Det är den enda representanten för släktet <i>Dryocopus</i> i Europa. Den häckar framförallt i grov- och högstammig skog. År 2020 finns den med på Världsnaturfondens Röda lista med hotade arter.",
+"url":"https://sv.wikipedia.org/wiki/Spillkråka"
+}
+},
+"17871":{
+"name":"Dendrocopos major",
+"rank":"species",
+"sv":"Större Hackspett",
+"parent":17866,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/259132621/medium.jpeg",
+"artist":"(c) Elio Giacone, some rights reserved (CC BY-NC), uploaded by Elio Giacone",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/259132621"
+},
+"wiki":{
+"extract":"<b>Större hackspett</b> (<i>Dendrocopos major</i>) är en fågelart inom familjen hackspettar (Picidae). Den förekommer i Europa, norra Afrika och norra Asien och merparten av världspopulationen är stannfåglar förutom de som häckar i den kallaste nordligaste delarna av utbredningsområdet.",
+"url":"https://sv.wikipedia.org/wiki/Större_hackspett"
+}
+},
+"64705":{
+"name":"Delichon urbicum",
+"rank":"species",
+"sv":"Hussvala",
+"parent":11875,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/370662370/medium.jpg",
+"artist":"(c) Thomas Landgren, some rights reserved (CC BY-NC-ND)",
+"license":"CC-BY-NC-ND",
+"page":"https://www.inaturalist.org/photos/370662370"
+},
+"wiki":{
+"extract":"<b>Hussvala</b> (<i>Delichon urbicum</i>, tidigare <i>Delichon urbica</i>) är en fågel som tillhör familjen svalor. Den är en flyttfågel som häckar i Europa, Nordafrika och i de tempererade delarna av Asien och övervintrar i subsahariska Afrika och tropiska Asien. Hussvalan livnär sig av insekter som den fångar i flykten, och vintertid flyttar den till klimat där flygande insekter finns i rikliga mängder. Den är blå på huvud och ovansida, vit på gump och undersida och hittas både i...",
+"url":"https://sv.wikipedia.org/wiki/Hussvala"
+}
+},
+"69193":{
+"name":"Chrysomela",
+"rank":"genus",
+"sv":"",
+"parent":510464,
+"iconic":"Insecta",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/70786/medium.jpg",
+"artist":"(c) Sean McCann, some rights reserved (CC BY-NC-SA)",
+"license":"CC-BY-NC-SA",
+"page":"https://www.inaturalist.org/photos/70786"
+},
+"wiki":{
+"extract":"<i><b>Chrysomela</b></i> är ett släkte av skalbaggar som beskrevs av Carl von Linné 1758. <i>Chrysomela</i> ingår i familjen bladbaggar.",
+"url":"https://sv.wikipedia.org/wiki/Chrysomela"
+}
+},
+"116804":{
+"name":"Acrocephalus schoenobaenus",
+"rank":"species",
+"sv":"Sävsångare",
+"parent":6701,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/189848450/medium.jpg",
+"artist":"(c) Ad Konings, some rights reserved (CC BY-NC), uploaded by Ad Konings",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/189848450"
+},
+"wiki":{
+"extract":"<b>Sävsångare</b> (<i>Acrocephalus schoenobaenus</i>) är en fågel som tillhör familjen rörsångare (Acrocephalidae) som tidigare var en del av den numera uppdelade familjen sångare. Fågeln förekommer i våtmarker i stora delar av Europa och vidare österut till Centralasien. Den påträffas även i fjälltrakterna där den påträffas i videsnår. Vintertid flyttar den till Afrika söder om Sahara. Globalt anses beståndet vara livskraftigt.",
+"url":"https://sv.wikipedia.org/wiki/Sävsångare"
+}
+},
+"116918":{
+"name":"Hippolais icterina",
+"rank":"species",
+"sv":"Härmsångare",
+"parent":1238,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/100390771/medium.jpg",
+"artist":"(c) Radovan Václav, some rights reserved (CC BY-NC)",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/100390771"
+},
+"wiki":{
+"extract":"<b>Härmsångare</b> (<i>Hippolais icterina</i>) är en fågel som tillhör familjen rörsångare (Acrocephalidae) som tidigare ingick i familjen sångare. Den häckar från Centraleuropa och Skandinavien österut genom Asien till Altaj. Vintertid flyttar den till tropiska Afrika. Arten är mycket lik och nära släkt med den västligare polyglottsångaren. IUCN kategoriserar den som livskraftig.",
+"url":"https://sv.wikipedia.org/wiki/Härmsångare"
+}
+},
+"117016":{
+"name":"Phylloscopus collybita",
+"rank":"species",
+"sv":"Gransångare",
+"parent":71737,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/232289336/medium.jpg",
+"artist":"(c) Mikhail Ezdakov, some rights reserved (CC BY-NC), uploaded by Mikhail Ezdakov",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/232289336"
+},
+"wiki":{
+"extract":"<b>Gransångare</b> (<i>Phylloscopus collybita</i>) är en liten fågelart, en tätting, som tillhör familjen Phylloscopidae och som tidigare placerades i familjen sångare. Den är vanlig och häckar i öppen skogsmark i större delen i Europa, kring Medelhavet samt i delar av norra och centrala Asien. Denna flyttfågel övervintrar i södra och västra Europa, södra Asien och norra Afrika. Tidigare behandlades arterna kanariegransångare, iberisk gransångare och kashmirgransångare som underarter av gransångare.",
+"url":"https://sv.wikipedia.org/wiki/Gransångare"
+}
+},
+"117055":{
+"name":"Phylloscopus trochilus",
+"rank":"species",
+"sv":"Lövsångare",
+"parent":71737,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/165631422/medium.jpeg",
+"artist":"(c) Valia Pavlou, some rights reserved (CC BY-NC), uploaded by Valia Pavlou",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/165631422"
+},
+"wiki":{
+"extract":"<b>Lövsångare</b> (<i>Phylloscopus trochilus</i>) är en ljust gröngul fågel inom familjen lövsångare som främst observeras genom sin sång. Den häckar i norra och tempererade Europa och Asien och är där en av regionens talrikaste fågelarter. Man räknar med att det bara i Europa finns mellan 110 och 200 miljoner individer. Den är en långflyttare och merparten övervintrar söder om Sahara.",
+"url":"https://sv.wikipedia.org/wiki/Lövsångare"
+}
+},
+"144243":{
+"name":"Picus viridis",
+"rank":"species",
+"sv":"Gröngöling",
+"parent":18299,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/242668015/medium.jpg",
+"artist":"(c) Andrea Poggi, some rights reserved (CC BY), uploaded by Andrea Poggi",
+"license":"CC-BY",
+"page":"https://www.inaturalist.org/photos/242668015"
+},
+"wiki":{
+"extract":"<b>Gröngöling</b> (<i>Picus viridis</i>) är en fågel inom familjen hackspettar. Den är en stannfågel som förekommer i västra och sydvästra Asien, samt i större delen av Europa förutom på vissa öar och i de nordligaste områdena. Den är en av de vanligaste hackspettarna i Europa. Den tillhör släktet <i>Picus</i>, vilka är hackspettarter med gröngrå fjäderdräkt.",
+"url":"https://sv.wikipedia.org/wiki/Gröngöling"
+}
+},
+"144510":{
+"name":"Chroicocephalus ridibundus",
+"rank":"species",
+"sv":"Skrattmås",
+"parent":144320,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/198109587/medium.jpg",
+"artist":"(c) Dmitry Dubikovskiy, some rights reserved (CC BY-NC), uploaded by Dmitry Dubikovskiy",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/198109587"
+},
+"wiki":{
+"extract":"<b>Skrattmås</b> (<i>Chroicocephalus ridibundus</i>) är en fågel som tillhör familjen måsfåglar.",
+"url":"https://sv.wikipedia.org/wiki/Skrattmås"
+}
+},
+"144809":{
+"name":"Poecile palustris",
+"rank":"species",
+"sv":"Entita",
+"parent":144351,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/436733670/medium.jpg",
+"artist":"(c) fra298, some rights reserved (CC BY-NC-ND)",
+"license":"CC-BY-NC-ND",
+"page":"https://www.inaturalist.org/photos/436733670"
+},
+"wiki":{
+"extract":"<b>Entita</b> (<i>Poecile palustris</i>) är en mes som förekommer i palearktis och oftast är en stationär stannfågel. Entitan placeras i släktet <i>Poecile</i> och närbesläktad med talltita och davidmes.",
+"url":"https://sv.wikipedia.org/wiki/Entita"
+}
+},
+"144812":{
+"name":"Poecile montanus",
+"rank":"species",
+"sv":"Talltita",
+"parent":144351,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/458622888/medium.jpg",
+"artist":"(c) Leonid, some rights reserved (CC BY-NC), uploaded by Leonid",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/458622888"
+},
+"wiki":{
+"extract":"<b>Talltita</b> (<i>Poecile montanus</i>) är en liten fågel som tillhör familjen mesar.",
+"url":"https://sv.wikipedia.org/wiki/Talltita"
+}
+},
+"144823":{
+"name":"Periparus ater",
+"rank":"species",
+"sv":"Svartmes",
+"parent":144352,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/436734934/medium.jpg",
+"artist":"(c) Luiz Lapa, some rights reserved (CC BY)",
+"license":"CC-BY",
+"page":"https://www.inaturalist.org/photos/436734934"
+},
+"wiki":{
+"extract":"<b>Svartmes</b> (<i>Periparus ater</i>) är en liten mes i släktet <i>Periparus</i>. Den förekommer över stora delar av Europa och Asien, huvudsakligen i barrskog.",
+"url":"https://sv.wikipedia.org/wiki/Svartmes"
+}
+},
+"144830":{
+"name":"Lophophanes cristatus",
+"rank":"species",
+"sv":"Tofsmes",
+"parent":144354,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/323017422/medium.jpg",
+"artist":"(c) Erik Eckstein, some rights reserved (CC BY-NC), uploaded by Erik Eckstein",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/323017422"
+},
+"wiki":{
+"extract":"<b>Tofsmes</b> (<i>Lophophanes cristatus</i>) är en tätting som tillhör familjen mesar.",
+"url":"https://sv.wikipedia.org/wiki/Tofsmes"
+}
+},
+"144849":{
+"name":"Cyanistes caeruleus",
+"rank":"species",
+"sv":"Blåmes",
+"parent":144357,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/41677354/medium.jpeg",
+"artist":"(c) rorygardner79, some rights reserved (CC BY-NC)",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/41677354"
+},
+"wiki":{
+"extract":"<b>Blåmes</b> (<i>Cyanistes caeruleus</i>) är en fågelart inom ordningen tättingar i familjen mesar (Paridae). Den lilla fågeln är med sin blågula fjäderdräkt rätt enkel att känna igen och mycket vanlig i stora delar av Europa. Blåmesens habitat är löv- och blandskog, men den återfinns också i parker och trädgårdar. Utöver Europa förekommer den i angränsande delar av Asien. Populationen i Nordafrika och på Kanarieöarna har tidigare kategoriserats som en underart till blåmesen, men betraktas idag oftast som...",
+"url":"https://sv.wikipedia.org/wiki/Blåmes"
+}
+},
+"145303":{
+"name":"Spinus spinus",
+"rank":"species",
+"sv":"Grönsiska",
+"parent":144410,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/458846447/medium.jpg",
+"artist":"(c) caroline legg, some rights reserved (CC BY)",
+"license":"CC-BY",
+"page":"https://www.inaturalist.org/photos/458846447"
+},
+"wiki":{
+"extract":"<b>Grönsiska</b> (<i>Spinus spinus</i>) är en liten fågel i familjen finkar som förekommer i norra Europa och Asien. Arten häckar mestadels i högstammig barrskog och ses ofta vintertid i stora flockar födosökande i alar. Den placerades tidigare i släktet <i>Carduelis</i>, men lyfts numera ut till släktet <i>Spinus</i> tillsammans med himalayasiskan och en större grupp nord- och sydamerikanska siskor. Grönsiskan är talrik och anses vara livskraftig.",
+"url":"https://sv.wikipedia.org/wiki/Grönsiska"
+}
+},
+"145360":{
+"name":"Chloris chloris",
+"rank":"species",
+"sv":"Grönfink",
+"parent":145356,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/61258110/medium.jpg",
+"artist":"(c) Martin Kunz, some rights reserved (CC BY)",
+"license":"CC-BY",
+"page":"https://www.inaturalist.org/photos/61258110"
+},
+"wiki":{
+"extract":"<b>Grönfink</b> (<i>Chloris chloris</i>) är en fågel som hör till familjen finkar och som huvudsakligen förekommer i Europa.",
+"url":"https://sv.wikipedia.org/wiki/Grönfink"
+}
+},
+"145363":{
+"name":"Troglodytes troglodytes",
+"rank":"species",
+"sv":"Gärdsmyg",
+"parent":7542,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/447128005/medium.jpg",
+"artist":"(c) Samuel Beyertt, some rights reserved (CC BY-NC), uploaded by Samuel Beyertt",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/447128005"
+},
+"wiki":{
+"extract":"<b>Gärdsmyg</b> (<i>Troglodytes troglodytes</i>) är en liten brun tätting som tillhör familjen gärdsmygar och som förekommer över ett mycket stort utbredningsområde i Eurasien. Tidigare behandlades även de båda nordamerikanska arterna vintergärdsmyg och stillahavsgärdsmyg som underarter av gärdsmygen.",
+"url":"https://sv.wikipedia.org/wiki/Gärdsmyg"
+}
+},
+"204512":{
+"name":"Ficedula hypoleuca",
+"rank":"species",
+"sv":"Svartvit Flugsnappare",
+"parent":13105,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/185217056/medium.jpeg",
+"artist":"(c) Matthieu Gauvain, some rights reserved (CC BY-NC), uploaded by Matthieu Gauvain",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/185217056"
+},
+"wiki":{
+"extract":"<b>Svartvit flugsnappare</b> (<i>Ficedula hypoleuca</i>) är en fågel som tillhör familjen flugsnappare. Den är en flyttfågel som häckar i Eurasien och övervintrar i tropiska Afrika. Den adulta hanen är svartvit medan honan är mer brungrå och vit. Svartvit flugsnappare är en hålhäckare i lövskog och blandskog och den lever till största delen av insekter som den, likt namnet indikerar, snappar i luften.",
+"url":"https://sv.wikipedia.org/wiki/Svartvit_flugsnappare"
+}
+},
+"792977":{
+"name":"Dryobates minor",
+"rank":"species",
+"sv":"Mindre hackspett",
+"parent":792976,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/9109/medium.jpg",
+"artist":"(c) Sergey Yeliseev, some rights reserved (CC BY-NC-ND)",
+"license":"CC-BY-NC-ND",
+"page":"https://www.inaturalist.org/photos/9109"
+},
+"wiki":{
+"extract":"<b>Mindre hackspett</b> (<i>Dryobates minor</i>) är den minsta av Europas hackspettar med sin längd på cirka 15 cm, vilket gör den jämnstor med gråsparven. Mindre hackspett har sin utbredning över hela västra och norra Palearktis till Asiens Stillahavskust. I Mellaneuropa är den en spridd men inte vanlig häckfågel. Som många små hackspettsarter söker den sin föda främst i trädkronornas yttre grenområde.",
+"url":"https://sv.wikipedia.org/wiki/Mindre_hackspett"
+}
+},
+"4449":{
+"name":"Sterna paradisaea",
+"rank":"species",
+"sv":"Silvertärna",
+"parent":4424,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/149865822/medium.jpg",
+"artist":"(c) pelagicgraf, some rights reserved (CC BY-NC), uploaded by pelagicgraf",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/149865822"
+},
+"wiki":{
+"extract":"<b>Silvertärna</b> (<i>Sterna paradisaea</i>) är en havsfågel inom familjen måsfåglar. Den är en flyttfågel som häckar i kolonier cirkumpolärt i arktiska och subarktiska områden i Europa, Asien och Nordamerika. Arten är känd för att vara det djur i världen som flyttar den längsta sträckan mellan sin häckningsplats och sina vinterkvarter, som återfinns i Antarktis. De populationer som flyttar längst förflyttar sig årligen cirka 90 000 kilometer, vilket motsvarar mer än två varv runt jorden. Tack vare dessa långa...",
+"url":"https://sv.wikipedia.org/wiki/Silvertärna"
+}
+},
+"7089":{
+"name":"Branta canadensis",
+"rank":"species",
+"sv":"Kanadagås",
+"parent":7086,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/239718896/medium.jpeg",
+"artist":"(c) Daniel LaFrance, some rights reserved (CC BY-NC), uploaded by Daniel LaFrance",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/239718896"
+},
+"wiki":{
+"extract":"<b>Kanadagås</b> (<i>Branta canadensis</i>) är en fågel inom släktgruppen gäss med sin ursprungliga utbredning i Nordamerika men som genom introduktion nu har en stor population i Europa och även i Nya Zeeland. Polargåsen behandlades länge som en underart till kanadagåsen men har idag artstatus.",
+"url":"https://sv.wikipedia.org/wiki/Kanadagås"
+}
+},
+"7450":{
+"name":"Certhia familiaris",
+"rank":"species",
+"sv":"Trädkrypare",
+"parent":7449,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/353776251/medium.jpg",
+"artist":"(c) Leonid, some rights reserved (CC BY-NC), uploaded by Leonid",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/353776251"
+},
+"wiki":{
+"extract":"<b>Trädkrypare</b> (<i>Certhia familiaris</i>) är en fågelart inom familjen trädkrypare (Certhiidae).",
+"url":"https://sv.wikipedia.org/wiki/Trädkrypare"
+}
+},
+"9801":{
+"name":"Coccothraustes coccothraustes",
+"rank":"species",
+"sv":"Stenknäck",
+"parent":9799,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/113175106/medium.jpg",
+"artist":"(c) Александр, some rights reserved (CC BY-NC-SA), uploaded by Александр",
+"license":"CC-BY-NC-SA",
+"page":"https://www.inaturalist.org/photos/113175106"
+},
+"wiki":{
+"extract":"<b>Stenknäck</b> (<i>Coccothraustes coccothraustes</i>) är en stor fink med mycket kraftig näbb. Den beskrevs av Carl von Linné 1758. Stenknäcken häckar i lövskogsområden i stora delar av Europa och tempererade delar av Asien. De nordliga populationerna är flyttfåglar. Arten har på senare tid ökat i antal och vidgat sitt utbredningsområde. IUCN kategoriserar den som livskraftig.",
+"url":"https://sv.wikipedia.org/wiki/Stenknäck"
+}
+},
+"12707":{
+"name":"Turdus pilaris",
+"rank":"species",
+"sv":"Björktrast",
+"parent":12705,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/171598598/medium.jpg",
+"artist":"(c) Михаил Голомысов, some rights reserved (CC BY), uploaded by Михаил Голомысов",
+"license":"CC-BY",
+"page":"https://www.inaturalist.org/photos/171598598"
+},
+"wiki":{
+"extract":"<b>Björktrast</b> (<i>Turdus pilaris</i>) är en trast som är vanligt förekommande i sitt häckningsområde i norra Palearktis.",
+"url":"https://sv.wikipedia.org/wiki/Björktrast"
+}
+},
+"12971":{
+"name":"Muscicapa striata",
+"rank":"species",
+"sv":"Grå flugsnappare",
+"parent":12964,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/110517229/medium.jpg",
+"artist":"(c) Ximo Galarza, some rights reserved (CC BY-NC-SA)",
+"license":"CC-BY-NC-SA",
+"page":"https://www.inaturalist.org/photos/110517229"
+},
+"wiki":{
+"extract":"<b>Grå flugsnappare</b> (<i>Muscicapa striata</i>) är en liten tätting i familjen flugsnappare. Den häckar i västra Asien och stora delar av Europa, dock inte på Island. Den är en flyttfågel och övervintrar i Afrika, söder om Sahara.",
+"url":"https://sv.wikipedia.org/wiki/Grå_flugsnappare"
+}
+},
+"12992":{
+"name":"Phoenicurus phoenicurus",
+"rank":"species",
+"sv":"Rödstjärt",
+"parent":12989,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/234744131/medium.jpg",
+"artist":"(c) Pablo Pozo, some rights reserved (CC BY-NC), uploaded by Pablo Pozo",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/234744131"
+},
+"wiki":{
+"extract":"<b>Rödstjärt</b> (<i>Phoenicurus phoenicurus</i>) är en insektsätande fågel som tillhör familjen flugsnappare. Den är en flyttfågel som häckar i stora delar av Europa och Centralasien, och även i allra nordligaste Afrika. Den övervintrar främst i Centralafrika.",
+"url":"https://sv.wikipedia.org/wiki/Rödstjärt"
+}
+},
+"13094":{
+"name":"Erithacus rubecula",
+"rank":"species",
+"sv":"Rödhake",
+"parent":13093,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/104940884/medium.jpeg",
+"artist":"(c) naturpel, some rights reserved (CC BY-NC), uploaded by naturpel",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/104940884"
+},
+"wiki":{
+"extract":"<b>Rödhake</b> (<i>Erithacus rubecula</i>) är en fågel som tidigare kategoriserades tillhöra trastarna (Turdidae) men numera oftast placeras i familjen flugsnappare (Muscicapidae) som ensam art i släktet <i><b>Erithacus</b></i>. Rödhaken är en liten, knubbig tätting, omkring 12,5–14 centimeter lång, med stort huvud och kort stjärt. Den har orangerött bröst och ansikte inramat med grå till brun ovansida och vitaktig buk. Könens fjäderdräkter är lika. Rödhakens utbredning sträcker sig över hela Europa till västra Sibirien, södra Algeriet och vid Atlanten så...",
+"url":"https://sv.wikipedia.org/wiki/Rödhake"
+}
+},
+"15302":{
+"name":"Sylvia borin",
+"rank":"species",
+"sv":"Trädgårdssångare",
+"parent":15279,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/150949826/medium.jpg",
+"artist":"(c) STŁ, some rights reserved (CC BY-NC), uploaded by STŁ",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/150949826"
+},
+"wiki":{
+"extract":"<b>Trädgårdssångare</b> (<i>Sylvia borin</i>) är en oansenlig brungröngrå fågel i familjen sylvior. Den häckar i större delen av Europa österut till västra Sibirien. Vintertid flyttar den till tropiska Afrika. Fågeln är talrik och IUCN kategoriserar den som livskraftig.",
+"url":"https://sv.wikipedia.org/wiki/Trädgårdssångare"
+}
+},
+"117048":{
+"name":"Phylloscopus sibilatrix",
+"rank":"species",
+"sv":"Grönsångare",
+"parent":71737,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/231450677/medium.jpg",
+"artist":"(c) Steve Garvie, some rights reserved (CC BY-SA)",
+"license":"CC-BY-SA",
+"page":"https://www.inaturalist.org/photos/231450677"
+},
+"wiki":{
+"extract":"<b>Grönsångare</b> (<i>Phylloscopus sibilatrix</i>) är en fågel som tillhör familjen lövsångare. Jämfört med sina släktingar är den relativt bjärt färgad med mossgrön ovansida, gult bröst och ögonbrynsstreck och vit buk. Dess karakteristiska sång har liknats vid ett mynt som roterar på en marmorskiva.",
+"url":"https://sv.wikipedia.org/wiki/Grönsångare"
+}
+},
+"204455":{
+"name":"Acrocephalus scirpaceus",
+"rank":"species",
+"sv":"Rörsångare",
+"parent":6701,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/355963131/medium.jpg",
+"artist":"(c) Tony Morris, some rights reserved (CC BY-NC)",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/355963131"
+},
+"wiki":{
+"extract":"<b>Rörsångare</b> (<i>Acrocephalus scirpaceus</i>) är en fågel som tillhör familjen rörsångare (Acrocephalidae) som tidigare ingick i familjen sångare. Arten beskrevs vetenskapligt av Johann Hermann 1804. Rörsångaren är en flyttfågel som häckar i Europa, allra nordligaste Afrika och tempererade Asien, så långt österut som Kazakstan, och övervintrar i Afrika söder om Sahara. Den kategoriseras av IUCN som livskraftig (LC).",
+"url":"https://sv.wikipedia.org/wiki/Rörsångare"
+}
+},
+"1289470":{
+"name":"Curruca communis",
+"rank":"species",
+"sv":"Törnsångare",
+"parent":1289192,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/391168486/medium.jpg",
+"artist":"(c) Oscar Valencoso - Salomé Planas, some rights reserved (CC BY-NC)",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/391168486"
+},
+"wiki":{
+"extract":"<b>Törnsångare</b> (<i>Curruca communis</i>) är en fågel som tillhör familjen sylvior. Den häckar allmänt i öppna landskap med buskar och snår, i stora delar av Europa, österut till bergstrakter i Centralasien samt i Marocko och Algeriet i nordvästra Afrika. Vintertid flyttar den till tropiska Afrika. Törnsångaren ökar i antal och beståndet anses vara livskraftigt.",
+"url":"https://sv.wikipedia.org/wiki/Törnsångare"
+}
 }
 },
 "names":{

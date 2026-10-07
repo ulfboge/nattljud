@@ -143,9 +143,26 @@ class Taxonomy:
         anc = [int(x) for x in (t.get("ancestry") or "").split("/") if x]
         rec = {"name": t["name"], "rank": t["rank"], "sv": _cap(t.get("preferred_common_name") or ""),
                "parent": anc[-1] if anc else None, "iconic": t.get("iconic_taxon_name")}
+        if full:
+            # standardbilden om den är fritt licensierad, annars första fritt licensierade bland taxonbilderna
+            cands = [t.get("default_photo") or {}] + [(x or {}).get("photo") or {} for x in t.get("taxon_photos") or []]
+            ph = next((x for x in cands if x.get("license_code") and x.get("medium_url")), {})
+            # bara fritt licensierade bilder (iNaturalist anger licens per foto)
+            rec["photo"] = {"src": ph.get("medium_url"), "artist": ph.get("attribution", ""),
+                            "license": (ph.get("license_code") or "").upper(),
+                            "page": f"https://www.inaturalist.org/photos/{ph.get('id')}"} \
+                if ph.get("license_code") and ph.get("medium_url") else None
         if full and t.get("wikipedia_summary"):
             rec["wiki"] = {"extract": t["wikipedia_summary"], "url": t.get("wikipedia_url") or ""}
         self.taxa[str(t["id"])] = {**self.taxa.get(str(t["id"]), {}), **rec}
+
+    def photos(self, ids):
+        """Standardbild för taxa (hämtar om taxa som cachats innan bilder sparades)."""
+        old = [i for i in ids if i is not None and "photo" not in (self.get(i) or {})]
+        for i in old:
+            self.taxa.pop(str(i), None)
+        self.ensure(old)
+        return {i: (self.get(i) or {}).get("photo") for i in ids}
 
     def get(self, i):
         return self.taxa.get(str(i))

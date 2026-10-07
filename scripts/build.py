@@ -368,6 +368,13 @@ def add_inat(species, sites, use_inat=True, online=True):
         obs.append([i, o["id"], o["date"], o["time"], o["lat"], o["lon"], o["acc"], o["quality"][:1], o["place"],
                     o["photo"], site, 1 if o["obscured"] else 0, o["license"], o["src"]])
 
+    # Bild till taxa utan eget foto (t.ex. eBird-fynd): iNaturalists standardbild om den är fritt licensierad.
+    noimg = [s for s in species if not s.get("image") and s.get("inat") and not s.get("members")]
+    ph = tax.photos([s["inat"] for s in noimg])
+    for s in noimg:
+        if ph.get(s["inat"]):
+            s["image"] = ph[s["inat"]]
+
     # Dyntaxa: svenskt namn där iNaturalist saknar det, och avvikande vetenskapligt namn för arter.
     need = [tax.get(s["inat"])["name"] for s in species if s.get("group") == "obs" and tax.get(s.get("inat"))]
     for s in species:

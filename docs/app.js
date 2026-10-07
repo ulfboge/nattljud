@@ -603,6 +603,6 @@
   }
 
   function renderCredits() {
-    $("#credits").innerHTML = D.species.filter(s => s.image && !s.image.page.includes("inaturalist.org")).map(s => `<li>${esc(s.sv || s.sci)}: ${esc(s.image.artist || "okänd")}, <a href="${esc(s.image.page)}" target="_blank" rel="noopener">${esc(s.image.license || "Commons")}</a></li>`).join("");
+    $("#credits").innerHTML = D.species.filter(s => s.image && s.image.artist !== "Johan Karlsson").map(s => `<li>${esc(s.sv || s.sci)}: ${esc(s.image.artist || "okänd")}, <a href="${esc(s.image.page)}" target="_blank" rel="noopener">${esc(s.image.license || "Commons")}</a></li>`).join("");
   }
 })();
