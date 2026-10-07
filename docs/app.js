@@ -29,8 +29,9 @@
   const fmt = n => n.toLocaleString("sv-SE");
   const median = a => { if (!a.length) return NaN; const s = [...a].sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
 
-  let D, map, siteLayer, obsLayer, NEW = new Map();
-  const state = { minProb: 0.5, night: "all", site: "all", source: "all" };
+  let D, map, dagMap, siteLayer, obsLayer, NEW = new Map();
+  const state = { minProb: 0.5, night: "all", site: "all", tab: "natt" };
+  const dag = { src: "all", year: "all", area: "all" };
 
   // ---------- tid ----------
   // Minuter från kl 12 natten börjar (natt = SURVEY DATE), så att 19:00→420, 03:00→900.
@@ -54,11 +55,11 @@
   const shortTime = t => `${+t.slice(8, 10)}/${+t.slice(5, 7)} ${t.slice(11, 16)}`;
 
   // ---------- filter ----------
-  const inScope = d => state.source !== "obs" && (state.night === "all" || d[5] === state.night) && (state.site === "all" || d[1] === +state.site);
-  // Fältobservationer (iNaturalist, eBird): o = [art, id, datum, tid, lat, lon, noggrannhet, kvalitet, plats, foto, lokal, oskarp, licens, källa]
-  const nextDay = n => new Date(Date.parse(n + "T12:00:00Z") + 864e5).toISOString().slice(0, 10);
-  const obsInScope = o => state.source !== "det" && (state.site === "all" || o[10] === +state.site) &&
-    (state.night === "all" || o[2] === state.night && (!o[3] || o[3] >= "12:00") || o[2] === nextDay(state.night) && o[3] && o[3] < "12:00");
+  const inScope = d => (state.night === "all" || d[5] === state.night) && (state.site === "all" || d[1] === +state.site);
+  // Dagobservationer (iNaturalist, eBird): o = [art, id, datum, tid, lat, lon, noggrannhet, kvalitet, plats, foto, lokal, oskarp, licens, källa, land]
+  const obsInScope = o => (dag.src === "all" || (dag.src === "i" ? o[13] === "i" : o[13] !== "i")) &&
+    (dag.year === "all" || (o[2] || "").startsWith(dag.year)) &&
+    (dag.area === "all" || (dag.area === "near" ? o[10] >= 0 : dag.area === "SE" ? o[14] === "SE" : o[14] !== "SE"));
   const scopedObs = () => (D.observations || []).filter(obsInScope);
   const scoped = () => D.detections.filter(inScope);
   const passing = () => D.detections.filter(d => inScope(d) && d[3] >= state.minProb);
@@ -78,16 +79,67 @@
 
   document.addEventListener("click", e => { const a = e.target.closest(".leaflet-popup a[data-sp]"); if (a) { e.preventDefault(); openSpecies(+a.dataset.sp); } });
 
+
+  // ---------- flikar ----------
+  function showTab() {
+    state.tab = location.hash === "#dag" ? "dag" : "natt";
+    ["natt", "dag"].forEach(t => {
+      $("#tab-" + t).hidden = state.tab !== t;
+      $("#tabbtn-" + t).setAttribute("aria-selected", state.tab === t);
+    });
+    document.title = state.tab === "dag" ? "Dagobservationer – Nattljud" : "Nattljud – ultraljudsfynd";
+    render();
+    if (state.tab === "natt" && map) map.invalidateSize();
+  }
+
+  // ---------- dagobservationer ----------
+  function renderDag() {
+    const ob = scopedObs(), sp = new Set(ob.map(o => o[0]));
+    const species = [...sp].filter(i => isSpecies(D.species[i]));
+    const places = new Set(ob.map(o => o[8]).filter(Boolean));
+    const years = [...new Set(ob.map(o => (o[2] || "").slice(0, 4)).filter(Boolean))].sort();
+    const inat = ob.filter(o => o[13] === "i"), rg = inat.filter(o => o[7] === "r").length;
+    $("#dagLede").textContent = ob.length ? `${fmt(ob.length)} observationer av ${fmt(sp.size)} taxa (${fmt(species.length)} bestämda till art) från iNaturalist och eBird` +
+      (years.length ? `, ${years[0] === years[years.length - 1] ? years[0] : years[0] + "–" + years[years.length - 1]}.` : ".") : "Inga observationer med valda filter.";
+    const tiles = [[fmt(ob.length), "observationer"], [fmt(species.length), "arter"], [fmt(sp.size), "taxa totalt"],
+      [fmt(places.size), "platser"], [inat.length ? Math.round(100 * rg / inat.length) + " %" : "–", "forskningsgrad (iNat)"]];
+    $("#dagTiles").innerHTML = tiles.map(([v, l]) => `<div class="tile"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
+    const latest = [...ob].filter(o => o[2]).sort((a, b) => (b[2] + b[3]).localeCompare(a[2] + a[3])).slice(0, 12);
+    $("#dagLatest").innerHTML = latest.map(o => { const s = D.species[o[0]]; return `<a class="obs" href="#" data-sp="${o[0]}">
+      ${o[9] ? `<img src="${esc(o[9].replace("/medium.", "/square."))}" alt="" loading="lazy">` : `<span class="noimg"></span>`}
+      <span><b>${esc(s.sv || s.sci)}</b><br><i>${esc(s.sci)}</i><br><span class="sub">${esc(o[2])} · ${esc(o[8] || "")}</span></span></a>`; }).join("") || `<p class="sub">Inga observationer.</p>`;
+    $("#dagLatest").querySelectorAll("[data-sp]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); openSpecies(+a.dataset.sp); }));
+    // organismgrupper: rike och klass (eller stam) enligt trädet
+    const grp = new Map();
+    ob.forEach(o => { const lin = lineage(D.species[o[0]].inat);
+      const k = lin.find(n => node(n)[1] === "kingdom"), cl = lin.find(n => node(n)[1] === "class") || lin.find(n => node(n)[1] === "phylum");
+      const key = `${k ?? ""}|${cl ?? ""}`; const g = grp.get(key) || grp.set(key, { k, cl, n: 0, sp: new Set() }).get(key); g.n++; g.sp.add(o[0]); });
+    const rows = [...grp.values()].sort((a, b) => b.n - a.n);
+    $("#dagGroups").innerHTML = rows.length ? `<table class="grp-table"><thead><tr><th>Rike</th><th>Klass</th><th class="num">Observationer</th><th class="num">Taxa</th></tr></thead><tbody>${rows.map(g =>
+      `<tr><td>${g.k != null ? esc(nodeName(g.k)) : "–"}</td><td>${g.cl != null ? `${esc(nodeName(g.cl))}${nodeName(g.cl) !== node(g.cl)[2] ? ` <i style="color:var(--ink-2)">${esc(node(g.cl)[2])}</i>` : ""}` : "–"}</td><td class="num">${fmt(g.n)}</td><td class="num">${fmt(g.sp.size)}</td></tr>`).join("")}</tbody></table>` : "";
+    renderObsMap();
+    renderTaxonomy("dag");
+  }
+
   // ---------- init ----------
   fetch("data/data.json").then(r => r.json()).then(data => {
     D = data;
     D.species.forEach((s, i) => { s.i = i; s.probs = []; });
     D.detections.forEach(d => D.species[d[0]].probs.push(d[3]));
     D.tree = D.tree || {}; D.observations = D.observations || [];
-    $("#source").addEventListener("change", e => { state.source = e.target.value; render(); });
-    $("#taxSearch").addEventListener("input", e => { taxQuery = e.target.value; renderTaxonomy(passing()); });
-    $("#taxOpen").addEventListener("click", () => { document.querySelectorAll("#taxonomy details.tx").forEach(d => { d.open = true; taxOpen.set(d.dataset.n, true); }); });
-    $("#taxClose").addEventListener("click", () => { document.querySelectorAll("#taxonomy details.tx").forEach(d => { d.open = false; taxOpen.set(d.dataset.n, false); }); });
+    [["natt", "#taxSearch", "#taxOpen", "#taxClose"], ["dag", "#taxSearchDag", "#taxOpenDag", "#taxCloseDag"]].forEach(([m, q, o, c]) => {
+      $(q).addEventListener("input", e => { TX[m].q = e.target.value; renderTaxonomy(m); });
+      $(o).addEventListener("click", () => document.querySelectorAll(TX[m].el + " details.tx").forEach(d => { d.open = true; TX[m].open.set(d.dataset.n, true); }));
+      $(c).addEventListener("click", () => document.querySelectorAll(TX[m].el + " details.tx").forEach(d => { d.open = false; TX[m].open.set(d.dataset.n, false); }));
+    });
+    const years = [...new Set(D.observations.map(o => (o[2] || "").slice(0, 4)).filter(Boolean))].sort().reverse();
+    $("#dagYear").innerHTML = `<option value="all">Alla år</option>` + years.map(y => `<option>${y}</option>`).join("");
+    $("#dagArea").innerHTML = `<option value="all">Alla områden</option><option value="SE">Sverige</option><option value="X">Utomlands</option>` +
+      (D.sites.length ? `<option value="near">Vid detektorlokalerna</option>` : "");
+    $("#dagSrc").addEventListener("change", e => { dag.src = e.target.value; render(); });
+    $("#dagYear").addEventListener("change", e => { dag.year = e.target.value; render(); });
+    $("#dagArea").addEventListener("change", e => { dag.area = e.target.value; render(); });
+    window.addEventListener("hashchange", showTab);
     const nights = [...new Set(D.detections.map(d => d[5]))].sort();
     $("#night").innerHTML = `<option value="all">Alla nätter (${nights.length})</option>` + nights.map(n => `<option value="${n}">${nightLabel(n)}</option>`).join("");
     $("#site").innerHTML = `<option value="all">Alla lokaler (${D.sites.length})</option>` + D.sites.map((s, i) => `<option value="${i}">${esc(s.name)}</option>`).join("");
@@ -98,7 +150,7 @@
     $("#site").addEventListener("change", e => { state.site = e.target.value; render(); });
     renderCredits();
     initMap();
-    render();
+    showTab();
   }).catch(err => { $("#lede").textContent = "Kunde inte läsa data/data.json – kör scripts/build.py. (" + err + ")"; });
 
   function render() {
@@ -108,7 +160,8 @@
     const hidTaxa = new Set(all.map(d => d[0])).size - new Set(pass.map(d => d[0])).size;
     $("#hiddenNote").textContent = hid ? `${fmt(hid)} detektioner under gränsen döljs${hidTaxa ? ` (${hidTaxa} taxa försvinner helt)` : ""}.` : "Inga detektioner döljs.";
     NEW = newBySite();
-    renderLede(pass); renderTiles(pass); renderNew(); renderMap(pass); renderActivity(pass); renderWeather(); renderCompare(); renderEquipment(); renderTaxonomy(pass); renderTable(all);
+    if (state.tab === "dag") { renderDag(); return; }
+    renderLede(pass); renderTiles(pass); renderNew(); renderMap(pass); renderActivity(pass); renderWeather(); renderCompare(); renderEquipment(); renderTaxonomy("natt"); renderTable(all);
   }
 
   function counts(dets) { const c = new Map(); dets.forEach(d => c.set(d[0], (c.get(d[0]) || 0) + 1)); return c; }
@@ -119,9 +172,7 @@
     const nights = new Set(pass.map(d => d[5])).size, sites = new Set(pass.map(d => d[1])).size;
     const c = counts(pass);
     const bats = D.species.filter(s => s.group === "bat" && isSpecies(s) && c.get(s.i)).length;
-    const ob = scopedObs(), obSp = new Set(ob.map(o => o[0])).size;
-    $("#lede").textContent = `${fmt(pass.length)} registreringar från ${nights} ${nights === 1 ? "natt" : "nätter"} på ${sites} ${sites === 1 ? "lokal" : "lokaler"}, automatiskt artbestämda. ${bats} fladdermusarter över vald sannolikhetsgräns.` +
-      (ob.length ? ` Dessutom ${fmt(ob.length)} fältobservationer av ${fmt(obSp)} taxa från iNaturalist och eBird.` : "");
+    $("#lede").textContent = `${fmt(pass.length)} registreringar från ${nights} ${nights === 1 ? "natt" : "nätter"} på ${sites} ${sites === 1 ? "lokal" : "lokaler"}, automatiskt artbestämda. ${bats} fladdermusarter över vald sannolikhetsgräns.`;
   }
 
   function renderTiles(pass) {
@@ -130,17 +181,12 @@
     const bats = pass.filter(d => D.species[d[0]].group === "bat").length;
     const tiles = [
       [fmt(pass.length), "detektioner"],
-      [sp.length, "arter (detektor)"],
+      [sp.length, "arter"],
       [sp.filter(s => s.group === "bat").length, "fladdermusarter"],
       [fmt(bats), "fladdermusregistreringar"],
       [new Set(pass.map(d => d[5])).size, "nätter"],
       [new Set(pass.map(d => d[1])).size, "lokaler"],
     ];
-    const ob = scopedObs();
-    if (ob.length) {
-      const allSp = new Set([...sp.map(s => s.i), ...ob.map(o => o[0]).filter(i => isSpecies(D.species[i]))]);
-      tiles.push([fmt(ob.length), "fältobservationer"], [fmt(allSp.size), "arter totalt"]);
-    }
     $("#tiles").innerHTML = tiles.map(([v, l]) => `<div class="tile"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
   }
 
@@ -198,20 +244,33 @@
     const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: "© OpenStreetMap" }).addTo(map);
     const sat = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", { maxZoom: 19, attribution: "Esri World Imagery" });
     siteLayer = L.layerGroup().addTo(map);
-    obsLayer = L.layerGroup().addTo(map);
-    L.control.layers({ Karta: osm, Flygfoto: sat }, { "Detektorlokaler": siteLayer, "Fältobservationer": obsLayer }).addTo(map);
+    L.control.layers({ Karta: osm, Flygfoto: sat }).addTo(map);
     const b = L.latLngBounds(D.sites.map(s => [s.lat, s.lon]));
     D.sites.length > 1 ? map.fitBounds(b.pad(0.3)) : map.setView(b.getCenter(), 14);
   }
-  function renderMap(pass) {
-    siteLayer.clearLayers(); obsLayer.clearLayers();
+  function renderObsMap() {
+    if (!dagMap) {
+      dagMap = L.map("dagMap", { scrollWheelZoom: false });
+      const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: "© OpenStreetMap" }).addTo(dagMap);
+      const sat = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", { maxZoom: 19, attribution: "Esri World Imagery" });
+      L.control.layers({ Karta: osm, Flygfoto: sat }).addTo(dagMap);
+      obsLayer = L.layerGroup().addTo(dagMap);
+    }
+    obsLayer.clearLayers();
     const css = v => getComputedStyle(document.documentElement).getPropertyValue(v.slice(4, -1)).trim();
-    scopedObs().filter(o => o[4] != null).forEach(o => {
+    const pts = scopedObs().filter(o => o[4] != null);
+    pts.forEach(o => {
       const s = D.species[o[0]], col = css(KINGDOM_COLOR[kingdomOf(s)] || "var(--s0)");
       L.circleMarker([o[4], o[5]], { radius: 5, color: "#fff", weight: 1, fillColor: col, fillOpacity: .9 })
         .bindPopup(`${o[9] ? `<img src="${esc(o[9].replace("/medium.", "/square."))}" alt="" style="float:left;width:56px;height:56px;object-fit:cover;margin:0 .5rem .2rem 0;border-radius:4px">` : ""}<b>${esc(s.sv || s.sci)}</b><br><i>${esc(s.sci)}</i><br>${esc(o[2])} ${esc(o[3] || "")}<br>${esc(o[8] || "")}<br><a href="${obsLink(o)}" target="_blank" rel="noopener">${obsSrc(o)}</a> · <a href="#" data-sp="${o[0]}">Visa art</a>`)
         .bindTooltip(esc(s.sv || s.sci)).addTo(obsLayer);
     });
+    dagMap.invalidateSize();
+    if (pts.length) dagMap.fitBounds(L.latLngBounds(pts.map(o => [o[4], o[5]])).pad(0.1), { maxZoom: 14 });
+    else dagMap.setView([59.4, 18.07], 8);
+  }
+  function renderMap(pass) {
+    siteLayer.clearLayers();
     const accent = getComputedStyle(document.documentElement).getPropertyValue("--s1").trim();
     D.sites.forEach((s, i) => {
       const dets = pass.filter(d => d[1] === i);
@@ -293,12 +352,14 @@
   function lineage(id) { const out = []; let n = node(id) ? id : null; const seen = new Set(); while (n != null && node(n) && !seen.has(n)) { seen.add(n); out.unshift(n); n = node(n)[0]; } return out; }
   function kingdomOf(s) { const k = lineage(s.inat).find(n => node(n)[1] === "kingdom"); return k ? node(k)[2] : ""; }
   const KINGDOM_COLOR = { Animalia: "var(--s1)", Plantae: "var(--s3)", Fungi: "var(--s2)" };
-  const taxOpen = new Map();
-  let taxQuery = "";
+  const TX = { natt: { q: "", open: new Map(), el: "#taxonomy" }, dag: { q: "", open: new Map(), el: "#taxonomyDag" } };
 
-  function renderTaxonomy(pass) {
-    const c = counts(pass), all = counts(scoped()), oc = counts(scopedObs()), fresh = newestSpecies();
-    const q = taxQuery.trim().toLowerCase();
+  // mode "natt": detektorns fynd (BTO, BirdNET); mode "dag": iNaturalist och eBird
+  function renderTaxonomy(mode) {
+    const T = TX[mode], natt = mode === "natt";
+    const c = natt ? counts(passing()) : new Map(), all = natt ? counts(scoped()) : new Map();
+    const oc = natt ? new Map() : counts(scopedObs()), fresh = natt ? newestSpecies() : new Map();
+    const q = T.q.trim().toLowerCase();
     const taxa = D.species.filter(s => isTaxon(s) && (all.get(s.i) || oc.get(s.i)) &&
       (!q || (s.sv || "").toLowerCase().includes(q) || s.sci.toLowerCase().includes(q) || lineage(s.inat).some(n => nodeName(n).toLowerCase().includes(q) || node(n)[2].toLowerCase().includes(q))));
     // artkortet hamnar under närmaste förfader som är en rubriknivå
@@ -348,7 +409,7 @@
     const render = (n, depth) => {
       const nd = node(n), total = countSp(n);
       // standard: två översta nivåerna öppna, och vägen ner till detektorns arter
-      const open = q ? true : taxOpen.has(n) ? taxOpen.get(n) : (depth < 2 || hasDet(n));
+      const open = q ? true : T.open.has(n) ? T.open.get(n) : (depth < 2 || hasDet(n));
       const ex = expand(n);
       const own = [...(cardsAt.get(n) || []), ...ex.cards].sort((a, b) => a.sci.localeCompare(b.sci));
       const ch = ex.nodes.sort(sortN);
@@ -356,11 +417,12 @@
         <div class="tx-body">${ch.map(k => render(k, depth + 1)).join("")}${own.length ? `<div class="cards">${own.map(card).join("")}</div>` : ""}</div></details>`;
     };
     const roots = [...(kids.get("root") || [])].sort(sortN);
-    $("#taxonomy").innerHTML = (roots.map(r => render(r, depth0)).join("") +
+    const el = $(T.el);
+    el.innerHTML = (roots.map(r => render(r, depth0)).join("") +
       (loose.length ? `<details class="tx" open><summary><b>Utan plats i trädet</b></summary><div class="tx-body"><div class="cards">${loose.map(card).join("")}</div></div></details>` : "")) ||
       `<p class="sub">${q ? "Inga taxa matchar sökningen." : "Inga fynd med valda filter."}</p>`;
-    $("#taxonomy").querySelectorAll(".card").forEach(b => b.addEventListener("click", () => openSpecies(+b.dataset.sp)));
-    $("#taxonomy").querySelectorAll("details.tx[data-n]").forEach(d => d.addEventListener("toggle", () => { if (!q) taxOpen.set(d.dataset.n, d.open); }));
+    el.querySelectorAll(".card").forEach(b => b.addEventListener("click", () => openSpecies(+b.dataset.sp)));
+    el.querySelectorAll("details.tx[data-n]").forEach(d => d.addEventListener("toggle", () => { if (!q) T.open.set(d.dataset.n, d.open); }));
   }
   const RANK_SV = { kingdom: "rike", phylum: "stam", subphylum: "understam", superclass: "överklass", class: "klass",
     subclass: "underklass", infraclass: "infraklass", superorder: "överordning", order: "ordning", suborder: "underordning",
@@ -375,7 +437,7 @@
   const obsSrc = o => o[13] === "i" ? "iNaturalist" : o[13] === "l" ? "eBird (livslista)" : "eBird";
   function openSpecies(i) {
     const s = D.species[i], dets = scoped().filter(d => d[0] === i), pass = dets.filter(d => d[3] >= state.minProb);
-    const obs = scopedObs().filter(o => o[0] === i);
+    const obs = D.observations.filter(o => o[0] === i);
     const probs = dets.map(d => d[3]), sun = sunTimes();
     const echo = dets.filter(d => d[4] === "echolocation").length, social = dets.filter(d => d[4] === "social").length;
     const img = s.image ? `<img class="dlg-hero" src="${esc(s.image.src)}" alt="${esc(s.sv || s.sci)}"><p class="credit">Foto: ${esc(s.image.artist || "okänd")}, <a href="${esc(s.image.page)}" target="_blank" rel="noopener">${esc(s.image.license || "se Commons")}</a></p>` : "";
@@ -391,7 +453,7 @@
       [shortTime(dets[dets.length - 1][2]), "sista"],
     ] : [];
     if (dets.length && s.group === "bat") facts.push([`${echo} / ${social}`, "ekolod / sociala läten"]);
-    if (obs.length) facts.push([fmt(obs.length), "fältobservationer"], [obs[0][2] || "–", "första observation"]);
+    if (obs.length) facts.push([fmt(obs.length), "dagobservationer"], [obs[0][2] || "–", "första observation"]);
     if (s.gbifSE != null) facts.push([fmt(s.gbifSE), "GBIF-fynd i Sverige"], [fmt(s.gbifNear25km ?? 0), "GBIF-fynd inom 25 km"]);
     const links = [
       s.wiki && s.wiki.url && `<a href="${esc(s.wiki.url)}" target="_blank" rel="noopener">Wikipedia</a>`,
@@ -406,7 +468,7 @@
       <h2 id="dlgTitle">${esc(s.sv || s.sci)}</h2>
       <div class="sub">${[isSpecies(s) ? `<i>${esc(s.sci)}</i>` : `<i>${esc(s.sci)}</i> (${esc(RANK_SV[s.rank] || s.rank || "")})`, s.en && esc(s.en), s.code && `BTO-kod ${esc(s.code)}`].filter(Boolean).join(" · ")}</div>
       <div class="sub">${path}</div>
-      <div class="sub">Källor: ${(s.sources || []).map(esc).join(", ")}</div>
+      <div class="sub">Källor: ${(s.sources || []).map(esc).join(", ")}${dets.length && obs.length ? " – finns både bland nattljuden och dagobservationerna" : ""}</div>
       ${[...NEW].filter(([, o]) => o.first.has(i)).map(([si, o]) => { const f = o.first.get(i), isNew = f.night > o.start;
         return `<div class="sub">${isNew ? `<span class="newtag" style="position:static">Ny</span> ` : ""}Första detektion på ${esc(D.sites[si].name)}: natten ${nightLabel(f.night)}${isNew ? "" : " (lokalens första natt)"}</div>`; }).join("")}
       ${s.inatName ? `<div class="sub">I iNaturalist: <i>${esc(s.inatName)}</i></div>` : ""}
@@ -424,7 +486,7 @@
       <div class="det-list"><table><thead><tr><th>Tid</th><th class="num">p</th><th>Lätestyp</th>${s.members ? "<th>BTO</th>" : ""}<th>Fil</th></tr></thead><tbody>
         ${dets.slice(0, 500).map(d => `<tr${d[3] < state.minProb ? ' style="color:var(--muted)"' : ""}><td>${shortTime(d[2])}</td><td class="num">${d[3].toFixed(2)}</td><td>${d[4] === "echolocation" ? "ekolod" : d[4] === "social" ? "socialt" : esc(d[4])}</td>${s.members ? `<td>${esc(s.members[d[8]]?.sv || "")}</td>` : ""}<td>${esc(d[6])}</td></tr>`).join("")}
       </tbody></table></div>${dets.length > 500 ? `<p class="sub">Visar de första 500.</p>` : ""}` : ""}
-      ${obs.length ? `<h3>Fältobservationer (${fmt(obs.length)})</h3><div class="obs-list">${[...obs].reverse().map(o => `<a class="obs" href="${obsLink(o)}" target="_blank" rel="noopener">
+      ${obs.length ? `<h3>Dagobservationer (${fmt(obs.length)})</h3><div class="obs-list">${[...obs].reverse().map(o => `<a class="obs" href="${obsLink(o)}" target="_blank" rel="noopener">
         ${o[9] ? `<img src="${esc(o[9].replace("/medium.", "/square."))}" alt="" loading="lazy">` : `<span class="noimg"></span>`}
         <span><b>${esc(o[2] || "okänt datum")}${o[3] ? ` ${esc(o[3])}` : ""}</b><br>${esc(o[8] || "")}<br><span class="sub">${obsSrc(o)}${o[7] ? ` · ${QUALITY[o[7]] || ""}` : ""}${o[11] ? " · position oskarp" : ""}</span></span></a>`).join("")}</div>` : ""}
       <div class="links" style="margin-top:1rem">${links}</div></div>`;

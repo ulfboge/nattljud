@@ -208,3 +208,14 @@ details.tx.d1 > summary { font-size: 1.02rem; }
 .obs img, .obs .noimg { width: 64px; height: 64px; object-fit: cover; border-radius: 6px; flex: none; background: var(--grid); }
 .obs .sub { margin: 0; font-size: .78rem; }
 @media (max-width: 600px) { details.tx > .tx-body { margin-left: .4rem; padding-left: .4rem; } }
+
+/* flikar */
+.tabs { display: flex; gap: .25rem; margin-top: 1rem; border-bottom: 1px solid var(--border); }
+.tabs a { padding: .5rem .9rem; text-decoration: none; color: var(--ink-2); border-bottom: 2px solid transparent; margin-bottom: -1px; font-weight: 600; }
+.tabs a:hover { color: var(--ink); }
+.tabs a[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.top { padding-bottom: 0; }
+main > .lede { margin-top: 1.25rem; }
+.grp-table { border-collapse: collapse; font-size: .9rem; min-width: 320px; }
+.grp-table th, .grp-table td { padding: .3rem .8rem .3rem 0; text-align: left; border-bottom: 1px solid var(--border); }
+.grp-table td.num, .grp-table th.num { text-align: right; font-variant-numeric: tabular-nums; }

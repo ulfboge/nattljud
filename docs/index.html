@@ -12,9 +12,14 @@
 <header class="top">
   <div class="wrap">
     <h1>Nattljud</h1>
-    <p class="lede" id="lede">Laddar…</p>
+    <nav class="tabs" role="tablist" aria-label="Vy">
+      <a href="#natt" role="tab" id="tabbtn-natt" aria-controls="tab-natt">Nattljud</a>
+      <a href="#dag" role="tab" id="tabbtn-dag" aria-controls="tab-dag">Dagobservationer</a>
+    </nav>
   </div>
 </header>
+
+<div id="tab-natt" role="tabpanel" aria-labelledby="tabbtn-natt">
 
 <div class="filters" role="region" aria-label="Filter">
   <div class="wrap filter-row">
@@ -30,19 +35,12 @@
       <span>Lokal</span>
       <select id="site"></select>
     </label>
-    <label class="f">
-      <span>Källa</span>
-      <select id="source">
-        <option value="all">Alla källor</option>
-        <option value="det">Detektor (BTO, BirdNET)</option>
-        <option value="obs">Fältobservationer (iNaturalist, eBird)</option>
-      </select>
-    </label>
     <p class="hidden-note" id="hiddenNote"></p>
   </div>
 </div>
 
 <main class="wrap">
+  <p class="lede" id="lede">Laddar…</p>
   <section class="tiles" id="tiles" aria-label="Översikt"></section>
 
   <section>
@@ -52,8 +50,7 @@
   </section>
 
   <section>
-    <h2>Karta</h2>
-    <p class="sub">Stora punkter: detektorlokaler. Små punkter: fältobservationer (blå djur, grön växter, orange svampar). Zooma ut för fynd längre bort.</p>
+    <h2>Fyndlokaler</h2>
     <div id="map" class="map" aria-label="Karta över fyndlokaler"></div>
   </section>
 
@@ -77,7 +74,7 @@
 
   <section>
     <h2>Arter i systematisk ordning</h2>
-    <p class="sub">Alla källor i samma träd, enligt iNaturalists taxonomi med alla rangnivåer (rike, stam, klass, ordning, familj och mellannivåer där de delar upp arterna). Svenska namn från iNaturalist och Dyntaxa. Klicka på ett kort för detaljer.</p>
+    <p class="sub">Enligt iNaturalists taxonomi med alla rangnivåer (rike, stam, klass, ordning, familj och mellannivåer där de delar upp arterna). Svenska namn från iNaturalist och Dyntaxa. Klicka på ett kort för detaljer.</p>
     <div class="tax-tools">
       <input type="search" id="taxSearch" placeholder="Sök art, släkte, familj …" aria-label="Sök i artträdet">
       <button type="button" id="taxOpen">Visa alla</button>
@@ -101,7 +98,6 @@
     <h2>Om datat</h2>
     <p>Inspelningar med ultraljudsdetektor, automatiskt artbestämda i BTO Acoustic Pipeline (<span id="classifier"></span>). Automatiska bestämningar är förslag – särskilt fynd med låg sannolikhet, sociala läten och arter som är svåra att skilja på ljud (t.ex. <i>Myotis</i>) bör verifieras manuellt i spektrogram innan de rapporteras till Artportalen.</p>
     <p>Klipp där BTO bara angav "fågel (obestämd art)" har körts genom <a href="https://birdnet.cornell.edu/" target="_blank" rel="noopener">BirdNET</a>; arter med sannolikhet ≥ 0,5 visas med BirdNET som källa, övriga ligger kvar som obestämda.</p>
-    <p>Fältobservationer: mina publika observationer på <a href="https://www.inaturalist.org/people/ulfboge" target="_blank" rel="noopener">iNaturalist</a> (hämtas vid varje bygge, med positioner som där) och min eBird-data. Livslistan från eBird har bara första fyndet per art och inga koordinater, så de fynden syns i artträdet men inte på kartan. Systematiken följer iNaturalists taxonomi; där Dyntaxa använder ett annat vetenskapligt namn visas det i artdialogen.</p>
     <p>Fynden rapporteras till Artportalen via <a href="https://www.artportalen.se/ImportSighting" target="_blank" rel="noopener">importsidan</a>.</p>
     <p>”GBIF-fynd” är antal registrerade observationer i GBIF i Sverige respektive inom 25 km från lokalen – ett grovt mått på hur väntat fyndet är.</p>
     <p>Väder från <a href="https://www.smhi.se/data/meteorologi/ladda-ner-meteorologiska-observationer" target="_blank" rel="noopener">SMHI:s öppna data</a>, närmaste station med data för respektive parameter. Värden från de senaste fyra månaderna är inte slutgiltigt kvalitetsgranskade av SMHI. Stationerna står i regel några kilometer bort, så lokala förhållanden kan skilja.</p>
@@ -110,6 +106,66 @@
     <p class="gen" id="gen"></p>
   </section>
 </main>
+</div>
+
+<div id="tab-dag" role="tabpanel" aria-labelledby="tabbtn-dag" hidden>
+<div class="filters" role="region" aria-label="Filter för dagobservationer">
+  <div class="wrap filter-row">
+    <label class="f">
+      <span>Källa</span>
+      <select id="dagSrc">
+        <option value="all">iNaturalist och eBird</option>
+        <option value="i">iNaturalist</option>
+        <option value="e">eBird</option>
+      </select>
+    </label>
+    <label class="f">
+      <span>År</span>
+      <select id="dagYear"></select>
+    </label>
+    <label class="f">
+      <span>Område</span>
+      <select id="dagArea"></select>
+    </label>
+  </div>
+</div>
+<main class="wrap">
+  <p class="lede" id="dagLede"></p>
+  <section class="tiles" id="dagTiles" aria-label="Översikt dagobservationer"></section>
+
+  <section>
+    <h2>Senaste observationerna</h2>
+    <div id="dagLatest" class="obs-list"></div>
+  </section>
+
+  <section>
+    <h2>Karta</h2>
+    <p class="sub">En punkt per observation (blå djur, grön växter, orange svampar). eBirds livslista saknar koordinater och syns inte här.</p>
+    <div id="dagMap" class="map" aria-label="Karta över dagobservationer"></div>
+  </section>
+
+  <section>
+    <h2>Organismgrupper</h2>
+    <div id="dagGroups" class="table-wrap"></div>
+  </section>
+
+  <section>
+    <h2>Arter i systematisk ordning</h2>
+    <p class="sub">Enligt iNaturalists taxonomi med alla rangnivåer. Svenska namn från iNaturalist och Dyntaxa. Klicka på ett kort för detaljer.</p>
+    <div class="tax-tools">
+      <input type="search" id="taxSearchDag" placeholder="Sök art, släkte, familj …" aria-label="Sök i artträdet">
+      <button type="button" id="taxOpenDag">Visa alla</button>
+      <button type="button" id="taxCloseDag">Fäll ihop</button>
+    </div>
+    <div id="taxonomyDag"></div>
+  </section>
+
+  <section class="about">
+    <h2>Om dagobservationerna</h2>
+    <p>Mina publika observationer på <a href="https://www.inaturalist.org/people/ulfboge" target="_blank" rel="noopener">iNaturalist</a> (hämtas vid varje bygge, med positioner som där) och min data från eBird. Livslistan från eBird har bara första fyndet per art och inga koordinater. Systematiken följer iNaturalists taxonomi; där Dyntaxa använder ett annat vetenskapligt namn visas det i artdialogen. Arter som också finns bland nattljuden visar båda delarna i artdialogen.</p>
+  </section>
+</main>
+</div>
 
 <dialog id="dlg" aria-labelledby="dlgTitle">
   <form method="dialog"><button class="close" aria-label="Stäng">×</button></form>

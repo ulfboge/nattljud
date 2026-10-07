@@ -333,7 +333,8 @@ def add_inat(species, sites, use_inat=True, online=True):
         raw.append({"id": e["sub"], "taxon": tid, "date": e["date"], "time": e["time"], "lat": e["lat"],
                     "lon": e["lon"], "acc": None, "obscured": False, "quality": "", "license": "", "photo": "",
                     "place": ", ".join(x for x in (e["place"], e["region"]) if x), "sounds": 0,
-                    "src": "e" if e["kind"] == "obs" else "l", "count": e["count"]})
+                    "src": "e" if e["kind"] == "obs" else "l", "count": e["count"],
+                    "country": "SE" if (e["region"] or "").startswith("SE") else "X"})
     if eb:
         print(f"  eBird: {len(eb)} rader")
     tax.ensure([s.get("inat") for s in species] + [o["taxon"] for o in raw])
@@ -366,7 +367,8 @@ def add_inat(species, sites, use_inat=True, online=True):
         site = -1 if o["lat"] is None else next((k for k, st in enumerate(sites)
                      if _dist_m(o["lat"], o["lon"], st["lat"], st["lon"]) <= st.get("radius_m", 100)), -1)
         obs.append([i, o["id"], o["date"], o["time"], o["lat"], o["lon"], o["acc"], o["quality"][:1], o["place"],
-                    o["photo"], site, 1 if o["obscured"] else 0, o["license"], o["src"]])
+                    o["photo"], site, 1 if o["obscured"] else 0, o["license"], o["src"],
+                    o.get("country", "")])
 
     # Bild till taxa utan eget foto (t.ex. eBird-fynd): iNaturalists standardbild om den är fritt licensierad.
     noimg = [s for s in species if not s.get("image") and s.get("inat") and not s.get("members")]
@@ -548,7 +550,7 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all
            "species": species, "sites": pub_sites, "recorders": recorders, "weather": wx, "detections": det,
            "tree": tree, "inatUser": INAT_USER if use_inat else None,
            "obsFields": ["species", "id", "date", "time", "lat", "lon", "acc", "quality", "place", "photo", "site",
-                         "obscured", "license", "source"],
+                         "obscured", "license", "source", "country"],
            "observations": obs}
     os.makedirs(OUT, exist_ok=True)
     with open(os.path.join(OUT, "data.json"), "w", encoding="utf-8") as fh:

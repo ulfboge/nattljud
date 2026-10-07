@@ -95,6 +95,7 @@ def _compact(o):
         "quality": o.get("quality_grade", ""), "place": o.get("place_guess") or "",
         "photo": (photo.get("url") or "").replace("/square.", "/medium."),
         "license": photo.get("license_code") or "", "sounds": len(o.get("sounds") or []),
+        "country": "SE" if SWEDEN in (o.get("place_ids") or []) else "X",
     }
 
 
