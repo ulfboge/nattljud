@@ -140,9 +140,12 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
             "Privat kommentar": f"{_n(len(dets))} totalt denna natt, median sannolikhet {_p(med)}.{rec_txt}",
             "Beskrivning artbestämning": (f"Automatisk artbestämning i BTO Acoustic Pipeline ({classifier}), "
                                           f"högsta sannolikhet {_p(max(probs))}. Ej manuellt verifierad."),
-            "Externid": _unique_id(base_id, prev_ids),
         })
-        ids.append(rec["Externid"])
+        # Artportalen vägrar Externid när inget projekt är valt vid import (SiteConversionError_ExternalId_
+        # NoProjectSelected) – kolumnen lämnas tom och id:t läggs i privat kommentar i stället.
+        ext_id = _unique_id(base_id, prev_ids)
+        rec["Privat kommentar"] += f" Id: {ext_id}"
+        ids.append(ext_id)
         per_sheet[sheet].append(rec)
 
     wb = Workbook()
@@ -158,7 +161,7 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
         "4. Klistra in på artportalen.se/ImportSighting och klicka Importera. Ett blad i taget, max 2000 rader.",
         "5. Fynden hamnar under fliken Granska & publicera i Artportalen – kontrollera och publicera där.",
         "",
-        "Kolumnerna följer Artportalens Excelmall version 4.17. Externid gör att samma fynd går att känna igen vid ny import.",
+        "Kolumnerna följer Artportalens Excelmall version 4.17. Externid lämnas tom (kräver projekt); fyndets id står i Privat kommentar.",
         f"Minsta sannolikhet för att komma med: {min_prob:g}. Skapad {datetime.now():%Y-%m-%d %H:%M}.",
     ] + ([f"Omfattar {scope}. Exporterade filer loggas i data/artportalen_exporterat.json."] if scope else []):
         ws.append([line])
