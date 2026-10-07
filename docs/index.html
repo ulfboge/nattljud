@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nattljud – ultraljudsfynd</title>
-<meta name="description" content="Fladdermöss, vårtbitare och andra djur registrerade med ultraljudsdetektor.">
+<meta name="description" content="Fladdermöss, vårtbitare och andra djur registrerade med ultraljudsdetektor, samt fältobservationer från iNaturalist och eBird.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -30,6 +30,14 @@
       <span>Lokal</span>
       <select id="site"></select>
     </label>
+    <label class="f">
+      <span>Källa</span>
+      <select id="source">
+        <option value="all">Alla källor</option>
+        <option value="det">Detektor (BTO, BirdNET)</option>
+        <option value="obs">Fältobservationer (iNaturalist, eBird)</option>
+      </select>
+    </label>
     <p class="hidden-note" id="hiddenNote"></p>
   </div>
 </div>
@@ -44,7 +52,8 @@
   </section>
 
   <section>
-    <h2>Fyndlokaler</h2>
+    <h2>Karta</h2>
+    <p class="sub">Stora punkter: detektorlokaler. Små punkter: fältobservationer (blå djur, grön växter, orange svampar). Zooma ut för fynd längre bort.</p>
     <div id="map" class="map" aria-label="Karta över fyndlokaler"></div>
   </section>
 
@@ -68,7 +77,12 @@
 
   <section>
     <h2>Arter i systematisk ordning</h2>
-    <p class="sub">Klass → ordning → familj. Klicka på ett kort för detaljer.</p>
+    <p class="sub">Alla källor i samma träd, enligt iNaturalists taxonomi med alla rangnivåer (rike, stam, klass, ordning, familj och mellannivåer där de delar upp arterna). Svenska namn från iNaturalist och Dyntaxa. Klicka på ett kort för detaljer.</p>
+    <div class="tax-tools">
+      <input type="search" id="taxSearch" placeholder="Sök art, släkte, familj …" aria-label="Sök i artträdet">
+      <button type="button" id="taxOpen">Visa alla</button>
+      <button type="button" id="taxClose">Fäll ihop</button>
+    </div>
     <div id="taxonomy"></div>
   </section>
 
@@ -87,6 +101,7 @@
     <h2>Om datat</h2>
     <p>Inspelningar med ultraljudsdetektor, automatiskt artbestämda i BTO Acoustic Pipeline (<span id="classifier"></span>). Automatiska bestämningar är förslag – särskilt fynd med låg sannolikhet, sociala läten och arter som är svåra att skilja på ljud (t.ex. <i>Myotis</i>) bör verifieras manuellt i spektrogram innan de rapporteras till Artportalen.</p>
     <p>Klipp där BTO bara angav "fågel (obestämd art)" har körts genom <a href="https://birdnet.cornell.edu/" target="_blank" rel="noopener">BirdNET</a>; arter med sannolikhet ≥ 0,5 visas med BirdNET som källa, övriga ligger kvar som obestämda.</p>
+    <p>Fältobservationer: mina publika observationer på <a href="https://www.inaturalist.org/people/ulfboge" target="_blank" rel="noopener">iNaturalist</a> (hämtas vid varje bygge, med positioner som där) och min eBird-data. Livslistan från eBird har bara första fyndet per art och inga koordinater, så de fynden syns i artträdet men inte på kartan. Systematiken följer iNaturalists taxonomi; där Dyntaxa använder ett annat vetenskapligt namn visas det i artdialogen.</p>
     <p>Fynden rapporteras till Artportalen via <a href="https://www.artportalen.se/ImportSighting" target="_blank" rel="noopener">importsidan</a>.</p>
     <p>”GBIF-fynd” är antal registrerade observationer i GBIF i Sverige respektive inom 25 km från lokalen – ett grovt mått på hur väntat fyndet är.</p>
     <p>Väder från <a href="https://www.smhi.se/data/meteorologi/ladda-ner-meteorologiska-observationer" target="_blank" rel="noopener">SMHI:s öppna data</a>, närmaste station med data för respektive parameter. Värden från de senaste fyra månaderna är inte slutgiltigt kvalitetsgranskade av SMHI. Stationerna står i regel några kilometer bort, så lokala förhållanden kan skilja.</p>

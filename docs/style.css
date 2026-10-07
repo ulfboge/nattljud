@@ -184,3 +184,27 @@ dialog .close { position: absolute; right: .5rem; top: .4rem; font-size: 1.6rem;
 .eq dt { color: var(--ink-2); }
 .eq dd { margin: 0; }
 @media (max-width: 600px) { .eq dl { grid-template-columns: 1fr; } .eq dt { margin-top: .4rem; } }
+
+/* artträd */
+.tax-tools { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1rem; }
+.tax-tools input { flex: 1; min-width: 200px; font: inherit; font-size: .95rem; padding: .4rem .6rem; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--ink); }
+.tax-tools button { font: inherit; font-size: .85rem; padding: .35rem .7rem; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--ink); cursor: pointer; }
+details.tx { margin: .15rem 0; }
+details.tx > summary { cursor: pointer; padding: .3rem .2rem; border-radius: 6px; list-style-position: outside; }
+details.tx > summary:hover { background: var(--grid); }
+details.tx > summary .rk { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+details.tx > summary i { color: var(--ink-2); font-weight: 400; }
+details.tx > summary .n { font-size: .8rem; color: var(--muted); margin-left: .3rem; }
+details.tx > .tx-body { margin-left: .9rem; padding-left: .6rem; border-left: 1px solid var(--border); }
+details.tx > .tx-body > .cards { margin: .5rem 0 .8rem; }
+details.tx.d0 > summary { font-size: 1.1rem; }
+details.tx.d1 > summary { font-size: 1.02rem; }
+.card .meta { gap: .5rem; flex-wrap: wrap; }
+.card .srcs { display: flex; flex-wrap: wrap; gap: .25rem; margin-top: .35rem; }
+.card .srcs span { font-size: .68rem; padding: 0 .35rem; border-radius: 99px; border: 1px solid var(--border); color: var(--ink-2); }
+.obs-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: .5rem; }
+.obs { display: flex; gap: .6rem; align-items: flex-start; text-decoration: none; color: var(--ink); font-size: .85rem; padding: .4rem; border: 1px solid var(--border); border-radius: 8px; }
+.obs:hover { border-color: var(--accent); }
+.obs img, .obs .noimg { width: 64px; height: 64px; object-fit: cover; border-radius: 6px; flex: none; background: var(--grid); }
+.obs .sub { margin: 0; font-size: .78rem; }
+@media (max-width: 600px) { details.tx > .tx-body { margin-left: .4rem; padding-left: .4rem; } }

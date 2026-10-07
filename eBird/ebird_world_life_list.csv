@@ -1,0 +1,77 @@
+Row #,Taxon Order,Category,Common Name,Scientific Name,Count,Location,S/P,Date,LocID,SubID,Exotic,Countable
+1,6562,species,Great Black-backed Gull,Larus marinus,,Lagnöpromenad,SE-AB,10 Jul 2026,L48060769,S370014994,,1
+2,377,species,Mute Swan,Cygnus olor,,Landet,SE-AB,04 Jul 2026,L48054239,S367337654,,1
+3,4094,species,Common Swift,Apus apus,,Hästhagen,SE-AB,03 Jun 2026,L41456574,S351702303,,1
+4,22615,species,Eurasian Skylark,Alauda arvensis,,Ekerum,SE-H,15 May 2026,L66237771,S339100124,,1
+5,24214,species,Western House-Martin,Delichon urbicum,,Gösslunda,SE-H,14 May 2026,L66168347,S338756425,,1
+6,8543,species,Common Buzzard,Buteo buteo,,Rinkebyskogen,SE-AB,31 Mar 2026,L59976124,S315044111,,1
+7,11784,species,Black Woodpecker,Dryocopus martius,,Ösbyskogen,SE-AB,07 Mar 2026,L41546757,S306632223,,1
+8,9199,species,Tawny Owl,Strix aluco,,Ösbysjön,SE-AB,04 Feb 2026,L39714908,S297983854,,1
+9,390,species,Whooper Swan,Cygnus cygnus,,Stallet,SE-AB,19 Nov 2025,L41994124,S285145886,,1
+10,5718,species,Common Crane,Grus grus,,Sjön,SE-S,07 Aug 2025,L51146977,S265603211,,1
+11,7745,species,Gray Heron,Ardea cinerea,,Ösbysjön,SE-AB,03 Aug 2025,L44517741,S264641486,,1
+12,7397,species,Great Cormorant,Phalacrocorax carbo,,Färjan,SE-AB,01 Aug 2025,L50802547,S264136253,,1
+13,25209,species,Long-tailed Tit,Aegithalos caudatus,,Lagnöpromenad,SE-AB,26 Jul 2025,L48060820,S262744834,,1
+14,21045,species,Red-backed Shrike,Lanius collurio,,Lagnöpromenad,SE-AB,20 Jul 2025,L48060820,S261273103,,1
+15,21996,species,Crested Tit,Lophophanes cristatus,,Landet,SE-AB,19 Jul 2025,L48054239,S260959899,,1
+16,23651,species,Icterine Warbler,Hippolais icterina,,Lagnöpromenad,SE-AB,14 Jul 2025,L48060820,S259832127,,1
+17,6733,species,Arctic Tern,Sterna paradisaea,,Ljusteröpromenad,SE-AB,13 Jul 2025,L49683874,S259404181,,1
+18,23676,species,Common Reed Warbler,Acrocephalus scirpaceus,,Strandbadspromenad,SE-AB,12 Jul 2025,L49538337,S259079893,,1
+19,22030,species,Marsh Tit,Poecile palustris,,Lagnöpromenad,SE-AB,09 Jul 2025,L49414048,S258265330,,1
+20,6748,species,Common Tern,Sterna hirundo,,Ösbysjön,SE-AB,05 Jul 2025,L40291397,S257021829,,1
+21,32733,species,Yellowhammer,Emberiza citrinella,,Landet,SE-AB,20 Jun 2025,L48051638,S252319623,,1
+22,5786,species,Eurasian Oystercatcher,Haematopus ostralegus,,Hästhagen,SE-AB,11 Jun 2025,L47336551,S249069447,,1
+23,24187,species,Barn Swallow,Hirundo rustica,,Ösbysjön,SE-AB,08 Jun 2025,L47089062,S247948467,,1
+24,25364,species,Greater Whitethroat,Curruca communis,,Ösbysjön,SE-AB,06 Jun 2025,L46916433,S247184656,,1
+25,762,species,Common Merganser,Mergus merganser,,Germaniaviken,SE-AB,30 May 2025,L46638791,S245806318,,1
+26,27010,species,Eurasian Treecreeper,Certhia familiaris,,Ösbyskogen,SE-AB,30 May 2025,L41546757,S244427777,,1
+27,25273,species,Garden Warbler,Sylvia borin,,Vendevägen,SE-AB,30 May 2025,L42458845,S244426734,,1
+28,28818,species,Spotted Flycatcher,Muscicapa striata,,Hästhagen,SE-AB,29 May 2025,L41456574,S244049833,,1
+29,29392,species,Thrush Nightingale,Luscinia luscinia,,Ösbyskogen,SE-AB,17 May 2025,L41546757,S239008387,,1
+30,21950,species,Coal Tit,Periparus ater,,Ösbyskogen,SE-AB,11 May 2025,L41546757,S236072092,,1
+31,29609,species,Common Redstart,Phoenicurus phoenicurus,,Hästhagen,SE-AB,11 May 2025,L40761462,S236070799,,1
+32,23661,species,Sedge Warbler,Acrocephalus schoenobaenus,,Ösbysjön,SE-AB,10 May 2025,L44517741,S235294761,,1
+33,24843,species,Willow Warbler,Phylloscopus trochilus,,Ösbysjön,SE-AB,10 May 2025,L40291397,S235294464,,1
+34,31720,species,White Wagtail,Motacilla alba,,Hästhagen,SE-AB,02 May 2025,L40838799,S232272538,,1
+35,29558,species,European Pied Flycatcher,Ficedula hypoleuca,,Ösbysjön,SE-AB,02 May 2025,L39714908,S231839006,,1
+36,24792,species,Wood Warbler,Phylloscopus sibilatrix,,Ösbyskogen,SE-AB,27 Apr 2025,L40379733,S229864160,,1
+37,21514,species,Eurasian Jackdaw,Coloeus monedula,,Ryds Bilglas,SE-AB,24 Apr 2025,L43310633,S228774402,,1
+38,28497,species,Redwing,Turdus iliacus,,Hästhagen,SE-AB,21 Apr 2025,L43104457,S227696346,,1
+39,25267,species,Eurasian Blackcap,Sylvia atricapilla,,Hästhagen,SE-AB,21 Apr 2025,L43104457,S227696232,,1
+40,32498,species,Red Crossbill,Loxia curvirostra,,Klövsjö Spår,SE-Z,17 Apr 2025,L42774210,S226240616,,1
+41,24853,species,Common Chiffchaff,Phylloscopus collybita,,Klövsjö,SE-Z,15 Apr 2025,L42689536,S225830414,,1
+42,28429,species,Mistle Thrush,Turdus viscivorus,,Vendevägen,SE-AB,12 Apr 2025,L42458845,S224740245,,1
+43,275,species,Graylag Goose,Anser anser,,Hästhagen,SE-AB,06 Apr 2025,L40761462,S223300406,,1
+44,6474,species,Black-headed Gull,Chroicocephalus ridibundus,,Ösbyskogen,SE-AB,30 Mar 2025,L41546757,S221722801,,1
+45,32091,species,Hawfinch,Coccothraustes coccothraustes,,Ösbyskogen,SE-AB,30 Mar 2025,L41546757,S221722423,,1
+46,28433,species,Song Thrush,Turdus philomelos,,Ekebysjön,SE-AB,29 Mar 2025,L41798898,S221435562,,1
+47,6513,species,Common Gull,Larus canus,,Ösbysjön,SE-AB,28 Mar 2025,L39714908,S221276452,,1
+48,5487,species,Eurasian Coot,Fulica atra,,Ekebysjön,SE-AB,26 Mar 2025,L41687149,S220857219,,1
+49,545,species,Mallard,Anas platyrhynchos,,Ekebysjön,SE-AB,23 Mar 2025,L41558396,S220209905,,1
+50,27813,species,European Starling,Sturnus vulgaris,,Hästhagen,SE-AB,23 Mar 2025,L40761462,S220157701,,1
+51,342,species,Canada Goose,Branta canadensis,,Hästhagen,SE-AB,22 Mar 2025,L41511768,S220001301,N,1
+52,27258,species,Eurasian Wren,Troglodytes troglodytes,,Ösbyakogen,SE-AB,22 Mar 2025,L41489743,S219894629,,1
+53,1880,species,Stock Dove,Columba oenas,,Ösbyakogen,SE-AB,22 Mar 2025,L41489743,S219894617,,1
+54,29253,species,European Robin,Erithacus rubecula,,Hästhagen,SE-AB,22 Mar 2025,L40838799,S219894052,,1
+55,1885,species,Common Wood-Pigeon,Columba palumbus,,Ösbysjön,SE-AB,22 Mar 2025,L39714908,S219890122,,1
+56,11377,species,Lesser Spotted Woodpecker,Dryobates minor,,Hästhagen,SE-AB,21 Mar 2025,L41456574,S219735182,,1
+57,11673,species,Eurasian Green Woodpecker,Picus viridis,,Hästhagen,SE-AB,21 Mar 2025,L40838799,S219734524,,1
+58,32552,species,European Goldfinch,Carduelis carduelis,,Dagis,SE-AB,15 Mar 2025,L40291515,S218618341,,1
+59,28593,species,Fieldfare,Turdus pilaris,,Hästhagen,SE-AB,11 Mar 2025,L40838799,S217840244,,1
+60,31534,species,House Sparrow,Passer domesticus,,Ösbysjön,SE-AB,02 Mar 2025,L39714908,S216166511,,1
+61,21339,species,Eurasian Jay,Garrulus glandarius,,Ösbysjön,SE-AB,02 Mar 2025,L39714908,S216166527,,1
+62,32594,species,Eurasian Siskin,Spinus spinus,,Ösbysjön,SE-AB,02 Mar 2025,L40291397,S216164962,,1
+63,21578,species,Hooded Crow,Corvus cornix,,Dagis,SE-AB,02 Mar 2025,L40291515,S216164255,,1
+64,28500,species,Eurasian Blackbird,Turdus merula,,Hästhagen,SE-AB,02 Mar 2025,L40761462,S216164016,,1
+65,21467,species,Eurasian Magpie,Pica pica,,Hästhagen,SE-AB,02 Mar 2025,L40761462,S216164006,,1
+66,21624,species,Common Raven,Corvus corax,,Idre Stugby,SE-W,01 Mar 2025,L40631686,S215967978,,1
+67,31948,species,Common Chaffinch,Fringilla coelebs,,Idre Skoterled,SE-W,28 Feb 2025,L40684096,S215785313,,1
+68,22041,species,Willow Tit,Poecile montanus,,Idre Skogen,SE-W,25 Feb 2025,L40597592,S215314983,,1
+69,32251,species,Eurasian Bullfinch,Pyrrhula pyrrhula,,Idre Skog,SE-W,24 Feb 2025,L40568385,S215163266,,1
+70,26856,species,Goldcrest,Regulus regulus,,Ösbysjön,SE-AB,23 Feb 2025,L39714908,S214954181,,1
+71,11349,species,Great Spotted Woodpecker,Dendrocopos major,,Ösbysjön,SE-AB,23 Feb 2025,L39714908,S214954169,,1
+72,26966,species,Eurasian Nuthatch,Sitta europaea,,Ösbyskogen,SE-AB,18 Feb 2025,L40379733,S214223591,,1
+73,32336,species,European Greenfinch,Chloris chloris,,Ösbysjön,SE-AB,16 Feb 2025,L39714908,S213692346,,1
+74,31603,species,Eurasian Tree Sparrow,Passer montanus,,Ösbysjön,SE-AB,16 Feb 2025,L39714908,S213692132,,1
+75,22114,species,Eurasian Blue Tit,Cyanistes caeruleus,,Dagis,SE-AB,16 Feb 2025,L40291515,S213691615,,1
+76,22175,species,Great Tit,Parus major,,Ösbysjön,SE-AB,26 Jan 2025,L39714908,S210713232,,1

@@ -33,7 +33,7 @@ from collections import OrderedDict
 from datetime import date, datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import smhi, artportalen  # noqa: E402
+import smhi, artportalen, inat, ebird  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESULTS = os.path.join(ROOT, "results")
@@ -44,6 +44,10 @@ EXPORTS = os.path.join(ROOT, "exports")
 AP_LOG = os.path.join(ROOT, "data", "artportalen_exporterat.json")
 EQUIPMENT = os.path.join(ROOT, "data", "equipment.json")
 OUT = os.path.join(ROOT, "docs", "data")
+INAT_USER = "ulfboge"  # iNaturalist-användare vars publika observationer tas med (--no-inat stänger av)
+INAT_CACHE = os.path.join(ROOT, "data", "inat_cache.json")
+TAXONOMY_CACHE = os.path.join(ROOT, "data", "taxonomy_cache.json")
+EBIRD_DIRS = [os.path.join(ROOT, "eBird"), os.path.join(ROOT, "data", "ebird")]
 UA = {"User-Agent": "bat-fynd/1.0 (github.com/ulfboge/bat)"}
 
 # Svenska namn som går före allt annat. Fladdermöss enligt Naturvårdsverkets
@@ -304,8 +308,118 @@ def add_site(name, where, folders=()):
     json.dump(sites, open(SITES, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     print(f"  la till {st['id']} {name} ({st['lat']}, {st['lon']})" + (f", mappar: {', '.join(folders)}" if folders else ""))
 
+# ------------------------------------------------------------------ iNaturalist och artträd
+# Namn att slå upp i iNaturalist för detektorns taxa som inte är vanliga artnamn.
+INAT_NAME = {"Aves sp.": "Aves", "Myotis mystacinus/brandtii": "Myotis"}
 
-def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all=False, exclude=()):
+
+def add_inat(species, sites, use_inat=True, online=True):
+    """Lägg till iNaturalist-observationer och bygg det systematiska trädet för alla taxa.
+    Returnerar (tree, observations). tree: {id: [förälder, rang, vetenskapligt namn, svenskt namn]}.
+    Detektorns arter får 'inat' (taxon-id i trädet); iNaturalist-arter läggs till sist i species."""
+    tax = inat.Taxonomy(TAXONOMY_CACHE, online)
+    for s in species:
+        if s["sci"] != "Oidentifierad":
+            s["inat"] = tax.lookup(INAT_NAME.get(s["sci"], s["sci"]))
+    raw = inat.fetch_observations(INAT_USER, INAT_CACHE, online) if use_inat else []
+    for o in raw:
+        o["src"] = "i"
+    eb = ebird.read(EBIRD_DIRS)
+    for e in eb:
+        tid = tax.lookup(e["sci"])
+        if tid is None:
+            print("  eBird: hittar inte i iNaturalist:", e["sci"])
+            continue
+        raw.append({"id": e["sub"], "taxon": tid, "date": e["date"], "time": e["time"], "lat": e["lat"],
+                    "lon": e["lon"], "acc": None, "obscured": False, "quality": "", "license": "", "photo": "",
+                    "place": ", ".join(x for x in (e["place"], e["region"]) if x), "sounds": 0,
+                    "src": "e" if e["kind"] == "obs" else "l", "count": e["count"]})
+    if eb:
+        print(f"  eBird: {len(eb)} rader")
+    tax.ensure([s.get("inat") for s in species] + [o["taxon"] for o in raw])
+
+    for s in species:
+        if s["sci"] != "Oidentifierad":
+            s["sources"] = [s.get("source") or "BTO"]
+    by_taxon = {s["inat"]: i for i, s in enumerate(species) if s.get("inat") and not s.get("members")}
+    obs = []
+    for o in sorted(raw, key=lambda o: (o["date"], o["time"])):
+        t = tax.get(o["taxon"])
+        if not t:
+            continue
+        i = by_taxon.get(o["taxon"])
+        if i is None:
+            i = by_taxon[o["taxon"]] = len(species)
+            species.append({"sci": t["name"], "sv": t.get("sv") or "", "rank": t["rank"], "inat": o["taxon"],
+                            "group": "obs", "groupSv": inat.ICONIC_SV.get(t.get("iconic"), "Övrigt"),
+                            "iconic": t.get("iconic"), "code": "", "en": "", **({"wiki": {
+                                "lang": "sv" if "sv.wikipedia" in t["wiki"]["url"] else "en", "title": t["name"],
+                                **t["wiki"]}} if t.get("wiki") else {})})
+        s = species[i]
+        s.setdefault("sources", [])
+        src_name = "iNaturalist" if o["src"] == "i" else "eBird"
+        if src_name not in s["sources"]:
+            s["sources"].append(src_name)
+        if o["photo"] and not s.get("image"):
+            s["image"] = {"src": o["photo"], "artist": "Johan Karlsson", "license": o["license"].upper() or "iNaturalist",
+                          "page": f"https://www.inaturalist.org/observations/{o['id']}"}
+        site = -1 if o["lat"] is None else next((k for k, st in enumerate(sites)
+                     if _dist_m(o["lat"], o["lon"], st["lat"], st["lon"]) <= st.get("radius_m", 100)), -1)
+        obs.append([i, o["id"], o["date"], o["time"], o["lat"], o["lon"], o["acc"], o["quality"][:1], o["place"],
+                    o["photo"], site, 1 if o["obscured"] else 0, o["license"], o["src"]])
+
+    # Dyntaxa: svenskt namn där iNaturalist saknar det, och avvikande vetenskapligt namn för arter.
+    need = [tax.get(s["inat"])["name"] for s in species if s.get("group") == "obs" and tax.get(s.get("inat"))]
+    for s in species:
+        for n in tax.path(s["inat"]) if s.get("inat") else []:
+            t = tax.get(n)
+            if t and not t.get("sv") and t["rank"] not in ("species", "subspecies"):
+                need.append(t["name"])
+    tax.prefetch_dyntaxa(need)
+    for s in species:
+        t = tax.get(s.get("inat")) if s.get("inat") else None
+        if not t or s.get("members") or s["sci"] in INAT_NAME:
+            continue
+        if t["name"] != s["sci"]:
+            s["inatName"] = t["name"]  # t.ex. Eptesicus nilssonii heter Cnephaeus nilssonii i iNaturalist
+        if s.get("group") == "obs":
+            dy = tax.dyntaxa_for(t["name"])
+            if dy:
+                s.setdefault("dyntaxaId", dy.get("id"))
+                if dy.get("name") and dy["name"] != t["name"]:
+                    s["dyntaxaName"] = dy["name"]
+                if not s.get("sv"):
+                    s["sv"] = dy.get("sv") or ""
+            if not s.get("sv"):
+                s["sv"] = ""
+
+    # Trädet: alla noder på vägen från rike till varje taxon.
+    tree = {}
+    for s in species:
+        if not s.get("inat"):
+            continue
+        for n in tax.path(s["inat"]):
+            t = tax.get(n)
+            if t and str(n) not in tree:
+                tree[str(n)] = [t.get("parent"), t["rank"], t["name"], t.get("sv") or ""]
+    # svenska namn på högre taxa från Dyntaxa där iNaturalist saknar dem
+    for k, v in tree.items():
+        if not v[3] and v[1] not in ("species", "subspecies"):
+            v[3] = (tax.dyntaxa_for(v[2]) or {}).get("sv", "")
+    # förälder = närmaste förfader som finns i trädet
+    for k, v in tree.items():
+        p = v[0]
+        while p is not None and str(p) not in tree:
+            p = (tax.get(p) or {}).get("parent")
+        v[0] = p
+    tax.save()
+    if use_inat:
+        print(f"  iNaturalist/eBird: {len(obs)} observationer, {sum(1 for s in species if s.get('group') == 'obs')} nya taxa")
+    return tree, obs
+
+
+def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all=False, exclude=(), use_inat=True,
+          online=True):
     files = sorted(glob.glob(os.path.join(RESULTS, "**", "*.csv"), recursive=True))
     rows, seen, dups = [], set(), 0
     wavs_per_file = {}  # resultatfilens namn -> inspelningar i den (för Artportalen-loggen)
@@ -384,6 +498,7 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all
     for s in species:
         if s["sci"] in DOUBTFUL:
             s["doubt"] = DOUBTFUL[s["sci"]]
+    tree, obs = add_inat(species, sites, use_inat, online)
 
     # --- detektioner (kompakt) ---
     det = []
@@ -423,12 +538,16 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all
 
     out = {"generated": time.strftime("%Y-%m-%d %H:%M"), "classifier": classifier,
            "fields": ["species", "site", "time", "prob", "callType", "night", "file", "recorder", "btoMember"],
-           "species": species, "sites": pub_sites, "recorders": recorders, "weather": wx, "detections": det}
+           "species": species, "sites": pub_sites, "recorders": recorders, "weather": wx, "detections": det,
+           "tree": tree, "inatUser": INAT_USER if use_inat else None,
+           "obsFields": ["species", "id", "date", "time", "lat", "lon", "acc", "quality", "place", "photo", "site",
+                         "obscured", "license", "source"],
+           "observations": obs}
     os.makedirs(OUT, exist_ok=True)
     with open(os.path.join(OUT, "data.json"), "w", encoding="utf-8") as fh:
         json.dump(out, fh, ensure_ascii=False, separators=(",", ":"))
     print(f"Skrev docs/data/data.json ({len(species)} taxa, {len(sites)} lokaler, "
-          f"{len({d[5] for d in det})} nätter)")
+          f"{len({d[5] for d in det})} nätter, {len(obs)} fältobservationer)")
 
     if export_ap:
         export_artportalen(det, species, sites, classifier, recorders, wavs_per_file, min_prob, export_all, exclude)
@@ -485,6 +604,7 @@ if __name__ == "__main__":
         add_site(a[i + 1], a[i + 2], a[i + 3].split(",") if len(a) > i + 3 and not a[i + 3].startswith("--") else ())
         sys.exit(0)
     mp = float(a[a.index("--min-prob") + 1]) if "--min-prob" in a else 0.8
-    build(refresh="--refresh" in a, weather="--no-weather" not in a,
+    build(refresh="--refresh" in a, weather="--no-weather" not in a, use_inat="--no-inat" not in a,
+          online="--offline" not in a,
           export_ap="--artportalen" in a, min_prob=mp, export_all="--alla" in a,
           exclude={x.strip() for x in a[a.index("--utan") + 1].split(",")} if "--utan" in a else ())

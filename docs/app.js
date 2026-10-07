@@ -29,8 +29,8 @@
   const fmt = n => n.toLocaleString("sv-SE");
   const median = a => { if (!a.length) return NaN; const s = [...a].sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
 
-  let D, map, siteLayer, NEW = new Map();
-  const state = { minProb: 0.5, night: "all", site: "all" };
+  let D, map, siteLayer, obsLayer, NEW = new Map();
+  const state = { minProb: 0.5, night: "all", site: "all", source: "all" };
 
   // ---------- tid ----------
   // Minuter från kl 12 natten börjar (natt = SURVEY DATE), så att 19:00→420, 03:00→900.
@@ -54,7 +54,12 @@
   const shortTime = t => `${+t.slice(8, 10)}/${+t.slice(5, 7)} ${t.slice(11, 16)}`;
 
   // ---------- filter ----------
-  const inScope = d => (state.night === "all" || d[5] === state.night) && (state.site === "all" || d[1] === +state.site);
+  const inScope = d => state.source !== "obs" && (state.night === "all" || d[5] === state.night) && (state.site === "all" || d[1] === +state.site);
+  // Fältobservationer (iNaturalist, eBird): o = [art, id, datum, tid, lat, lon, noggrannhet, kvalitet, plats, foto, lokal, oskarp, licens, källa]
+  const nextDay = n => new Date(Date.parse(n + "T12:00:00Z") + 864e5).toISOString().slice(0, 10);
+  const obsInScope = o => state.source !== "det" && (state.site === "all" || o[10] === +state.site) &&
+    (state.night === "all" || o[2] === state.night && (!o[3] || o[3] >= "12:00") || o[2] === nextDay(state.night) && o[3] && o[3] < "12:00");
+  const scopedObs = () => (D.observations || []).filter(obsInScope);
   const scoped = () => D.detections.filter(inScope);
   const passing = () => D.detections.filter(d => inScope(d) && d[3] >= state.minProb);
 
@@ -71,11 +76,18 @@
     tip.style.left = x + "px"; tip.style.top = y + "px";
   });
 
+  document.addEventListener("click", e => { const a = e.target.closest(".leaflet-popup a[data-sp]"); if (a) { e.preventDefault(); openSpecies(+a.dataset.sp); } });
+
   // ---------- init ----------
   fetch("data/data.json").then(r => r.json()).then(data => {
     D = data;
     D.species.forEach((s, i) => { s.i = i; s.probs = []; });
     D.detections.forEach(d => D.species[d[0]].probs.push(d[3]));
+    D.tree = D.tree || {}; D.observations = D.observations || [];
+    $("#source").addEventListener("change", e => { state.source = e.target.value; render(); });
+    $("#taxSearch").addEventListener("input", e => { taxQuery = e.target.value; renderTaxonomy(passing()); });
+    $("#taxOpen").addEventListener("click", () => { document.querySelectorAll("#taxonomy details.tx").forEach(d => { d.open = true; taxOpen.set(d.dataset.n, true); }); });
+    $("#taxClose").addEventListener("click", () => { document.querySelectorAll("#taxonomy details.tx").forEach(d => { d.open = false; taxOpen.set(d.dataset.n, false); }); });
     const nights = [...new Set(D.detections.map(d => d[5]))].sort();
     $("#night").innerHTML = `<option value="all">Alla nätter (${nights.length})</option>` + nights.map(n => `<option value="${n}">${nightLabel(n)}</option>`).join("");
     $("#site").innerHTML = `<option value="all">Alla lokaler (${D.sites.length})</option>` + D.sites.map((s, i) => `<option value="${i}">${esc(s.name)}</option>`).join("");
@@ -107,7 +119,9 @@
     const nights = new Set(pass.map(d => d[5])).size, sites = new Set(pass.map(d => d[1])).size;
     const c = counts(pass);
     const bats = D.species.filter(s => s.group === "bat" && isSpecies(s) && c.get(s.i)).length;
-    $("#lede").textContent = `${fmt(pass.length)} registreringar från ${nights} ${nights === 1 ? "natt" : "nätter"} på ${sites} ${sites === 1 ? "lokal" : "lokaler"}, automatiskt artbestämda. ${bats} fladdermusarter över vald sannolikhetsgräns.`;
+    const ob = scopedObs(), obSp = new Set(ob.map(o => o[0])).size;
+    $("#lede").textContent = `${fmt(pass.length)} registreringar från ${nights} ${nights === 1 ? "natt" : "nätter"} på ${sites} ${sites === 1 ? "lokal" : "lokaler"}, automatiskt artbestämda. ${bats} fladdermusarter över vald sannolikhetsgräns.` +
+      (ob.length ? ` Dessutom ${fmt(ob.length)} fältobservationer av ${fmt(obSp)} taxa från iNaturalist och eBird.` : "");
   }
 
   function renderTiles(pass) {
@@ -116,12 +130,17 @@
     const bats = pass.filter(d => D.species[d[0]].group === "bat").length;
     const tiles = [
       [fmt(pass.length), "detektioner"],
-      [sp.length, "arter"],
+      [sp.length, "arter (detektor)"],
       [sp.filter(s => s.group === "bat").length, "fladdermusarter"],
       [fmt(bats), "fladdermusregistreringar"],
       [new Set(pass.map(d => d[5])).size, "nätter"],
       [new Set(pass.map(d => d[1])).size, "lokaler"],
     ];
+    const ob = scopedObs();
+    if (ob.length) {
+      const allSp = new Set([...sp.map(s => s.i), ...ob.map(o => o[0]).filter(i => isSpecies(D.species[i]))]);
+      tiles.push([fmt(ob.length), "fältobservationer"], [fmt(allSp.size), "arter totalt"]);
+    }
     $("#tiles").innerHTML = tiles.map(([v, l]) => `<div class="tile"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
   }
 
@@ -178,13 +197,21 @@
     map = L.map("map", { scrollWheelZoom: false });
     const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: "© OpenStreetMap" }).addTo(map);
     const sat = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", { maxZoom: 19, attribution: "Esri World Imagery" });
-    L.control.layers({ Karta: osm, Flygfoto: sat }).addTo(map);
     siteLayer = L.layerGroup().addTo(map);
+    obsLayer = L.layerGroup().addTo(map);
+    L.control.layers({ Karta: osm, Flygfoto: sat }, { "Detektorlokaler": siteLayer, "Fältobservationer": obsLayer }).addTo(map);
     const b = L.latLngBounds(D.sites.map(s => [s.lat, s.lon]));
     D.sites.length > 1 ? map.fitBounds(b.pad(0.3)) : map.setView(b.getCenter(), 14);
   }
   function renderMap(pass) {
-    siteLayer.clearLayers();
+    siteLayer.clearLayers(); obsLayer.clearLayers();
+    const css = v => getComputedStyle(document.documentElement).getPropertyValue(v.slice(4, -1)).trim();
+    scopedObs().filter(o => o[4] != null).forEach(o => {
+      const s = D.species[o[0]], col = css(KINGDOM_COLOR[kingdomOf(s)] || "var(--s0)");
+      L.circleMarker([o[4], o[5]], { radius: 5, color: "#fff", weight: 1, fillColor: col, fillOpacity: .9 })
+        .bindPopup(`${o[9] ? `<img src="${esc(o[9].replace("/medium.", "/square."))}" alt="" style="float:left;width:56px;height:56px;object-fit:cover;margin:0 .5rem .2rem 0;border-radius:4px">` : ""}<b>${esc(s.sv || s.sci)}</b><br><i>${esc(s.sci)}</i><br>${esc(o[2])} ${esc(o[3] || "")}<br>${esc(o[8] || "")}<br><a href="${obsLink(o)}" target="_blank" rel="noopener">${obsSrc(o)}</a> · <a href="#" data-sp="${o[0]}">Visa art</a>`)
+        .bindTooltip(esc(s.sv || s.sci)).addTo(obsLayer);
+    });
     const accent = getComputedStyle(document.documentElement).getPropertyValue("--s1").trim();
     D.sites.forEach((s, i) => {
       const dets = pass.filter(d => d[1] === i);
@@ -254,81 +281,152 @@
   }
 
   // ---------- systematik ----------
+  // Trädet kommer från iNaturalists taxonomi (D.tree: id -> [förälder, rang, namn, svenskt namn]).
+  // Huvudnivåer visas alltid; mellannivåer (underordning, överfamilj …) bara när de delar upp arterna.
+  const MAIN_RANKS = new Set(["kingdom", "phylum", "class", "order", "family"]);
+  const HIDDEN_RANKS = new Set(["genus", "species", "subspecies", "variety", "form", "hybrid", "complex", "subgenus",
+    "section", "subsection", "zoosection", "zoosubsection"]);
+  const TOP_ORDER = ["Animalia", "Plantae", "Fungi", "Chromista", "Protozoa", "Chordata", "Arthropoda", "Mollusca",
+    "Mammalia", "Aves", "Reptilia", "Amphibia", "Actinopterygii", "Insecta", "Arachnida"];
+  const node = id => D.tree[id];
+  const nodeName = id => { const n = node(id); return n ? (n[3] || svTax(n[2])) : ""; };
+  function lineage(id) { const out = []; let n = node(id) ? id : null; const seen = new Set(); while (n != null && node(n) && !seen.has(n)) { seen.add(n); out.unshift(n); n = node(n)[0]; } return out; }
+  function kingdomOf(s) { const k = lineage(s.inat).find(n => node(n)[1] === "kingdom"); return k ? node(k)[2] : ""; }
+  const KINGDOM_COLOR = { Animalia: "var(--s1)", Plantae: "var(--s3)", Fungi: "var(--s2)" };
+  const taxOpen = new Map();
+  let taxQuery = "";
+
   function renderTaxonomy(pass) {
-    const c = counts(pass), all = counts(scoped()), fresh = newestSpecies();
-    const taxa = D.species.filter(s => isTaxon(s) && all.get(s.i));
-    const tree = {};
+    const c = counts(pass), all = counts(scoped()), oc = counts(scopedObs()), fresh = newestSpecies();
+    const q = taxQuery.trim().toLowerCase();
+    const taxa = D.species.filter(s => isTaxon(s) && (all.get(s.i) || oc.get(s.i)) &&
+      (!q || (s.sv || "").toLowerCase().includes(q) || s.sci.toLowerCase().includes(q) || lineage(s.inat).some(n => nodeName(n).toLowerCase().includes(q) || node(n)[2].toLowerCase().includes(q))));
+    // artkortet hamnar under närmaste förfader som är en rubriknivå
+    const kids = new Map(), cardsAt = new Map(), loose = [];
+    const isHead = n => node(n) && !HIDDEN_RANKS.has(node(n)[1]);
     taxa.forEach(s => {
-      const cl = s.class || "Övrigt", or = s.order || "", fa = s.family || "";
-      ((tree[cl] ??= {})[or] ??= {})[fa] ??= [];
-      tree[cl][or][fa].push(s);
+      // arter hamnar under närmaste rubriknivå ovanför; taxa bestämda till t.ex. ordning hamnar i sin egen ordning
+      let n = node(s.inat) ? (isHead(s.inat) ? s.inat : node(s.inat)[0]) : null;
+      while (n != null && node(n) && !isHead(n)) n = node(n)[0];
+      if (n == null || !node(n)) { loose.push(s); return; }
+      (cardsAt.get(n) || cardsAt.set(n, []).get(n)).push(s);
+      let ch = n, p = node(n)[0];
+      while (p != null && node(p)) { const k = kids.get(p) || kids.set(p, new Set()).get(p); k.add(ch); ch = p; p = node(p)[0]; }
+      if (!kids.has("root")) kids.set("root", new Set());
+      kids.get("root").add(lineage(n)[0]);
     });
-    const classes = Object.keys(tree).sort((a, b) => (CLASS_ORDER.indexOf(a) + 99 * (CLASS_ORDER.indexOf(a) < 0)) - (CLASS_ORDER.indexOf(b) + 99 * (CLASS_ORDER.indexOf(b) < 0)));
+    const detAt = new Map();
+    const hasDet = n => { if (detAt.has(n)) return detAt.get(n); const v = (cardsAt.get(n) || []).some(s => all.get(s.i)) || [...(kids.get(n) || [])].some(hasDet); detAt.set(n, v); return v; };
+    const size = new Map();
+    const countSp = n => { if (size.has(n)) return size.get(n); let t = (cardsAt.get(n) || []).length; (kids.get(n) || []).forEach(k => t += countSp(k)); size.set(n, t); return t; };
+    // hoppa över mellannivåer med bara en gren och inga egna kort
+    // mellannivåer visas bara när de delar upp något: minst två grenar/kort och minst ett syskon
+    const shown = n => { if (MAIN_RANKS.has(node(n)[1])) return true;
+      const own = (cardsAt.get(n) || []).length + (kids.get(n) || new Set()).size;
+      const sib = (kids.get(node(n)[0]) || new Set()).size;
+      return own >= 2 && sib >= 2; };
+    // synliga barnnoder, och kort från överhoppade nivåer som flyttas upp
+    const expand = n => { const nodes = [], cards = []; (kids.get(n) || []).forEach(k => { if (shown(k)) nodes.push(k);
+      else { const e = expand(k); nodes.push(...e.nodes); cards.push(...(cardsAt.get(k) || []), ...e.cards); } }); return { nodes, cards }; };
+    const sortN = (a, b) => { const ia = TOP_ORDER.indexOf(node(a)[2]), ib = TOP_ORDER.indexOf(node(b)[2]);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || node(a)[2].localeCompare(node(b)[2]); };
     const card = s => {
-      const n = c.get(s.i) || 0, med = median(s.probs);
+      const n = c.get(s.i) || 0, no = oc.get(s.i) || 0, med = median(s.probs);
       const img = s.image ? `style="background-image:url('${esc(s.image.src)}')"` : "";
       const nw = fresh.get(s.i);
       const tag = nw ? `<span class="newtag">Ny${D.sites.length > 1 && state.site === "all" ? ` för ${esc(D.sites[nw.site].name)}` : ""} ${nightLabel(nw.night).replace(/ \d{4}$/, "")}</span>` : "";
-      return `<button class="card${n ? "" : " dim"}${nw ? " is-new" : ""}" data-sp="${s.i}" aria-label="${esc(s.sv || s.sci)}, ${n} detektioner${nw ? ", ny art för lokalen" : ""}">
+      const det = all.get(s.i) ? `<span><span class="cnt">${fmt(n)}</span> det.</span>` : "";
+      const ob = no ? `<span><span class="cnt">${fmt(no)}</span> obs.</span>` : "";
+      const badge = s.doubt ? `<span class="badge">trolig felbestämning</span>` : all.get(s.i) && med < 0.5 ? `<span class="badge">osäker bestämning</span>` : "";
+      return `<button class="card${n || no ? "" : " dim"}${nw ? " is-new" : ""}" data-sp="${s.i}" aria-label="${esc(s.sv || s.sci)}">
         <div class="img" ${img} role="img" aria-label="">${tag}</div>
-        <div class="body"><div class="sv">${esc(s.sv || s.sci)}</div><div class="sci">${isSpecies(s) ? esc(s.sci) : "obestämd art"}</div>
-        <div class="meta"><span class="cnt">${fmt(n)}</span>${s.doubt ? `<span class="badge">trolig felbestämning</span>` : med < 0.5 ? `<span class="badge">osäker bestämning</span>` : `<span>median p ${med.toFixed(2)}</span>`}</div>
-        ${n ? "" : `<div class="sub" style="margin:.2rem 0 0;font-size:.75rem">${fmt(all.get(s.i))} under gränsen</div>`}</div></button>`;
+        <div class="body"><div class="sv">${esc(s.sv || s.sci)}</div><div class="sci">${isSpecies(s) ? esc(s.sci) : `${esc(s.sci)} <span style="font-style:normal">(${esc(RANK_SV[s.rank] || s.rank || "obestämd")})</span>`}</div>
+        <div class="meta">${det}${ob}${badge}</div>
+        <div class="srcs">${(s.sources || []).map(x => `<span>${esc(x)}</span>`).join("")}</div></div></button>`;
     };
-    $("#taxonomy").innerHTML = classes.map(cl => {
-      const orders = tree[cl];
-      return `<div class="class-block"><h3>${svTax(cl)} <span class="sci" style="font-weight:400;color:var(--muted)">${esc(cl)}</span></h3>` +
-        Object.keys(orders).sort().map(or => `<div class="order-block">${or ? `<h4>${svTax(or)} <span class="sci" style="font-weight:400;color:var(--muted)">${esc(or)}</span></h4>` : ""}` +
-          Object.keys(orders[or]).sort().map(fa => `<div class="family-block">${fa ? `<h5>${svTax(fa)} <span class="sci">${esc(fa)}</span></h5>` : ""}<div class="cards">` +
-            orders[or][fa].sort((a, b) => (c.get(b.i) || 0) - (c.get(a.i) || 0)).map(card).join("") + `</div></div>`).join("") + `</div>`).join("") + `</div>`;
-    }).join("");
+    let depth0 = 0;
+    const render = (n, depth) => {
+      const nd = node(n), total = countSp(n);
+      // standard: två översta nivåerna öppna, och vägen ner till detektorns arter
+      const open = q ? true : taxOpen.has(n) ? taxOpen.get(n) : (depth < 2 || hasDet(n));
+      const ex = expand(n);
+      const own = [...(cardsAt.get(n) || []), ...ex.cards].sort((a, b) => a.sci.localeCompare(b.sci));
+      const ch = ex.nodes.sort(sortN);
+      return `<details class="tx d${Math.min(depth, 6)}" data-n="${n}"${open ? " open" : ""}><summary><span class="rk">${esc(RANK_SV[nd[1]] || nd[1])}</span> <b>${esc(nd[3] || svTax(nd[2]))}</b>${nd[3] || TAXA_SV[nd[2]] ? ` <i>${esc(nd[2])}</i>` : ""} <span class="n">${total} ${total === 1 ? "taxon" : "taxa"}</span></summary>
+        <div class="tx-body">${ch.map(k => render(k, depth + 1)).join("")}${own.length ? `<div class="cards">${own.map(card).join("")}</div>` : ""}</div></details>`;
+    };
+    const roots = [...(kids.get("root") || [])].sort(sortN);
+    $("#taxonomy").innerHTML = (roots.map(r => render(r, depth0)).join("") +
+      (loose.length ? `<details class="tx" open><summary><b>Utan plats i trädet</b></summary><div class="tx-body"><div class="cards">${loose.map(card).join("")}</div></div></details>` : "")) ||
+      `<p class="sub">${q ? "Inga taxa matchar sökningen." : "Inga fynd med valda filter."}</p>`;
     $("#taxonomy").querySelectorAll(".card").forEach(b => b.addEventListener("click", () => openSpecies(+b.dataset.sp)));
+    $("#taxonomy").querySelectorAll("details.tx[data-n]").forEach(d => d.addEventListener("toggle", () => { if (!q) taxOpen.set(d.dataset.n, d.open); }));
   }
+  const RANK_SV = { kingdom: "rike", phylum: "stam", subphylum: "understam", superclass: "överklass", class: "klass",
+    subclass: "underklass", infraclass: "infraklass", superorder: "överordning", order: "ordning", suborder: "underordning",
+    infraorder: "infraordning", parvorder: "parvordning", superfamily: "överfamilj", epifamily: "epifamilj", family: "familj",
+    subfamily: "underfamilj", supertribe: "övertribus", tribe: "tribus", subtribe: "undertribus", genus: "släkte",
+    subgenus: "undersläkte", species: "art", subspecies: "underart", complex: "artkomplex", section: "sektion",
+    variety: "varietet", hybrid: "hybrid", zoosection: "sektion", zoosubsection: "undersektion" };
 
   // ---------- artdialog ----------
+  const QUALITY = { r: "forskningsgrad", n: "behöver ID", c: "informell" };
+  const obsLink = o => o[13] === "i" ? `https://www.inaturalist.org/observations/${o[1]}` : `https://ebird.org/checklist/${o[1]}`;
+  const obsSrc = o => o[13] === "i" ? "iNaturalist" : o[13] === "l" ? "eBird (livslista)" : "eBird";
   function openSpecies(i) {
     const s = D.species[i], dets = scoped().filter(d => d[0] === i), pass = dets.filter(d => d[3] >= state.minProb);
+    const obs = scopedObs().filter(o => o[0] === i);
     const probs = dets.map(d => d[3]), sun = sunTimes();
     const echo = dets.filter(d => d[4] === "echolocation").length, social = dets.filter(d => d[4] === "social").length;
     const img = s.image ? `<img class="dlg-hero" src="${esc(s.image.src)}" alt="${esc(s.sv || s.sci)}"><p class="credit">Foto: ${esc(s.image.artist || "okänd")}, <a href="${esc(s.image.page)}" target="_blank" rel="noopener">${esc(s.image.license || "se Commons")}</a></p>` : "";
-    const path = [s.class, s.order, s.family].filter(Boolean).map(t => `${svTax(t)} (<i>${esc(t)}</i>)`).join(" › ");
-    const facts = [
+    const lin = lineage(s.inat).filter(n => n !== s.inat && (!HIDDEN_RANKS.has(node(n)[1]) || node(n)[1] === "genus"));
+    const path = lin.length ? lin.map(n => `<span title="${esc(RANK_SV[node(n)[1]] || node(n)[1])}">${esc(nodeName(n))}${node(n)[3] || TAXA_SV[node(n)[2]] ? ` (<i>${esc(node(n)[2])}</i>)` : ""}</span>`).join(" › ")
+      : [s.class, s.order, s.family].filter(Boolean).map(t => `${svTax(t)} (<i>${esc(t)}</i>)`).join(" › ");
+    const facts = dets.length ? [
       [fmt(pass.length), `detektioner ≥ ${state.minProb.toFixed(2)}`],
       [fmt(dets.length), "detektioner totalt"],
-      [probs.length ? Math.max(...probs).toFixed(2) : "–", "högsta sannolikhet"],
-      [probs.length ? median(probs).toFixed(2) : "–", "median sannolikhet"],
-      [dets.length ? shortTime(dets[0][2]) : "–", "första"],
-      [dets.length ? shortTime(dets[dets.length - 1][2]) : "–", "sista"],
-    ];
-    if (s.group === "bat") facts.push([`${echo} / ${social}`, "ekolod / sociala läten"]);
+      [Math.max(...probs).toFixed(2), "högsta sannolikhet"],
+      [median(probs).toFixed(2), "median sannolikhet"],
+      [shortTime(dets[0][2]), "första"],
+      [shortTime(dets[dets.length - 1][2]), "sista"],
+    ] : [];
+    if (dets.length && s.group === "bat") facts.push([`${echo} / ${social}`, "ekolod / sociala läten"]);
+    if (obs.length) facts.push([fmt(obs.length), "fältobservationer"], [obs[0][2] || "–", "första observation"]);
     if (s.gbifSE != null) facts.push([fmt(s.gbifSE), "GBIF-fynd i Sverige"], [fmt(s.gbifNear25km ?? 0), "GBIF-fynd inom 25 km"]);
     const links = [
-      s.wiki && `<a href="${esc(s.wiki.url)}" target="_blank" rel="noopener">Wikipedia</a>`,
+      s.wiki && s.wiki.url && `<a href="${esc(s.wiki.url)}" target="_blank" rel="noopener">Wikipedia</a>`,
+      s.inat && `<a href="https://www.inaturalist.org/taxa/${s.inat}" target="_blank" rel="noopener">iNaturalist</a>`,
       s.gbifKey && `<a href="https://www.gbif.org/species/${s.gbifKey}" target="_blank" rel="noopener">GBIF</a>`,
       s.dyntaxaId && `<a href="https://artfakta.se/taxa/${s.dyntaxaId}" target="_blank" rel="noopener">Artfakta</a>`,
       isSpecies(s) && !s.doubt && `<a href="${AP_IMPORT}" target="_blank" rel="noopener">Rapportera i Artportalen</a>`,
     ].filter(Boolean).join("");
     const g = groupOf(s.group);
+    const wikiText = s.wiki ? String(s.wiki.extract).replace(/<[^>]+>/g, "") : "";
     $("#dlgBody").innerHTML = `${img}<div class="dlg-content">
       <h2 id="dlgTitle">${esc(s.sv || s.sci)}</h2>
-      <div class="sub">${[isSpecies(s) && `<i>${esc(s.sci)}</i>`, s.en && esc(s.en)].filter(Boolean).join(" · ")}${s.code ? ` · BTO-kod ${esc(s.code)}` : ""}</div>
+      <div class="sub">${[isSpecies(s) ? `<i>${esc(s.sci)}</i>` : `<i>${esc(s.sci)}</i> (${esc(RANK_SV[s.rank] || s.rank || "")})`, s.en && esc(s.en), s.code && `BTO-kod ${esc(s.code)}`].filter(Boolean).join(" · ")}</div>
       <div class="sub">${path}</div>
+      <div class="sub">Källor: ${(s.sources || []).map(esc).join(", ")}</div>
       ${[...NEW].filter(([, o]) => o.first.has(i)).map(([si, o]) => { const f = o.first.get(i), isNew = f.night > o.start;
-        return `<div class="sub">${isNew ? `<span class="newtag" style="position:static">Ny</span> ` : ""}Första fynd på ${esc(D.sites[si].name)}: natten ${nightLabel(f.night)}${isNew ? "" : " (lokalens första natt)"}</div>`; }).join("")}
+        return `<div class="sub">${isNew ? `<span class="newtag" style="position:static">Ny</span> ` : ""}Första detektion på ${esc(D.sites[si].name)}: natten ${nightLabel(f.night)}${isNew ? "" : " (lokalens första natt)"}</div>`; }).join("")}
+      ${s.inatName ? `<div class="sub">I iNaturalist: <i>${esc(s.inatName)}</i></div>` : ""}
       ${s.dyntaxaName && s.dyntaxaName !== s.sci ? `<div class="sub">I Dyntaxa: <i>${esc(s.dyntaxaName)}</i></div>` : ""}
       ${s.doubt ? `<p><span class="badge">trolig felbestämning</span> ${esc(s.doubt)} Arten tas inte med i Artportalen-exporten.</p>` : ""}
       ${s.note ? `<p>${esc(s.note)}</p>` : ""}
       ${s.source === "BirdNET" ? `<p>Artbestämd med <a href="https://birdnet.cornell.edu/" target="_blank" rel="noopener">BirdNET</a> i klipp som BTO:s klassificerare bara angav som fågel (obestämd art). Sannolikheten är BirdNETs och går inte att jämföra direkt med BTO:s.</p>` : ""}
       ${s.members ? `<p class="sub">BTO:s bestämning: ${s.members.map((m, k) => `${esc(m.sv || m.sci)} (<i>${esc(m.sci)}</i>) ${fmt(dets.filter(d => d[8] === k).length)}`).join(" · ")} detektioner</p>` : ""}
-      ${s.wiki ? `<p>${esc(s.wiki.extract)} <a href="${esc(s.wiki.url)}" target="_blank" rel="noopener">Läs mer</a></p>` : ""}
-      ${!s.doubt && median(probs) < 0.5 ? `<p><span class="badge">osäker bestämning</span> Medianen för klassificerarens sannolikhet är under 0,5 – verifiera i spektrogram innan fyndet rapporteras.</p>` : ""}
-      <div class="facts">${facts.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("")}</div>
-      <div class="chart"><h4><span class="sw" style="background:${g.color}"></span>Aktivitet (≥ ${state.minProb.toFixed(2)})</h4>${barChart(pass, g.color, sun, nightRange(scoped(), sun), "detektioner")}</div>
+      ${wikiText ? `<p>${esc(wikiText)} ${s.wiki.url ? `<a href="${esc(s.wiki.url)}" target="_blank" rel="noopener">Läs mer</a>` : ""}</p>` : ""}
+      ${dets.length && !s.doubt && median(probs) < 0.5 ? `<p><span class="badge">osäker bestämning</span> Medianen för klassificerarens sannolikhet är under 0,5 – verifiera i spektrogram innan fyndet rapporteras.</p>` : ""}
+      ${facts.length ? `<div class="facts">${facts.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("")}</div>` : ""}
+      ${dets.length ? `<div class="chart"><h4><span class="sw" style="background:${g.color}"></span>Aktivitet (≥ ${state.minProb.toFixed(2)})</h4>${barChart(pass, g.color, sun, nightRange(scoped(), sun), "detektioner")}</div>
       <h3>Sannolikhetsfördelning</h3>${heat(probs, true)}
       <h3>Detektioner (${fmt(dets.length)})</h3>
       <div class="det-list"><table><thead><tr><th>Tid</th><th class="num">p</th><th>Lätestyp</th>${s.members ? "<th>BTO</th>" : ""}<th>Fil</th></tr></thead><tbody>
         ${dets.slice(0, 500).map(d => `<tr${d[3] < state.minProb ? ' style="color:var(--muted)"' : ""}><td>${shortTime(d[2])}</td><td class="num">${d[3].toFixed(2)}</td><td>${d[4] === "echolocation" ? "ekolod" : d[4] === "social" ? "socialt" : esc(d[4])}</td>${s.members ? `<td>${esc(s.members[d[8]]?.sv || "")}</td>` : ""}<td>${esc(d[6])}</td></tr>`).join("")}
-      </tbody></table></div>${dets.length > 500 ? `<p class="sub">Visar de första 500.</p>` : ""}
+      </tbody></table></div>${dets.length > 500 ? `<p class="sub">Visar de första 500.</p>` : ""}` : ""}
+      ${obs.length ? `<h3>Fältobservationer (${fmt(obs.length)})</h3><div class="obs-list">${[...obs].reverse().map(o => `<a class="obs" href="${obsLink(o)}" target="_blank" rel="noopener">
+        ${o[9] ? `<img src="${esc(o[9].replace("/medium.", "/square."))}" alt="" loading="lazy">` : `<span class="noimg"></span>`}
+        <span><b>${esc(o[2] || "okänt datum")}${o[3] ? ` ${esc(o[3])}` : ""}</b><br>${esc(o[8] || "")}<br><span class="sub">${obsSrc(o)}${o[7] ? ` · ${QUALITY[o[7]] || ""}` : ""}${o[11] ? " · position oskarp" : ""}</span></span></a>`).join("")}</div>` : ""}
       <div class="links" style="margin-top:1rem">${links}</div></div>`;
     $("#dlg").showModal();
   }
@@ -505,6 +603,6 @@
   }
 
   function renderCredits() {
-    $("#credits").innerHTML = D.species.filter(s => s.image).map(s => `<li>${esc(s.sv || s.sci)}: ${esc(s.image.artist || "okänd")}, <a href="${esc(s.image.page)}" target="_blank" rel="noopener">${esc(s.image.license || "Commons")}</a></li>`).join("");
+    $("#credits").innerHTML = D.species.filter(s => s.image && !s.image.page.includes("inaturalist.org")).map(s => `<li>${esc(s.sv || s.sci)}: ${esc(s.image.artist || "okänd")}, <a href="${esc(s.image.page)}" target="_blank" rel="noopener">${esc(s.image.license || "Commons")}</a></li>`).join("");
   }
 })();
