@@ -83,6 +83,40 @@ DOUBTFUL = {
 }
 
 
+BIRDNET = os.path.join(ROOT, "data", "birdnet")
+BIRDNET_MIN = 0.5
+
+
+def apply_birdnet(rows):
+    """BTO:s ultraljudsklassificerare anger fåglar bara som "Aves sp.". Klippen har körts genom BirdNET
+    (data/birdnet/*.csv, semikolonseparerade: Fil;Tid;Start s;Slut s;Art;Vetenskapligt namn;Sannolikhet).
+    En Aves sp.-detektion ersätts av de arter BirdNET hittat i samma fil med sannolikhet ≥ BIRDNET_MIN
+    (högsta värdet per art); sannolikheten blir BirdNETs. Övriga lämnas som obestämda."""
+    best = {}
+    for f in sorted(glob.glob(os.path.join(BIRDNET, "*.csv"))):
+        with open(f, encoding="utf-8-sig", newline="") as fh:
+            for r in csv.DictReader(fh, delimiter=";"):
+                sci, p = r.get("Vetenskapligt namn", "").strip(), (r.get("Sannolikhet") or "").replace(",", ".")
+                if not sci or not p or float(p) < BIRDNET_MIN:
+                    continue
+                d = best.setdefault(r["Fil"], {})
+                d[sci] = max(d.get(sci, 0), float(p))
+    if not best:
+        return
+    out, n = [], 0
+    for r in rows:
+        hits = best.get(r["ORIGINAL FILE NAME"]) if r["SCIENTIFIC NAME"].strip() == "Aves sp." else None
+        if not hits:
+            out.append(r)
+            continue
+        for sci, p in sorted(hits.items(), key=lambda kv: -kv[1]):
+            out.append({**r, "SCIENTIFIC NAME": sci, "SPECIES": "", "ENGLISH NAME": "", "SPECIES GROUP": "bird",
+                        "PROBABILITY": f"{p:.2f}", "CALL TYPE": "", "_source": "BirdNET"})
+            n += 1
+    rows[:] = out
+    print(f"  BirdNET: {n} fågeldetektioner artbestämda (≥ {BIRDNET_MIN:g})")
+
+
 def merge_pairs(species, rows):
     """Slå ihop arter som inte går att skilja på ljudet till ett artpar (artportalen.PAIRS).
     Returnerar ny artlista, index per vetenskapligt namn (även för de sammanslagna arterna)
@@ -288,6 +322,7 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all
                 seen.add(k)
                 rows.append(r)
     print(f"{len(files)} filer, {len(rows)} detektioner" + (f" ({dups} dubbletter borttagna)" if dups else ""))
+    apply_birdnet(rows)
 
     # --- lokaler ---
     sites = json.load(open(SITES, encoding="utf-8")) if os.path.exists(SITES) else []
@@ -330,7 +365,8 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all
     for r in rows:
         sci = r["SCIENTIFIC NAME"].strip() or "Oidentifierad"
         sp_keys.setdefault(sci, {"group": r["SPECIES GROUP"].strip(), "code": r["SPECIES"].strip(),
-                                 "en": r["ENGLISH NAME"].strip()})
+                                 "en": r["ENGLISH NAME"].strip(),
+                                 **({"source": r["_source"]} if r.get("_source") else {})})
     for sci, meta in sp_keys.items():
         if sci != "Oidentifierad" and (sci not in cache or "wiki" not in cache[sci] or "dyntaxaId" not in cache[sci] or ("image" in cache[sci] and not cache[sci]["image"].get("license"))):
             print("  hämtar artinfo:", sci)

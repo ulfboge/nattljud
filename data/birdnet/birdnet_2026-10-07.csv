@@ -1,0 +1,63 @@
+﻿Fil;Tid;Start s;Slut s;Art;Vetenskapligt namn;Sannolikhet
+DEV_001_20260930_060119.wav;2026-09-30 06:01:19;;;(ingen fågel hittad);;
+DEV_001_20260930_071217.wav;2026-09-30 07:12:17;;;(ingen fågel hittad);;
+DEV_001_20260930_181919.wav;2026-09-30 18:19:19;0.0;3.0;Pilfink;Passer montanus;0,41
+DEV_001_20260930_181919.wav;2026-09-30 18:19:19;3.0;6.0;Pilfink;Passer montanus;0,23
+DEV_001_20260930_222110.wav;2026-09-30 22:21:10;;;(ingen fågel hittad);;
+DEV_001_20261001_072536.wav;2026-10-01 07:25:36;0.0;3.0;Blåmes;Cyanistes caeruleus;0,48
+DEV_001_20261001_072536.wav;2026-10-01 07:25:36;3.0;6.0;Blåmes;Cyanistes caeruleus;0,35
+DEV_001_20261001_195325.wav;2026-10-01 19:53:25;;;(ingen fågel hittad);;
+DEV_001_20261002_063443.wav;2026-10-02 06:34:43;0.0;3.0;Talgoxe;Parus major;0,51
+DEV_001_20261002_064934.wav;2026-10-02 06:49:34;;;(ingen fågel hittad);;
+DEV_001_20261002_071955.wav;2026-10-02 07:19:55;3.0;6.0;Pilfink;Passer montanus;0,97
+DEV_001_20261002_071955.wav;2026-10-02 07:19:55;0.0;3.0;Pilfink;Passer montanus;0,88
+DEV_001_20261002_072022.wav;2026-10-02 07:20:22;3.0;6.0;Pilfink;Passer montanus;0,68
+DEV_001_20261002_072022.wav;2026-10-02 07:20:22;3.0;6.0;Gråsparv;Passer domesticus;0,18
+DEV_001_20261002_072022.wav;2026-10-02 07:20:22;0.0;3.0;Gråsparv;Passer domesticus;0,12
+DEV_001_20261002_072115.wav;2026-10-02 07:21:15;0.0;3.0;Gråsparv;Passer domesticus;0,38
+DEV_001_20261002_072115.wav;2026-10-02 07:21:15;3.0;6.0;Gråsparv;Passer domesticus;0,23
+DEV_001_20261002_072115.wav;2026-10-02 07:21:15;0.0;3.0;Pilfink;Passer montanus;0,10
+DEV_001_20261002_072128.wav;2026-10-02 07:21:28;3.0;6.0;Gråsparv;Passer domesticus;0,39
+DEV_001_20261002_072128.wav;2026-10-02 07:21:28;3.0;6.0;Pilfink;Passer montanus;0,34
+DEV_001_20261002_072128.wav;2026-10-02 07:21:28;0.0;3.0;Pilfink;Passer montanus;0,27
+DEV_001_20261002_072128.wav;2026-10-02 07:21:28;0.0;3.0;Gråsparv;Passer domesticus;0,23
+DEV_002_20260927_201602.wav;2026-09-27 20:16:02;;;(ingen fågel hittad);;
+DEV_002_20260927_235028.wav;2026-09-27 23:50:28;;;(ingen fågel hittad);;
+DEV_002_20260928_043721.wav;2026-09-28 04:37:21;;;(ingen fågel hittad);;
+DEV_002_20260928_045024.wav;2026-09-28 04:50:24;;;(ingen fågel hittad);;
+DEV_002_20260928_181642.wav;2026-09-28 18:16:42;;;(ingen fågel hittad);;
+DEV_002_20260928_181956.wav;2026-09-28 18:19:56;0.0;3.0;Koltrast;Turdus merula;0,37
+DEV_002_20260928_182250.wav;2026-09-28 18:22:50;3.0;6.0;Koltrast;Turdus merula;0,25
+DEV_002_20260928_182250.wav;2026-09-28 18:22:50;3.0;6.0;Grå flugsnappare;Muscicapa striata;0,12
+DEV_002_20260928_182327.wav;2026-09-28 18:23:27;;;(ingen fågel hittad);;
+DEV_002_20260928_182334.wav;2026-09-28 18:23:34;0.0;3.0;Grå flugsnappare;Muscicapa striata;0,16
+DEV_002_20260928_182334.wav;2026-09-28 18:23:34;0.0;3.0;Mindre flugsnappare;Ficedula parva;0,11
+DEV_002_20260928_182352.wav;2026-09-28 18:23:52;0.0;3.0;Grå flugsnappare;Muscicapa striata;0,28
+DEV_002_20260928_182410.wav;2026-09-28 18:24:10;;;(ingen fågel hittad);;
+DEV_002_20260928_182558.wav;2026-09-28 18:25:58;;;(ingen fågel hittad);;
+DEV_002_20260928_182634.wav;2026-09-28 18:26:34;0.0;3.0;Koltrast;Turdus merula;0,14
+DEV_002_20260928_182647.wav;2026-09-28 18:26:47;;;(ingen fågel hittad);;
+DEV_002_20260928_182702.wav;2026-09-28 18:27:02;3.0;6.0;Rödvingetrast;Turdus iliacus;0,35
+DEV_002_20260928_182709.wav;2026-09-28 18:27:09;0.0;3.0;Grå flugsnappare;Muscicapa striata;0,22
+DEV_002_20260928_182709.wav;2026-09-28 18:27:09;0.0;3.0;Koltrast;Turdus merula;0,15
+DEV_002_20260928_182731.wav;2026-09-28 18:27:31;3.0;6.0;Koltrast;Turdus merula;0,13
+DEV_002_20260928_182738.wav;2026-09-28 18:27:38;3.0;6.0;Koltrast;Turdus merula;0,13
+DEV_002_20260928_182808.wav;2026-09-28 18:28:08;;;(ingen fågel hittad);;
+DEV_002_20260928_182854.wav;2026-09-28 18:28:54;0.0;3.0;Grå flugsnappare;Muscicapa striata;0,47
+DEV_002_20260928_182901.wav;2026-09-28 18:29:01;3.0;6.0;Rödvingetrast;Turdus iliacus;0,11
+DEV_002_20260928_182906.wav;2026-09-28 18:29:06;0.0;3.0;Skata;Pica pica;0,20
+DEV_002_20260928_182906.wav;2026-09-28 18:29:06;3.0;6.0;Trädkrypare;Certhia familiaris;0,19
+DEV_002_20260928_182906.wav;2026-09-28 18:29:06;3.0;6.0;Grå flugsnappare;Muscicapa striata;0,15
+DEV_002_20260928_182919.wav;2026-09-28 18:29:19;0.0;3.0;Grå flugsnappare;Muscicapa striata;0,20
+DEV_002_20260928_182926.wav;2026-09-28 18:29:26;;;(ingen fågel hittad);;
+DEV_002_20260928_182955.wav;2026-09-28 18:29:55;0.0;3.0;Trädkrypare;Certhia familiaris;0,14
+DEV_002_20260928_183600.wav;2026-09-28 18:36:00;0.0;3.0;Gråhäger;Ardea cinerea;0,15
+DEV_002_20260928_184554.wav;2026-09-28 18:45:54;;;(ingen fågel hittad);;
+DEV_002_20260928_184600.wav;2026-09-28 18:46:00;;;(ingen fågel hittad);;
+DEV_002_20260928_190019.wav;2026-09-28 19:00:19;3.0;6.0;Taltrast;Turdus philomelos;0,24
+DEV_002_20260928_192035.wav;2026-09-28 19:20:35;;;(ingen fågel hittad);;
+DEV_002_20260928_222117.wav;2026-09-28 22:21:17;;;(ingen fågel hittad);;
+DEV_002_20260928_232207.wav;2026-09-28 23:22:07;;;(ingen fågel hittad);;
+DEV_002_20260928_235800.wav;2026-09-28 23:58:00;;;(ingen fågel hittad);;
+DEV_002_20260929_000340.wav;2026-09-29 00:03:40;0.0;3.0;Rödvingetrast;Turdus iliacus;0,77
+DEV_002_20260929_015305.wav;2026-09-29 01:53:05;0.0;3.0;Rödvingetrast;Turdus iliacus;0,56

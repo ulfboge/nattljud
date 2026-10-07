@@ -419,5 +419,89 @@
     },
     "gbifSE": 3508,
     "gbifNear25km": 693
+  },
+  "Turdus iliacus": {
+    "sci": "Turdus iliacus",
+    "gbifKey": 2490781,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Turdidae",
+    "genus": "Turdus",
+    "dyntaxaId": 103001,
+    "sv": "Rödvingetrast",
+    "wiki": {
+      "lang": "sv",
+      "title": "Rödvingetrast",
+      "extract": "Rödvingetrast är en fågel inom familjen trastar. Den är vida spridd i norra Europa och norra Asien.",
+      "url": "https://sv.wikipedia.org/wiki/R%C3%B6dvingetrast"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Flickr_-_Rainbirder_-_Redwing_%28Turdus_iliacus%29_in_the_rain.jpg/500px-Flickr_-_Rainbirder_-_Redwing_%28Turdus_iliacus%29_in_the_rain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Flickr_-_Rainbirder_-_Redwing_(Turdus_iliacus)_in_the_rain.jpg",
+      "artist": "Steve Garvie from Dunfermline, Fife, Scotland",
+      "license": "CC BY-SA 2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Flickr_-_Rainbirder_-_Redwing_%28Turdus_iliacus%29_in_the_rain.jpg"
+    },
+    "gbifSE": 489642,
+    "gbifNear25km": 33726
+  },
+  "Parus major": {
+    "sci": "Parus major",
+    "gbifKey": 9705453,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Paridae",
+    "genus": "Parus",
+    "dyntaxaId": 103026,
+    "sv": "Talgoxe",
+    "wiki": {
+      "lang": "sv",
+      "title": "Talgoxe",
+      "extract": "Talgoxe är en fågel inom ordningen tättingar och familjen mesar. Den är vanlig i hela Europa, västra, centrala och norra Asien och delar av Nordafrika och förekommer i alla sorters skogslandskap. Den är vanligen stannfågel och de flesta talgoxar flyttar inte förutom under extremt hårda vintrar. Talgoxen är den mest utbredda arten i släktet Parus och dess taxonomi är komplicerad och omdiskuterad. Den är nära släkt med asiatiska arten grå talgoxe som tidigare behandlades som del av talgoxen. Denna urskiljs dock numera vanligen som en egen art.",
+      "url": "https://sv.wikipedia.org/wiki/Talgoxe"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/%D0%A1%D0%B8%D0%BD%D0%B8%D1%86%D0%B0_%28Parus_major%2C_fem%29%2C_%D0%91%D0%B8%D1%82%D1%86%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B5%D1%81.jpg/500px-%D0%A1%D0%B8%D0%BD%D0%B8%D1%86%D0%B0_%28Parus_major%2C_fem%29%2C_%D0%91%D0%B8%D1%82%D1%86%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B5%D1%81.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Синица_(Parus_major,_fem),_Битцевский_лес.jpg",
+      "artist": "Dion Art",
+      "license": "CC BY-SA 4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B8%D0%BD%D0%B8%D1%86%D0%B0_%28Parus_major%2C_fem%29%2C_%D0%91%D0%B8%D1%82%D1%86%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B5%D1%81.jpg"
+    },
+    "gbifSE": 2095195,
+    "gbifNear25km": 139904
+  },
+  "Passer montanus": {
+    "sci": "Passer montanus",
+    "gbifKey": 5231198,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Passeridae",
+    "genus": "Passer",
+    "dyntaxaId": 103039,
+    "sv": "Pilfink",
+    "wiki": {
+      "lang": "sv",
+      "title": "Pilfink",
+      "extract": "Pilfink är en fågel som tillhör familjen sparvfinkar, liksom gråsparven som den är ganska lik och ibland förväxlas med. Pilfinken har kastanjefärgad hjässa och nacke, och en svart fläck på den vita kinden. Könen är lika till utseendet medan juvenil dräkt är en blekare version av den adulta. Den häckar över merparten av Europa och Sibirien och har introducerats till flera områden i Asien, till Australien och Nordamerika. Flera underarter är erkända, men fågelns utseende varierar inte mycket över dess stora utbredningsområde.",
+      "url": "https://sv.wikipedia.org/wiki/Pilfink"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Thirsty_sparrow.jpg/500px-Thirsty_sparrow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Thirsty_sparrow.jpg",
+      "artist": "Siddharthranka1436",
+      "license": "CC BY-SA 4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Thirsty_sparrow.jpg"
+    },
+    "gbifSE": 686590,
+    "gbifNear25km": 63593
   }
 }

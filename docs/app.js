@@ -7,6 +7,7 @@
     Mammalia: "Däggdjur", Aves: "Fåglar", Insecta: "Insekter", Amphibia: "Groddjur",
     Chiroptera: "Fladdermöss", Orthoptera: "Hopprätvingar", Soricomorpha: "Insektsätare",
     Eulipotyphla: "Insektsätare", Rodentia: "Gnagare",
+    Passeriformes: "Tättingar", Turdidae: "Trastar", Paridae: "Mesar", Passeridae: "Sparvfinkar",
     Vespertilionidae: "Läderlappar", Tettigoniidae: "Vårtbitare", Soricidae: "Näbbmöss",
     Gryllidae: "Syrsor", Muridae: "Råttdjur",
   };
@@ -310,13 +311,14 @@
     const g = groupOf(s.group);
     $("#dlgBody").innerHTML = `${img}<div class="dlg-content">
       <h2 id="dlgTitle">${esc(s.sv || s.sci)}</h2>
-      <div class="sub">${isSpecies(s) ? `<i>${esc(s.sci)}</i> · ` : ""}${esc(s.en)}${s.code ? ` · BTO-kod ${esc(s.code)}` : ""}</div>
+      <div class="sub">${[isSpecies(s) && `<i>${esc(s.sci)}</i>`, s.en && esc(s.en)].filter(Boolean).join(" · ")}${s.code ? ` · BTO-kod ${esc(s.code)}` : ""}</div>
       <div class="sub">${path}</div>
       ${[...NEW].filter(([, o]) => o.first.has(i)).map(([si, o]) => { const f = o.first.get(i), isNew = f.night > o.start;
         return `<div class="sub">${isNew ? `<span class="newtag" style="position:static">Ny</span> ` : ""}Första fynd på ${esc(D.sites[si].name)}: natten ${nightLabel(f.night)}${isNew ? "" : " (lokalens första natt)"}</div>`; }).join("")}
       ${s.dyntaxaName && s.dyntaxaName !== s.sci ? `<div class="sub">I Dyntaxa: <i>${esc(s.dyntaxaName)}</i></div>` : ""}
       ${s.doubt ? `<p><span class="badge">trolig felbestämning</span> ${esc(s.doubt)} Arten tas inte med i Artportalen-exporten.</p>` : ""}
       ${s.note ? `<p>${esc(s.note)}</p>` : ""}
+      ${s.source === "BirdNET" ? `<p>Artbestämd med <a href="https://birdnet.cornell.edu/" target="_blank" rel="noopener">BirdNET</a> i klipp som BTO:s klassificerare bara angav som fågel (obestämd art). Sannolikheten är BirdNETs och går inte att jämföra direkt med BTO:s.</p>` : ""}
       ${s.members ? `<p class="sub">BTO:s bestämning: ${s.members.map((m, k) => `${esc(m.sv || m.sci)} (<i>${esc(m.sci)}</i>) ${fmt(dets.filter(d => d[8] === k).length)}`).join(" · ")} detektioner</p>` : ""}
       ${s.wiki ? `<p>${esc(s.wiki.extract)} <a href="${esc(s.wiki.url)}" target="_blank" rel="noopener">Läs mer</a></p>` : ""}
       ${!s.doubt && median(probs) < 0.5 ? `<p><span class="badge">osäker bestämning</span> Medianen för klassificerarens sannolikhet är under 0,5 – verifiera i spektrogram innan fyndet rapporteras.</p>` : ""}
