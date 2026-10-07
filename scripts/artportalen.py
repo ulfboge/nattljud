@@ -78,6 +78,7 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
         print("  ! openpyxl saknas – kör: pip install openpyxl")
         return None
 
+    species, rows = _merge_pairs(species, rows)
     groups = {}
     for d in rows:  # d = [spIdx, siteIdx, time, prob, callType, night, file]
         groups.setdefault((d[1], d[5], d[0]), []).append(d)
@@ -109,6 +110,8 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
             stat["Att tänka på"] = (stat["Att tänka på"] + "; " if stat["Att tänka på"] else "") + \
                 "BTO varnar: alla näbbmusarter ingår inte i klassificeraren"
         base_id = f"nattljud:{site['id']}:{night}:{sp['sci'].replace(' ', '_')}"
+        if sp.get("pairNote"):
+            stat["Att tänka på"] = (stat["Att tänka på"] + "; " if stat["Att tänka på"] else "") + sp["pairNote"]
         if base_id in prev_ids:
             stat["Att tänka på"] = (stat["Att tänka på"] + "; " if stat["Att tänka på"] else "") + \
                 "Arten har redan rapporterats denna natt i en tidigare export – detta är bara nya inspelningar"
@@ -204,6 +207,35 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
     wb.save(path)
     _write_tsv(path[:-5], per_sheet, granska)
     return path, sum(len(v) for v in per_sheet.values()), len(granska), ids
+
+
+# Arter som inte går att skilja på ljudet rapporteras som artpar (Artportalens valideringsregel för
+# fladdermöss: "Om individen inte går att artbestämma, rapportera den som mys/bra"). Namn enligt Dyntaxa.
+PAIRS = {
+    "Myotis mystacinus": "pair_mysbra", "Myotis brandtii": "pair_mysbra",
+}
+PAIR_TAXA = {
+    "pair_mysbra": {"sci": "Myotis mystacinus/brandtii", "sv": "mustaschfladdermus/tajgafladdermus",
+                    "dyntaxaId": 232474,
+                    "pairNote": "Mustasch- och tajgafladdermus skiljs inte på ljudet – rapporteras som artpar"},
+}
+
+
+def _merge_pairs(species, rows):
+    """Byt mustasch- och tajgafladdermus mot artparet; registreringar samma natt slås ihop till ett fynd."""
+    species = list(species)
+    new_idx, remap = {}, {}
+    for i, sp in enumerate(species):
+        key = PAIRS.get(sp.get("sci"))
+        if not key:
+            continue
+        if key not in new_idx:
+            species.append({**sp, **PAIR_TAXA[key], "rank": "species"})
+            new_idx[key] = len(species) - 1
+        remap[i] = new_idx[key]
+    if not remap:
+        return species, rows
+    return species, [[remap.get(d[0], d[0])] + list(d[1:]) for d in rows]
 
 
 def _unique_id(base, prev_ids):
