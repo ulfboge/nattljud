@@ -132,7 +132,7 @@
     D.sites.forEach((_, i) => out.set(i, { nights: new Set(), first: new Map() }));
     D.detections.forEach(d => {
       const o = out.get(d[1]); o.nights.add(d[5]);
-      if (d[3] < state.minProb || !isSpecies(D.species[d[0]])) return;
+      if (d[3] < state.minProb || !isSpecies(D.species[d[0]]) || D.species[d[0]].doubt) return;
       const f = o.first.get(d[0]);
       if (!f || d[5] < f.night) o.first.set(d[0], { night: d[5], n: 1, max: d[3] });
       else if (d[5] === f.night) { f.n++; f.max = Math.max(f.max, d[3]); }
@@ -271,7 +271,7 @@
       return `<button class="card${n ? "" : " dim"}${nw ? " is-new" : ""}" data-sp="${s.i}" aria-label="${esc(s.sv || s.sci)}, ${n} detektioner${nw ? ", ny art för lokalen" : ""}">
         <div class="img" ${img} role="img" aria-label="">${tag}</div>
         <div class="body"><div class="sv">${esc(s.sv || s.sci)}</div><div class="sci">${isSpecies(s) ? esc(s.sci) : "obestämd art"}</div>
-        <div class="meta"><span class="cnt">${fmt(n)}</span>${med < 0.5 ? `<span class="badge">osäker bestämning</span>` : `<span>median p ${med.toFixed(2)}</span>`}</div>
+        <div class="meta"><span class="cnt">${fmt(n)}</span>${s.doubt ? `<span class="badge">trolig felbestämning</span>` : med < 0.5 ? `<span class="badge">osäker bestämning</span>` : `<span>median p ${med.toFixed(2)}</span>`}</div>
         ${n ? "" : `<div class="sub" style="margin:.2rem 0 0;font-size:.75rem">${fmt(all.get(s.i))} under gränsen</div>`}</div></button>`;
     };
     $("#taxonomy").innerHTML = classes.map(cl => {
@@ -305,7 +305,7 @@
       s.wiki && `<a href="${esc(s.wiki.url)}" target="_blank" rel="noopener">Wikipedia</a>`,
       s.gbifKey && `<a href="https://www.gbif.org/species/${s.gbifKey}" target="_blank" rel="noopener">GBIF</a>`,
       s.dyntaxaId && `<a href="https://artfakta.se/taxa/${s.dyntaxaId}" target="_blank" rel="noopener">Artfakta</a>`,
-      isSpecies(s) && `<a href="${AP_IMPORT}" target="_blank" rel="noopener">Rapportera i Artportalen</a>`,
+      isSpecies(s) && !s.doubt && `<a href="${AP_IMPORT}" target="_blank" rel="noopener">Rapportera i Artportalen</a>`,
     ].filter(Boolean).join("");
     const g = groupOf(s.group);
     $("#dlgBody").innerHTML = `${img}<div class="dlg-content">
@@ -315,14 +315,17 @@
       ${[...NEW].filter(([, o]) => o.first.has(i)).map(([si, o]) => { const f = o.first.get(i), isNew = f.night > o.start;
         return `<div class="sub">${isNew ? `<span class="newtag" style="position:static">Ny</span> ` : ""}Första fynd på ${esc(D.sites[si].name)}: natten ${nightLabel(f.night)}${isNew ? "" : " (lokalens första natt)"}</div>`; }).join("")}
       ${s.dyntaxaName && s.dyntaxaName !== s.sci ? `<div class="sub">I Dyntaxa: <i>${esc(s.dyntaxaName)}</i></div>` : ""}
+      ${s.doubt ? `<p><span class="badge">trolig felbestämning</span> ${esc(s.doubt)} Arten tas inte med i Artportalen-exporten.</p>` : ""}
+      ${s.note ? `<p>${esc(s.note)}</p>` : ""}
+      ${s.members ? `<p class="sub">BTO:s bestämning: ${s.members.map((m, k) => `${esc(m.sv || m.sci)} (<i>${esc(m.sci)}</i>) ${fmt(dets.filter(d => d[8] === k).length)}`).join(" · ")} detektioner</p>` : ""}
       ${s.wiki ? `<p>${esc(s.wiki.extract)} <a href="${esc(s.wiki.url)}" target="_blank" rel="noopener">Läs mer</a></p>` : ""}
-      ${median(probs) < 0.5 ? `<p><span class="badge">osäker bestämning</span> Medianen för klassificerarens sannolikhet är under 0,5 – verifiera i spektrogram innan fyndet rapporteras.</p>` : ""}
+      ${!s.doubt && median(probs) < 0.5 ? `<p><span class="badge">osäker bestämning</span> Medianen för klassificerarens sannolikhet är under 0,5 – verifiera i spektrogram innan fyndet rapporteras.</p>` : ""}
       <div class="facts">${facts.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("")}</div>
       <div class="chart"><h4><span class="sw" style="background:${g.color}"></span>Aktivitet (≥ ${state.minProb.toFixed(2)})</h4>${barChart(pass, g.color, sun, nightRange(scoped(), sun), "detektioner")}</div>
       <h3>Sannolikhetsfördelning</h3>${heat(probs, true)}
       <h3>Detektioner (${fmt(dets.length)})</h3>
-      <div class="det-list"><table><thead><tr><th>Tid</th><th class="num">p</th><th>Lätestyp</th><th>Fil</th></tr></thead><tbody>
-        ${dets.slice(0, 500).map(d => `<tr${d[3] < state.minProb ? ' style="color:var(--muted)"' : ""}><td>${shortTime(d[2])}</td><td class="num">${d[3].toFixed(2)}</td><td>${d[4] === "echolocation" ? "ekolod" : d[4] === "social" ? "socialt" : esc(d[4])}</td><td>${esc(d[6])}</td></tr>`).join("")}
+      <div class="det-list"><table><thead><tr><th>Tid</th><th class="num">p</th><th>Lätestyp</th>${s.members ? "<th>BTO</th>" : ""}<th>Fil</th></tr></thead><tbody>
+        ${dets.slice(0, 500).map(d => `<tr${d[3] < state.minProb ? ' style="color:var(--muted)"' : ""}><td>${shortTime(d[2])}</td><td class="num">${d[3].toFixed(2)}</td><td>${d[4] === "echolocation" ? "ekolod" : d[4] === "social" ? "socialt" : esc(d[4])}</td>${s.members ? `<td>${esc(s.members[d[8]]?.sv || "")}</td>` : ""}<td>${esc(d[6])}</td></tr>`).join("")}
       </tbody></table></div>${dets.length > 500 ? `<p class="sub">Visar de första 500.</p>` : ""}
       <div class="links" style="margin-top:1rem">${links}</div></div>`;
     $("#dlg").showModal();

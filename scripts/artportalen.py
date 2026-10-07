@@ -132,7 +132,7 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
                             next((r.get("artportalen_metod_fladdermoss") for r in used if r.get("artportalen_metod_fladdermoss")), None)
                             or "Autobox")
         rec.update({
-            "Artnamn": sp.get("sv") or sp["sci"],
+            "Artnamn": sp.get("apName") or sp.get("sv") or sp["sci"],
             "Lokalnamn": site["name"],
             "Ost": e, "Nord": n,
             "Noggrannhet": _accuracy(site.get("accuracy_m", 50)),
@@ -215,8 +215,12 @@ PAIRS = {
     "Myotis mystacinus": "pair_mysbra", "Myotis brandtii": "pair_mysbra",
 }
 PAIR_TAXA = {
-    "pair_mysbra": {"sci": "Myotis mystacinus/brandtii", "sv": "mustaschfladdermus/tajgafladdermus",
-                    "dyntaxaId": 232474,
+    "pair_mysbra": {"sci": "Myotis mystacinus/brandtii", "sv": "Mustasch-/tajgafladdermus",
+                    "apName": "mustaschfladdermus/tajgafladdermus", "dyntaxaId": 232474,
+                    "en": "Whiskered/Brandt's Bat",
+                    "note": "Mustaschfladdermus och tajgafladdermus går inte att skilja åt på ekolodsljud. "
+                            "BTO:s klassificerare anger ändå den ena eller andra arten – här visas de "
+                            "som artpar, så som de ska rapporteras till Artportalen.",
                     "pairNote": "Mustasch- och tajgafladdermus skiljs inte på ljudet – rapporteras som artpar"},
 }
 

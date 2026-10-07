@@ -9,7 +9,8 @@ Bygger webbsidans data från BTO Acoustic Pipeline-exporter.
                                               # resultatfiler som inte exporterats tidigare
   python scripts/build.py --artportalen --min-prob 0.9
   python scripts/build.py --artportalen --alla  # alla filer, oavsett tidigare export (loggas inte)
-  python scripts/build.py --artportalen --utan "Myotis bechsteinii"  # utelämna arter (kommaseparerat)
+  python scripts/build.py --artportalen --utan "Art1,Art2"  # utelämna arter (kommaseparerat);
+                                              # arter i DOUBTFUL utelämnas alltid
   python scripts/build.py --add-site "Hemma" "Hildingavägen 33, Djursholm" hemma
         # ny lokal från adress eller "lat,lon"; valfritt: mappnamn under results/ som hör dit
 
@@ -72,6 +73,51 @@ SV_NAMES = {
 GROUP_SV = {"bat": "Fladdermöss", "bush-cricket": "Vårtbitare",
             "bird": "Fåglar", "terrestrial mammal": "Övriga däggdjur",
             "": "Oidentifierat"}
+
+
+# Bestämningar som visas på webbsidan men märks som troligen felaktiga och aldrig går till Artportalen.
+DOUBTFUL = {
+    "Myotis bechsteinii": "Bechsteins fladdermus är i Sverige bara känd från Skåne, "
+                          "och klassificeraren förväxlar den lätt med andra Myotis-arter. Kontrollera i "
+                          "spektrogram innan fyndet används.",
+}
+
+
+def merge_pairs(species, rows):
+    """Slå ihop arter som inte går att skilja på ljudet till ett artpar (artportalen.PAIRS).
+    Returnerar ny artlista, index per vetenskapligt namn (även för de sammanslagna arterna)
+    och medlemsindex per sammanslagen art (sparas som nionde fält i detektionen)."""
+    n_by_sci = {}
+    for r in rows:
+        k = r["SCIENTIFIC NAME"].strip() or "Oidentifierad"
+        n_by_sci[k] = n_by_sci.get(k, 0) + 1
+    out, index, member_of, pair_pos = [], {}, {}, {}
+    for s in species:
+        key = artportalen.PAIRS.get(s["sci"])
+        if not key:
+            index[s["sci"]] = len(out)
+            out.append(s)
+            continue
+        if key not in pair_pos:
+            pair_pos[key] = len(out)
+            t = artportalen.PAIR_TAXA[key]
+            out.append({k: s.get(k) for k in ("kingdom", "phylum", "class", "order", "family", "genus",
+                                              "group", "groupSv", "image")}
+                       | {"sci": t["sci"], "sv": t["sv"], "apName": t["apName"], "en": t["en"],
+                          "rank": "species", "dyntaxaId": t["dyntaxaId"], "gbifKey": None,
+                          "note": t["note"], "pairNote": t["pairNote"], "code": "", "members": []})
+        pair = out[pair_pos[key]]
+        if not pair.get("image") and s.get("image"):
+            pair["image"] = s["image"]
+        member_of[s["sci"]] = len(pair["members"])
+        pair["members"].append({"sci": s["sci"], "sv": s.get("sv"), "code": s.get("code"),
+                                "n": n_by_sci.get(s["sci"], 0), "dyntaxaId": s.get("dyntaxaId")})
+        pair["code"] = "/".join(m["code"] for m in pair["members"] if m["code"])
+        index[s["sci"]] = pair_pos[key]
+    for s in out:
+        if s.get("image") is None:
+            s.pop("image", None)
+    return out, index, member_of
 
 
 def get_json(url, tries=4):
@@ -298,13 +344,17 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all
         info = dict(cache.get(sci, {"sci": sci, "sv": "Oidentifierad signal"}))
         info.update(meta, groupSv=GROUP_SV.get(meta["group"], meta["group"]))
         species.append(info)
-    sp_index = {s["sci"]: i for i, s in enumerate(species)}
+    species, sp_index, member_of = merge_pairs(species, rows)
+    for s in species:
+        if s["sci"] in DOUBTFUL:
+            s["doubt"] = DOUBTFUL[s["sci"]]
 
     # --- detektioner (kompakt) ---
     det = []
     for r in rows:
         d, mth, y = r["ACTUAL DATE"].split("/")
         sd, sm, sy = r["SURVEY DATE"].split("/")
+        sci = r["SCIENTIFIC NAME"].strip() or "Oidentifierad"
         det.append([
             sp_index[r["SCIENTIFIC NAME"].strip() or "Oidentifierad"],
             r["_site"],
@@ -314,7 +364,7 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all
             f"{sy}-{sm}-{sd}",
             r["ORIGINAL FILE NAME"],
             r["_rec"],
-        ])
+        ] + ([member_of[sci]] if sci in member_of else []))
     det.sort(key=lambda x: x[2])
     classifier = sorted({r["CLASSIFIER NAME"] for r in rows})
     # Publik version av lokalerna: sätt "decimals" i data/sites.json (t.ex. 2 ≈ 1 km)
@@ -336,7 +386,7 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all
         json.dump(wcache, open(WEATHER, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
     out = {"generated": time.strftime("%Y-%m-%d %H:%M"), "classifier": classifier,
-           "fields": ["species", "site", "time", "prob", "callType", "night", "file", "recorder"],
+           "fields": ["species", "site", "time", "prob", "callType", "night", "file", "recorder", "btoMember"],
            "species": species, "sites": pub_sites, "recorders": recorders, "weather": wx, "detections": det}
     os.makedirs(OUT, exist_ok=True)
     with open(os.path.join(OUT, "data.json"), "w", encoding="utf-8") as fh:
@@ -359,6 +409,10 @@ def export_artportalen(det, species, sites, classifier, recorders, wavs_per_file
         return
     old_wavs = set() if export_all else set().union(*(wavs_per_file[f] for f in wavs_per_file if f in done))
     sel = [d for d in det if d[6] not in old_wavs]
+    doubt = {sp["sci"] for sp in species if sp.get("doubt")}
+    if doubt - set(exclude):
+        print(f"Artportalen: utelämnar tveksamma bestämningar: {', '.join(sorted(doubt - set(exclude)))}")
+    exclude = set(exclude) | doubt
     if exclude:
         skip = {i for i, sp in enumerate(species) if sp["sci"] in exclude}
         n0 = len(sel)
