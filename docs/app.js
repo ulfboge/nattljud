@@ -30,6 +30,8 @@
   const median = a => { if (!a.length) return NaN; const s = [...a].sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
 
   let D, map, dagMap, siteLayer, obsLayer, NEW = new Map();
+  // Ljudexempel (docs/data/clips.json från scripts/clips.py): art -> klipp, "fil|art" -> klipp
+  const CLIPS = new Map(), CLIP_BY_FILE = new Map();
   const state = { minProb: 0.5, night: "all", site: "all", tab: "natt" };
   const dag = { src: "all", year: "all", area: "all" };
 
@@ -122,7 +124,14 @@
   }
 
   // ---------- init ----------
-  fetch("data/data.json").then(r => r.json()).then(data => {
+  const clipsReady = fetch("data/clips.json").then(r => r.ok ? r.json() : { clips: [] }).catch(() => ({ clips: [] })).then(c => {
+    c.clips.forEach(([sci, night, file, start, dur, prob, time, path, slow]) => {
+      const k = { sci, night, file, start, dur, prob, time, path, slow };
+      (CLIPS.get(sci) || CLIPS.set(sci, []).get(sci)).push(k);
+      CLIP_BY_FILE.set(`${file}|${sci}`, k);
+    });
+  });
+  fetch("data/data.json").then(r => r.json()).then(data => clipsReady.then(() => data)).then(data => {
     D = data;
     D.species.forEach((s, i) => { s.i = i; s.probs = []; });
     D.detections.forEach(d => D.species[d[0]].probs.push(d[3]));
@@ -462,6 +471,14 @@
       s.dyntaxaId && `<a href="https://artfakta.se/taxa/${s.dyntaxaId}" target="_blank" rel="noopener">Artfakta</a>`,
       isSpecies(s) && !s.doubt && `<a href="${AP_IMPORT}" target="_blank" rel="noopener">Rapportera i Artportalen</a>`,
     ].filter(Boolean).join("");
+    const clips = (CLIPS.get(s.sci) || []).filter(c => state.night === "all" || c.night === state.night)
+      .sort((a, b) => a.night < b.night ? -1 : a.night > b.night ? 1 : b.prob - a.prob);
+    const clipKey = d => CLIP_BY_FILE.get(`${d[6]}|${s.sci}`);
+    const slowNote = clips.some(c => c.slow > 1) ? `<p class="sub">Ultraljudet är nedsaktat ${clips.find(c => c.slow > 1).slow} gånger så att det hörs – ${String(clips.find(c => c.slow > 1).dur).replace(".", ",")} s inspelning blir ${Math.round(clips.find(c => c.slow > 1).dur * clips.find(c => c.slow > 1).slow)} s ljud. Spektrogrammet visar originalets tid och frekvens.</p>` : "";
+    const clipHtml = clips.length ? `<h3>Ljudexempel (${clips.length})</h3>${slowNote}<div class="clips">${clips.map(c => `<figure class="clip" id="clip-${esc(c.path.replace(/[^\w-]/g, "_"))}">
+        <figcaption>${nightLabel(c.night)} · kl. ${esc(c.time.slice(11, 16))} · p ${c.prob.toFixed(2)}<br><span class="sub">${esc(c.file)}${c.start ? `, från ${String(c.start).replace(".", ",")} s` : ""}</span></figcaption>
+        <img src="${esc(c.path)}.png" alt="Spektrogram" loading="lazy" width="640" height="200">
+        <audio controls preload="none" src="${esc(c.path)}.mp3"></audio></figure>`).join("")}</div>` : "";
     const g = groupOf(s.group);
     const wikiText = s.wiki ? String(s.wiki.extract).replace(/<[^>]+>/g, "") : "";
     $("#dlgBody").innerHTML = `${img}<div class="dlg-content">
@@ -481,10 +498,11 @@
       ${dets.length && !s.doubt && median(probs) < 0.5 ? `<p><span class="badge">osäker bestämning</span> Medianen för klassificerarens sannolikhet är under 0,5 – verifiera i spektrogram innan fyndet rapporteras.</p>` : ""}
       ${facts.length ? `<div class="facts">${facts.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("")}</div>` : ""}
       ${dets.length ? `<div class="chart"><h4><span class="sw" style="background:${g.color}"></span>Aktivitet (≥ ${state.minProb.toFixed(2)})</h4>${barChart(pass, g.color, sun, nightRange(scoped(), sun), "detektioner")}</div>
+      ${clipHtml}
       <h3>Sannolikhetsfördelning</h3>${heat(probs, true)}
       <h3>Detektioner (${fmt(dets.length)})</h3>
-      <div class="det-list"><table><thead><tr><th>Tid</th><th class="num">p</th><th>Lätestyp</th>${s.members ? "<th>BTO</th>" : ""}<th>Fil</th></tr></thead><tbody>
-        ${dets.slice(0, 500).map(d => `<tr${d[3] < state.minProb ? ' style="color:var(--muted)"' : ""}><td>${shortTime(d[2])}</td><td class="num">${d[3].toFixed(2)}</td><td>${d[4] === "echolocation" ? "ekolod" : d[4] === "social" ? "socialt" : esc(d[4])}</td>${s.members ? `<td>${esc(s.members[d[8]]?.sv || "")}</td>` : ""}<td>${esc(d[6])}</td></tr>`).join("")}
+      <div class="det-list"><table><thead><tr><th><span class="vh">Ljud</span></th><th>Tid</th><th class="num">p</th><th>Lätestyp</th>${s.members ? "<th>BTO</th>" : ""}<th>Fil</th></tr></thead><tbody>
+        ${dets.slice(0, 500).map(d => `<tr${d[3] < state.minProb ? ' style="color:var(--muted)"' : ""}><td>${clipKey(d) ? `<button class="play" data-clip="clip-${esc(clipKey(d).path.replace(/[^\w-]/g, "_"))}" aria-label="Spela ljudexempel" title="Spela ljudexempel">▶</button>` : ""}</td><td>${shortTime(d[2])}</td><td class="num">${d[3].toFixed(2)}</td><td>${d[4] === "echolocation" ? "ekolod" : d[4] === "social" ? "socialt" : esc(d[4])}</td>${s.members ? `<td>${esc(s.members[d[8]]?.sv || "")}</td>` : ""}<td>${esc(d[6])}</td></tr>`).join("")}
       </tbody></table></div>${dets.length > 500 ? `<p class="sub">Visar de första 500.</p>` : ""}` : ""}
       ${obs.length ? `<h3>Dagobservationer (${fmt(obs.length)})</h3><div class="obs-list">${[...obs].reverse().map(o => `<a class="obs" href="${obsLink(o)}" target="_blank" rel="noopener">
         ${o[9] ? `<img src="${esc(o[9].replace("/medium.", "/square."))}" alt="" loading="lazy">` : `<span class="noimg"></span>`}
@@ -492,7 +510,17 @@
       <div class="links" style="margin-top:1rem">${links}</div></div>`;
     $("#dlg").showModal();
   }
-  $("#dlg").addEventListener("click", e => { if (e.target.id === "dlg") e.target.close(); });
+  $("#dlg").addEventListener("click", e => {
+    if (e.target.id === "dlg") e.target.close();
+    const b = e.target.closest("button.play");
+    if (b) {
+      const fig = document.getElementById(b.dataset.clip), au = fig && fig.querySelector("audio");
+      if (au) { document.querySelectorAll("#dlg audio").forEach(a => a !== au && a.pause()); fig.scrollIntoView({ behavior: "smooth", block: "center" }); au.play(); }
+    }
+  });
+  // bara ett klipp i taget
+  document.addEventListener("play", e => { if (e.target.tagName === "AUDIO") document.querySelectorAll("audio").forEach(a => a !== e.target && a.pause()); }, true);
+  $("#dlg").addEventListener("close", () => document.querySelectorAll("#dlg audio").forEach(a => a.pause()));
 
   // ---------- tabell ----------
   function heat(probs, big) {

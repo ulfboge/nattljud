@@ -31,6 +31,10 @@ Samma art får en etikett *Ny* på sitt kort i artlistan.
      (Wikipedia/Commons) cachas i `data/species_cache.json`. `--refresh` hämtar om allt.
    - Väder: timvärden från SMHI:s närmaste stationer per natt och lokal,
      cachas i `data/weather_cache.json`. `--no-weather` hoppar över.
+   - Ljudexempel: kör sedan `python scripts/clips.py` (kräver ffmpeg, numpy, scipy,
+     matplotlib). Upp till tre klipp per art och natt med spektrogram hamnar i
+     `docs/audio/` och `docs/data/clips.json`. Ultraljud saktas ner tio gånger.
+     `--antal 5` ger fler klipp, `--tid 150` stoppar efter 150 s (kör igen för att fortsätta).
 
 3. Lokaler finns i `data/sites.json`. Varje rad i CSV-filerna kopplas till en lokal i
    denna ordning:
