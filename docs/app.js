@@ -475,7 +475,7 @@
       ${s.dyntaxaName && s.dyntaxaName !== s.sci ? `<div class="sub">I Dyntaxa: <i>${esc(s.dyntaxaName)}</i></div>` : ""}
       ${s.doubt ? `<p><span class="badge">trolig felbestämning</span> ${esc(s.doubt)} Arten tas inte med i Artportalen-exporten.</p>` : ""}
       ${s.note ? `<p>${esc(s.note)}</p>` : ""}
-      ${s.source === "BirdNET" ? `<p>Artbestämd med <a href="https://birdnet.cornell.edu/" target="_blank" rel="noopener">BirdNET</a> i klipp som BTO:s klassificerare bara angav som fågel (obestämd art). Sannolikheten är BirdNETs och går inte att jämföra direkt med BTO:s.</p>` : ""}
+      ${s.source === "BirdNET" ? `<p>Artbestämd med <a href="https://birdnet.cornell.edu/" target="_blank" rel="noopener">BirdNET</a> – i klipp som BTO:s klassificerare bara angav som fågel (obestämd art), eller i nätter då detektorn spelade in i fågelläge. Sannolikheten är BirdNETs och går inte att jämföra direkt med BTO:s.</p>` : ""}
       ${s.members ? `<p class="sub">BTO:s bestämning: ${s.members.map((m, k) => `${esc(m.sv || m.sci)} (<i>${esc(m.sci)}</i>) ${fmt(dets.filter(d => d[8] === k).length)}`).join(" · ")} detektioner</p>` : ""}
       ${wikiText ? `<p>${esc(wikiText)} ${s.wiki.url ? `<a href="${esc(s.wiki.url)}" target="_blank" rel="noopener">Läs mer</a>` : ""}</p>` : ""}
       ${dets.length && !s.doubt && median(probs) < 0.5 ? `<p><span class="badge">osäker bestämning</span> Medianen för klassificerarens sannolikhet är under 0,5 – verifiera i spektrogram innan fyndet rapporteras.</p>` : ""}

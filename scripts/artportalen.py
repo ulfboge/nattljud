@@ -5,6 +5,7 @@ Skriver exports/artportalen_<datum>_<tid>.xlsx med:
   Fladdermöss         – exakt samma kolumner som mallens blad "Fladdermöss"
   Ryggradslösa djur   – mallens blad "Ryggradslösa djur" (vårtbitare m.fl.)
   Däggdjur (exkl.fladdermöss)
+  Fåglar              – mallens blad "Fåglar" (BirdNET-bestämda fåglar)
   Granska             – alla taxa per natt och lokal, även de som inte kom med
 
 En rad per art, natt och lokal där minst en registrering når minsta sannolikhet
@@ -40,6 +41,13 @@ SHEETS = {
     "Däggdjur (exkl.fladdermöss)": ["Artnamn", "Antal", "Ålder-Stadium", "Kön", "Aktivitet", "Metod"] + _PLACE_TIME +
                                    ["Ej återfunnen", "Dölj fyndet t.o.m.", "Andrahand", "Osäker artbestämning",
                                     "Ospontan", "Biotop", "Biotop-beskrivning"] + _TAIL,
+    "Fåglar": ["Artnamn", "Antal", "Ålder-Stadium", "Kön", "Aktivitet", "Metod", "Lokalnamn", "Huvudlokal",
+               "Ost", "Nord", "Noggrannhet", "Diffusion", "Startdatum", "Starttid", "Slutdatum", "Sluttid",
+               "Publik kommentar", "Intressant kommentar", "Privat kommentar", "Ej återfunnen", "Andrahand",
+               "Osäker artbestämning", "Ospontan", "Biotop", "Biotop-beskrivning", "Artbestämd av",
+               "Artbestämd av (fritext)", "Bestämningsår", "Beskrivning artbestämning", "Bekräftad av",
+               "Bekräftad av (fritext)", "Bekräftelseår", "Länk till BOLD/GenBank", "Dölj fyndet t.o.m."] +
+              ["Med-observatör"] * 10 + ["Externid", "Ej funnen"],
 }
 # BTO-grupp -> (blad, standardvärden). Värdena finns i mallens listor för respektive blad.
 GROUP_SHEET = {
@@ -47,7 +55,12 @@ GROUP_SHEET = {
     "bush-cricket": ("Ryggradslösa djur", {"Aktivitet": "Spel", "Metod": "Ultraljudsdetektor"}),
     # Mallen saknar ultraljudsdetektor som metod för övriga däggdjur – lämnas tom.
     "terrestrial mammal": ("Däggdjur (exkl.fladdermöss)", {"Aktivitet": "Lockläte, övriga läten"}),
+    # Fåglar: antal individer går inte att avgöra från ljudet – Antal lämnas tomt.
+    "bird": ("Fåglar", {"Aktivitet": "Lockläte, övriga läten", "Metod": "Passiv ljudinspelning"}),
 }
+# Nattflyttare: Aktivitet blir Sträckande när minst hälften av klippen är från natten (kl. 19–06).
+NIGHT_MIGRANTS = {"Turdus iliacus", "Turdus philomelos", "Turdus pilaris", "Fringilla montifringilla",
+                  "Anas crecca"}
 NOGGRANNHET = [1, 5, 10, 25, 50, 75, 100, 125, 150, 200, 250, 300, 400, 500, 750, 1000, 1500, 2000, 2500, 3000, 5000]
 CALL_SV = {"echolocation": "ekolod", "social": "sociala läten"}
 
@@ -126,6 +139,10 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
         used = [recorders[i] for i in sorted({d[7] for d in good if len(d) > 7 and d[7] >= 0})]
         rec_txt = f" Inspelare: {', '.join(r['name'] for r in used)}." if used else ""
         rec = dict(defaults)
+        bird = sheet == "Fåglar"
+        if bird and sp["sci"] in NIGHT_MIGRANTS and \
+                sum(not "06:00" <= t[11:16] < "19:00" for t in times) * 2 >= len(times):
+            rec["Aktivitet"] = "Sträckande"
         if sheet == "Fladdermöss":
             rec["Antal"] = len(good)
             rec["Metod"] = (site.get("metod_fladdermoss") or
@@ -138,10 +155,13 @@ def export(rows, species, sites, out_dir, min_prob=0.8, classifier="", recorders
             "Noggrannhet": _accuracy(site.get("accuracy_m", 50)),
             "Startdatum": times[0][:10], "Starttid": times[0][11:16],
             "Slutdatum": times[-1][:10], "Sluttid": times[-1][11:16],
-            "Publik kommentar": (f"Ultraljud, {_n(len(good))} {_span(times)}"
+            "Publik kommentar": (f"Ljudinspelning, hörd i {len(good)} klipp à 40 s {_span(times)}." if bird else
+                                 f"Ultraljud, {_n(len(good))} {_span(times)}"
                                  f"{' (' + ', '.join(CALL_SV.get(c, c) for c in calls) + ')' if calls else ''}."),
             "Privat kommentar": f"{_n(len(dets))} totalt denna natt, median sannolikhet {_p(med)}.{rec_txt}",
-            "Beskrivning artbestämning": (f"Automatisk artbestämning i BTO Acoustic Pipeline ({classifier}), "
+            "Beskrivning artbestämning": (f"Automatisk artbestämning med BirdNET 2.4 (passiv inspelare i fågelläge), "
+                                          f"högsta sannolikhet {_p(max(probs))}. Ej manuellt verifierad." if bird else
+                                          f"Automatisk artbestämning i BTO Acoustic Pipeline ({classifier}), "
                                           f"högsta sannolikhet {_p(max(probs))}. Ej manuellt verifierad."),
         })
         # Artportalen vägrar Externid när inget projekt är valt vid import (SiteConversionError_ExternalId_

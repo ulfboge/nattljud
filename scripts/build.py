@@ -84,11 +84,21 @@ DOUBTFUL = {
     "Myotis bechsteinii": "Bechsteins fladdermus är i Sverige bara känd från Skåne, "
                           "och klassificeraren förväxlar den lätt med andra Myotis-arter. Kontrollera i "
                           "spektrogram innan fyndet används.",
+    # BirdNET-bestämningar som är osannolika för platsen eller tiden (natt i oktober, Djursholm)
+    "Botaurus stellaris": "Rördrom i en villaträdgård i Djursholm är osannolikt, och BirdNET ger lätt "
+                          "falsklarm för rördrom på låga, dova ljud. Lyssna på klippet innan fyndet används.",
+    "Falco subbuteo": "Lärkfalken har normalt lämnat Sverige i oktober, och det är bara ett enstaka "
+                      "segment. Lyssna på klippet innan fyndet används.",
+    "Tringa erythropus": "Sen svartsnäppa på ett enstaka segment mitt i natten. Lyssna på klippet innan "
+                         "fyndet används.",
+    "Coccothraustes coccothraustes": "Stenknäck som lockar mitt i natten är osannolikt. Lyssna på klippen "
+                                     "innan fynden används.",
 }
 
 
 BIRDNET = os.path.join(ROOT, "data", "birdnet")
 BIRDNET_MIN = 0.5
+BIRDNET_CLASSIFIER = "BirdNET 2.4"
 
 
 def apply_birdnet(rows):
@@ -119,6 +129,51 @@ def apply_birdnet(rows):
             n += 1
     rows[:] = out
     print(f"  BirdNET: {n} fågeldetektioner artbestämda (≥ {BIRDNET_MIN:g})")
+
+
+def birdnet_only(rows, wavs_per_file):
+    """Inspelningar gjorda i detektorns fågelläge laddas inte upp till BTO utan körs bara genom BirdNET.
+    Klipp i data/birdnet/*.csv som saknas i BTO-resultaten blir egna detektioner: en per klipp och art
+    med högsta sannolikhet ≥ BIRDNET_MIN (tid = klippets start + segmentets början).
+    Position från data/birdnet/<samma namn>.json: {"lat": .., "lon": ..}.
+    Varje BirdNET-fil räknas som en resultatfil i Artportalen-loggen."""
+    from datetime import timedelta
+    in_bto = {r["ORIGINAL FILE NAME"] for r in rows}
+    added = []
+    for f in sorted(glob.glob(os.path.join(BIRDNET, "*.csv"))):
+        meta_f = f[:-4] + ".json"
+        meta = json.load(open(meta_f, encoding="utf-8")) if os.path.exists(meta_f) else {}
+        best, wavs = {}, set()
+        with open(f, encoding="utf-8-sig", newline="") as fh:
+            for r in csv.DictReader(fh, delimiter=";"):
+                if r["Fil"] in in_bto:
+                    continue
+                wavs.add(r["Fil"])
+                sci, p = r.get("Vetenskapligt namn", "").strip(), (r.get("Sannolikhet") or "").replace(",", ".")
+                if not sci or not p or float(p) < BIRDNET_MIN:
+                    continue
+                k = (r["Fil"], sci)
+                if float(p) > best.get(k, (0,))[0]:
+                    best[k] = (float(p), float(r["Start s"] or 0), r["Tid"])
+        if not wavs:
+            continue
+        if not meta.get("lat"):
+            print(f"  ! {os.path.basename(f)}: {len(wavs)} klipp utan BTO-resultat men position saknas ({os.path.basename(meta_f)})")
+            continue
+        wavs_per_file[os.path.basename(f)] = wavs
+        for (wav, sci), (p, start, tid) in sorted(best.items()):
+            t = datetime.strptime(tid, "%Y-%m-%d %H:%M:%S") + timedelta(seconds=start)
+            night = (t - timedelta(hours=12)).date()
+            added.append({"RECORDING FILE NAME": wav, "ORIGINAL FILE NAME": wav, "ORIGINAL FILE PART": "0",
+                          "LATITUDE": str(meta["lat"]), "LONGITUDE": str(meta["lon"]), "SPECIES": "",
+                          "SCIENTIFIC NAME": sci, "ENGLISH NAME": "", "SPECIES GROUP": "bird",
+                          "PROBABILITY": f"{p:.2f}", "CALL TYPE": "", "ACTUAL DATE": t.strftime("%d/%m/%Y"),
+                          "SURVEY DATE": night.strftime("%d/%m/%Y"), "TIME": t.strftime("%H:%M:%S"),
+                          "CLASSIFIER NAME": BIRDNET_CLASSIFIER, "BATCH NAME": "", "_folder": "",
+                          "_source": "BirdNET"})
+        print(f"  BirdNET (fågelläge) {os.path.basename(f)}: {len(wavs)} klipp, "
+              f"{sum(1 for k in best if k[0] in wavs)} detektioner ≥ {BIRDNET_MIN:g}")
+    rows.extend(added)
 
 
 def merge_pairs(species, rows):
@@ -446,6 +501,7 @@ def build(refresh=False, weather=True, export_ap=False, min_prob=0.8, export_all
                 rows.append(r)
     print(f"{len(files)} filer, {len(rows)} detektioner" + (f" ({dups} dubbletter borttagna)" if dups else ""))
     apply_birdnet(rows)
+    birdnet_only(rows, wavs_per_file)
 
     # --- lokaler ---
     sites = json.load(open(SITES, encoding="utf-8")) if os.path.exists(SITES) else []

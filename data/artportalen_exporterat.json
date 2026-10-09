@@ -116,6 +116,30 @@
     "nattljud:L1:2026-10-06:Plecotus_auritus",
     "nattljud:L1:2026-10-06:Eptesicus_nilssonii"
    ]
+  },
+  {
+   "datum": "2026-10-08 22:20",
+   "xlsx": "exports/artportalen_2026-10-08_2220.xlsx",
+   "min_prob": 0.8,
+   "natter": [
+    "2026-10-07"
+   ],
+   "filer": [
+    "birdnet_2026-10-08.csv"
+   ],
+   "externid": [
+    "nattljud:L1:2026-10-07:Turdus_iliacus",
+    "nattljud:L1:2026-10-07:Strix_aluco",
+    "nattljud:L1:2026-10-07:Anas_crecca",
+    "nattljud:L1:2026-10-07:Turdus_philomelos",
+    "nattljud:L1:2026-10-07:Bucephala_clangula",
+    "nattljud:L1:2026-10-07:Turdus_pilaris",
+    "nattljud:L1:2026-10-07:Corvus_monedula",
+    "nattljud:L1:2026-10-07:Turdus_merula",
+    "nattljud:L1:2026-10-07:Pica_pica",
+    "nattljud:L1:2026-10-07:Fringilla_montifringilla",
+    "nattljud:L1:2026-10-07:Sitta_europaea"
+   ]
   }
  ]
 }

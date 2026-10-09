@@ -503,5 +503,538 @@
     },
     "gbifSE": 686590,
     "gbifNear25km": 63593
+  },
+  "Strix aluco": {
+    "sci": "Strix aluco",
+    "gbifKey": 9282206,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Strigiformes",
+    "family": "Strigidae",
+    "genus": "Strix",
+    "dyntaxaId": 102974,
+    "sv": "Kattuggla",
+    "wiki": {
+      "lang": "sv",
+      "title": "Kattuggla",
+      "extract": "Kattuggla är en kompakt, medelstor uggla som tillhör familjen ugglor och är vanlig i skogar över stora delar av Eurasien. Dess undersida är blek med mörka strimmor och ovansidan är antingen brun eller grå, och flera av de elva erkända underarterna uppvisar båda dessa färgvarianter. Boet är vanligen placerat i en trädhåla och ägg och ungar försvaras våldsamt mot potentiella predatorer. Kattugglan är en stannfågel och mycket territoriell. Många årsungar svälter om de inte kan hitta ett ledigt revir när omvårdnaden från föräldrarna upphör.",
+      "url": "https://sv.wikipedia.org/wiki/Kattuggla"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Waldkauz-Strix_aluco.jpg/500px-Waldkauz-Strix_aluco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Waldkauz-Strix_aluco.jpg",
+      "artist": "Andreas Trepte",
+      "license": "CC BY-SA 2.5",
+      "page": "https://commons.wikimedia.org/wiki/File:Waldkauz-Strix_aluco.jpg"
+    },
+    "gbifSE": 303571,
+    "gbifNear25km": 22130
+  },
+  "Anas crecca": {
+    "sci": "Anas crecca",
+    "gbifKey": 8214667,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Anseriformes",
+    "family": "Anatidae",
+    "genus": "Anas",
+    "dyntaxaId": 102932,
+    "sv": "Kricka",
+    "wiki": {
+      "lang": "sv",
+      "title": "Kricka",
+      "extract": "Kricka är en liten andfågel som tillhör gruppen simänder. Den förekommer i Eurasien där den är vanlig och vida spridd. Den kan bilda stora flockar utanför häckningssäsongen. Under häckningen förekommer den främst i skyddade våtmarker och lever främst av frön och vattenlevande insekter. Amerikanska populationer urskildes tidigare som en egen art, amerikansk kricka, och vissa gör det fortfarande. Globalt anses krickans bestånd vara livskraftigt, men minskar i antal i Sverige, så pass att den sedan 2020 är upptagen på Artdatabankens rödlista som sårbar.",
+      "url": "https://sv.wikipedia.org/wiki/Kricka"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Teal_%28Anas_crecca%29_%287%29.jpg/500px-Teal_%28Anas_crecca%29_%287%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Teal_(Anas_crecca)_(7).jpg",
+      "artist": "Ken Billington",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Teal_%28Anas_crecca%29_%287%29.jpg"
+    },
+    "gbifSE": 878547,
+    "gbifNear25km": 48096
+  },
+  "Turdus philomelos": {
+    "sci": "Turdus philomelos",
+    "gbifKey": 7901064,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Turdidae",
+    "genus": "Turdus",
+    "dyntaxaId": 103000,
+    "sv": "Taltrast",
+    "wiki": {
+      "lang": "sv",
+      "title": "Taltrast",
+      "extract": "Taltrast är en fågel inom familjen trastar som förekommer i stora delar av Palearktis så långt österut som Bajkalsjön. Den delas upp i två till fyra underarter. Den har brun ovansida och svartprickig gulvit eller gulbrun undersida. Dess karakteristiska sång, med upprepade musikaliska fraser, har ofta omnämnts i poesi.",
+      "url": "https://sv.wikipedia.org/wiki/Taltrast"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/%D0%9F%D0%B5%D0%B2%D1%87%D0%B8%D0%B9_%D0%B4%D1%80%D0%BE%D0%B7%D0%B4_%D0%BD%D0%B0_%D0%BF%D0%B5%D0%BD%D1%8C%D0%BA%D0%B5_%28Turdus_philomelos%29%2C_%D0%91%D0%B8%D1%82%D1%86%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B5%D1%81.jpg/640px-%D0%9F%D0%B5%D0%B2%D1%87%D0%B8%D0%B9_%D0%B4%D1%80%D0%BE%D0%B7%D0%B4_%D0%BD%D0%B0_%D0%BF%D0%B5%D0%BD%D1%8C%D0%BA%D0%B5_%28Turdus_philomelos%29%2C_%D0%91%D0%B8%D1%82%D1%86%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B5%D1%81.jpg",
+      "file": "3840px-Певчий_дрозд_на_пеньке_(Turdus_philomelos),_Битцевский_лес.jpg",
+      "artist": "",
+      "license": "",
+      "page": "https://commons.wikimedia.org/wiki/File:3840px-%D0%9F%D0%B5%D0%B2%D1%87%D0%B8%D0%B9_%D0%B4%D1%80%D0%BE%D0%B7%D0%B4_%D0%BD%D0%B0_%D0%BF%D0%B5%D0%BD%D1%8C%D0%BA%D0%B5_%28Turdus_philomelos%29%2C_%D0%91%D0%B8%D1%82%D1%86%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B5%D1%81.jpg"
+    },
+    "gbifSE": 639058,
+    "gbifNear25km": 42731
+  },
+  "Botaurus stellaris": {
+    "sci": "Botaurus stellaris",
+    "gbifKey": 2480910,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Pelecaniformes",
+    "family": "Ardeidae",
+    "genus": "Botaurus",
+    "dyntaxaId": 100018,
+    "sv": "Rördrom",
+    "wiki": {
+      "lang": "en",
+      "title": "Eurasian bittern",
+      "extract": "The Eurasian bittern or great bittern is a wading bird in the bittern subfamily (Botaurinae) of the heron family Ardeidae. There are two subspecies, the northern race breeding in parts of Europe and across the Palearctic, as well as on the northern coast of Africa, while the southern race is endemic to parts of southern Africa. It is a secretive bird, seldom seen in the open as it prefers to skulk in reed beds and thick vegetation near water bodies. Its presence is apparent in the spring, when the booming call of the male during the breeding season can be heard. It feeds on fish, small mammals, fledgling birds, amphibians, crustaceans and insects.",
+      "url": "https://en.wikipedia.org/wiki/Eurasian_bittern"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Eurasian_Bittern_-_Torrile_-_Italy_4528_%2815409347121%29.jpg/500px-Eurasian_Bittern_-_Torrile_-_Italy_4528_%2815409347121%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Eurasian_Bittern_-_Torrile_-_Italy_4528_(15409347121).jpg",
+      "artist": "Francesco Veronesi from Italy",
+      "license": "CC BY-SA 2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurasian_Bittern_-_Torrile_-_Italy_4528_%2815409347121%29.jpg"
+    },
+    "gbifSE": 162582,
+    "gbifNear25km": 13085
+  },
+  "Tringa erythropus": {
+    "sci": "Tringa erythropus",
+    "gbifKey": 2481725,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Charadriiformes",
+    "family": "Scolopacidae",
+    "genus": "Tringa",
+    "dyntaxaId": 102957,
+    "sv": "Svartsnäppa",
+    "wiki": {
+      "lang": "sv",
+      "title": "Svartsnäppa",
+      "extract": "Svartsnäppa är en vadarfågel som tillhör familjen snäppor. Den häckar i nordligaste Europa och norra Asien. Vintertid flyttar den till Medelhavsområdet och södra Asien, ibland även tropiska Afrika. Under häckningstid har den helsvart dräkt, därav namnet. I vinterdräkt är den dock gråvit med röda ben. Globalt anses svartsnäppans bestånd vara livskraftigt. I Sverige minskar den dock i antal och kategoriseras som nära hotad.",
+      "url": "https://sv.wikipedia.org/wiki/Svartsn%C3%A4ppa"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Spotted_redshank_breeding_plumage.jpg/500px-Spotted_redshank_breeding_plumage.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Spotted_redshank_breeding_plumage.jpg",
+      "artist": "Michele Lamberti",
+      "license": "CC BY 2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Spotted_redshank_breeding_plumage.jpg"
+    },
+    "gbifSE": 244804,
+    "gbifNear25km": 12097
+  },
+  "Somateria mollissima": {
+    "sci": "Somateria mollissima",
+    "gbifKey": 2498352,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Anseriformes",
+    "family": "Anatidae",
+    "genus": "Somateria",
+    "dyntaxaId": 102935,
+    "sv": "Ejder",
+    "wiki": {
+      "lang": "sv",
+      "title": "Ejder",
+      "extract": "Ejder är en stor och tung dykand som mäter 60–70 cm. Den har en karaktäristisk huvudprofil med kilformad näbb som är fjäderklädd på sidorna. Den adulta hanen (guding) i praktdräkt är kontrastrik, med svart hjässa, övergump och buk, blek näbbspets, ljusgrön nackfläck och är i övrigt vit, med rödrosa anstrykning på bröstet. Den adulta honan (åda) är året runt brunvattrad, från gråbrun till rödbrun eller sandfärgad beroende på underart och den har vitkantad mörk vingspegel. Ejdern har en komplicerad ruggningsstrategi varför den i eklipsdräkt har mycket skiftande dräkt i svart, brunt och vitt.",
+      "url": "https://sv.wikipedia.org/wiki/Ejder"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Somateria_mollissima_male_female.jpg/500px-Somateria_mollissima_male_female.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Somateria_mollissima_male_female.jpg",
+      "artist": "Andreas Trepte",
+      "license": "CC BY-SA 2.5",
+      "page": "https://commons.wikimedia.org/wiki/File:Somateria_mollissima_male_female.jpg"
+    },
+    "gbifSE": 472270,
+    "gbifNear25km": 3548
+  },
+  "Bucephala clangula": {
+    "sci": "Bucephala clangula",
+    "gbifKey": 2498326,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Anseriformes",
+    "family": "Anatidae",
+    "genus": "Bucephala",
+    "dyntaxaId": 102937,
+    "sv": "Knipa",
+    "wiki": {
+      "lang": "sv",
+      "title": "Knipa",
+      "extract": "Knipa är en andfågel som förekommer cirkumpolärt i Skandinavien, norra Ryssland och norra Nordamerika. Fågeln häckar i trädhål vid floder, sjöar och våtmarker. I flykten hörs ett typiskt visslande ljud från vingarna. Knipan är talrik och beståndet anses vara livskraftigt.",
+      "url": "https://sv.wikipedia.org/wiki/Knipa"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Bucephala_clangula.jpg/500px-Bucephala_clangula.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Bucephala_clangula.jpg",
+      "artist": "Taken by Adrian Pingstone user:Arpingstone",
+      "license": "Public domain",
+      "page": "https://commons.wikimedia.org/wiki/File:Bucephala_clangula.jpg"
+    },
+    "gbifSE": 1193220,
+    "gbifNear25km": 82171
+  },
+  "Coccothraustes coccothraustes": {
+    "sci": "Coccothraustes coccothraustes",
+    "gbifKey": 2494329,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Fringillidae",
+    "genus": "Coccothraustes",
+    "dyntaxaId": 100037,
+    "sv": "Stenknäck",
+    "wiki": {
+      "lang": "sv",
+      "title": "Stenknäck",
+      "extract": "Stenknäck är en stor fink med mycket kraftig näbb. Den beskrevs av Carl von Linné 1758. Stenknäcken häckar i lövskogsområden i stora delar av Europa och tempererade delar av Asien. De nordliga populationerna är flyttfåglar. Arten har på senare tid ökat i antal och vidgat sitt utbredningsområde. IUCN kategoriserar den som livskraftig.",
+      "url": "https://sv.wikipedia.org/wiki/Stenkn%C3%A4ck"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Coccothraustes_coccothraustes_1_%28Marek_Szczepanek%29.jpg/500px-Coccothraustes_coccothraustes_1_%28Marek_Szczepanek%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Coccothraustes_coccothraustes_1_(Marek_Szczepanek).jpg",
+      "artist": "Marek Szczepanek",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Coccothraustes_coccothraustes_1_%28Marek_Szczepanek%29.jpg"
+    },
+    "gbifSE": 416930,
+    "gbifNear25km": 49068
+  },
+  "Turdus pilaris": {
+    "sci": "Turdus pilaris",
+    "gbifKey": 2490737,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Turdidae",
+    "genus": "Turdus",
+    "dyntaxaId": 102999,
+    "sv": "Björktrast",
+    "wiki": {
+      "lang": "en",
+      "title": "Fieldfare",
+      "extract": "The fieldfare is a member of the thrush family Turdidae. It breeds in woodland and scrub in northern Europe and across the Palearctic. It is strongly migratory, with many northern birds moving south during the winter. It is a very rare breeder in the British Isles, but winters in large numbers in the United Kingdom, Southern Europe, North Africa and the Middle East. It is omnivorous, eating a wide range of molluscs, insects and earthworms in the summer, and berries, grain and seeds in the winter.",
+      "url": "https://en.wikipedia.org/wiki/Fieldfare"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Turdus_pilaris_EM1B9020_%2834450664312%29.jpg/500px-Turdus_pilaris_EM1B9020_%2834450664312%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Turdus_pilaris_EM1B9020_(34450664312).jpg",
+      "artist": "Bengt Nyman from Vaxholm, Sweden",
+      "license": "CC BY 2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Turdus_pilaris_EM1B9020_%2834450664312%29.jpg"
+    },
+    "gbifSE": 872072,
+    "gbifNear25km": 96759
+  },
+  "Anthus trivialis": {
+    "sci": "Anthus trivialis",
+    "gbifKey": 2490246,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Motacillidae",
+    "genus": "Anthus",
+    "dyntaxaId": 266857,
+    "sv": "Trädpiplärka",
+    "wiki": {
+      "lang": "en",
+      "title": "Tree pipit",
+      "extract": "The tree pipit is a small passerine bird that breeds throughout most of Europe and the Palearctic as far east as the East Siberian Mountains. It is a long-distance migrant, migrating in winter to Africa and southern Asia. The scientific name is from Latin: anthus is the name of a small bird of grasslands, and the specific  trivialis means \"common\".",
+      "url": "https://en.wikipedia.org/wiki/Tree_pipit"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Tree_Pipit_%28Anthus_trivialis%29_%2839760400431%29_%28cropped%29.jpg/500px-Tree_Pipit_%28Anthus_trivialis%29_%2839760400431%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Tree_Pipit_(Anthus_trivialis)_(39760400431)_(cropped).jpg",
+      "artist": "Imran Shah from Islamabad, Pakistan",
+      "license": "CC BY-SA 2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Tree_Pipit_%28Anthus_trivialis%29_%2839760400431%29_%28cropped%29.jpg"
+    },
+    "gbifSE": 466722,
+    "gbifNear25km": 17522
+  },
+  "Corvus monedula": {
+    "sci": "Corvus monedula",
+    "gbifKey": 2482473,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Corvidae",
+    "genus": "Coloeus",
+    "dyntaxaId": 103033,
+    "dyntaxaName": "Coloeus monedula",
+    "sv": "Kaja",
+    "wiki": {
+      "lang": "sv",
+      "title": "Kaja",
+      "extract": "Kaja är en fågel i familjen kråkfåglar som förekommer över Europa, västra Asien och i Nordafrika. Den är huvudsakligen en stannfågel, men en del populationer i norr och öster flyttar söderut på vintern. Fyra underarter har identifierats. De utskiljer sig framförallt i fjäderdräktens färger på huvudet och nacken. Carl von Linné var den första som beskrev denna art formellt. Han gav den namnet Corvus monedula. DNA-analys har senare visat att denna art, tillsammans med klippkaja, är en tidig förgrening i släktet Corvus och tillräckligt olika de andra för att motivera att de klassificeras som ett eget släkte, Coloeus.",
+      "url": "https://sv.wikipedia.org/wiki/Kaja"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/%D0%93%D0%B0%D0%BB%D0%BA%D0%B0_%28Corvus_monedula%29%2C_%D0%A6%D0%B0%D1%80%D0%B8%D1%86%D1%8B%D0%BD%D0%BE.jpg/640px-%D0%93%D0%B0%D0%BB%D0%BA%D0%B0_%28Corvus_monedula%29%2C_%D0%A6%D0%B0%D1%80%D0%B8%D1%86%D1%8B%D0%BD%D0%BE.jpg",
+      "file": "3840px-Галка_(Corvus_monedula),_Царицыно.jpg",
+      "artist": "",
+      "license": "",
+      "page": "https://commons.wikimedia.org/wiki/File:3840px-%D0%93%D0%B0%D0%BB%D0%BA%D0%B0_%28Corvus_monedula%29%2C_%D0%A6%D0%B0%D1%80%D0%B8%D1%86%D1%8B%D0%BD%D0%BE.jpg"
+    },
+    "gbifSE": 15527,
+    "gbifNear25km": 101
+  },
+  "Turdus merula": {
+    "sci": "Turdus merula",
+    "gbifKey": 2490719,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Turdidae",
+    "genus": "Turdus",
+    "dyntaxaId": 102998,
+    "sv": "Koltrast",
+    "wiki": {
+      "lang": "sv",
+      "title": "Koltrast",
+      "extract": "Koltrast är en fågel som tillhör familjen trastar. Den räknas som den mest utbredda trasten i Europa. Tidigare var koltrasten en utpräglad skogsfågel men den har sedan mitten av 1800-talet bosatt sig i parker nära bebyggelse samt i trädgårdar vilket idag gör den till en kulturföljare. Tidigare behandlades en stor mängd trastpopulationer i palearktis som del av arten, men genetiska studier indikerar att de bättre beskrivs som fyra arter: koltrast, mandarintrast, tibettrast och indisk trast.",
+      "url": "https://sv.wikipedia.org/wiki/Koltrast"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D0%B4%D1%80%D0%BE%D0%B7%D0%B4_%28Turdus_merula%2C_per_aspera%29%2C_%D0%91%D0%B8%D1%82%D1%86%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B5%D1%81.jpg/640px-%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D0%B4%D1%80%D0%BE%D0%B7%D0%B4_%28Turdus_merula%2C_per_aspera%29%2C_%D0%91%D0%B8%D1%82%D1%86%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B5%D1%81.jpg",
+      "file": "3840px-Чёрный_дрозд_(Turdus_merula,_per_aspera),_Битцевский_лес.jpg",
+      "artist": "",
+      "license": "",
+      "page": "https://commons.wikimedia.org/wiki/File:3840px-%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D0%B4%D1%80%D0%BE%D0%B7%D0%B4_%28Turdus_merula%2C_per_aspera%29%2C_%D0%91%D0%B8%D1%82%D1%86%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B5%D1%81.jpg"
+    },
+    "gbifSE": 1419424,
+    "gbifNear25km": 144681
+  },
+  "Falco subbuteo": {
+    "sci": "Falco subbuteo",
+    "gbifKey": 2481035,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Falconiformes",
+    "family": "Falconidae",
+    "genus": "Falco",
+    "dyntaxaId": 102943,
+    "sv": "Lärkfalk",
+    "wiki": {
+      "lang": "sv",
+      "title": "Lärkfalk",
+      "extract": "Lärkfalk är en medelstor falk som häckar över stora delar av Palearktis. Den är en snabb och skicklig flygare som lever av stora insekter och småfåglar som den fångar i luften. För sitt födosök är den beroende av vatten varför den ofta uppträder vid sjöar, myrar eller vid kusten. Den placerar ofta sitt bo i ett övergivet kråkbo, gärna i en hög tall. Beståndet anses vara livskraftigt.",
+      "url": "https://sv.wikipedia.org/wiki/L%C3%A4rkfalk"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Eurasian_Hobby_%28Falco_subbuteo%29_%286045599673%29.jpg/500px-Eurasian_Hobby_%28Falco_subbuteo%29_%286045599673%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Eurasian_Hobby_(Falco_subbuteo)_(6045599673).jpg",
+      "artist": "Bernard DUPONT from FRANCE",
+      "license": "CC BY-SA 2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurasian_Hobby_%28Falco_subbuteo%29_%286045599673%29.jpg"
+    },
+    "gbifSE": 268742,
+    "gbifNear25km": 16797
+  },
+  "Cyanistes caeruleus": {
+    "sci": "Cyanistes caeruleus",
+    "gbifKey": 2487879,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Paridae",
+    "genus": "Cyanistes",
+    "dyntaxaId": 103025,
+    "sv": "Blåmes",
+    "wiki": {
+      "lang": "en",
+      "title": "Eurasian blue tit",
+      "extract": "The Eurasian blue tit is a small passerine bird in the tit family, Paridae. It is easily recognised by its blue and yellow plumage and small size.",
+      "url": "https://en.wikipedia.org/wiki/Eurasian_blue_tit"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Eurasian_blue_tit_Lancashire.jpg/500px-Eurasian_blue_tit_Lancashire.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Eurasian_blue_tit_Lancashire.jpg",
+      "artist": "Francis Franklin",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Eurasian_blue_tit_Lancashire.jpg"
+    },
+    "gbifSE": 1971259,
+    "gbifNear25km": 130996
+  },
+  "Pica pica": {
+    "sci": "Pica pica",
+    "gbifKey": 5229490,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Corvidae",
+    "genus": "Pica",
+    "dyntaxaId": 103032,
+    "sv": "Skata",
+    "wiki": {
+      "lang": "sv",
+      "title": "Skata",
+      "extract": "Skata är en fågel inom släktet skator och familjen kråkfåglar, som förekommer i stora delar av Europa samt västra och norra Asien. I Europa är skatan vanlig, särskilt i bebodda områden, och med sin karakteristiska svartvita fjäderdräkt och påfallande långa stjärt är den svår att förväxla med andra arter. Skatan är ofta starkt knuten till mänsklig bebyggelse, en så kallad kulturföljare, och uppträder både i städer och på landsbygden. Den häckar också i kustområden. Skatan är allätare och ses ofta proviantera på marken. Den äter både animalisk och vegetabilisk föda under hela året.",
+      "url": "https://sv.wikipedia.org/wiki/Skata"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/%D0%A1%D0%BE%D1%80%D0%BE%D0%BA%D0%B0_%28Pica_pica%29%2C_%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4.jpg/640px-%D0%A1%D0%BE%D1%80%D0%BE%D0%BA%D0%B0_%28Pica_pica%29%2C_%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4.jpg",
+      "file": "3840px-Сорока_(Pica_pica),_Калининград.jpg",
+      "artist": "",
+      "license": "",
+      "page": "https://commons.wikimedia.org/wiki/File:3840px-%D0%A1%D0%BE%D1%80%D0%BE%D0%BA%D0%B0_%28Pica_pica%29%2C_%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4.jpg"
+    },
+    "gbifSE": 969863,
+    "gbifNear25km": 101586
+  },
+  "Fringilla montifringilla": {
+    "sci": "Fringilla montifringilla",
+    "gbifKey": 2494441,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Fringillidae",
+    "genus": "Fringilla",
+    "dyntaxaId": 103041,
+    "sv": "Bergfink",
+    "wiki": {
+      "lang": "sv",
+      "title": "Bergfink",
+      "extract": "Bergfink är en fågel som tillhör familjen finkar, och är nära besläktad med bofinken. Bergfinken har en nordlig utbredning och häckar över hela tajgaområdet, från Norge i väster till Kamtjatka i öster. Dess huvudsakliga övervintringsområde ligger i Väst- och Mellaneuropa och i södra och mellersta Asien.",
+      "url": "https://sv.wikipedia.org/wiki/Bergfink"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Brambling_breeding_plumage.jpg/500px-Brambling_breeding_plumage.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Brambling_breeding_plumage.jpg",
+      "artist": "Stefan Berndtsson",
+      "license": "CC BY 2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Brambling_breeding_plumage.jpg"
+    },
+    "gbifSE": 585714,
+    "gbifNear25km": 18419
+  },
+  "Sitta europaea": {
+    "sci": "Sitta europaea",
+    "gbifKey": 2484916,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Sittidae",
+    "genus": "Sitta",
+    "dyntaxaId": 103027,
+    "sv": "Nötväcka",
+    "wiki": {
+      "lang": "sv",
+      "title": "Nötväcka",
+      "extract": "Nötväcka är en liten fågelart i familjen nötväckor som häckar över stora delar av Palearktis. Det är en satt fågel, med stort huvud, kort stjärt, lång spetsig näbb och starka fötter. Ovansidan är blekt blågrå, ansiktet vitt, undersidan ljusare i vitt eller orangebeige och den har svart ögonbrynsstreck. Arten delas upp i ett tjugotal underarter.",
+      "url": "https://sv.wikipedia.org/wiki/N%C3%B6tv%C3%A4cka"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Kleiber_pae.jpg/500px-Kleiber_pae.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Kleiber_pae.jpg",
+      "artist": "Paethon",
+      "license": "CC BY-SA 4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Kleiber_pae.jpg"
+    },
+    "gbifSE": 940791,
+    "gbifNear25km": 95039
+  },
+  "Phalacrocorax carbo": {
+    "sci": "Phalacrocorax carbo",
+    "gbifKey": 2481890,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Suliformes",
+    "family": "Phalacrocoracidae",
+    "genus": "Phalacrocorax",
+    "dyntaxaId": 100102,
+    "sv": "Storskarv",
+    "wiki": {
+      "lang": "sv",
+      "title": "Storskarv",
+      "extract": "Storskarv, ålkråka, ålakråka, ålekråka, havstjäder eller kormoran är en fågel inom familjen skarvar. Skarvarnas närmsta släktingar utgörs av fregattfåglar, sulor och ormhalsfåglar. Storskarven förekommer på alla världens kontinenter utom Antarktis och Sydamerika och förekommer både vid kusten och i inlandet. Den delas upp i en mängd underarter, däribland P. c. sinensis som ibland kallas mellanskarv. Vissa populationer av storskarv, främst de nordligaste är flyttfåglar, andra populationer drar sig bara undan is och hårt väder medan vissa är stannfåglar.",
+      "url": "https://sv.wikipedia.org/wiki/Storskarv"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Great_cormorant_%28Phalacrocorax_carbo%29_%28cropped%29.JPG/500px-Great_cormorant_%28Phalacrocorax_carbo%29_%28cropped%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Great_cormorant_(Phalacrocorax_carbo)_(cropped).JPG",
+      "artist": "Charles J. Sharp",
+      "license": "CC BY-SA 4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Great_cormorant_%28Phalacrocorax_carbo%29_%28cropped%29.JPG"
+    },
+    "gbifSE": 830165,
+    "gbifNear25km": 49249
+  },
+  "Aegithalos caudatus": {
+    "sci": "Aegithalos caudatus",
+    "gbifKey": 2495000,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Aegithalidae",
+    "genus": "Aegithalos",
+    "dyntaxaId": 103019,
+    "sv": "Stjärtmes",
+    "wiki": {
+      "lang": "sv",
+      "title": "Stjärtmes",
+      "extract": "Stjärtmes är en tätting och den enda europeiska representanten för familjen stjärtmesar. Den är mycket liten med en stjärt som utgör mer än halva kroppslängden. Stjärtmesen hittas i löv- och blandskog där den ofta ses röra sig kvickt i små familjegrupper. Den bygger ett konstrikt klotformat bo av lav, fjädrar, spindelväv och mossa. IUCN kategoriserar den som livskraftig.",
+      "url": "https://sv.wikipedia.org/wiki/Stj%C3%A4rtmes"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Long-tailed_tit_%2874940%29.jpg/500px-Long-tailed_tit_%2874940%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Long-tailed_tit_(74940).jpg",
+      "artist": "Rhododendrites",
+      "license": "CC BY-SA 4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Long-tailed_tit_%2874940%29.jpg"
+    },
+    "gbifSE": 387807,
+    "gbifNear25km": 30667
   }
 }

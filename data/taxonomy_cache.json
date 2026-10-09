@@ -21543,6 +21543,212 @@
 "extract":"<b>Törnsångare</b> (<i>Curruca communis</i>) är en fågel som tillhör familjen sylvior. Den häckar allmänt i öppna landskap med buskar och snår, i stora delar av Europa, österut till bergstrakter i Centralasien samt i Marocko och Algeriet i nordvästra Afrika. Vintertid flyttar den till tropiska Afrika. Törnsångaren ökar i antal och beståndet anses vara livskraftigt.",
 "url":"https://sv.wikipedia.org/wiki/Törnsångare"
 }
+},
+"3882":{
+"name":"Tringa erythropus",
+"rank":"species",
+"sv":"Svartsnäppa",
+"parent":3874,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/347059364/medium.jpg",
+"artist":"(c) Ján Svetlík, some rights reserved (CC BY-NC-ND)",
+"license":"CC-BY-NC-ND",
+"page":"https://www.inaturalist.org/photos/347059364"
+},
+"wiki":{
+"extract":"<b>Svartsnäppa</b> (<i>Tringa erythropus</i>) är en vadarfågel som tillhör familjen snäppor. Den häckar i nordligaste Europa och norra Asien. Vintertid flyttar den till Medelhavsområdet och södra Asien, ibland även tropiska Afrika. Under häckningstid har den helsvart dräkt, därav namnet. I vinterdräkt är den dock gråvit med röda ben. Globalt anses svartsnäppans bestånd vara livskraftigt. I Sverige minskar den dock i antal och kategoriseras som nära hotad.",
+"url":"https://sv.wikipedia.org/wiki/Svartsnäppa"
+}
+},
+"3835":{
+"name":"Scolopacidae",
+"rank":"family",
+"sv":"Snäppor",
+"parent":67561,
+"iconic":"Aves"
+},
+"3874":{
+"name":"Tringa",
+"rank":"genus",
+"sv":"Tringavadare",
+"parent":3835,
+"iconic":"Aves"
+},
+"4643":{
+"name":"Falco subbuteo",
+"rank":"species",
+"sv":"Lärkfalk",
+"parent":4638,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/206987601/medium.jpeg",
+"artist":"(c) Наталия, some rights reserved (CC BY-NC), uploaded by Наталия",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/206987601"
+},
+"wiki":{
+"extract":"<b>Lärkfalk</b> (<i>Falco subbuteo</i>) är en medelstor falk som häckar över stora delar av Palearktis. Den är en snabb och skicklig flygare som lever av stora insekter och småfåglar som den fångar i luften. För sitt födosök är den beroende av vatten varför den ofta uppträder vid sjöar, myrar eller vid kusten. Den placerar ofta sitt bo i ett övergivet kråkbo, gärna i en hög tall.",
+"url":"https://sv.wikipedia.org/wiki/Lärkfalk"
+}
+},
+"67570":{
+"name":"Falconiformes",
+"rank":"order",
+"sv":"Falkfåglar",
+"parent":3,
+"iconic":"Aves"
+},
+"4637":{
+"name":"Falconidae",
+"rank":"family",
+"sv":"Falkar",
+"parent":67570,
+"iconic":"Aves"
+},
+"4638":{
+"name":"Falco",
+"rank":"genus",
+"sv":"",
+"parent":4637,
+"iconic":"Aves"
+},
+"5033":{
+"name":"Botaurus stellaris",
+"rank":"species",
+"sv":"Rördrom",
+"parent":5030,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/60579218/medium.jpg",
+"artist":"(c) Tatyana Zarubo, some rights reserved (CC BY-NC), uploaded by Tatyana Zarubo",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/60579218"
+},
+"wiki":{
+"extract":"<b>Rördrom</b> (<i>Botaurus stellaris</i>) är en fågel som tillhör familjen hägrar och förekommer i Palearktis och södra Afrika. Fågeln håller sig ofta dold i vassbestånd i våtmarker. Den känns främst känns igen på sitt vittljudande dovt tutande läte. När den hotas, då står den helt still och riktar näbben rakt upp, varvid dess spräckliga fjäderdräkt gör att den blir svår att upptäcka.",
+"url":"https://sv.wikipedia.org/wiki/Rördrom"
+}
+},
+"1008365":{
+"name":"Botaurinae",
+"rank":"subfamily",
+"sv":"",
+"parent":4929,
+"iconic":"Aves"
+},
+"5030":{
+"name":"Botaurus",
+"rank":"genus",
+"sv":"",
+"parent":1008365,
+"iconic":"Aves"
+},
+"6937":{
+"name":"Anas crecca",
+"rank":"species",
+"sv":"Kricka",
+"parent":6922,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/77632197/medium.jpg",
+"artist":"(c) Smudge 9000, some rights reserved (CC BY-SA)",
+"license":"CC-BY-SA",
+"page":"https://www.inaturalist.org/photos/77632197"
+},
+"wiki":{
+"extract":"<b>Kricka</b> (<i>Anas crecca</i>) är en liten andfågel som tillhör gruppen simänder. Den förekommer i Eurasien där den är vanlig och vida spridd. Den kan bilda stora flockar utanför häckningssäsongen. Under häckningen förekommer den främst i skyddade våtmarker och lever främst av frön och vattenlevande insekter. Amerikansk kricka (<i>A. carolinensis</i>) behandlades tidigare som en underart och vissa auktoriteter gör det fortfarande. Globalt anses krickans bestånd vara livskraftigt, men minskar i antal i Sverige, så pass att den...",
+"url":"https://sv.wikipedia.org/wiki/Kricka"
+}
+},
+"6990":{
+"name":"Bucephala clangula",
+"rank":"species",
+"sv":"Knipa",
+"parent":6989,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/248120204/medium.jpg",
+"artist":"(c) brian stahls, some rights reserved (CC BY-NC), uploaded by brian stahls",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/248120204"
+},
+"wiki":{
+"extract":"<b>Knipa</b> (<i>Bucephala clangula</i>) är en andfågel som tillhör underfamiljen Merginae.",
+"url":"https://sv.wikipedia.org/wiki/Knipa"
+}
+},
+"6989":{
+"name":"Bucephala",
+"rank":"genus",
+"sv":"",
+"parent":6912,
+"iconic":"Aves"
+},
+"7024":{
+"name":"Somateria mollissima",
+"rank":"species",
+"sv":"Ejder",
+"parent":7023,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/101350509/medium.jpeg",
+"artist":"(c) Christoph Moning, some rights reserved (CC BY), uploaded by Christoph Moning",
+"license":"CC-BY",
+"page":"https://www.inaturalist.org/photos/101350509"
+},
+"wiki":{
+"extract":"<b>Ejder</b> (<i>Somateria mollissima</i>) är en stor och tung dykand som mäter 60–70 cm. Den har en karaktäristisk huvudprofil med kilformad näbb som är fjäderklädd på sidorna. Den adulta hanen (<i>guding</i>) i praktdräkt är kontrastrik, med svart hjässa, övergump och buk, blek näbbspets, ljusgrön nackfläck och är i övrigt vit, med rödrosa anstrykning på bröstet. Den adulta honan (<i>åda</i>) är året runt brunvattrad, från gråbrun till rödbrun eller sandfärgad beroende på underart och den har vitkantad mörk...",
+"url":"https://sv.wikipedia.org/wiki/Ejder"
+}
+},
+"7023":{
+"name":"Somateria",
+"rank":"genus",
+"sv":"",
+"parent":6912,
+"iconic":"Aves"
+},
+"10069":{
+"name":"Fringilla montifringilla",
+"rank":"species",
+"sv":"Bergfink",
+"parent":10068,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/43710488/medium.jpg",
+"artist":"(c) Геннадий, some rights reserved (CC BY-NC), uploaded by Геннадий",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/43710488"
+},
+"wiki":{
+"extract":"<b>Bergfink</b> (<i>Fringilla montifringilla</i>) är en liten fågel som tillhör familjen finkar.",
+"url":"https://sv.wikipedia.org/wiki/Bergfink"
+}
+},
+"13711":{
+"name":"Anthus trivialis",
+"rank":"species",
+"sv":"Trädpiplärka",
+"parent":13706,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/329702724/medium.jpg",
+"artist":"(c) Alejandro Ocampo, some rights reserved (CC BY-NC), uploaded by Alejandro Ocampo",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/329702724"
+},
+"wiki":{
+"extract":"<b>Trädpiplärka</b> (<i>Anthus trivialis</i>) är en fågel som tillhör släktet piplärkor i familjen ärlor.",
+"url":"https://sv.wikipedia.org/wiki/Trädpiplärka"
+}
+},
+"13706":{
+"name":"Anthus",
+"rank":"genus",
+"sv":"Piplärkor",
+"parent":71339,
+"iconic":"Aves"
 }
 },
 "names":{
@@ -21635,7 +21841,16 @@
 "Dendrocopos major":17871,
 "Sitta europaea":14824,
 "Chloris chloris":145360,
-"Cyanistes caeruleus":144849
+"Cyanistes caeruleus":144849,
+"Anas crecca":6937,
+"Botaurus stellaris":5033,
+"Tringa erythropus":3882,
+"Somateria mollissima":7024,
+"Bucephala clangula":6990,
+"Anthus trivialis":13711,
+"Corvus monedula":336399,
+"Falco subbuteo":4643,
+"Fringilla montifringilla":10069
 },
 "dyntaxa":{
 "Tachina grossa":{
@@ -28612,6 +28827,27 @@
 "Valerianoideae":{},
 "Stethophyma":{},
 "Vespertilionini":{},
-"Xanthorioideae":{}
+"Xanthorioideae":{},
+"Botaurus":{
+"id":1001432,
+"name":"Botaurus",
+"sv":""
+},
+"Somateria":{
+"id":1001448,
+"name":"Somateria",
+"sv":""
+},
+"Bucephala":{
+"id":1001451,
+"name":"Bucephala",
+"sv":""
+},
+"Falco":{
+"id":1001465,
+"name":"Falco",
+"sv":"Falkar"
+},
+"Botaurinae":{}
 }
 }
