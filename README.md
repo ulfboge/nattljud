@@ -63,6 +63,18 @@ Samma art får en etikett *Ny* på sitt kort i artlistan.
 
 5. Committa och pusha – GitHub Pages publicerar `docs/`.
 
+## Egna fynd från Artportalen
+
+Exportera dina fynd i Artportalen (*Sök → Sök fynd*, välj fynd du själv rapporterat/observerat,
+*Tabell* → Excel) och lägg xlsx-filen i mappen `artportalen/` – **inte** i `docs/`, som publiceras.
+Bygget läser alla xlsx-filer där; samma fynd i flera exporter räknas en gång (fyndets id).
+
+- Skyddade fynd tas aldrig med.
+- Fynd inom en lokal av en art som detektorn har (alltså det som skickats in via `--artportalen`)
+  hoppas över, liksom fynd av samma art samma dag som ett iNaturalist-fynd.
+- Exporten måste göras för hand – Artportalens API kräver inloggning per användare och går inte att
+  köra obevakat.
+
 ## Automatisk uppdatering
 
 GitHub Actions (`.github/workflows/uppdatera.yml`) kör `build.py` varje måndag morgon så att

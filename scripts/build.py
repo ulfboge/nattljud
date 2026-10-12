@@ -33,7 +33,7 @@ from collections import OrderedDict
 from datetime import date, datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import smhi, artportalen, inat, ebird  # noqa: E402
+import smhi, artportalen, artportalen_fynd, inat, ebird  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESULTS = os.path.join(ROOT, "results")
@@ -48,6 +48,7 @@ INAT_USER = "ulfboge"  # iNaturalist-användare vars publika observationer tas m
 INAT_CACHE = os.path.join(ROOT, "data", "inat_cache.json")
 TAXONOMY_CACHE = os.path.join(ROOT, "data", "taxonomy_cache.json")
 EBIRD_DIRS = [os.path.join(ROOT, "eBird"), os.path.join(ROOT, "data", "ebird")]
+AP_DIRS = [os.path.join(ROOT, "artportalen")]  # egna fynd exporterade från Artportalen (xlsx)
 UA = {"User-Agent": "bat-fynd/1.0 (github.com/ulfboge/bat)"}
 
 # Svenska namn som går före allt annat. Fladdermöss enligt Naturvårdsverkets
@@ -392,6 +393,32 @@ def add_inat(species, sites, use_inat=True, online=True):
                     "country": "SE" if (e["region"] or "").startswith("SE") else "X"})
     if eb:
         print(f"  eBird: {len(eb)} rader")
+    ap = artportalen_fynd.read(AP_DIRS)
+    if ap:
+        # Detektorfynd som rapporterats till Artportalen (art som detektorn har, inom en lokal) och fynd som
+        # redan finns i iNaturalist (samma taxon och dag) hoppas över, så att inget visas två gånger.
+        det_taxa = {s["inat"] for s in species if s.get("inat")}
+        inat_days = {(o["taxon"], o["date"]) for o in raw if o["src"] == "i"}
+        added = skipped_det = skipped_inat = 0
+        for a in ap:
+            tid = tax.lookup(INAT_NAME.get(a["sci"], a["sci"]))
+            if tid is None:
+                print("  Artportalen: hittar inte i iNaturalist:", a["sci"])
+                continue
+            at_site = a["lat"] is not None and any(
+                _dist_m(a["lat"], a["lon"], st["lat"], st["lon"]) <= st.get("radius_m", 100) for st in sites)
+            if at_site and tid in det_taxa:
+                skipped_det += 1
+                continue
+            if (tid, a["date"]) in inat_days:
+                skipped_inat += 1
+                continue
+            raw.append({"id": a["id"], "taxon": tid, "date": a["date"], "time": a["time"], "lat": a["lat"],
+                        "lon": a["lon"], "acc": a["acc"], "obscured": False, "quality": "", "license": "",
+                        "photo": "", "place": a["place"], "sounds": 0, "src": "a", "count": a["count"],
+                        "country": "SE"})
+            added += 1
+        print(f"  Artportalen: {added} fynd (hoppar över {skipped_det} detektorfynd, {skipped_inat} som finns i iNaturalist)")
     tax.ensure([s.get("inat") for s in species] + [o["taxon"] for o in raw])
 
     for s in species:
@@ -413,7 +440,7 @@ def add_inat(species, sites, use_inat=True, online=True):
                                 **t["wiki"]}} if t.get("wiki") else {})})
         s = species[i]
         s.setdefault("sources", [])
-        src_name = "iNaturalist" if o["src"] == "i" else "eBird"
+        src_name = {"i": "iNaturalist", "a": "Artportalen"}.get(o["src"], "eBird")
         if src_name not in s["sources"]:
             s["sources"].append(src_name)
         if o["photo"] and not s.get("image"):

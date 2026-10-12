@@ -58,8 +58,8 @@
 
   // ---------- filter ----------
   const inScope = d => (state.night === "all" || d[5] === state.night) && (state.site === "all" || d[1] === +state.site);
-  // Dagobservationer (iNaturalist, eBird): o = [art, id, datum, tid, lat, lon, noggrannhet, kvalitet, plats, foto, lokal, oskarp, licens, källa, land]
-  const obsInScope = o => (dag.src === "all" || (dag.src === "i" ? o[13] === "i" : o[13] !== "i")) &&
+  // Dagobservationer (iNaturalist, eBird, Artportalen): o = [art, id, datum, tid, lat, lon, noggrannhet, kvalitet, plats, foto, lokal, oskarp, licens, källa, land]
+  const obsInScope = o => (dag.src === "all" || o[13] === dag.src || (dag.src === "e" && o[13] === "l")) &&
     (dag.year === "all" || (o[2] || "").startsWith(dag.year)) &&
     (dag.area === "all" || (dag.area === "near" ? o[10] >= 0 : dag.area === "SE" ? o[14] === "SE" : o[14] !== "SE"));
   const scopedObs = () => (D.observations || []).filter(obsInScope);
@@ -101,7 +101,7 @@
     const places = new Set(ob.map(o => o[8]).filter(Boolean));
     const years = [...new Set(ob.map(o => (o[2] || "").slice(0, 4)).filter(Boolean))].sort();
     const inat = ob.filter(o => o[13] === "i"), rg = inat.filter(o => o[7] === "r").length;
-    $("#dagLede").textContent = ob.length ? `${fmt(ob.length)} observationer av ${fmt(sp.size)} taxa (${fmt(species.length)} bestämda till art) från iNaturalist och eBird` +
+    $("#dagLede").textContent = ob.length ? `${fmt(ob.length)} observationer av ${fmt(sp.size)} taxa (${fmt(species.length)} bestämda till art) från iNaturalist, eBird och Artportalen` +
       (years.length ? `, ${years[0] === years[years.length - 1] ? years[0] : years[0] + "–" + years[years.length - 1]}.` : ".") : "Inga observationer med valda filter.";
     const tiles = [[fmt(ob.length), "observationer"], [fmt(species.length), "arter"], [fmt(sp.size), "taxa totalt"],
       [fmt(places.size), "platser"], [inat.length ? Math.round(100 * rg / inat.length) + " %" : "–", "forskningsgrad (iNat)"]];
@@ -442,8 +442,8 @@
 
   // ---------- artdialog ----------
   const QUALITY = { r: "forskningsgrad", n: "behöver ID", c: "informell" };
-  const obsLink = o => o[13] === "i" ? `https://www.inaturalist.org/observations/${o[1]}` : `https://ebird.org/checklist/${o[1]}`;
-  const obsSrc = o => o[13] === "i" ? "iNaturalist" : o[13] === "l" ? "eBird (livslista)" : "eBird";
+  const obsLink = o => o[13] === "i" ? `https://www.inaturalist.org/observations/${o[1]}` : o[13] === "a" ? `https://www.artportalen.se/Sighting/${o[1]}` : `https://ebird.org/checklist/${o[1]}`;
+  const obsSrc = o => o[13] === "i" ? "iNaturalist" : o[13] === "a" ? "Artportalen" : o[13] === "l" ? "eBird (livslista)" : "eBird";
   function openSpecies(i) {
     const s = D.species[i], dets = scoped().filter(d => d[0] === i), pass = dets.filter(d => d[3] >= state.minProb);
     const obs = D.observations.filter(o => o[0] === i);

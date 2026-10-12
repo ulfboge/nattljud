@@ -31,6 +31,34 @@ def wgs84_to_sweref99tm(lat, lon):
     return round(y), round(x)   # (Ost/E, Nord/N) i meter
 
 
+def sweref99tm_to_wgs84(east, north):
+    """SWEREF 99 TM (Ost, Nord) -> (lat, lon) i grader, Lantmäteriets inversa formler."""
+    a, f = 6378137.0, 1 / 298.257222101
+    lon0, k0, fn, fe = math.radians(15.0), 0.9996, 0.0, 500000.0
+    e2 = f * (2 - f)
+    n = f / (2 - f)
+    ah = a / (1 + n) * (1 + n ** 2 / 4 + n ** 4 / 64)
+    d1 = n / 2 - 2 * n ** 2 / 3 + 37 * n ** 3 / 96 - n ** 4 / 360
+    d2 = n ** 2 / 48 + n ** 3 / 15 - 437 * n ** 4 / 1440
+    d3 = 17 * n ** 3 / 480 - 37 * n ** 4 / 840
+    d4 = 4397 * n ** 4 / 161280
+    As = e2 + e2 ** 2 + e2 ** 3 + e2 ** 4
+    Bs = -(7 * e2 ** 2 + 17 * e2 ** 3 + 30 * e2 ** 4) / 6
+    Cs = (224 * e2 ** 3 + 889 * e2 ** 4) / 120
+    Ds = -(4279 * e2 ** 4) / 1260
+    xi = (north - fn) / (k0 * ah)
+    eta = (east - fe) / (k0 * ah)
+    xip = xi - d1 * math.sin(2 * xi) * math.cosh(2 * eta) - d2 * math.sin(4 * xi) * math.cosh(4 * eta) \
+        - d3 * math.sin(6 * xi) * math.cosh(6 * eta) - d4 * math.sin(8 * xi) * math.cosh(8 * eta)
+    etap = eta - d1 * math.cos(2 * xi) * math.sinh(2 * eta) - d2 * math.cos(4 * xi) * math.sinh(4 * eta) \
+        - d3 * math.cos(6 * xi) * math.sinh(6 * eta) - d4 * math.cos(8 * xi) * math.sinh(8 * eta)
+    phis = math.asin(math.sin(xip) / math.cosh(etap))
+    dl = math.atan(math.sinh(etap) / math.cos(xip))
+    s2 = math.sin(phis) ** 2
+    phi = phis + math.sin(phis) * math.cos(phis) * (As + Bs * s2 + Cs * s2 ** 2 + Ds * s2 ** 3)
+    return math.degrees(phi), math.degrees(lon0 + dl)
+
+
 # ---------- svensk lokaltid (CET/CEST) utan tzdata ----------
 def _last_sunday(year, month):
     d = datetime(year, month + 1, 1) - timedelta(days=1) if month < 12 else datetime(year, 12, 31)
