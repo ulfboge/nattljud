@@ -21749,6 +21749,103 @@
 "sv":"Piplärkor",
 "parent":71339,
 "iconic":"Aves"
+},
+"41733":{
+"name":"Halichoerus grypus",
+"rank":"species",
+"sv":"Gråsäl",
+"parent":41732,
+"iconic":"Mammalia",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/200723202/medium.jpg",
+"artist":"(c) Martha de Jong-Lantink, some rights reserved (CC BY-NC-ND)",
+"license":"CC-BY-NC-ND",
+"page":"https://www.inaturalist.org/photos/200723202"
+},
+"wiki":{
+"extract":"<b>Gråsäl</b> (<i>Halichoerus grypus</i>) är en säl som förekommer i Östersjön och Atlanten. Den tillhör familjen öronlösa sälar och är den enda arten i släktet <i><b>Halichoerus</b></i>. Gråsälen är större än knubbsälen och vikaren, och i motsats till andra sälarter som förekommer vid svenska kusten har den ett konformigt huvud. Gråsälshanen kallas också för <i>ståte</i>, pluralis <i>ståtar</i>.",
+"url":"https://sv.wikipedia.org/wiki/Gråsäl"
+}
+},
+"41573":{
+"name":"Carnivora",
+"rank":"order",
+"sv":"Rovdjur",
+"parent":848324,
+"iconic":"Mammalia"
+},
+"372843":{
+"name":"Phocoidea",
+"rank":"superfamily",
+"sv":"Sälar",
+"parent":41573,
+"iconic":"Mammalia"
+},
+"41687":{
+"name":"Phocidae",
+"rank":"family",
+"sv":"Öronlösa sälar",
+"parent":372843,
+"iconic":"Mammalia"
+},
+"1691817":{
+"name":"Phocinae",
+"rank":"subfamily",
+"sv":"",
+"parent":41687,
+"iconic":"Mammalia"
+},
+"1691820":{
+"name":"Phocini",
+"rank":"tribe",
+"sv":"",
+"parent":1691817,
+"iconic":"Mammalia"
+},
+"41732":{
+"name":"Halichoerus",
+"rank":"genus",
+"sv":"",
+"parent":1691820,
+"iconic":"Mammalia"
+},
+"966698":{
+"name":"Vipera berus",
+"rank":"species",
+"sv":"Huggorm",
+"parent":30889,
+"iconic":"Reptilia",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/50352922/medium.jpeg",
+"artist":"(c) Kęstutis, some rights reserved (CC BY-NC), uploaded by Kęstutis",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/50352922"
+},
+"wiki":{
+"extract":"<b>Huggorm</b> (<i>Vipera berus</i>) är en art inom familjen huggormar och som förekommer över stora delar av palearktis.",
+"url":"https://sv.wikipedia.org/wiki/Huggorm"
+}
+},
+"30667":{
+"name":"Viperidae",
+"rank":"family",
+"sv":"Huggormar",
+"parent":85553,
+"iconic":"Reptilia"
+},
+"797529":{
+"name":"Viperinae",
+"rank":"subfamily",
+"sv":"",
+"parent":30667,
+"iconic":"Reptilia"
+},
+"30889":{
+"name":"Vipera",
+"rank":"genus",
+"sv":"",
+"parent":797529,
+"iconic":"Reptilia"
 }
 },
 "names":{
@@ -21850,7 +21947,14 @@
 "Anthus trivialis":13711,
 "Corvus monedula":336399,
 "Falco subbuteo":4643,
-"Fringilla montifringilla":10069
+"Fringilla montifringilla":10069,
+"Vipera berus":966698,
+"Plebejus argus":57484,
+"Cnephaeus nilssonii":1596132,
+"Halichoerus grypus":41733,
+"Tachina grossa":423928,
+"Blaps mortisaga":468937,
+"Stictoleptura rubra":53258
 },
 "dyntaxa":{
 "Tachina grossa":{
@@ -28848,6 +28952,29 @@
 "name":"Falco",
 "sv":"Falkar"
 },
-"Botaurinae":{}
+"Botaurinae":{},
+"Phocini":{},
+"Phocinae":{},
+"Viperinae":{},
+"Vipera berus":{
+"id":208260,
+"name":"Vipera berus",
+"sv":"Huggorm"
+},
+"Vipera":{
+"id":1002301,
+"name":"Vipera",
+"sv":""
+},
+"Halichoerus":{
+"id":1001654,
+"name":"Halichoerus",
+"sv":""
+},
+"Halichoerus grypus":{
+"id":100068,
+"name":"Halichoerus grypus",
+"sv":"Gråsäl"
+}
 }
 }
