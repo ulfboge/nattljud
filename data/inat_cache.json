@@ -1,6 +1,6 @@
 {
 "user":"ulfboge",
-"fetched":"2026-10-08 22:20",
+"fetched":"2026-10-12 10:43",
 "observations":[
 {
 "id":228321,
@@ -6331,7 +6331,7 @@
 "lon":12.263661,
 "acc":null,
 "obscured":false,
-"quality":"needs_id",
+"quality":"research",
 "place":"Charlottenberg",
 "photo":"https://inaturalist-open-data.s3.amazonaws.com/photos/681983744/medium.jpg",
 "license":"cc-by-nc",
@@ -10075,7 +10075,7 @@
 "lon":18.53047,
 "acc":null,
 "obscured":false,
-"quality":"needs_id",
+"quality":"research",
 "place":"Ljusterö",
 "photo":"https://inaturalist-open-data.s3.amazonaws.com/photos/697094320/medium.jpg",
 "license":"cc-by-nc",
@@ -13691,7 +13691,7 @@
 "lon":18.064939,
 "acc":22,
 "obscured":false,
-"quality":"needs_id",
+"quality":"research",
 "place":"Djursholm",
 "photo":"https://inaturalist-open-data.s3.amazonaws.com/photos/745387563/medium.jpg",
 "license":"cc-by-nc",
@@ -13711,6 +13711,22 @@
 "place":"Djursholm",
 "photo":"https://inaturalist-open-data.s3.amazonaws.com/photos/747313391/medium.jpg",
 "license":"cc-by-nc",
+"sounds":0,
+"country":"SE"
+},
+{
+"id":407772292,
+"taxon":7004,
+"date":"2026-10-12",
+"time":"12:00",
+"lat":58.749809,
+"lon":17.010374,
+"acc":null,
+"obscured":false,
+"quality":"casual",
+"place":"Nyköping",
+"photo":"",
+"license":"",
 "sounds":0,
 "country":"SE"
 }
