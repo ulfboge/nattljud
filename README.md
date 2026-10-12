@@ -63,6 +63,14 @@ Samma art får en etikett *Ny* på sitt kort i artlistan.
 
 5. Committa och pusha – GitHub Pages publicerar `docs/`.
 
+## Automatisk uppdatering
+
+GitHub Actions (`.github/workflows/uppdatera.yml`) kör `build.py` varje måndag morgon så att
+nya iNaturalist-fynd, eBird och väder kommer med utan att något körs lokalt. Flödet committar
+bara om sidans innehåll ändrats. Det går också att starta för hand under
+*Actions → Uppdatera data → Run workflow*. Hämta ner ändringarna (`git pull`) innan du
+lägger till nya inspelningar.
+
 ## Artportalen
 
     python scripts/build.py --artportalen                 # minsta sannolikhet 0,8

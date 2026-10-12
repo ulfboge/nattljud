@@ -1,0 +1,52 @@
+# Bygger om sidan en gång i veckan så att nya iNaturalist-fynd (och eBird/väder) kommer med.
+# Committar bara om innehållet i docs/data/data.json faktiskt ändrats (tidsstämpeln räknas inte).
+# Kan också köras för hand under Actions → "Uppdatera data" → Run workflow.
+name: Uppdatera data
+
+on:
+  schedule:
+    - cron: "17 4 * * 1"   # måndagar 04:17 UTC (06:17 svensk sommartid)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: uppdatera-data
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Bygg
+        run: python scripts/build.py
+
+      - name: Har innehållet ändrats?
+        id: diff
+        run: |
+          python - <<'EOF'
+          import json, os, subprocess
+          old = json.loads(subprocess.check_output(["git", "show", "HEAD:docs/data/data.json"]))
+          new = json.load(open("docs/data/data.json", encoding="utf-8"))
+          old.pop("generated", None); new.pop("generated", None)
+          changed = old != new
+          print("Ändrat innehåll:", changed)
+          with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
+              fh.write(f"changed={'true' if changed else 'false'}\n")
+          EOF
+
+      - name: Committa och pusha
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add docs/data data
+          git commit -m "Automatisk uppdatering av data (iNaturalist m.m.)"
+          git push
