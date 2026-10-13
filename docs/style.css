@@ -224,6 +224,7 @@ details.tx.d1 > summary { font-size: 1.02rem; }
 .obs { display: flex; gap: .6rem; align-items: flex-start; text-decoration: none; color: var(--ink); font-size: .85rem; padding: .4rem; border: 1px solid var(--border); border-radius: 8px; }
 .obs:hover { border-color: var(--accent); }
 .obs img, .obs .noimg { width: 64px; height: 64px; object-fit: cover; border-radius: 6px; flex: none; background: var(--grid); }
+.obs img.generic { opacity: .7; filter: saturate(.6); }
 .obs .sub { margin: 0; font-size: .78rem; }
 @media (max-width: 600px) { details.tx > .tx-body { margin-left: .4rem; padding-left: .4rem; } }
 

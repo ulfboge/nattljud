@@ -108,7 +108,8 @@
     $("#dagTiles").innerHTML = tiles.map(([v, l]) => `<div class="tile"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
     const latest = [...ob].filter(o => o[2]).sort((a, b) => (b[2] + b[3]).localeCompare(a[2] + a[3])).slice(0, 12);
     $("#dagLatest").innerHTML = latest.map(o => { const s = D.species[o[0]]; return `<a class="obs" href="#" data-sp="${o[0]}">
-      ${o[9] ? `<img src="${esc(o[9].replace("/medium.", "/square."))}" alt="" loading="lazy">` : `<span class="noimg"></span>`}
+      ${o[9] ? `<img src="${esc(o[9].replace("/medium.", "/square."))}" alt="" loading="lazy">`
+        : s.image ? `<img class="generic" src="${esc(s.image.src.replace("/medium.", "/square."))}" alt="" loading="lazy" title="Artbild – inget foto till just den här observationen">` : `<span class="noimg"></span>`}
       <span><b>${esc(s.sv || s.sci)}</b><br><i>${esc(s.sci)}</i><br><span class="sub">${esc(o[2])} · ${esc(o[8] || "")}</span></span></a>`; }).join("") || `<p class="sub">Inga observationer.</p>`;
     $("#dagLatest").querySelectorAll("[data-sp]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); openSpecies(+a.dataset.sp); }));
     // organismgrupper: rike och klass (eller stam) enligt trädet
