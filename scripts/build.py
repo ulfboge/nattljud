@@ -273,7 +273,9 @@ def fetch_species(sci):
             img = s.get("thumbnail") or {}
             orig = (s.get("originalimage") or {}).get("source", "")
             if img:
-                fname = urllib.parse.unquote(orig.split("/")[-1].split("?")[0]) if orig else None
+                # originalimage kan vara en förminskning (…/thumb/a/ab/Fil.jpg/3840px-Fil.jpg): ta filnamnet före "NNNpx-"
+                parts = urllib.parse.urlparse(orig).path.split("/") if orig else []
+                fname = urllib.parse.unquote(parts[-2] if "thumb" in parts and len(parts) > 2 else parts[-1]) if parts else None
                 info["image"] = {"src": img["source"].split("?")[0].replace(f"/{img['width']}px-", "/640px-").split("?")[0]
                                  if img.get("width", 0) < 640 and "/thumb/" in img["source"] else img["source"],
                                  "file": fname}
@@ -290,6 +292,9 @@ def fetch_species(sci):
                         info["image"]["artist"] = strip(md.get("Artist", {}).get("value"))[:120]
                         info["image"]["license"] = strip(md.get("LicenseShortName", {}).get("value"))
                         info["image"]["page"] = f"https://commons.wikimedia.org/wiki/File:{q(fname)}"
+                # utan licens från Commons är bilden okontrollerad (och adressen ofta trasig): hoppa över den
+                if not info["image"].get("license"):
+                    info.pop("image")
             if lang == "sv" and not SV_NAMES.get(name) and info["rank"] == "species":
                 info["sv"] = s["title"]
             break
@@ -443,14 +448,20 @@ def add_inat(species, sites, use_inat=True, online=True):
         src_name = {"i": "iNaturalist", "a": "Artportalen"}.get(o["src"], "eBird")
         if src_name not in s["sources"]:
             s["sources"].append(src_name)
-        if o["photo"] and not s.get("image"):
+        # Eget foto går före Wikipedia/Commons; bland egna foton går forskningsgradade observationer först.
+        cur = s.get("image") or {}
+        mine = cur.get("artist") == "Johan Karlsson"
+        if o["photo"] and (not mine or (o["quality"][:1] == "r" and not cur.get("rg"))):
             s["image"] = {"src": o["photo"], "artist": "Johan Karlsson", "license": o["license"].upper() or "iNaturalist",
-                          "page": f"https://www.inaturalist.org/observations/{o['id']}"}
+                          "page": f"https://www.inaturalist.org/observations/{o['id']}", "rg": o["quality"][:1] == "r"}
         site = -1 if o["lat"] is None else next((k for k, st in enumerate(sites)
                      if _dist_m(o["lat"], o["lon"], st["lat"], st["lon"]) <= st.get("radius_m", 100)), -1)
         obs.append([i, o["id"], o["date"], o["time"], o["lat"], o["lon"], o["acc"], o["quality"][:1], o["place"],
                     o["photo"], site, 1 if o["obscured"] else 0, o["license"], o["src"],
                     o.get("country", "")])
+
+    for s in species:
+        (s.get("image") or {}).pop("rg", None)
 
     # Bild till taxa utan eget foto (t.ex. eBird-fynd): iNaturalists standardbild om den är fritt licensierad.
     noimg = [s for s in species if not s.get("image") and s.get("inat") and not s.get("members")]

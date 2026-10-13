@@ -228,21 +228,32 @@
   };
 
   function renderNew() {
-    const html = [...NEW].filter(([si, o]) => (state.site === "all" || si === +state.site) && o.nights.length).map(([si, o]) => {
+    const cards = [...NEW].filter(([si, o]) => (state.site === "all" || si === +state.site) && o.nights.length).map(([si, o]) => {
       const site = D.sites[si], nSp = o.first.size;
       const head = `<h3>${esc(site.name)}</h3><p class="sub">${o.nights.length} ${o.nights.length === 1 ? "natt" : "nätter"} · ${nSp} arter · första natten ${nightLabel(o.start)}</p>`;
       if (o.nights.length === 1) return `<div class="new-site">${head}<p class="sub">Bara en natt hittills – nya arter visas här från nästa natt.</p></div>`;
       if (!o.added.length) return `<div class="new-site">${head}<p class="sub">Inga nya arter sedan första natten.</p></div>`;
+      const thumb = (sp, cls) => { const im = D.species[sp].image; return `<span class="${cls}"${im ? ` style="background-image:url('${esc(im.src)}')"` : ""}></span>`; };
+      const reg = n => `${n} ${n === 1 ? "registrering" : "registreringar"}`;
       const hl = o.latest.map(a => {
         const s = D.species[a.sp];
-        return `<button class="new-hl" data-sp="${a.sp}"><span class="thumb"${s.image ? ` style="background-image:url('${esc(s.image.src)}')"` : ""}></span>
-          <span><span class="lbl">Senast nya art</span><br><span class="nm">${esc(s.sv || s.sci)}</span> <i class="dt">${esc(s.sci)}</i><br>
-          <span class="dt">Första gången natten ${nightLabel(a.night)} · ${a.n} ${a.n === 1 ? "registrering" : "registreringar"}, högsta p ${a.max.toFixed(2)}</span></span></button>`;
+        return `<button class="new-hl" data-sp="${a.sp}">${thumb(a.sp, "thumb")}
+          <span class="txt"><span class="nm">${esc(s.sv || s.sci)}</span><i class="dt">${esc(s.sci)}</i>
+          <span class="dt" title="${reg(a.n)}, högsta sannolikhet ${a.max.toFixed(2)}">${a.n} reg. · max p ${a.max.toFixed(2)}</span></span></button>`;
       }).join("");
+      const latest = `<p class="new-head"><span class="lbl">Senaste nya arter</span> natten ${nightLabel(o.latest[0].night)} · ${o.latest.length} ${o.latest.length === 1 ? "art" : "arter"}</p><div class="new-hl-grid">${hl}</div>`;
       const rest = o.added.filter(a => a.night !== o.latest[0].night);
-      const list = rest.length ? `<ul class="new-list">${rest.map(a => `<li><a data-sp="${a.sp}">${esc(D.species[a.sp].sv || D.species[a.sp].sci)}</a><span class="when">${nightLabel(a.night)}</span></li>`).join("")}</ul>` : "";
-      return `<div class="new-site">${head}${hl}${list}</div>`;
-    }).join("");
+      const byNight = new Map();
+      rest.forEach(a => { if (!byNight.has(a.night)) byNight.set(a.night, []); byNight.get(a.night).push(a); });
+      const list = rest.length ? `<p class="new-head"><span class="lbl">Tidigare nätter</span></p><div class="new-nights">${[...byNight].map(([night, arr]) =>
+        `<div class="new-night"><span class="when">${nightLabel(night)}</span><div class="chips">${arr.map(a => {
+          const sp = D.species[a.sp];
+          return `<button class="chip" data-sp="${a.sp}" title="${esc(sp.sci)} · ${reg(a.n)}">${thumb(a.sp, "cthumb")}${esc(sp.sv || sp.sci)}</button>`;
+        }).join("")}</div></div>`).join("")}</div>` : "";
+      return `<div class="new-site">${head}${latest}${list}</div>`;
+    });
+    const html = cards.join("");
+    $("#newsp").classList.toggle("single", cards.length === 1);
     $("#newsp").innerHTML = html || `<p class="sub">Inga lokaler med data.</p>`;
     $("#newsp").querySelectorAll("[data-sp]").forEach(b => b.addEventListener("click", () => openSpecies(+b.dataset.sp)));
   }
