@@ -21846,6 +21846,19 @@
 "sv":"",
 "parent":797529,
 "iconic":"Reptilia"
+},
+"204533":{
+"name":"Larus argentatus",
+"rank":"species",
+"sv":"Gråtrut",
+"parent":4343,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/198439202/medium.jpeg",
+"artist":"(c) Andrew Thompson, some rights reserved (CC BY-NC), uploaded by Andrew Thompson",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/198439202"
+}
 }
 },
 "names":{
@@ -28975,6 +28988,26 @@
 "id":100068,
 "name":"Halichoerus grypus",
 "sv":"Gråsäl"
+},
+"Rumex":{
+"id":1006077,
+"name":"Rumex",
+"sv":"Skräppor"
+},
+"Larus argentatus":{
+"id":102966,
+"name":"Larus argentatus",
+"sv":"Gråtrut"
+},
+"Syrphus":{
+"id":1000398,
+"name":"Syrphus",
+"sv":"Solblomflugor"
+},
+"Sphaerophoria":{
+"id":1000392,
+"name":"Sphaerophoria",
+"sv":"Sländblomflugor"
 }
 }
 }
