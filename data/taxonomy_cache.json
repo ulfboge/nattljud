@@ -21859,6 +21859,120 @@
 "license":"CC-BY-NC",
 "page":"https://www.inaturalist.org/photos/198439202"
 }
+},
+"118036":{
+"name":"Chondrostereum purpureum",
+"rank":"species",
+"sv":"Purpurskinn",
+"parent":118043,
+"iconic":"Fungi",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/388071/medium.jpg",
+"artist":"(c) Amadej Trnkoczy, some rights reserved (CC BY-NC-SA)",
+"license":"CC-BY-NC-SA",
+"page":"https://www.inaturalist.org/photos/388071"
+},
+"wiki":{
+"extract":"<b>Purpurskinn</b> (<i>Chondrostereum purpureum</i>) är en svampart som först beskrevs av Christiaan Hendrik Persoon, och fick sitt nu gällande namn av Zdeněk Pouzar 1959. Purpurskinnet är en vedlevande, svagt patogen svamp. Den växer i princip uteslutande på lövträd och är specialiserad på och beroende av att snabbt kunna etablera sig i sårskador, eller nyligen avverkade stubbar av lövträd. <i>Purpurskinn</i> ingår i släktet <i>Chondrostereum</i> och familjen Cyphellaceae. Arten är reproducerande i Sverige. Inga underarter finns listade i Catalogue",
+"url":"https://sv.wikipedia.org/wiki/Purpurskinn"
+}
+},
+"785516":{
+"name":"Marasmiineae",
+"rank":"suborder",
+"sv":"",
+"parent":47167,
+"iconic":"Fungi"
+},
+"118042":{
+"name":"Cyphellaceae",
+"rank":"family",
+"sv":"",
+"parent":785516,
+"iconic":"Fungi"
+},
+"118043":{
+"name":"Chondrostereum",
+"rank":"genus",
+"sv":"",
+"parent":118042,
+"iconic":"Fungi"
+},
+"146685":{
+"name":"Steatoda bipunctata",
+"rank":"species",
+"sv":"Fettspindel",
+"parent":61998,
+"iconic":"Arachnida",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/1009323/medium.jpg",
+"artist":"(c) Mick Talbot, some rights reserved (CC BY-NC-SA)",
+"license":"CC-BY-NC-SA",
+"page":"https://www.inaturalist.org/photos/1009323"
+},
+"wiki":{
+"extract":"<b>Fettspindel</b> (<i>Steatoda bipunctata</i>) är en art i ordningen spindlar som tillhör familjen klotspindlar. Den hör till de mer allmänna spindlarna och kan ofta hittas inne i hus, skjul och andra byggnader. Dess nät är en oregelbunden konstruktion där olika mindre insekter, som flugor, kan fastna.",
+"url":"https://sv.wikipedia.org/wiki/Fettspindel"
+}
+},
+"1472111":{
+"name":"Latrodectinae",
+"rank":"subfamily",
+"sv":"",
+"parent":47371,
+"iconic":"Arachnida"
+},
+"61998":{
+"name":"Steatoda",
+"rank":"genus",
+"sv":"Vaxspindlar",
+"parent":1472111,
+"iconic":"Arachnida"
+},
+"483375":{
+"name":"Ptilophora plumigera",
+"rank":"species",
+"sv":"Fjäderbärare",
+"parent":483376,
+"iconic":"Insecta",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/166565681/medium.jpg",
+"artist":"(c) Michał Brzeziński, some rights reserved (CC BY-NC), uploaded by Michał Brzeziński",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/166565681"
+},
+"wiki":{
+"extract":"<b>Fjäderbärare</b> (<i>Ptilophora plumigera</i>) är en fjäril som tillhör familjen tandspinnare. Den har rödbrunaktiga vingar och en vingbredd på 34-40 millimeter. Hanen har stora fjäderlika antenner, honans antenner är trådlika. Larven är grön med två ljusa längsgående linjer på ryggen. Dess värdväxter är lönn, bok och pil. Förpuppningen sker i marken. De fullbildade fjärilarna flyger om natten sent på hösten, i oktober och november. Övervintringen sker som ägg.",
+"url":"https://sv.wikipedia.org/wiki/Fjäderbärare"
+}
+},
+"47718":{
+"name":"Notodontidae",
+"rank":"family",
+"sv":"Tandspinnare",
+"parent":47607,
+"iconic":"Insecta"
+},
+"122424":{
+"name":"Notodontinae",
+"rank":"subfamily",
+"sv":"",
+"parent":47718,
+"iconic":"Insecta"
+},
+"473973":{
+"name":"Notodontini",
+"rank":"tribe",
+"sv":"",
+"parent":122424,
+"iconic":"Insecta"
+},
+"483376":{
+"name":"Ptilophora",
+"rank":"genus",
+"sv":"",
+"parent":473973,
+"iconic":"Insecta"
 }
 },
 "names":{
@@ -29013,6 +29127,52 @@
 "id":1000355,
 "name":"Eupeodes",
 "sv":"Fältblomflugor"
+},
+"Marasmiineae":{
+"id":6332016,
+"name":"Marasmiineae",
+"sv":""
+},
+"Notodontinae":{
+"id":6004102,
+"name":"Notodontinae",
+"sv":""
+},
+"Chondrostereum purpureum":{
+"id":3254,
+"name":"Chondrostereum purpureum",
+"sv":"Purpurskinn"
+},
+"Latrodectinae":{},
+"Ptilophora":{
+"id":1000604,
+"name":"Ptilophora",
+"sv":""
+},
+"Chondrostereum":{
+"id":1000793,
+"name":"Chondrostereum",
+"sv":""
+},
+"Notodontini":{
+"id":6004103,
+"name":"Notodontini",
+"sv":""
+},
+"Cyphellaceae":{
+"id":2002482,
+"name":"Cyphellaceae",
+"sv":""
+},
+"Steatoda bipunctata":{
+"id":218603,
+"name":"Steatoda bipunctata",
+"sv":"Fettspindel"
+},
+"Ptilophora plumigera":{
+"id":101679,
+"name":"Ptilophora plumigera",
+"sv":"Fjäderbärare"
 }
 }
 }
