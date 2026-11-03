@@ -1036,5 +1036,311 @@
     },
     "gbifSE": 387807,
     "gbifNear25km": 30667
+  },
+  "Asio otus": {
+    "sci": "Asio otus",
+    "gbifKey": 2497306,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Strigiformes",
+    "family": "Strigidae",
+    "genus": "Asio",
+    "dyntaxaId": 102975,
+    "sv": "Hornuggla",
+    "wiki": {
+      "lang": "sv",
+      "title": "Hornuggla",
+      "extract": "Hornuggla är en fågel inom släktet Asio och familjen ugglor. Arten har en ovanligt stor utbredning och häckar i Europa, Asien och Nordamerika. Till största delen är den flyttfågel. Globalt anses beståndet vara livskraftigt.",
+      "url": "https://sv.wikipedia.org/wiki/Hornuggla"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Asio_otus_%28P%C3%A9rign%C3%A9%29_23052019_03.jpg/500px-Asio_otus_%28P%C3%A9rign%C3%A9%29_23052019_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Asio_otus_(Périgné)_23052019_03.jpg",
+      "artist": "Gllawm",
+      "license": "CC BY-SA 4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Asio_otus_%28P%C3%A9rign%C3%A9%29_23052019_03.jpg"
+    },
+    "gbifSE": 103649,
+    "gbifNear25km": 2445
+  },
+  "Tringa ochropus": {
+    "sci": "Tringa ochropus",
+    "gbifKey": 2481728,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Charadriiformes",
+    "family": "Scolopacidae",
+    "genus": "Tringa",
+    "dyntaxaId": 102960,
+    "sv": "Skogssnäppa",
+    "wiki": {
+      "lang": "sv",
+      "title": "Skogssnäppa",
+      "extract": "Skogssnäppa är en liten vadarfågel som tillhör familjen snäppor. Den häckar i våtmarker i barrskogsområden i norra Europa och Asien. Vintertid flyttar den till södra Europa och Asien samt tropiska Afrika. Arten är talrik och beståndet anses vara stabilt.",
+      "url": "https://sv.wikipedia.org/wiki/Skogssn%C3%A4ppa"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Tringa_ochropus_1_%28Marek_Szczepanek%29.jpg/500px-Tringa_ochropus_1_%28Marek_Szczepanek%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Tringa_ochropus_1_(Marek_Szczepanek).jpg",
+      "artist": "",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Tringa_ochropus_1_%28Marek_Szczepanek%29.jpg"
+    },
+    "gbifSE": 393160,
+    "gbifNear25km": 23240
+  },
+  "Gallinula chloropus": {
+    "sci": "Gallinula chloropus",
+    "gbifKey": 5228199,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Gruiformes",
+    "family": "Rallidae",
+    "genus": "Gallinula",
+    "dyntaxaId": 102948,
+    "sv": "Rörhöna",
+    "wiki": {
+      "lang": "sv",
+      "title": "Rörhöna",
+      "extract": "Rörhöna är en fågel i familjen rallar som förekommer i Europa, Asien och Afrika. Den liknar sothönan med huvudsakligen svart fjäderdräkt, men har vita sidor på undre stjärttäckarna och rött på näbb och pannsköld, ej vitt. Rörhönan hittas i våtmarker och vasskantade dammar, åar och sjöar, där den oftast håller sig dold, även om den kan uppträda orädd på vissa platser. Den mycket lika arten amerikansk rörhöna behandlades tidigare som en del av rörhönan, men urskiljs numera som egen art på grund av framför allt genetiska och lätesmässiga skillnader.",
+      "url": "https://sv.wikipedia.org/wiki/R%C3%B6rh%C3%B6na"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Flickr_-_Rainbirder_-_Moorhen%28Gallinula_chloropus%29.jpg/500px-Flickr_-_Rainbirder_-_Moorhen%28Gallinula_chloropus%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Flickr_-_Rainbirder_-_Moorhen(Gallinula_chloropus).jpg",
+      "artist": "Steve Garvie from Dunfermline, Fife, Scotland",
+      "license": "CC BY-SA 2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Flickr_-_Rainbirder_-_Moorhen%28Gallinula_chloropus%29.jpg"
+    },
+    "gbifSE": 256256,
+    "gbifNear25km": 35497
+  },
+  "Pyrrhula pyrrhula": {
+    "sci": "Pyrrhula pyrrhula",
+    "gbifKey": 2494543,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Fringillidae",
+    "genus": "Pyrrhula",
+    "dyntaxaId": 103052,
+    "sv": "Domherre",
+    "wiki": {
+      "lang": "sv",
+      "title": "Domherre",
+      "extract": "Domherre är en stor och kraftig fink som förekommer i Europa och Asien, inklusive Kamtjatka och Japan. Den lever främst i barrskog från lågland till bergsskogar, gärna i granplanteringar, men också i gles blandskog med små barrträd och rik undervegetation, eller i parker och trädgårdar. Födan består främst av frön, bär och knoppar. Domherren kategoriseras inte som hotad.",
+      "url": "https://sv.wikipedia.org/wiki/Domherre"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Bullfinch_at_Pennington_Flash.jpg/500px-Bullfinch_at_Pennington_Flash.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Bullfinch_at_Pennington_Flash.jpg",
+      "artist": "Mark S Jobling (Mjobling at English Wikipedia)",
+      "license": "Public domain",
+      "page": "https://commons.wikimedia.org/wiki/File:Bullfinch_at_Pennington_Flash.jpg"
+    },
+    "gbifSE": 824074,
+    "gbifNear25km": 48732
+  },
+  "Motacilla cinerea": {
+    "sci": "Motacilla cinerea",
+    "gbifKey": 2490310,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Motacillidae",
+    "genus": "Motacilla",
+    "dyntaxaId": 102986,
+    "sv": "Forsärla",
+    "wiki": {
+      "lang": "sv",
+      "title": "Forsärla",
+      "extract": "Forsärla är en fågel i familjen ärlor som förekommer i tempererade delar av Europa och Asien samt i Nordafrika. Som namnet avslöjar häckar den vanligen vid rinnande vattendrag. Kännetecknande i alla dräkter är den exceptionellt långa stjärten. I Sverige etablerade den sig som häckfågel på 1900-talet och har expanderat kraftigt de senaste decennierna. Det globala beståndet anses vara livskraftigt.",
+      "url": "https://sv.wikipedia.org/wiki/Fors%C3%A4rla"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/GreyWagtail_Kent.jpg/500px-GreyWagtail_Kent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "GreyWagtail_Kent.jpg",
+      "artist": "Phil Armitage",
+      "license": "Public domain",
+      "page": "https://commons.wikimedia.org/wiki/File:GreyWagtail_Kent.jpg"
+    },
+    "gbifSE": 253829,
+    "gbifNear25km": 1212
+  },
+  "Chloris chloris": {
+    "sci": "Chloris chloris",
+    "gbifKey": 5845582,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Fringillidae",
+    "genus": "Chloris",
+    "dyntaxaId": 103042,
+    "sv": "Grönfink",
+    "wiki": {
+      "lang": "sv",
+      "title": "Grönfink",
+      "extract": "Grönfink är en fågel som hör till familjen finkar och som huvudsakligen förekommer i Europa.",
+      "url": "https://sv.wikipedia.org/wiki/Gr%C3%B6nfink"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/European_Greenfinch_-_Italy_S4E5435_%2823013963086%29.jpg/500px-European_Greenfinch_-_Italy_S4E5435_%2823013963086%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "European_Greenfinch_-_Italy_S4E5435_(23013963086).jpg",
+      "artist": "Francesco Veronesi from Italy",
+      "license": "CC BY-SA 2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:European_Greenfinch_-_Italy_S4E5435_%2823013963086%29.jpg"
+    }
+  },
+  "Columba palumbus": {
+    "sci": "Columba palumbus",
+    "gbifKey": 2495455,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Columbiformes",
+    "family": "Columbidae",
+    "genus": "Columba",
+    "dyntaxaId": 102971,
+    "sv": "Ringduva",
+    "wiki": {
+      "lang": "sv",
+      "title": "Ringduva",
+      "extract": "Ringduva är den största och mest utspridda duvarten i Europa. Ringduvan förekommer i de flesta typer av skog och har på senare år förflyttat sig till mänsklig bebyggelse, såsom parker och trädgårdar.",
+      "url": "https://sv.wikipedia.org/wiki/Ringduva"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Columba_palumbus_1_%28Marek_Szczepanek%29.jpg/500px-Columba_palumbus_1_%28Marek_Szczepanek%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Columba_palumbus_1_(Marek_Szczepanek).jpg",
+      "artist": "Marek Szczepanek",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Columba_palumbus_1_%28Marek_Szczepanek%29.jpg"
+    },
+    "gbifSE": 1158875,
+    "gbifNear25km": 106094
+  },
+  "Fulica atra": {
+    "sci": "Fulica atra",
+    "gbifKey": 2474377,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Gruiformes",
+    "family": "Rallidae",
+    "genus": "Fulica",
+    "dyntaxaId": 102949,
+    "sv": "Sothöna",
+    "wiki": {
+      "lang": "sv",
+      "title": "Sothöna",
+      "extract": "Sothöna är en vattenlevande fågel som tillhör familjen rallar. Den har en rund kroppsform, skiffersvart fjäderdräkt och vitaktig näbb med en fjäderlös pannsköld, och nickar med huvudet när den simmar. Arten, som ofta delas upp i fyra underarter, häckar i Nordafrika, Europa och stora delar av Centralasien till Japan och söderut till Australien och Nya Zeeland. Delar av populationen är stannfåglar medan de som häckar i kallare områden flyttar söderut om vintern.",
+      "url": "https://sv.wikipedia.org/wiki/Soth%C3%B6na"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Bl%C3%A4sshuhn_Fulica_atra_Richard_B_II.jpg/500px-Bl%C3%A4sshuhn_Fulica_atra_Richard_B_II.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Blässhuhn_Fulica_atra_Richard_B_II.jpg",
+      "artist": "This picture was realized by Richard Bartz by using a Canon EF 70-300mm f/4-5.6 IS USM Lens",
+      "license": "CC BY-SA 2.5",
+      "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%A4sshuhn_Fulica_atra_Richard_B_II.jpg"
+    },
+    "gbifSE": 604851,
+    "gbifNear25km": 95616
+  },
+  "Linaria cannabina": {
+    "sci": "Linaria cannabina",
+    "gbifKey": 8104397,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Fringillidae",
+    "genus": "Linaria",
+    "dyntaxaId": 103045,
+    "sv": "Hämpling",
+    "wiki": {
+      "lang": "sv",
+      "title": "Hämpling",
+      "extract": "Hämpling är en fågel inom familjen finkar. Den häckar i torrt och buskigt kulturlandskap i stora delar av Europa, västra Asien och Nordafrika. Nordliga och östliga populationer flyttar vintertid mot väst och sydväst. Den minskar i antal, men beståndet anses ändå livskraftigt.",
+      "url": "https://sv.wikipedia.org/wiki/H%C3%A4mpling"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Carduelis_cannabina_-England_-male-8.jpg/500px-Carduelis_cannabina_-England_-male-8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Carduelis_cannabina_-England_-male-8.jpg",
+      "artist": "Joe Pell",
+      "license": "CC BY 2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Carduelis_cannabina_-England_-male-8.jpg"
+    },
+    "gbifSE": 397080,
+    "gbifNear25km": 15574
+  },
+  "Bubo bubo": {
+    "sci": "Bubo bubo",
+    "gbifKey": 5959092,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Strigiformes",
+    "family": "Strigidae",
+    "genus": "Bubo",
+    "dyntaxaId": 100020,
+    "sv": "Berguv",
+    "wiki": {
+      "lang": "sv",
+      "title": "Berguv",
+      "extract": "Berguv är en fågelart i släktet Bubo och Europas största samt en av världens största ugglor. Den är en stannfågel, som förekommer i större delen av Europa och Asien. Den har en kraftfull kropp och ett påfallande kraftigt huvud med örontofsar. Ögonen är orangegula, fjäderdräkten mörkfläckig och bröst och mage ljusare än ryggen. Den häckar främst i skogiga bergsområden, på klippöar och mer sällan i byggnader.",
+      "url": "https://sv.wikipedia.org/wiki/Berguv"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Uhu-muc.jpg/500px-Uhu-muc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Uhu-muc.jpg",
+      "artist": "Photograph:  Softeis",
+      "license": "CC BY-SA 3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Uhu-muc.jpg"
+    },
+    "gbifSE": 24416,
+    "gbifNear25km": 1256
+  },
+  "Acanthis flammea": {
+    "sci": "Acanthis flammea",
+    "gbifKey": 5231630,
+    "rank": "species",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Aves",
+    "order": "Passeriformes",
+    "family": "Fringillidae",
+    "genus": "Acanthis",
+    "dyntaxaId": 103046,
+    "sv": "Gråsiska",
+    "wiki": {
+      "lang": "sv",
+      "title": "Gråsiska",
+      "extract": "Gråsiska är en siska som tillhör familjen finkar. Den häckar cirkumpolärt på norra halvklotet i tempererat och subarktiskt klimat. Den globala populationen uppvisar tydliga men klinala morfologiska skillnader vilket skapat stora diskussioner vilka populationer som ska ingå i artkomplexet. Sentida studier indikerar att snösiska, som tidigare ofta haft artstatus istället – tillsammans med bland annat brunsiska – bör behandlas som del av gråsiskan, vilket bland annat Birdlife Sverige gör. Denna linje följs här.",
+      "url": "https://sv.wikipedia.org/wiki/Gr%C3%A5siska"
+    },
+    "image": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Acanthis_flammea%2C_Kotka%2C_Finland_3.jpg/500px-Acanthis_flammea%2C_Kotka%2C_Finland_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "file": "Acanthis_flammea,_Kotka,_Finland_3.jpg",
+      "artist": "Jyrki Salmi from Finland",
+      "license": "CC BY-SA 2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Acanthis_flammea%2C_Kotka%2C_Finland_3.jpg"
+    },
+    "gbifSE": 892861,
+    "gbifNear25km": 36223
   }
 }

@@ -1,0 +1,926 @@
+﻿Fil;Tid;Start s;Slut s;Art;Vetenskapligt namn;Sannolikhet
+DEV_001_20261102_181504.wav;2026-11-02 18:15:04;6.0;9.0;Havstrut;Larus marinus;0,26
+DEV_001_20261102_181504.wav;2026-11-02 18:15:04;15.0;18.0;Gråhäger;Ardea cinerea;0,22
+DEV_001_20261102_181504.wav;2026-11-02 18:15:04;21.0;24.0;Sångsvan;Cygnus cygnus;0,22
+DEV_001_20261102_181544.wav;2026-11-02 18:15:44;;;(ingen fågel hittad);;
+DEV_001_20261102_181626.wav;2026-11-02 18:16:26;30.0;33.0;Rörhöna;Gallinula chloropus;0,11
+DEV_001_20261102_181705.wav;2026-11-02 18:17:05;9.0;12.0;Bläsgås;Anser albifrons;0,14
+DEV_001_20261102_181705.wav;2026-11-02 18:17:05;12.0;15.0;Trana;Grus grus;0,48
+DEV_001_20261102_181745.wav;2026-11-02 18:17:45;;;(ingen fågel hittad);;
+DEV_001_20261102_181825.wav;2026-11-02 18:18:25;3.0;6.0;Havstrut;Larus marinus;0,15
+DEV_001_20261102_181905.wav;2026-11-02 18:19:05;6.0;9.0;Större hackspett;Dendrocopos major;0,15
+DEV_001_20261102_181948.wav;2026-11-02 18:19:48;;;(ingen fågel hittad);;
+DEV_001_20261102_182028.wav;2026-11-02 18:20:28;;;(ingen fågel hittad);;
+DEV_001_20261102_182108.wav;2026-11-02 18:21:08;;;(ingen fågel hittad);;
+DEV_001_20261102_182153.wav;2026-11-02 18:21:53;;;(ingen fågel hittad);;
+DEV_001_20261102_182235.wav;2026-11-02 18:22:35;;;(ingen fågel hittad);;
+DEV_001_20261102_182315.wav;2026-11-02 18:23:15;36.0;39.0;Kattuggla;Strix aluco;0,32
+DEV_001_20261102_182355.wav;2026-11-02 18:23:55;;;(ingen fågel hittad);;
+DEV_001_20261102_182435.wav;2026-11-02 18:24:35;;;(ingen fågel hittad);;
+DEV_001_20261102_182520.wav;2026-11-02 18:25:20;18.0;21.0;Tordmule;Alca torda;0,12
+DEV_001_20261102_182600.wav;2026-11-02 18:26:00;;;(ingen fågel hittad);;
+DEV_001_20261102_182645.wav;2026-11-02 18:26:45;;;(ingen fågel hittad);;
+DEV_001_20261102_182724.wav;2026-11-02 18:27:24;;;(ingen fågel hittad);;
+DEV_001_20261102_182804.wav;2026-11-02 18:28:04;0.0;3.0;Ormvråk;Buteo buteo;0,14
+DEV_001_20261102_182844.wav;2026-11-02 18:28:44;36.0;39.0;Trana;Grus grus;0,20
+DEV_001_20261102_182924.wav;2026-11-02 18:29:24;0.0;3.0;Ringduva;Columba palumbus;0,16
+DEV_001_20261102_183003.wav;2026-11-02 18:30:03;;;(ingen fågel hittad);;
+DEV_001_20261102_183044.wav;2026-11-02 18:30:44;;;(ingen fågel hittad);;
+DEV_001_20261102_183137.wav;2026-11-02 18:31:37;3.0;6.0;Ringduva;Columba palumbus;0,53
+DEV_001_20261102_183137.wav;2026-11-02 18:31:37;6.0;9.0;Mindre sångsvan;Cygnus columbianus;0,16
+DEV_001_20261102_183137.wav;2026-11-02 18:31:37;15.0;18.0;Trana;Grus grus;0,12
+DEV_001_20261102_183217.wav;2026-11-02 18:32:17;15.0;18.0;Ringduva;Columba palumbus;0,19
+DEV_001_20261102_183257.wav;2026-11-02 18:32:57;;;(ingen fågel hittad);;
+DEV_001_20261102_183337.wav;2026-11-02 18:33:37;;;(ingen fågel hittad);;
+DEV_001_20261102_183417.wav;2026-11-02 18:34:17;;;(ingen fågel hittad);;
+DEV_001_20261102_183457.wav;2026-11-02 18:34:57;;;(ingen fågel hittad);;
+DEV_001_20261102_183536.wav;2026-11-02 18:35:36;;;(ingen fågel hittad);;
+DEV_001_20261102_183616.wav;2026-11-02 18:36:16;;;(ingen fågel hittad);;
+DEV_001_20261102_183658.wav;2026-11-02 18:36:58;;;(ingen fågel hittad);;
+DEV_001_20261102_183738.wav;2026-11-02 18:37:38;;;(ingen fågel hittad);;
+DEV_001_20261102_183820.wav;2026-11-02 18:38:20;;;(ingen fågel hittad);;
+DEV_001_20261102_183904.wav;2026-11-02 18:39:04;;;(ingen fågel hittad);;
+DEV_001_20261102_183944.wav;2026-11-02 18:39:44;33.0;36.0;Gräsand;Anas platyrhynchos;0,20
+DEV_001_20261102_183944.wav;2026-11-02 18:39:44;33.0;36.0;Snatterand;Mareca strepera;0,11
+DEV_001_20261102_184024.wav;2026-11-02 18:40:24;;;(ingen fågel hittad);;
+DEV_001_20261102_184104.wav;2026-11-02 18:41:04;;;(ingen fågel hittad);;
+DEV_001_20261102_184144.wav;2026-11-02 18:41:44;;;(ingen fågel hittad);;
+DEV_001_20261102_184224.wav;2026-11-02 18:42:24;;;(ingen fågel hittad);;
+DEV_001_20261102_184303.wav;2026-11-02 18:43:03;;;(ingen fågel hittad);;
+DEV_001_20261102_184350.wav;2026-11-02 18:43:50;;;(ingen fågel hittad);;
+DEV_001_20261102_184430.wav;2026-11-02 18:44:30;0.0;3.0;Rörhöna;Gallinula chloropus;0,64
+DEV_001_20261102_184430.wav;2026-11-02 18:44:30;0.0;3.0;Björktrast;Turdus pilaris;0,18
+DEV_001_20261102_184510.wav;2026-11-02 18:45:10;;;(ingen fågel hittad);;
+DEV_001_20261102_184550.wav;2026-11-02 18:45:50;;;(ingen fågel hittad);;
+DEV_001_20261102_184630.wav;2026-11-02 18:46:30;;;(ingen fågel hittad);;
+DEV_001_20261102_184710.wav;2026-11-02 18:47:10;;;(ingen fågel hittad);;
+DEV_001_20261102_184750.wav;2026-11-02 18:47:50;;;(ingen fågel hittad);;
+DEV_001_20261102_184830.wav;2026-11-02 18:48:30;30.0;33.0;Sjöorre;Melanitta nigra;0,31
+DEV_001_20261102_184911.wav;2026-11-02 18:49:11;;;(ingen fågel hittad);;
+DEV_001_20261102_184952.wav;2026-11-02 18:49:52;;;(ingen fågel hittad);;
+DEV_001_20261102_185033.wav;2026-11-02 18:50:33;;;(ingen fågel hittad);;
+DEV_001_20261102_185117.wav;2026-11-02 18:51:17;;;(ingen fågel hittad);;
+DEV_001_20261102_185157.wav;2026-11-02 18:51:57;;;(ingen fågel hittad);;
+DEV_001_20261102_185237.wav;2026-11-02 18:52:37;;;(ingen fågel hittad);;
+DEV_001_20261102_185317.wav;2026-11-02 18:53:17;;;(ingen fågel hittad);;
+DEV_001_20261102_185358.wav;2026-11-02 18:53:58;;;(ingen fågel hittad);;
+DEV_001_20261102_185438.wav;2026-11-02 18:54:38;;;(ingen fågel hittad);;
+DEV_001_20261102_185518.wav;2026-11-02 18:55:18;;;(ingen fågel hittad);;
+DEV_001_20261102_185557.wav;2026-11-02 18:55:57;;;(ingen fågel hittad);;
+DEV_001_20261102_185637.wav;2026-11-02 18:56:37;;;(ingen fågel hittad);;
+DEV_001_20261102_185717.wav;2026-11-02 18:57:17;;;(ingen fågel hittad);;
+DEV_001_20261102_185757.wav;2026-11-02 18:57:57;;;(ingen fågel hittad);;
+DEV_001_20261102_185837.wav;2026-11-02 18:58:37;;;(ingen fågel hittad);;
+DEV_001_20261102_185917.wav;2026-11-02 18:59:17;;;(ingen fågel hittad);;
+DEV_001_20261102_190000.wav;2026-11-02 19:00:00;36.0;39.0;Berguv;Bubo bubo;0,13
+DEV_001_20261102_190043.wav;2026-11-02 19:00:43;;;(ingen fågel hittad);;
+DEV_001_20261102_190128.wav;2026-11-02 19:01:28;;;(ingen fågel hittad);;
+DEV_001_20261102_190215.wav;2026-11-02 19:02:15;;;(ingen fågel hittad);;
+DEV_001_20261102_190256.wav;2026-11-02 19:02:56;15.0;18.0;Rödvingetrast;Turdus iliacus;0,23
+DEV_001_20261102_190346.wav;2026-11-02 19:03:46;;;(ingen fågel hittad);;
+DEV_001_20261102_190430.wav;2026-11-02 19:04:30;;;(ingen fågel hittad);;
+DEV_001_20261102_190509.wav;2026-11-02 19:05:09;21.0;24.0;Sothöna;Fulica atra;0,59
+DEV_001_20261102_190509.wav;2026-11-02 19:05:09;21.0;24.0;Rörhöna;Gallinula chloropus;0,20
+DEV_001_20261102_190551.wav;2026-11-02 19:05:51;27.0;30.0;Skata;Pica pica;0,10
+DEV_001_20261102_190635.wav;2026-11-02 19:06:35;;;(ingen fågel hittad);;
+DEV_001_20261102_190717.wav;2026-11-02 19:07:17;;;(ingen fågel hittad);;
+DEV_001_20261102_190756.wav;2026-11-02 19:07:56;;;(ingen fågel hittad);;
+DEV_001_20261102_190836.wav;2026-11-02 19:08:36;;;(ingen fågel hittad);;
+DEV_001_20261102_190923.wav;2026-11-02 19:09:23;;;(ingen fågel hittad);;
+DEV_001_20261102_191003.wav;2026-11-02 19:10:03;;;(ingen fågel hittad);;
+DEV_001_20261102_191043.wav;2026-11-02 19:10:43;;;(ingen fågel hittad);;
+DEV_001_20261102_191132.wav;2026-11-02 19:11:32;;;(ingen fågel hittad);;
+DEV_001_20261102_191212.wav;2026-11-02 19:12:12;;;(ingen fågel hittad);;
+DEV_001_20261102_191252.wav;2026-11-02 19:12:52;;;(ingen fågel hittad);;
+DEV_001_20261102_191332.wav;2026-11-02 19:13:32;;;(ingen fågel hittad);;
+DEV_001_20261102_191411.wav;2026-11-02 19:14:11;;;(ingen fågel hittad);;
+DEV_001_20261102_191451.wav;2026-11-02 19:14:51;;;(ingen fågel hittad);;
+DEV_001_20261102_191531.wav;2026-11-02 19:15:31;;;(ingen fågel hittad);;
+DEV_001_20261102_191611.wav;2026-11-02 19:16:11;;;(ingen fågel hittad);;
+DEV_001_20261102_191650.wav;2026-11-02 19:16:50;;;(ingen fågel hittad);;
+DEV_001_20261102_191730.wav;2026-11-02 19:17:30;30.0;33.0;Skata;Pica pica;0,22
+DEV_001_20261102_191810.wav;2026-11-02 19:18:10;;;(ingen fågel hittad);;
+DEV_001_20261102_191859.wav;2026-11-02 19:18:59;;;(ingen fågel hittad);;
+DEV_001_20261102_191939.wav;2026-11-02 19:19:39;6.0;9.0;Gräsand;Anas platyrhynchos;0,13
+DEV_001_20261102_192019.wav;2026-11-02 19:20:19;27.0;30.0;Björktrast;Turdus pilaris;0,12
+DEV_001_20261102_192100.wav;2026-11-02 19:21:00;;;(ingen fågel hittad);;
+DEV_001_20261102_192139.wav;2026-11-02 19:21:39;3.0;6.0;Bläsand;Mareca penelope;0,20
+DEV_001_20261102_192219.wav;2026-11-02 19:22:19;;;(ingen fågel hittad);;
+DEV_001_20261102_192259.wav;2026-11-02 19:22:59;;;(ingen fågel hittad);;
+DEV_001_20261102_192339.wav;2026-11-02 19:23:39;;;(ingen fågel hittad);;
+DEV_001_20261102_192418.wav;2026-11-02 19:24:18;;;(ingen fågel hittad);;
+DEV_001_20261102_192506.wav;2026-11-02 19:25:06;;;(ingen fågel hittad);;
+DEV_001_20261102_192545.wav;2026-11-02 19:25:45;;;(ingen fågel hittad);;
+DEV_001_20261102_192626.wav;2026-11-02 19:26:26;;;(ingen fågel hittad);;
+DEV_001_20261102_192707.wav;2026-11-02 19:27:07;;;(ingen fågel hittad);;
+DEV_001_20261102_192747.wav;2026-11-02 19:27:47;18.0;21.0;Vattenrall;Rallus aquaticus;0,10
+DEV_001_20261102_192828.wav;2026-11-02 19:28:28;;;(ingen fågel hittad);;
+DEV_001_20261102_192908.wav;2026-11-02 19:29:08;;;(ingen fågel hittad);;
+DEV_001_20261102_192948.wav;2026-11-02 19:29:48;;;(ingen fågel hittad);;
+DEV_001_20261102_193030.wav;2026-11-02 19:30:30;;;(ingen fågel hittad);;
+DEV_001_20261102_193110.wav;2026-11-02 19:31:10;33.0;36.0;Skata;Pica pica;0,11
+DEV_001_20261102_193150.wav;2026-11-02 19:31:50;15.0;18.0;Björktrast;Turdus pilaris;0,12
+DEV_001_20261102_193231.wav;2026-11-02 19:32:31;;;(ingen fågel hittad);;
+DEV_001_20261102_193315.wav;2026-11-02 19:33:15;3.0;6.0;Trana;Grus grus;0,10
+DEV_001_20261102_193315.wav;2026-11-02 19:33:15;12.0;15.0;Domherre;Pyrrhula pyrrhula;0,42
+DEV_001_20261102_193315.wav;2026-11-02 19:33:15;30.0;33.0;Björktrast;Turdus pilaris;0,17
+DEV_001_20261102_193354.wav;2026-11-02 19:33:54;;;(ingen fågel hittad);;
+DEV_001_20261102_193434.wav;2026-11-02 19:34:34;;;(ingen fågel hittad);;
+DEV_001_20261102_193514.wav;2026-11-02 19:35:14;6.0;9.0;Hornuggla;Asio otus;0,16
+DEV_001_20261102_193514.wav;2026-11-02 19:35:14;12.0;15.0;Rödvingetrast;Turdus iliacus;0,14
+DEV_001_20261102_193554.wav;2026-11-02 19:35:54;;;(ingen fågel hittad);;
+DEV_001_20261102_193633.wav;2026-11-02 19:36:33;27.0;30.0;Mindre sångsvan;Cygnus columbianus;0,13
+DEV_001_20261102_193716.wav;2026-11-02 19:37:16;6.0;9.0;Vigg;Aythya fuligula;0,21
+DEV_001_20261102_193755.wav;2026-11-02 19:37:55;;;(ingen fågel hittad);;
+DEV_001_20261102_193835.wav;2026-11-02 19:38:35;;;(ingen fågel hittad);;
+DEV_001_20261102_193915.wav;2026-11-02 19:39:15;;;(ingen fågel hittad);;
+DEV_001_20261102_193955.wav;2026-11-02 19:39:55;;;(ingen fågel hittad);;
+DEV_001_20261102_194038.wav;2026-11-02 19:40:38;;;(ingen fågel hittad);;
+DEV_001_20261102_194117.wav;2026-11-02 19:41:17;;;(ingen fågel hittad);;
+DEV_001_20261102_194157.wav;2026-11-02 19:41:57;27.0;30.0;Gråkråka;Corvus cornix;0,36
+DEV_001_20261102_194238.wav;2026-11-02 19:42:38;;;(ingen fågel hittad);;
+DEV_001_20261102_194317.wav;2026-11-02 19:43:17;3.0;6.0;Gråkråka;Corvus cornix;0,11
+DEV_001_20261102_194357.wav;2026-11-02 19:43:57;;;(ingen fågel hittad);;
+DEV_001_20261102_194437.wav;2026-11-02 19:44:37;;;(ingen fågel hittad);;
+DEV_001_20261102_194517.wav;2026-11-02 19:45:17;;;(ingen fågel hittad);;
+DEV_001_20261102_194603.wav;2026-11-02 19:46:03;;;(ingen fågel hittad);;
+DEV_001_20261102_194648.wav;2026-11-02 19:46:48;;;(ingen fågel hittad);;
+DEV_001_20261102_194748.wav;2026-11-02 19:47:48;;;(ingen fågel hittad);;
+DEV_001_20261102_194831.wav;2026-11-02 19:48:31;;;(ingen fågel hittad);;
+DEV_001_20261102_194913.wav;2026-11-02 19:49:13;;;(ingen fågel hittad);;
+DEV_001_20261102_194956.wav;2026-11-02 19:49:56;;;(ingen fågel hittad);;
+DEV_001_20261102_195037.wav;2026-11-02 19:50:37;;;(ingen fågel hittad);;
+DEV_001_20261102_195134.wav;2026-11-02 19:51:34;;;(ingen fågel hittad);;
+DEV_001_20261102_195214.wav;2026-11-02 19:52:14;;;(ingen fågel hittad);;
+DEV_001_20261102_195309.wav;2026-11-02 19:53:09;;;(ingen fågel hittad);;
+DEV_001_20261102_195348.wav;2026-11-02 19:53:48;27.0;30.0;Ejder;Somateria mollissima;0,30
+DEV_001_20261102_195348.wav;2026-11-02 19:53:48;27.0;30.0;Ringduva;Columba palumbus;0,14
+DEV_001_20261102_195437.wav;2026-11-02 19:54:37;;;(ingen fågel hittad);;
+DEV_001_20261102_195517.wav;2026-11-02 19:55:17;;;(ingen fågel hittad);;
+DEV_001_20261102_195557.wav;2026-11-02 19:55:57;21.0;24.0;Ringduva;Columba palumbus;0,11
+DEV_001_20261102_195557.wav;2026-11-02 19:55:57;30.0;33.0;Turkduva;Streptopelia decaocto;0,31
+DEV_001_20261102_195637.wav;2026-11-02 19:56:37;9.0;12.0;Fiskmås;Larus canus;0,13
+DEV_001_20261102_195717.wav;2026-11-02 19:57:17;;;(ingen fågel hittad);;
+DEV_001_20261102_195758.wav;2026-11-02 19:57:58;24.0;27.0;Trana;Grus grus;0,36
+DEV_001_20261102_195758.wav;2026-11-02 19:57:58;24.0;27.0;Rörhöna;Gallinula chloropus;0,14
+DEV_001_20261102_195838.wav;2026-11-02 19:58:38;;;(ingen fågel hittad);;
+DEV_001_20261102_195918.wav;2026-11-02 19:59:18;;;(ingen fågel hittad);;
+DEV_001_20261102_195957.wav;2026-11-02 19:59:57;;;(ingen fågel hittad);;
+DEV_001_20261102_200037.wav;2026-11-02 20:00:37;;;(ingen fågel hittad);;
+DEV_001_20261102_200157.wav;2026-11-02 20:01:57;;;(ingen fågel hittad);;
+DEV_001_20261102_200254.wav;2026-11-02 20:02:54;;;(ingen fågel hittad);;
+DEV_001_20261102_200340.wav;2026-11-02 20:03:40;;;(ingen fågel hittad);;
+DEV_001_20261102_200424.wav;2026-11-02 20:04:24;;;(ingen fågel hittad);;
+DEV_001_20261102_200508.wav;2026-11-02 20:05:08;;;(ingen fågel hittad);;
+DEV_001_20261102_200548.wav;2026-11-02 20:05:48;;;(ingen fågel hittad);;
+DEV_001_20261102_200633.wav;2026-11-02 20:06:33;;;(ingen fågel hittad);;
+DEV_001_20261102_200713.wav;2026-11-02 20:07:13;;;(ingen fågel hittad);;
+DEV_001_20261102_200826.wav;2026-11-02 20:08:26;;;(ingen fågel hittad);;
+DEV_001_20261102_200906.wav;2026-11-02 20:09:06;;;(ingen fågel hittad);;
+DEV_001_20261102_200946.wav;2026-11-02 20:09:46;;;(ingen fågel hittad);;
+DEV_001_20261102_201028.wav;2026-11-02 20:10:28;;;(ingen fågel hittad);;
+DEV_001_20261102_201112.wav;2026-11-02 20:11:12;;;(ingen fågel hittad);;
+DEV_001_20261102_201153.wav;2026-11-02 20:11:53;;;(ingen fågel hittad);;
+DEV_001_20261102_201233.wav;2026-11-02 20:12:33;;;(ingen fågel hittad);;
+DEV_001_20261102_201316.wav;2026-11-02 20:13:16;36.0;39.0;Ringduva;Columba palumbus;0,15
+DEV_001_20261102_201356.wav;2026-11-02 20:13:56;;;(ingen fågel hittad);;
+DEV_001_20261102_201436.wav;2026-11-02 20:14:36;;;(ingen fågel hittad);;
+DEV_001_20261102_201516.wav;2026-11-02 20:15:16;;;(ingen fågel hittad);;
+DEV_001_20261102_201557.wav;2026-11-02 20:15:57;;;(ingen fågel hittad);;
+DEV_001_20261102_201739.wav;2026-11-02 20:17:39;;;(ingen fågel hittad);;
+DEV_001_20261102_201819.wav;2026-11-02 20:18:19;;;(ingen fågel hittad);;
+DEV_001_20261102_201903.wav;2026-11-02 20:19:03;;;(ingen fågel hittad);;
+DEV_001_20261102_201946.wav;2026-11-02 20:19:46;;;(ingen fågel hittad);;
+DEV_001_20261102_202034.wav;2026-11-02 20:20:34;;;(ingen fågel hittad);;
+DEV_001_20261102_202125.wav;2026-11-02 20:21:25;;;(ingen fågel hittad);;
+DEV_001_20261102_202210.wav;2026-11-02 20:22:10;3.0;6.0;Ringduva;Columba palumbus;0,17
+DEV_001_20261102_202210.wav;2026-11-02 20:22:10;3.0;6.0;Klippduva;Columba livia;0,16
+DEV_001_20261102_202250.wav;2026-11-02 20:22:50;;;(ingen fågel hittad);;
+DEV_001_20261102_202350.wav;2026-11-02 20:23:50;;;(ingen fågel hittad);;
+DEV_001_20261102_202431.wav;2026-11-02 20:24:31;;;(ingen fågel hittad);;
+DEV_001_20261102_202515.wav;2026-11-02 20:25:15;;;(ingen fågel hittad);;
+DEV_001_20261102_202555.wav;2026-11-02 20:25:55;;;(ingen fågel hittad);;
+DEV_001_20261102_202820.wav;2026-11-02 20:28:20;;;(ingen fågel hittad);;
+DEV_001_20261102_202929.wav;2026-11-02 20:29:29;;;(ingen fågel hittad);;
+DEV_001_20261102_203009.wav;2026-11-02 20:30:09;0.0;3.0;Ringduva;Columba palumbus;0,19
+DEV_001_20261102_203051.wav;2026-11-02 20:30:51;;;(ingen fågel hittad);;
+DEV_001_20261102_203131.wav;2026-11-02 20:31:31;;;(ingen fågel hittad);;
+DEV_001_20261102_203211.wav;2026-11-02 20:32:11;;;(ingen fågel hittad);;
+DEV_001_20261102_203251.wav;2026-11-02 20:32:51;;;(ingen fågel hittad);;
+DEV_001_20261102_203403.wav;2026-11-02 20:34:03;;;(ingen fågel hittad);;
+DEV_001_20261102_203443.wav;2026-11-02 20:34:43;;;(ingen fågel hittad);;
+DEV_001_20261102_203522.wav;2026-11-02 20:35:22;3.0;6.0;Sothöna;Fulica atra;0,13
+DEV_001_20261102_203611.wav;2026-11-02 20:36:11;;;(ingen fågel hittad);;
+DEV_001_20261102_203651.wav;2026-11-02 20:36:51;;;(ingen fågel hittad);;
+DEV_001_20261102_203843.wav;2026-11-02 20:38:43;;;(ingen fågel hittad);;
+DEV_001_20261102_203924.wav;2026-11-02 20:39:24;;;(ingen fågel hittad);;
+DEV_001_20261102_204015.wav;2026-11-02 20:40:15;;;(ingen fågel hittad);;
+DEV_001_20261102_204055.wav;2026-11-02 20:40:55;24.0;27.0;Vitryggig hackspett;Dendrocopos leucotos;0,17
+DEV_001_20261102_204055.wav;2026-11-02 20:40:55;24.0;27.0;Större hackspett;Dendrocopos major;0,12
+DEV_001_20261102_204135.wav;2026-11-02 20:41:35;;;(ingen fågel hittad);;
+DEV_001_20261102_204215.wav;2026-11-02 20:42:15;;;(ingen fågel hittad);;
+DEV_001_20261102_204255.wav;2026-11-02 20:42:55;;;(ingen fågel hittad);;
+DEV_001_20261102_204335.wav;2026-11-02 20:43:35;;;(ingen fågel hittad);;
+DEV_001_20261102_204415.wav;2026-11-02 20:44:15;3.0;6.0;Storskarv;Phalacrocorax carbo;0,14
+DEV_001_20261102_204456.wav;2026-11-02 20:44:56;;;(ingen fågel hittad);;
+DEV_001_20261102_204612.wav;2026-11-02 20:46:12;;;(ingen fågel hittad);;
+DEV_001_20261102_204705.wav;2026-11-02 20:47:05;;;(ingen fågel hittad);;
+DEV_001_20261102_204745.wav;2026-11-02 20:47:45;;;(ingen fågel hittad);;
+DEV_001_20261102_204825.wav;2026-11-02 20:48:25;21.0;24.0;Ringduva;Columba palumbus;0,15
+DEV_001_20261102_204910.wav;2026-11-02 20:49:10;9.0;12.0;Gräsand;Anas platyrhynchos;0,16
+DEV_001_20261102_204956.wav;2026-11-02 20:49:56;;;(ingen fågel hittad);;
+DEV_001_20261102_205104.wav;2026-11-02 20:51:04;;;(ingen fågel hittad);;
+DEV_001_20261102_205145.wav;2026-11-02 20:51:45;;;(ingen fågel hittad);;
+DEV_001_20261102_205224.wav;2026-11-02 20:52:24;;;(ingen fågel hittad);;
+DEV_001_20261102_205312.wav;2026-11-02 20:53:12;;;(ingen fågel hittad);;
+DEV_001_20261102_205351.wav;2026-11-02 20:53:51;;;(ingen fågel hittad);;
+DEV_001_20261102_205440.wav;2026-11-02 20:54:40;;;(ingen fågel hittad);;
+DEV_001_20261102_205519.wav;2026-11-02 20:55:19;;;(ingen fågel hittad);;
+DEV_001_20261102_205618.wav;2026-11-02 20:56:18;;;(ingen fågel hittad);;
+DEV_001_20261102_205743.wav;2026-11-02 20:57:43;;;(ingen fågel hittad);;
+DEV_001_20261102_205834.wav;2026-11-02 20:58:34;;;(ingen fågel hittad);;
+DEV_001_20261102_205914.wav;2026-11-02 20:59:14;;;(ingen fågel hittad);;
+DEV_001_20261102_205954.wav;2026-11-02 20:59:54;;;(ingen fågel hittad);;
+DEV_001_20261102_210039.wav;2026-11-02 21:00:39;;;(ingen fågel hittad);;
+DEV_001_20261102_210121.wav;2026-11-02 21:01:21;;;(ingen fågel hittad);;
+DEV_001_20261102_210200.wav;2026-11-02 21:02:00;30.0;33.0;Ringduva;Columba palumbus;0,11
+DEV_001_20261102_210200.wav;2026-11-02 21:02:00;33.0;36.0;Ringduva;Columba palumbus;0,17
+DEV_001_20261102_210240.wav;2026-11-02 21:02:40;12.0;15.0;Berguv;Bubo bubo;0,27
+DEV_001_20261102_210240.wav;2026-11-02 21:02:40;12.0;15.0;Slaguggla;Strix uralensis;0,16
+DEV_001_20261102_210240.wav;2026-11-02 21:02:40;12.0;15.0;Skogsduva;Columba oenas;0,13
+DEV_001_20261102_210240.wav;2026-11-02 21:02:40;18.0;21.0;Småspov;Numenius phaeopus;0,14
+DEV_001_20261102_210320.wav;2026-11-02 21:03:20;;;(ingen fågel hittad);;
+DEV_001_20261102_210452.wav;2026-11-02 21:04:52;;;(ingen fågel hittad);;
+DEV_001_20261102_210535.wav;2026-11-02 21:05:35;;;(ingen fågel hittad);;
+DEV_001_20261102_210633.wav;2026-11-02 21:06:33;;;(ingen fågel hittad);;
+DEV_001_20261102_210717.wav;2026-11-02 21:07:17;;;(ingen fågel hittad);;
+DEV_001_20261102_210756.wav;2026-11-02 21:07:56;;;(ingen fågel hittad);;
+DEV_001_20261102_210842.wav;2026-11-02 21:08:42;;;(ingen fågel hittad);;
+DEV_001_20261102_210925.wav;2026-11-02 21:09:25;;;(ingen fågel hittad);;
+DEV_001_20261102_211005.wav;2026-11-02 21:10:05;;;(ingen fågel hittad);;
+DEV_001_20261102_211047.wav;2026-11-02 21:10:47;;;(ingen fågel hittad);;
+DEV_001_20261102_211227.wav;2026-11-02 21:12:27;;;(ingen fågel hittad);;
+DEV_001_20261102_211330.wav;2026-11-02 21:13:30;;;(ingen fågel hittad);;
+DEV_001_20261102_211413.wav;2026-11-02 21:14:13;;;(ingen fågel hittad);;
+DEV_001_20261102_211502.wav;2026-11-02 21:15:02;;;(ingen fågel hittad);;
+DEV_001_20261102_211545.wav;2026-11-02 21:15:45;;;(ingen fågel hittad);;
+DEV_001_20261102_211626.wav;2026-11-02 21:16:26;;;(ingen fågel hittad);;
+DEV_001_20261102_211705.wav;2026-11-02 21:17:05;;;(ingen fågel hittad);;
+DEV_001_20261102_211748.wav;2026-11-02 21:17:48;;;(ingen fågel hittad);;
+DEV_001_20261102_211827.wav;2026-11-02 21:18:27;;;(ingen fågel hittad);;
+DEV_001_20261102_211907.wav;2026-11-02 21:19:07;;;(ingen fågel hittad);;
+DEV_001_20261102_211947.wav;2026-11-02 21:19:47;;;(ingen fågel hittad);;
+DEV_001_20261102_212038.wav;2026-11-02 21:20:38;;;(ingen fågel hittad);;
+DEV_001_20261102_212136.wav;2026-11-02 21:21:36;;;(ingen fågel hittad);;
+DEV_001_20261102_212224.wav;2026-11-02 21:22:24;;;(ingen fågel hittad);;
+DEV_001_20261102_212304.wav;2026-11-02 21:23:04;;;(ingen fågel hittad);;
+DEV_001_20261102_212350.wav;2026-11-02 21:23:50;;;(ingen fågel hittad);;
+DEV_001_20261102_212430.wav;2026-11-02 21:24:30;;;(ingen fågel hittad);;
+DEV_001_20261102_212516.wav;2026-11-02 21:25:16;;;(ingen fågel hittad);;
+DEV_001_20261102_212555.wav;2026-11-02 21:25:55;;;(ingen fågel hittad);;
+DEV_001_20261102_212640.wav;2026-11-02 21:26:40;;;(ingen fågel hittad);;
+DEV_001_20261102_212734.wav;2026-11-02 21:27:34;;;(ingen fågel hittad);;
+DEV_001_20261102_212831.wav;2026-11-02 21:28:31;;;(ingen fågel hittad);;
+DEV_001_20261102_212919.wav;2026-11-02 21:29:19;;;(ingen fågel hittad);;
+DEV_001_20261102_213010.wav;2026-11-02 21:30:10;;;(ingen fågel hittad);;
+DEV_001_20261102_213050.wav;2026-11-02 21:30:50;3.0;6.0;Prutgås;Branta bernicla;0,23
+DEV_001_20261102_213050.wav;2026-11-02 21:30:50;30.0;33.0;Kärrsnäppa;Calidris alpina;0,32
+DEV_001_20261102_213130.wav;2026-11-02 21:31:30;;;(ingen fågel hittad);;
+DEV_001_20261102_213225.wav;2026-11-02 21:32:25;;;(ingen fågel hittad);;
+DEV_001_20261102_213352.wav;2026-11-02 21:33:52;24.0;27.0;Trana;Grus grus;0,14
+DEV_001_20261102_213434.wav;2026-11-02 21:34:34;21.0;24.0;Rördrom;Botaurus stellaris;0,11
+DEV_001_20261102_213515.wav;2026-11-02 21:35:15;12.0;15.0;Smålom;Gavia stellata;0,18
+DEV_001_20261102_213515.wav;2026-11-02 21:35:15;18.0;21.0;Trana;Grus grus;0,20
+DEV_001_20261102_213557.wav;2026-11-02 21:35:57;;;(ingen fågel hittad);;
+DEV_001_20261102_213711.wav;2026-11-02 21:37:11;;;(ingen fågel hittad);;
+DEV_001_20261102_213757.wav;2026-11-02 21:37:57;12.0;15.0;Trana;Grus grus;0,11
+DEV_001_20261102_213757.wav;2026-11-02 21:37:57;18.0;21.0;Trana;Grus grus;0,23
+DEV_001_20261102_213757.wav;2026-11-02 21:37:57;18.0;21.0;Rörhöna;Gallinula chloropus;0,11
+DEV_001_20261102_213757.wav;2026-11-02 21:37:57;24.0;27.0;Råka;Corvus frugilegus;0,10
+DEV_001_20261102_213837.wav;2026-11-02 21:38:37;3.0;6.0;Bläsgås;Anser albifrons;0,12
+DEV_001_20261102_213837.wav;2026-11-02 21:38:37;6.0;9.0;Smålom;Gavia stellata;0,14
+DEV_001_20261102_213837.wav;2026-11-02 21:38:37;30.0;33.0;Slaguggla;Strix uralensis;0,30
+DEV_001_20261102_213837.wav;2026-11-02 21:38:37;30.0;33.0;Berguv;Bubo bubo;0,10
+DEV_001_20261102_214007.wav;2026-11-02 21:40:07;9.0;12.0;Kanadagås;Branta canadensis;0,12
+DEV_001_20261102_214051.wav;2026-11-02 21:40:51;0.0;3.0;Rördrom;Botaurus stellaris;0,38
+DEV_001_20261102_214051.wav;2026-11-02 21:40:51;9.0;12.0;Korp;Corvus corax;0,10
+DEV_001_20261102_214140.wav;2026-11-02 21:41:40;;;(ingen fågel hittad);;
+DEV_001_20261102_214220.wav;2026-11-02 21:42:20;0.0;3.0;Trana;Grus grus;0,18
+DEV_001_20261102_214301.wav;2026-11-02 21:43:01;;;(ingen fågel hittad);;
+DEV_001_20261102_214340.wav;2026-11-02 21:43:40;;;(ingen fågel hittad);;
+DEV_001_20261102_214421.wav;2026-11-02 21:44:21;;;(ingen fågel hittad);;
+DEV_001_20261102_214619.wav;2026-11-02 21:46:19;3.0;6.0;Stenfalk;Falco columbarius;0,17
+DEV_001_20261102_214724.wav;2026-11-02 21:47:24;3.0;6.0;Storspov;Numenius arquata;0,16
+DEV_001_20261102_214814.wav;2026-11-02 21:48:14;;;(ingen fågel hittad);;
+DEV_001_20261102_214854.wav;2026-11-02 21:48:54;;;(ingen fågel hittad);;
+DEV_001_20261102_215011.wav;2026-11-02 21:50:11;;;(ingen fågel hittad);;
+DEV_001_20261102_215053.wav;2026-11-02 21:50:53;;;(ingen fågel hittad);;
+DEV_001_20261102_215137.wav;2026-11-02 21:51:37;;;(ingen fågel hittad);;
+DEV_001_20261102_215309.wav;2026-11-02 21:53:09;;;(ingen fågel hittad);;
+DEV_001_20261102_215531.wav;2026-11-02 21:55:31;;;(ingen fågel hittad);;
+DEV_001_20261102_215727.wav;2026-11-02 21:57:27;;;(ingen fågel hittad);;
+DEV_001_20261102_215944.wav;2026-11-02 21:59:44;;;(ingen fågel hittad);;
+DEV_001_20261102_220024.wav;2026-11-02 22:00:24;;;(ingen fågel hittad);;
+DEV_001_20261102_220106.wav;2026-11-02 22:01:06;30.0;33.0;Storspov;Numenius arquata;0,13
+DEV_001_20261102_220146.wav;2026-11-02 22:01:46;;;(ingen fågel hittad);;
+DEV_001_20261102_220239.wav;2026-11-02 22:02:39;9.0;12.0;Korp;Corvus corax;0,17
+DEV_001_20261102_220725.wav;2026-11-02 22:07:25;;;(ingen fågel hittad);;
+DEV_001_20261102_220809.wav;2026-11-02 22:08:09;;;(ingen fågel hittad);;
+DEV_001_20261102_220849.wav;2026-11-02 22:08:49;;;(ingen fågel hittad);;
+DEV_001_20261102_221033.wav;2026-11-02 22:10:33;3.0;6.0;Gräsand;Anas platyrhynchos;0,11
+DEV_001_20261102_221113.wav;2026-11-02 22:11:13;;;(ingen fågel hittad);;
+DEV_001_20261102_221207.wav;2026-11-02 22:12:07;9.0;12.0;Slaguggla;Strix uralensis;0,21
+DEV_001_20261102_221246.wav;2026-11-02 22:12:46;;;(ingen fågel hittad);;
+DEV_001_20261102_221423.wav;2026-11-02 22:14:23;;;(ingen fågel hittad);;
+DEV_001_20261102_221615.wav;2026-11-02 22:16:15;;;(ingen fågel hittad);;
+DEV_001_20261102_221707.wav;2026-11-02 22:17:07;;;(ingen fågel hittad);;
+DEV_001_20261102_221746.wav;2026-11-02 22:17:46;;;(ingen fågel hittad);;
+DEV_001_20261102_221855.wav;2026-11-02 22:18:55;;;(ingen fågel hittad);;
+DEV_001_20261102_221937.wav;2026-11-02 22:19:37;;;(ingen fågel hittad);;
+DEV_001_20261102_222134.wav;2026-11-02 22:21:34;;;(ingen fågel hittad);;
+DEV_001_20261102_222307.wav;2026-11-02 22:23:07;24.0;27.0;Vitryggig hackspett;Dendrocopos leucotos;0,15
+DEV_001_20261102_222707.wav;2026-11-02 22:27:07;;;(ingen fågel hittad);;
+DEV_001_20261102_222747.wav;2026-11-02 22:27:47;;;(ingen fågel hittad);;
+DEV_001_20261102_222930.wav;2026-11-02 22:29:30;;;(ingen fågel hittad);;
+DEV_001_20261102_223029.wav;2026-11-02 22:30:29;;;(ingen fågel hittad);;
+DEV_001_20261102_223111.wav;2026-11-02 22:31:11;;;(ingen fågel hittad);;
+DEV_001_20261102_223157.wav;2026-11-02 22:31:57;;;(ingen fågel hittad);;
+DEV_001_20261102_223242.wav;2026-11-02 22:32:42;;;(ingen fågel hittad);;
+DEV_001_20261102_223448.wav;2026-11-02 22:34:48;;;(ingen fågel hittad);;
+DEV_001_20261102_223536.wav;2026-11-02 22:35:36;;;(ingen fågel hittad);;
+DEV_001_20261102_223649.wav;2026-11-02 22:36:49;;;(ingen fågel hittad);;
+DEV_001_20261102_223813.wav;2026-11-02 22:38:13;;;(ingen fågel hittad);;
+DEV_001_20261102_223931.wav;2026-11-02 22:39:31;;;(ingen fågel hittad);;
+DEV_001_20261102_224011.wav;2026-11-02 22:40:11;15.0;18.0;Berguv;Bubo bubo;0,23
+DEV_001_20261102_224053.wav;2026-11-02 22:40:53;;;(ingen fågel hittad);;
+DEV_001_20261102_224209.wav;2026-11-02 22:42:09;;;(ingen fågel hittad);;
+DEV_001_20261102_224332.wav;2026-11-02 22:43:32;;;(ingen fågel hittad);;
+DEV_001_20261102_224425.wav;2026-11-02 22:44:25;;;(ingen fågel hittad);;
+DEV_001_20261102_224515.wav;2026-11-02 22:45:15;;;(ingen fågel hittad);;
+DEV_001_20261102_224846.wav;2026-11-02 22:48:46;21.0;24.0;Ringduva;Columba palumbus;0,57
+DEV_001_20261102_224846.wav;2026-11-02 22:48:46;24.0;27.0;Ringduva;Columba palumbus;0,41
+DEV_001_20261102_225103.wav;2026-11-02 22:51:03;;;(ingen fågel hittad);;
+DEV_001_20261102_225143.wav;2026-11-02 22:51:43;;;(ingen fågel hittad);;
+DEV_001_20261102_225323.wav;2026-11-02 22:53:23;;;(ingen fågel hittad);;
+DEV_001_20261102_225433.wav;2026-11-02 22:54:33;;;(ingen fågel hittad);;
+DEV_001_20261102_225546.wav;2026-11-02 22:55:46;;;(ingen fågel hittad);;
+DEV_001_20261102_225627.wav;2026-11-02 22:56:27;;;(ingen fågel hittad);;
+DEV_001_20261102_230003.wav;2026-11-02 23:00:03;;;(ingen fågel hittad);;
+DEV_001_20261102_230359.wav;2026-11-02 23:03:59;;;(ingen fågel hittad);;
+DEV_001_20261102_230439.wav;2026-11-02 23:04:39;6.0;9.0;Ringduva;Columba palumbus;0,14
+DEV_001_20261102_230608.wav;2026-11-02 23:06:08;;;(ingen fågel hittad);;
+DEV_001_20261102_230704.wav;2026-11-02 23:07:04;;;(ingen fågel hittad);;
+DEV_001_20261102_230754.wav;2026-11-02 23:07:54;33.0;36.0;Klippduva;Columba livia;0,18
+DEV_001_20261102_230754.wav;2026-11-02 23:07:54;33.0;36.0;Berguv;Bubo bubo;0,16
+DEV_001_20261102_230835.wav;2026-11-02 23:08:35;;;(ingen fågel hittad);;
+DEV_001_20261102_230914.wav;2026-11-02 23:09:14;;;(ingen fågel hittad);;
+DEV_001_20261102_231002.wav;2026-11-02 23:10:02;;;(ingen fågel hittad);;
+DEV_001_20261102_231051.wav;2026-11-02 23:10:51;;;(ingen fågel hittad);;
+DEV_001_20261102_231506.wav;2026-11-02 23:15:06;;;(ingen fågel hittad);;
+DEV_001_20261102_231800.wav;2026-11-02 23:18:00;6.0;9.0;Storspov;Numenius arquata;0,11
+DEV_001_20261102_231845.wav;2026-11-02 23:18:45;;;(ingen fågel hittad);;
+DEV_001_20261102_232038.wav;2026-11-02 23:20:38;;;(ingen fågel hittad);;
+DEV_001_20261102_232118.wav;2026-11-02 23:21:18;;;(ingen fågel hittad);;
+DEV_001_20261102_232212.wav;2026-11-02 23:22:12;;;(ingen fågel hittad);;
+DEV_001_20261102_232412.wav;2026-11-02 23:24:12;12.0;15.0;Större hackspett;Dendrocopos major;0,18
+DEV_001_20261102_232515.wav;2026-11-02 23:25:15;;;(ingen fågel hittad);;
+DEV_001_20261102_232603.wav;2026-11-02 23:26:03;3.0;6.0;Rödvingetrast;Turdus iliacus;0,82
+DEV_001_20261102_232603.wav;2026-11-02 23:26:03;3.0;6.0;Björktrast;Turdus pilaris;0,60
+DEV_001_20261102_232725.wav;2026-11-02 23:27:25;;;(ingen fågel hittad);;
+DEV_001_20261102_232920.wav;2026-11-02 23:29:20;;;(ingen fågel hittad);;
+DEV_001_20261102_233030.wav;2026-11-02 23:30:30;0.0;3.0;Kattuggla;Strix aluco;0,42
+DEV_001_20261102_233124.wav;2026-11-02 23:31:24;;;(ingen fågel hittad);;
+DEV_001_20261102_233209.wav;2026-11-02 23:32:09;27.0;30.0;Bläsgås;Anser albifrons;0,17
+DEV_001_20261102_233306.wav;2026-11-02 23:33:06;9.0;12.0;Berguv;Bubo bubo;0,24
+DEV_001_20261102_233306.wav;2026-11-02 23:33:06;12.0;15.0;Berguv;Bubo bubo;0,35
+DEV_001_20261102_233306.wav;2026-11-02 23:33:06;12.0;15.0;Hornuggla;Asio otus;0,23
+DEV_001_20261102_233429.wav;2026-11-02 23:34:29;36.0;39.0;Ringduva;Columba palumbus;0,18
+DEV_001_20261102_233509.wav;2026-11-02 23:35:09;0.0;3.0;Ringduva;Columba palumbus;0,14
+DEV_001_20261102_233743.wav;2026-11-02 23:37:43;;;(ingen fågel hittad);;
+DEV_001_20261102_233823.wav;2026-11-02 23:38:23;;;(ingen fågel hittad);;
+DEV_001_20261102_233935.wav;2026-11-02 23:39:35;;;(ingen fågel hittad);;
+DEV_001_20261102_234145.wav;2026-11-02 23:41:45;;;(ingen fågel hittad);;
+DEV_001_20261102_234238.wav;2026-11-02 23:42:38;;;(ingen fågel hittad);;
+DEV_001_20261102_234318.wav;2026-11-02 23:43:18;;;(ingen fågel hittad);;
+DEV_001_20261102_234359.wav;2026-11-02 23:43:59;;;(ingen fågel hittad);;
+DEV_001_20261102_234510.wav;2026-11-02 23:45:10;;;(ingen fågel hittad);;
+DEV_001_20261102_234611.wav;2026-11-02 23:46:11;;;(ingen fågel hittad);;
+DEV_001_20261102_234909.wav;2026-11-02 23:49:09;;;(ingen fågel hittad);;
+DEV_001_20261102_235050.wav;2026-11-02 23:50:50;;;(ingen fågel hittad);;
+DEV_001_20261102_235130.wav;2026-11-02 23:51:30;;;(ingen fågel hittad);;
+DEV_001_20261102_235257.wav;2026-11-02 23:52:57;;;(ingen fågel hittad);;
+DEV_001_20261102_235342.wav;2026-11-02 23:53:42;3.0;6.0;Berguv;Bubo bubo;0,27
+DEV_001_20261102_235342.wav;2026-11-02 23:53:42;6.0;9.0;Berguv;Bubo bubo;0,17
+DEV_001_20261102_235423.wav;2026-11-02 23:54:23;;;(ingen fågel hittad);;
+DEV_001_20261102_235505.wav;2026-11-02 23:55:05;;;(ingen fågel hittad);;
+DEV_001_20261102_235546.wav;2026-11-02 23:55:46;;;(ingen fågel hittad);;
+DEV_001_20261102_235640.wav;2026-11-02 23:56:40;;;(ingen fågel hittad);;
+DEV_001_20261102_235941.wav;2026-11-02 23:59:41;;;(ingen fågel hittad);;
+DEV_001_20261103_000027.wav;2026-11-03 00:00:27;;;(ingen fågel hittad);;
+DEV_001_20261103_000106.wav;2026-11-03 00:01:06;;;(ingen fågel hittad);;
+DEV_001_20261103_000207.wav;2026-11-03 00:02:07;;;(ingen fågel hittad);;
+DEV_001_20261103_000450.wav;2026-11-03 00:04:50;;;(ingen fågel hittad);;
+DEV_001_20261103_000530.wav;2026-11-03 00:05:30;;;(ingen fågel hittad);;
+DEV_001_20261103_000706.wav;2026-11-03 00:07:06;;;(ingen fågel hittad);;
+DEV_001_20261103_000851.wav;2026-11-03 00:08:51;12.0;15.0;Rödvingetrast;Turdus iliacus;0,34
+DEV_001_20261103_000950.wav;2026-11-03 00:09:50;;;(ingen fågel hittad);;
+DEV_001_20261103_001030.wav;2026-11-03 00:10:30;;;(ingen fågel hittad);;
+DEV_001_20261103_001142.wav;2026-11-03 00:11:42;6.0;9.0;Tretåig hackspett;Picoides tridactylus;0,11
+DEV_001_20261103_001452.wav;2026-11-03 00:14:52;;;(ingen fågel hittad);;
+DEV_001_20261103_001922.wav;2026-11-03 00:19:22;;;(ingen fågel hittad);;
+DEV_001_20261103_002048.wav;2026-11-03 00:20:48;;;(ingen fågel hittad);;
+DEV_001_20261103_003028.wav;2026-11-03 00:30:28;15.0;18.0;Småspov;Numenius phaeopus;0,13
+DEV_001_20261103_003358.wav;2026-11-03 00:33:58;;;(ingen fågel hittad);;
+DEV_001_20261103_004036.wav;2026-11-03 00:40:36;3.0;6.0;Pilgrimsfalk;Falco peregrinus;0,12
+DEV_001_20261103_004120.wav;2026-11-03 00:41:20;0.0;3.0;Gråkråka;Corvus cornix;0,23
+DEV_001_20261103_004202.wav;2026-11-03 00:42:02;6.0;9.0;Duvhök;Accipiter gentilis;0,22
+DEV_001_20261103_004241.wav;2026-11-03 00:42:41;;;(ingen fågel hittad);;
+DEV_001_20261103_004323.wav;2026-11-03 00:43:23;;;(ingen fågel hittad);;
+DEV_001_20261103_004426.wav;2026-11-03 00:44:26;;;(ingen fågel hittad);;
+DEV_001_20261103_004747.wav;2026-11-03 00:47:47;0.0;3.0;Ringduva;Columba palumbus;0,15
+DEV_001_20261103_004747.wav;2026-11-03 00:47:47;0.0;3.0;Klippduva;Columba livia;0,14
+DEV_001_20261103_005040.wav;2026-11-03 00:50:40;;;(ingen fågel hittad);;
+DEV_001_20261103_005225.wav;2026-11-03 00:52:25;;;(ingen fågel hittad);;
+DEV_001_20261103_011522.wav;2026-11-03 01:15:22;0.0;3.0;Ringduva;Columba palumbus;0,54
+DEV_001_20261103_012500.wav;2026-11-03 01:25:00;;;(ingen fågel hittad);;
+DEV_001_20261103_014435.wav;2026-11-03 01:44:35;;;(ingen fågel hittad);;
+DEV_001_20261103_014647.wav;2026-11-03 01:46:47;;;(ingen fågel hittad);;
+DEV_001_20261103_015448.wav;2026-11-03 01:54:48;;;(ingen fågel hittad);;
+DEV_001_20261103_015856.wav;2026-11-03 01:58:56;;;(ingen fågel hittad);;
+DEV_001_20261103_020256.wav;2026-11-03 02:02:56;;;(ingen fågel hittad);;
+DEV_001_20261103_020453.wav;2026-11-03 02:04:53;;;(ingen fågel hittad);;
+DEV_001_20261103_020717.wav;2026-11-03 02:07:17;12.0;15.0;Ringduva;Columba palumbus;0,36
+DEV_001_20261103_020757.wav;2026-11-03 02:07:57;;;(ingen fågel hittad);;
+DEV_001_20261103_021419.wav;2026-11-03 02:14:19;;;(ingen fågel hittad);;
+DEV_001_20261103_022910.wav;2026-11-03 02:29:10;;;(ingen fågel hittad);;
+DEV_001_20261103_023152.wav;2026-11-03 02:31:52;;;(ingen fågel hittad);;
+DEV_001_20261103_024237.wav;2026-11-03 02:42:37;;;(ingen fågel hittad);;
+DEV_001_20261103_025013.wav;2026-11-03 02:50:13;;;(ingen fågel hittad);;
+DEV_001_20261103_025200.wav;2026-11-03 02:52:00;;;(ingen fågel hittad);;
+DEV_001_20261103_025849.wav;2026-11-03 02:58:49;;;(ingen fågel hittad);;
+DEV_001_20261103_030010.wav;2026-11-03 03:00:10;0.0;3.0;Slaguggla;Strix uralensis;0,17
+DEV_001_20261103_030125.wav;2026-11-03 03:01:25;15.0;18.0;Kattuggla;Strix aluco;0,10
+DEV_001_20261103_030125.wav;2026-11-03 03:01:25;36.0;39.0;Slaguggla;Strix uralensis;0,11
+DEV_001_20261103_030242.wav;2026-11-03 03:02:42;;;(ingen fågel hittad);;
+DEV_001_20261103_030601.wav;2026-11-03 03:06:01;;;(ingen fågel hittad);;
+DEV_001_20261103_031023.wav;2026-11-03 03:10:23;;;(ingen fågel hittad);;
+DEV_001_20261103_031436.wav;2026-11-03 03:14:36;;;(ingen fågel hittad);;
+DEV_001_20261103_031834.wav;2026-11-03 03:18:34;;;(ingen fågel hittad);;
+DEV_001_20261103_032134.wav;2026-11-03 03:21:34;;;(ingen fågel hittad);;
+DEV_001_20261103_032254.wav;2026-11-03 03:22:54;;;(ingen fågel hittad);;
+DEV_001_20261103_033436.wav;2026-11-03 03:34:36;;;(ingen fågel hittad);;
+DEV_001_20261103_033848.wav;2026-11-03 03:38:48;;;(ingen fågel hittad);;
+DEV_001_20261103_035042.wav;2026-11-03 03:50:42;;;(ingen fågel hittad);;
+DEV_001_20261103_035153.wav;2026-11-03 03:51:53;;;(ingen fågel hittad);;
+DEV_001_20261103_035437.wav;2026-11-03 03:54:37;3.0;6.0;Trana;Grus grus;0,41
+DEV_001_20261103_035437.wav;2026-11-03 03:54:37;3.0;6.0;Storlom;Gavia arctica;0,17
+DEV_001_20261103_035437.wav;2026-11-03 03:54:37;9.0;12.0;Björktrast;Turdus pilaris;0,44
+DEV_001_20261103_035437.wav;2026-11-03 03:54:37;9.0;12.0;Koltrast;Turdus merula;0,43
+DEV_001_20261103_035720.wav;2026-11-03 03:57:20;;;(ingen fågel hittad);;
+DEV_001_20261103_035930.wav;2026-11-03 03:59:30;;;(ingen fågel hittad);;
+DEV_001_20261103_040053.wav;2026-11-03 04:00:53;;;(ingen fågel hittad);;
+DEV_001_20261103_040133.wav;2026-11-03 04:01:33;;;(ingen fågel hittad);;
+DEV_001_20261103_040318.wav;2026-11-03 04:03:18;;;(ingen fågel hittad);;
+DEV_001_20261103_040419.wav;2026-11-03 04:04:19;36.0;39.0;Storspov;Numenius arquata;0,17
+DEV_001_20261103_040542.wav;2026-11-03 04:05:42;;;(ingen fågel hittad);;
+DEV_001_20261103_041034.wav;2026-11-03 04:10:34;6.0;9.0;Berguv;Bubo bubo;0,15
+DEV_001_20261103_041132.wav;2026-11-03 04:11:32;;;(ingen fågel hittad);;
+DEV_001_20261103_041214.wav;2026-11-03 04:12:14;;;(ingen fågel hittad);;
+DEV_001_20261103_041256.wav;2026-11-03 04:12:56;;;(ingen fågel hittad);;
+DEV_001_20261103_041336.wav;2026-11-03 04:13:36;;;(ingen fågel hittad);;
+DEV_001_20261103_041418.wav;2026-11-03 04:14:18;;;(ingen fågel hittad);;
+DEV_001_20261103_041509.wav;2026-11-03 04:15:09;;;(ingen fågel hittad);;
+DEV_001_20261103_041558.wav;2026-11-03 04:15:58;0.0;3.0;Hämpling;Linaria cannabina;0,80
+DEV_001_20261103_041558.wav;2026-11-03 04:15:58;27.0;30.0;Rödvingetrast;Turdus iliacus;0,82
+DEV_001_20261103_041558.wav;2026-11-03 04:15:58;27.0;30.0;Trädkrypare;Certhia familiaris;0,11
+DEV_001_20261103_042129.wav;2026-11-03 04:21:29;;;(ingen fågel hittad);;
+DEV_001_20261103_042209.wav;2026-11-03 04:22:09;6.0;9.0;Gråhäger;Ardea cinerea;0,18
+DEV_001_20261103_042209.wav;2026-11-03 04:22:09;6.0;9.0;Tajgasädgås;Anser fabalis;0,16
+DEV_001_20261103_042209.wav;2026-11-03 04:22:09;36.0;39.0;Ringduva;Columba palumbus;0,56
+DEV_001_20261103_042248.wav;2026-11-03 04:22:48;15.0;18.0;Kricka/Amerikansk kricka;Anas crecca;0,44
+DEV_001_20261103_042804.wav;2026-11-03 04:28:04;;;(ingen fågel hittad);;
+DEV_001_20261103_042845.wav;2026-11-03 04:28:45;0.0;3.0;Prutgås;Branta bernicla;0,35
+DEV_001_20261103_042845.wav;2026-11-03 04:28:45;3.0;6.0;Gräsand;Anas platyrhynchos;0,21
+DEV_001_20261103_042845.wav;2026-11-03 04:28:45;6.0;9.0;Dalripa;Lagopus lagopus;0,11
+DEV_001_20261103_042845.wav;2026-11-03 04:28:45;18.0;21.0;Slaguggla;Strix uralensis;0,10
+DEV_001_20261103_042845.wav;2026-11-03 04:28:45;21.0;24.0;Ringduva;Columba palumbus;0,24
+DEV_001_20261103_043447.wav;2026-11-03 04:34:47;;;(ingen fågel hittad);;
+DEV_001_20261103_043559.wav;2026-11-03 04:35:59;;;(ingen fågel hittad);;
+DEV_001_20261103_043953.wav;2026-11-03 04:39:53;;;(ingen fågel hittad);;
+DEV_001_20261103_044155.wav;2026-11-03 04:41:55;;;(ingen fågel hittad);;
+DEV_001_20261103_044440.wav;2026-11-03 04:44:40;;;(ingen fågel hittad);;
+DEV_001_20261103_044640.wav;2026-11-03 04:46:40;;;(ingen fågel hittad);;
+DEV_001_20261103_044736.wav;2026-11-03 04:47:36;;;(ingen fågel hittad);;
+DEV_001_20261103_044842.wav;2026-11-03 04:48:42;;;(ingen fågel hittad);;
+DEV_001_20261103_044922.wav;2026-11-03 04:49:22;;;(ingen fågel hittad);;
+DEV_001_20261103_045018.wav;2026-11-03 04:50:18;;;(ingen fågel hittad);;
+DEV_001_20261103_045127.wav;2026-11-03 04:51:27;;;(ingen fågel hittad);;
+DEV_001_20261103_045210.wav;2026-11-03 04:52:10;;;(ingen fågel hittad);;
+DEV_001_20261103_050021.wav;2026-11-03 05:00:21;;;(ingen fågel hittad);;
+DEV_001_20261103_050207.wav;2026-11-03 05:02:07;;;(ingen fågel hittad);;
+DEV_001_20261103_050552.wav;2026-11-03 05:05:52;;;(ingen fågel hittad);;
+DEV_001_20261103_050850.wav;2026-11-03 05:08:50;;;(ingen fågel hittad);;
+DEV_001_20261103_050930.wav;2026-11-03 05:09:30;;;(ingen fågel hittad);;
+DEV_001_20261103_051054.wav;2026-11-03 05:10:54;;;(ingen fågel hittad);;
+DEV_001_20261103_051214.wav;2026-11-03 05:12:14;0.0;3.0;Berguv;Bubo bubo;0,47
+DEV_001_20261103_051214.wav;2026-11-03 05:12:14;15.0;18.0;Berguv;Bubo bubo;0,35
+DEV_001_20261103_051214.wav;2026-11-03 05:12:14;21.0;24.0;Berguv;Bubo bubo;0,14
+DEV_001_20261103_051254.wav;2026-11-03 05:12:54;6.0;9.0;Prutgås;Branta bernicla;0,43
+DEV_001_20261103_051338.wav;2026-11-03 05:13:38;;;(ingen fågel hittad);;
+DEV_001_20261103_051419.wav;2026-11-03 05:14:19;;;(ingen fågel hittad);;
+DEV_001_20261103_051500.wav;2026-11-03 05:15:00;;;(ingen fågel hittad);;
+DEV_001_20261103_051541.wav;2026-11-03 05:15:41;;;(ingen fågel hittad);;
+DEV_001_20261103_051622.wav;2026-11-03 05:16:22;;;(ingen fågel hittad);;
+DEV_001_20261103_051708.wav;2026-11-03 05:17:08;;;(ingen fågel hittad);;
+DEV_001_20261103_051815.wav;2026-11-03 05:18:15;;;(ingen fågel hittad);;
+DEV_001_20261103_051900.wav;2026-11-03 05:19:00;;;(ingen fågel hittad);;
+DEV_001_20261103_051941.wav;2026-11-03 05:19:41;;;(ingen fågel hittad);;
+DEV_001_20261103_052021.wav;2026-11-03 05:20:21;;;(ingen fågel hittad);;
+DEV_001_20261103_052102.wav;2026-11-03 05:21:02;;;(ingen fågel hittad);;
+DEV_001_20261103_052144.wav;2026-11-03 05:21:44;;;(ingen fågel hittad);;
+DEV_001_20261103_052226.wav;2026-11-03 05:22:26;;;(ingen fågel hittad);;
+DEV_001_20261103_052306.wav;2026-11-03 05:23:06;;;(ingen fågel hittad);;
+DEV_001_20261103_052348.wav;2026-11-03 05:23:48;;;(ingen fågel hittad);;
+DEV_001_20261103_052432.wav;2026-11-03 05:24:32;;;(ingen fågel hittad);;
+DEV_001_20261103_052513.wav;2026-11-03 05:25:13;;;(ingen fågel hittad);;
+DEV_001_20261103_052554.wav;2026-11-03 05:25:54;18.0;21.0;Kricka/Amerikansk kricka;Anas crecca;0,31
+DEV_001_20261103_052554.wav;2026-11-03 05:25:54;21.0;24.0;Strandskata;Haematopus ostralegus;0,47
+DEV_001_20261103_052634.wav;2026-11-03 05:26:34;;;(ingen fågel hittad);;
+DEV_001_20261103_052714.wav;2026-11-03 05:27:14;;;(ingen fågel hittad);;
+DEV_001_20261103_052754.wav;2026-11-03 05:27:54;;;(ingen fågel hittad);;
+DEV_001_20261103_052833.wav;2026-11-03 05:28:33;;;(ingen fågel hittad);;
+DEV_001_20261103_052920.wav;2026-11-03 05:29:20;;;(ingen fågel hittad);;
+DEV_001_20261103_053004.wav;2026-11-03 05:30:04;18.0;21.0;Berguv;Bubo bubo;0,14
+DEV_001_20261103_053044.wav;2026-11-03 05:30:44;;;(ingen fågel hittad);;
+DEV_001_20261103_053124.wav;2026-11-03 05:31:24;27.0;30.0;Rördrom;Botaurus stellaris;0,33
+DEV_001_20261103_053203.wav;2026-11-03 05:32:03;3.0;6.0;Prutgås;Branta bernicla;0,16
+DEV_001_20261103_053203.wav;2026-11-03 05:32:03;9.0;12.0;Snatterand;Mareca strepera;0,15
+DEV_001_20261103_053203.wav;2026-11-03 05:32:03;24.0;27.0;Prutgås;Branta bernicla;0,17
+DEV_001_20261103_053243.wav;2026-11-03 05:32:43;;;(ingen fågel hittad);;
+DEV_001_20261103_053323.wav;2026-11-03 05:33:23;;;(ingen fågel hittad);;
+DEV_001_20261103_053403.wav;2026-11-03 05:34:03;;;(ingen fågel hittad);;
+DEV_001_20261103_053443.wav;2026-11-03 05:34:43;;;(ingen fågel hittad);;
+DEV_001_20261103_053523.wav;2026-11-03 05:35:23;3.0;6.0;Trana;Grus grus;0,11
+DEV_001_20261103_053603.wav;2026-11-03 05:36:03;;;(ingen fågel hittad);;
+DEV_001_20261103_053643.wav;2026-11-03 05:36:43;;;(ingen fågel hittad);;
+DEV_001_20261103_053722.wav;2026-11-03 05:37:22;;;(ingen fågel hittad);;
+DEV_001_20261103_053803.wav;2026-11-03 05:38:03;;;(ingen fågel hittad);;
+DEV_001_20261103_053842.wav;2026-11-03 05:38:42;;;(ingen fågel hittad);;
+DEV_001_20261103_053922.wav;2026-11-03 05:39:22;27.0;30.0;Björktrast;Turdus pilaris;0,12
+DEV_001_20261103_054002.wav;2026-11-03 05:40:02;;;(ingen fågel hittad);;
+DEV_001_20261103_054042.wav;2026-11-03 05:40:42;;;(ingen fågel hittad);;
+DEV_001_20261103_054122.wav;2026-11-03 05:41:22;;;(ingen fågel hittad);;
+DEV_001_20261103_054202.wav;2026-11-03 05:42:02;;;(ingen fågel hittad);;
+DEV_001_20261103_054242.wav;2026-11-03 05:42:42;;;(ingen fågel hittad);;
+DEV_001_20261103_054322.wav;2026-11-03 05:43:22;15.0;18.0;Kricka/Amerikansk kricka;Anas crecca;0,31
+DEV_001_20261103_054402.wav;2026-11-03 05:44:02;;;(ingen fågel hittad);;
+DEV_001_20261103_054441.wav;2026-11-03 05:44:41;;;(ingen fågel hittad);;
+DEV_001_20261103_054521.wav;2026-11-03 05:45:21;;;(ingen fågel hittad);;
+DEV_001_20261103_054601.wav;2026-11-03 05:46:01;;;(ingen fågel hittad);;
+DEV_001_20261103_054641.wav;2026-11-03 05:46:41;;;(ingen fågel hittad);;
+DEV_001_20261103_054721.wav;2026-11-03 05:47:21;;;(ingen fågel hittad);;
+DEV_001_20261103_054801.wav;2026-11-03 05:48:01;;;(ingen fågel hittad);;
+DEV_001_20261103_054840.wav;2026-11-03 05:48:40;;;(ingen fågel hittad);;
+DEV_001_20261103_054920.wav;2026-11-03 05:49:20;;;(ingen fågel hittad);;
+DEV_001_20261103_055000.wav;2026-11-03 05:50:00;;;(ingen fågel hittad);;
+DEV_001_20261103_055040.wav;2026-11-03 05:50:40;;;(ingen fågel hittad);;
+DEV_001_20261103_055120.wav;2026-11-03 05:51:20;;;(ingen fågel hittad);;
+DEV_001_20261103_055200.wav;2026-11-03 05:52:00;;;(ingen fågel hittad);;
+DEV_001_20261103_055240.wav;2026-11-03 05:52:40;;;(ingen fågel hittad);;
+DEV_001_20261103_055322.wav;2026-11-03 05:53:22;;;(ingen fågel hittad);;
+DEV_001_20261103_055402.wav;2026-11-03 05:54:02;18.0;21.0;Tajgasädgås;Anser fabalis;0,21
+DEV_001_20261103_055442.wav;2026-11-03 05:54:42;15.0;18.0;Berguv;Bubo bubo;0,72
+DEV_001_20261103_055522.wav;2026-11-03 05:55:22;3.0;6.0;Berguv;Bubo bubo;0,25
+DEV_001_20261103_055522.wav;2026-11-03 05:55:22;12.0;15.0;Kricka/Amerikansk kricka;Anas crecca;0,12
+DEV_001_20261103_055603.wav;2026-11-03 05:56:03;;;(ingen fågel hittad);;
+DEV_001_20261103_055643.wav;2026-11-03 05:56:43;;;(ingen fågel hittad);;
+DEV_001_20261103_055723.wav;2026-11-03 05:57:23;;;(ingen fågel hittad);;
+DEV_001_20261103_055803.wav;2026-11-03 05:58:03;;;(ingen fågel hittad);;
+DEV_001_20261103_055845.wav;2026-11-03 05:58:45;;;(ingen fågel hittad);;
+DEV_001_20261103_055926.wav;2026-11-03 05:59:26;;;(ingen fågel hittad);;
+DEV_001_20261103_060008.wav;2026-11-03 06:00:08;;;(ingen fågel hittad);;
+DEV_001_20261103_060048.wav;2026-11-03 06:00:48;6.0;9.0;Snatterand;Mareca strepera;0,28
+DEV_001_20261103_060127.wav;2026-11-03 06:01:27;;;(ingen fågel hittad);;
+DEV_001_20261103_060207.wav;2026-11-03 06:02:07;0.0;3.0;Björktrast;Turdus pilaris;0,46
+DEV_001_20261103_060207.wav;2026-11-03 06:02:07;3.0;6.0;Berguv;Bubo bubo;0,11
+DEV_001_20261103_060207.wav;2026-11-03 06:02:07;6.0;9.0;Björktrast;Turdus pilaris;0,58
+DEV_001_20261103_060207.wav;2026-11-03 06:02:07;9.0;12.0;Björktrast;Turdus pilaris;0,64
+DEV_001_20261103_060207.wav;2026-11-03 06:02:07;12.0;15.0;Björktrast;Turdus pilaris;0,61
+DEV_001_20261103_060207.wav;2026-11-03 06:02:07;18.0;21.0;Rörhöna;Gallinula chloropus;0,75
+DEV_001_20261103_060207.wav;2026-11-03 06:02:07;18.0;21.0;Björktrast;Turdus pilaris;0,26
+DEV_001_20261103_060207.wav;2026-11-03 06:02:07;21.0;24.0;Björktrast;Turdus pilaris;0,57
+DEV_001_20261103_060207.wav;2026-11-03 06:02:07;27.0;30.0;Björktrast;Turdus pilaris;0,48
+DEV_001_20261103_060207.wav;2026-11-03 06:02:07;30.0;33.0;Rörhöna;Gallinula chloropus;0,20
+DEV_001_20261103_060207.wav;2026-11-03 06:02:07;30.0;33.0;Björktrast;Turdus pilaris;0,18
+DEV_001_20261103_060247.wav;2026-11-03 06:02:47;3.0;6.0;Björktrast;Turdus pilaris;0,19
+DEV_001_20261103_060247.wav;2026-11-03 06:02:47;9.0;12.0;Koltrast;Turdus merula;0,13
+DEV_001_20261103_060247.wav;2026-11-03 06:02:47;12.0;15.0;Björktrast;Turdus pilaris;0,18
+DEV_001_20261103_060247.wav;2026-11-03 06:02:47;21.0;24.0;Björktrast;Turdus pilaris;0,86
+DEV_001_20261103_060247.wav;2026-11-03 06:02:47;21.0;24.0;Koltrast;Turdus merula;0,22
+DEV_001_20261103_060350.wav;2026-11-03 06:03:50;;;(ingen fågel hittad);;
+DEV_001_20261103_060431.wav;2026-11-03 06:04:31;;;(ingen fågel hittad);;
+DEV_001_20261103_060511.wav;2026-11-03 06:05:11;;;(ingen fågel hittad);;
+DEV_001_20261103_060552.wav;2026-11-03 06:05:52;;;(ingen fågel hittad);;
+DEV_001_20261103_060702.wav;2026-11-03 06:07:02;;;(ingen fågel hittad);;
+DEV_001_20261103_060742.wav;2026-11-03 06:07:42;;;(ingen fågel hittad);;
+DEV_001_20261103_060823.wav;2026-11-03 06:08:23;24.0;27.0;Gröngöling;Picus viridis;0,16
+DEV_001_20261103_060921.wav;2026-11-03 06:09:21;3.0;6.0;Björktrast;Turdus pilaris;0,11
+DEV_001_20261103_060921.wav;2026-11-03 06:09:21;18.0;21.0;Björktrast;Turdus pilaris;0,16
+DEV_001_20261103_061009.wav;2026-11-03 06:10:09;;;(ingen fågel hittad);;
+DEV_001_20261103_061049.wav;2026-11-03 06:10:49;;;(ingen fågel hittad);;
+DEV_001_20261103_061149.wav;2026-11-03 06:11:49;27.0;30.0;Tornfalk;Falco tinnunculus;0,30
+DEV_001_20261103_061149.wav;2026-11-03 06:11:49;27.0;30.0;Skogssnäppa;Tringa ochropus;0,27
+DEV_001_20261103_061149.wav;2026-11-03 06:11:49;27.0;30.0;Koltrast;Turdus merula;0,16
+DEV_001_20261103_061229.wav;2026-11-03 06:12:29;0.0;3.0;Björktrast;Turdus pilaris;0,40
+DEV_001_20261103_061229.wav;2026-11-03 06:12:29;9.0;12.0;Rödhake;Erithacus rubecula;0,20
+DEV_001_20261103_061229.wav;2026-11-03 06:12:29;9.0;12.0;Stenknäck;Coccothraustes coccothraustes;0,15
+DEV_001_20261103_061229.wav;2026-11-03 06:12:29;15.0;18.0;Björktrast;Turdus pilaris;0,13
+DEV_001_20261103_061229.wav;2026-11-03 06:12:29;18.0;21.0;Björktrast;Turdus pilaris;0,43
+DEV_001_20261103_061229.wav;2026-11-03 06:12:29;21.0;24.0;Koltrast;Turdus merula;0,15
+DEV_001_20261103_061229.wav;2026-11-03 06:12:29;21.0;24.0;Björktrast;Turdus pilaris;0,11
+DEV_001_20261103_061229.wav;2026-11-03 06:12:29;24.0;27.0;Rödvingetrast;Turdus iliacus;0,17
+DEV_001_20261103_061229.wav;2026-11-03 06:12:29;27.0;30.0;Björktrast;Turdus pilaris;0,34
+DEV_001_20261103_061229.wav;2026-11-03 06:12:29;33.0;36.0;Gröngöling;Picus viridis;0,12
+DEV_001_20261103_061229.wav;2026-11-03 06:12:29;36.0;39.0;Björktrast;Turdus pilaris;0,66
+DEV_001_20261103_061341.wav;2026-11-03 06:13:41;30.0;33.0;Skogsduva;Columba oenas;0,14
+DEV_001_20261103_061341.wav;2026-11-03 06:13:41;30.0;33.0;Vitryggig hackspett;Dendrocopos leucotos;0,12
+DEV_001_20261103_061433.wav;2026-11-03 06:14:33;3.0;6.0;Koltrast;Turdus merula;0,18
+DEV_001_20261103_061433.wav;2026-11-03 06:14:33;9.0;12.0;Koltrast;Turdus merula;0,27
+DEV_001_20261103_061433.wav;2026-11-03 06:14:33;21.0;24.0;Berguv;Bubo bubo;0,33
+DEV_001_20261103_061433.wav;2026-11-03 06:14:33;21.0;24.0;Koltrast;Turdus merula;0,13
+DEV_001_20261103_061433.wav;2026-11-03 06:14:33;24.0;27.0;Koltrast;Turdus merula;0,18
+DEV_001_20261103_061433.wav;2026-11-03 06:14:33;33.0;36.0;Koltrast;Turdus merula;0,63
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;9.0;12.0;Koltrast;Turdus merula;0,38
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;12.0;15.0;Koltrast;Turdus merula;0,19
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;12.0;15.0;Tornfalk;Falco tinnunculus;0,14
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;12.0;15.0;Skogssnäppa;Tringa ochropus;0,11
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;15.0;18.0;Skogssnäppa;Tringa ochropus;0,46
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;15.0;18.0;Koltrast;Turdus merula;0,20
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;18.0;21.0;Skogssnäppa;Tringa ochropus;0,17
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;24.0;27.0;Skogssnäppa;Tringa ochropus;0,29
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;24.0;27.0;Koltrast;Turdus merula;0,21
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;27.0;30.0;Skogssnäppa;Tringa ochropus;0,54
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;27.0;30.0;Koltrast;Turdus merula;0,32
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;30.0;33.0;Koltrast;Turdus merula;0,16
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;36.0;39.0;Skogssnäppa;Tringa ochropus;0,18
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;36.0;39.0;Koltrast;Turdus merula;0,11
+DEV_001_20261103_061523.wav;2026-11-03 06:15:23;39.0;39.6;Mindre hackspett;Dryobates minor;0,23
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;0.0;3.0;Koltrast;Turdus merula;0,24
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;0.0;3.0;Skogssnäppa;Tringa ochropus;0,12
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;6.0;9.0;Koltrast;Turdus merula;0,15
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;9.0;12.0;Koltrast;Turdus merula;0,30
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;9.0;12.0;Skogssnäppa;Tringa ochropus;0,14
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;9.0;12.0;Tornfalk;Falco tinnunculus;0,14
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;15.0;18.0;Skogssnäppa;Tringa ochropus;0,42
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;18.0;21.0;Skogssnäppa;Tringa ochropus;0,24
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;21.0;24.0;Skogssnäppa;Tringa ochropus;0,44
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;21.0;24.0;Koltrast;Turdus merula;0,23
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;24.0;27.0;Koltrast;Turdus merula;0,46
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;24.0;27.0;Skogssnäppa;Tringa ochropus;0,32
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;30.0;33.0;Skogssnäppa;Tringa ochropus;0,25
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;30.0;33.0;Tornfalk;Falco tinnunculus;0,21
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;33.0;36.0;Skogssnäppa;Tringa ochropus;0,15
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;36.0;39.0;Koltrast;Turdus merula;0,21
+DEV_001_20261103_061610.wav;2026-11-03 06:16:10;36.0;39.0;Skogssnäppa;Tringa ochropus;0,14
+DEV_001_20261103_061650.wav;2026-11-03 06:16:50;3.0;6.0;Skogssnäppa;Tringa ochropus;0,14
+DEV_001_20261103_061650.wav;2026-11-03 06:16:50;9.0;12.0;Björktrast;Turdus pilaris;0,17
+DEV_001_20261103_061650.wav;2026-11-03 06:16:50;15.0;18.0;Koltrast;Turdus merula;0,54
+DEV_001_20261103_061650.wav;2026-11-03 06:16:50;18.0;21.0;Skogssnäppa;Tringa ochropus;0,30
+DEV_001_20261103_061650.wav;2026-11-03 06:16:50;18.0;21.0;Koltrast;Turdus merula;0,29
+DEV_001_20261103_061650.wav;2026-11-03 06:16:50;27.0;30.0;Tornfalk;Falco tinnunculus;0,23
+DEV_001_20261103_061650.wav;2026-11-03 06:16:50;27.0;30.0;Skogssnäppa;Tringa ochropus;0,20
+DEV_001_20261103_061650.wav;2026-11-03 06:16:50;30.0;33.0;Skogssnäppa;Tringa ochropus;0,48
+DEV_001_20261103_061650.wav;2026-11-03 06:16:50;30.0;33.0;Koltrast;Turdus merula;0,17
+DEV_001_20261103_061650.wav;2026-11-03 06:16:50;33.0;36.0;Skogssnäppa;Tringa ochropus;0,32
+DEV_001_20261103_061650.wav;2026-11-03 06:16:50;33.0;36.0;Koltrast;Turdus merula;0,26
+DEV_001_20261103_061731.wav;2026-11-03 06:17:31;0.0;3.0;Skogssnäppa;Tringa ochropus;0,43
+DEV_001_20261103_061731.wav;2026-11-03 06:17:31;6.0;9.0;Skogssnäppa;Tringa ochropus;0,29
+DEV_001_20261103_061731.wav;2026-11-03 06:17:31;6.0;9.0;Koltrast;Turdus merula;0,24
+DEV_001_20261103_061731.wav;2026-11-03 06:17:31;21.0;24.0;Björktrast;Turdus pilaris;0,21
+DEV_001_20261103_061731.wav;2026-11-03 06:17:31;27.0;30.0;Mindre hackspett;Dryobates minor;0,15
+DEV_001_20261103_061731.wav;2026-11-03 06:17:31;33.0;36.0;Björktrast;Turdus pilaris;0,44
+DEV_001_20261103_061731.wav;2026-11-03 06:17:31;36.0;39.0;Koltrast;Turdus merula;0,14
+DEV_001_20261103_061811.wav;2026-11-03 06:18:11;9.0;12.0;Björktrast;Turdus pilaris;0,13
+DEV_001_20261103_061811.wav;2026-11-03 06:18:11;15.0;18.0;Björktrast;Turdus pilaris;0,59
+DEV_001_20261103_061811.wav;2026-11-03 06:18:11;15.0;18.0;Rörhöna;Gallinula chloropus;0,48
+DEV_001_20261103_061811.wav;2026-11-03 06:18:11;18.0;21.0;Björktrast;Turdus pilaris;0,32
+DEV_001_20261103_061811.wav;2026-11-03 06:18:11;18.0;21.0;Koltrast;Turdus merula;0,11
+DEV_001_20261103_061811.wav;2026-11-03 06:18:11;21.0;24.0;Björktrast;Turdus pilaris;0,11
+DEV_001_20261103_061811.wav;2026-11-03 06:18:11;27.0;30.0;Björktrast;Turdus pilaris;0,44
+DEV_001_20261103_061811.wav;2026-11-03 06:18:11;30.0;33.0;Koltrast;Turdus merula;0,40
+DEV_001_20261103_061811.wav;2026-11-03 06:18:11;30.0;33.0;Björktrast;Turdus pilaris;0,28
+DEV_001_20261103_061851.wav;2026-11-03 06:18:51;0.0;3.0;Koltrast;Turdus merula;0,26
+DEV_001_20261103_061851.wav;2026-11-03 06:18:51;3.0;6.0;Större hackspett;Dendrocopos major;0,11
+DEV_001_20261103_061851.wav;2026-11-03 06:18:51;12.0;15.0;Skogssnäppa;Tringa ochropus;0,13
+DEV_001_20261103_062010.wav;2026-11-03 06:20:10;21.0;24.0;Tornfalk;Falco tinnunculus;0,29
+DEV_001_20261103_062010.wav;2026-11-03 06:20:10;21.0;24.0;Koltrast;Turdus merula;0,18
+DEV_001_20261103_062010.wav;2026-11-03 06:20:10;24.0;27.0;Koltrast;Turdus merula;0,12
+DEV_001_20261103_062010.wav;2026-11-03 06:20:10;27.0;30.0;Koltrast;Turdus merula;0,83
+DEV_001_20261103_062010.wav;2026-11-03 06:20:10;30.0;33.0;Koltrast;Turdus merula;0,89
+DEV_001_20261103_062010.wav;2026-11-03 06:20:10;33.0;36.0;Koltrast;Turdus merula;0,38
+DEV_001_20261103_062104.wav;2026-11-03 06:21:04;0.0;3.0;Koltrast;Turdus merula;0,35
+DEV_001_20261103_062104.wav;2026-11-03 06:21:04;12.0;15.0;Koltrast;Turdus merula;0,28
+DEV_001_20261103_062104.wav;2026-11-03 06:21:04;15.0;18.0;Koltrast;Turdus merula;0,29
+DEV_001_20261103_062104.wav;2026-11-03 06:21:04;21.0;24.0;Gröngöling;Picus viridis;0,23
+DEV_001_20261103_062104.wav;2026-11-03 06:21:04;21.0;24.0;Björktrast;Turdus pilaris;0,20
+DEV_001_20261103_062104.wav;2026-11-03 06:21:04;27.0;30.0;Björktrast;Turdus pilaris;0,12
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;0.0;3.0;Koltrast;Turdus merula;0,24
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;3.0;6.0;Koltrast;Turdus merula;0,28
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;6.0;9.0;Koltrast;Turdus merula;0,53
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;9.0;12.0;Koltrast;Turdus merula;0,16
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;12.0;15.0;Koltrast;Turdus merula;0,71
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;12.0;15.0;Skogssnäppa;Tringa ochropus;0,19
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;15.0;18.0;Koltrast;Turdus merula;0,78
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;18.0;21.0;Koltrast;Turdus merula;0,34
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;21.0;24.0;Koltrast;Turdus merula;0,79
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;21.0;24.0;Skogssnäppa;Tringa ochropus;0,23
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;24.0;27.0;Skogssnäppa;Tringa ochropus;0,42
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;24.0;27.0;Koltrast;Turdus merula;0,21
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;27.0;30.0;Koltrast;Turdus merula;0,36
+DEV_001_20261103_062440.wav;2026-11-03 06:24:40;36.0;39.0;Koltrast;Turdus merula;0,60
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;0.0;3.0;Koltrast;Turdus merula;0,37
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;3.0;6.0;Koltrast;Turdus merula;0,21
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;3.0;6.0;Skogssnäppa;Tringa ochropus;0,14
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;6.0;9.0;Koltrast;Turdus merula;0,74
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;6.0;9.0;Skogssnäppa;Tringa ochropus;0,54
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;9.0;12.0;Koltrast;Turdus merula;0,92
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;12.0;15.0;Koltrast;Turdus merula;0,54
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;12.0;15.0;Skogssnäppa;Tringa ochropus;0,21
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;18.0;21.0;Koltrast;Turdus merula;0,23
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;18.0;21.0;Skogssnäppa;Tringa ochropus;0,13
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;21.0;24.0;Skogssnäppa;Tringa ochropus;0,92
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;21.0;24.0;Koltrast;Turdus merula;0,41
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;24.0;27.0;Koltrast;Turdus merula;0,63
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;24.0;27.0;Skogssnäppa;Tringa ochropus;0,18
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;30.0;33.0;Björktrast;Turdus pilaris;0,30
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;33.0;36.0;Koltrast;Turdus merula;0,84
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;36.0;39.0;Koltrast;Turdus merula;0,29
+DEV_001_20261103_062625.wav;2026-11-03 06:26:25;36.0;39.0;Skogssnäppa;Tringa ochropus;0,18
+DEV_001_20261103_062727.wav;2026-11-03 06:27:27;0.0;3.0;Koltrast;Turdus merula;0,18
+DEV_001_20261103_062727.wav;2026-11-03 06:27:27;3.0;6.0;Koltrast;Turdus merula;0,45
+DEV_001_20261103_062727.wav;2026-11-03 06:27:27;6.0;9.0;Koltrast;Turdus merula;0,39
+DEV_001_20261103_062727.wav;2026-11-03 06:27:27;6.0;9.0;Skogssnäppa;Tringa ochropus;0,11
+DEV_001_20261103_062821.wav;2026-11-03 06:28:21;6.0;9.0;Koltrast;Turdus merula;0,13
+DEV_001_20261103_062821.wav;2026-11-03 06:28:21;12.0;15.0;Björktrast;Turdus pilaris;0,13
+DEV_001_20261103_062821.wav;2026-11-03 06:28:21;18.0;21.0;Koltrast;Turdus merula;0,17
+DEV_001_20261103_062821.wav;2026-11-03 06:28:21;24.0;27.0;Koltrast;Turdus merula;0,20
+DEV_001_20261103_062821.wav;2026-11-03 06:28:21;27.0;30.0;Koltrast;Turdus merula;0,39
+DEV_001_20261103_062821.wav;2026-11-03 06:28:21;27.0;30.0;Björktrast;Turdus pilaris;0,14
+DEV_001_20261103_062821.wav;2026-11-03 06:28:21;33.0;36.0;Koltrast;Turdus merula;0,78
+DEV_001_20261103_062821.wav;2026-11-03 06:28:21;36.0;39.0;Björktrast;Turdus pilaris;0,21
+DEV_001_20261103_062821.wav;2026-11-03 06:28:21;39.0;39.6;Koltrast;Turdus merula;0,11
+DEV_001_20261103_062901.wav;2026-11-03 06:29:01;0.0;3.0;Koltrast;Turdus merula;0,55
+DEV_001_20261103_062901.wav;2026-11-03 06:29:01;0.0;3.0;Skogssnäppa;Tringa ochropus;0,12
+DEV_001_20261103_062901.wav;2026-11-03 06:29:01;3.0;6.0;Koltrast;Turdus merula;0,33
+DEV_001_20261103_062901.wav;2026-11-03 06:29:01;6.0;9.0;Koltrast;Turdus merula;0,13
+DEV_001_20261103_062901.wav;2026-11-03 06:29:01;9.0;12.0;Koltrast;Turdus merula;0,11
+DEV_001_20261103_062901.wav;2026-11-03 06:29:01;12.0;15.0;Koltrast;Turdus merula;0,59
+DEV_001_20261103_062941.wav;2026-11-03 06:29:41;18.0;21.0;Rödvingetrast;Turdus iliacus;0,17
+DEV_001_20261103_062941.wav;2026-11-03 06:29:41;27.0;30.0;Skogssnäppa;Tringa ochropus;0,50
+DEV_001_20261103_063021.wav;2026-11-03 06:30:21;0.0;3.0;Tornfalk;Falco tinnunculus;0,21
+DEV_001_20261103_063112.wav;2026-11-03 06:31:12;6.0;9.0;Koltrast;Turdus merula;0,23
+DEV_001_20261103_063159.wav;2026-11-03 06:31:59;0.0;3.0;Domherre;Pyrrhula pyrrhula;0,70
+DEV_001_20261103_063159.wav;2026-11-03 06:31:59;0.0;3.0;Kricka/Amerikansk kricka;Anas crecca;0,14
+DEV_001_20261103_063159.wav;2026-11-03 06:31:59;3.0;6.0;Domherre;Pyrrhula pyrrhula;0,20
+DEV_001_20261103_063159.wav;2026-11-03 06:31:59;6.0;9.0;Domherre;Pyrrhula pyrrhula;0,98
+DEV_001_20261103_063159.wav;2026-11-03 06:31:59;9.0;12.0;Domherre;Pyrrhula pyrrhula;0,95
+DEV_001_20261103_063159.wav;2026-11-03 06:31:59;15.0;18.0;Domherre;Pyrrhula pyrrhula;0,96
+DEV_001_20261103_063159.wav;2026-11-03 06:31:59;18.0;21.0;Domherre;Pyrrhula pyrrhula;0,11
+DEV_001_20261103_063314.wav;2026-11-03 06:33:14;0.0;3.0;Domherre;Pyrrhula pyrrhula;0,89
+DEV_001_20261103_063314.wav;2026-11-03 06:33:14;12.0;15.0;Domherre;Pyrrhula pyrrhula;0,98
+DEV_001_20261103_063314.wav;2026-11-03 06:33:14;15.0;18.0;Domherre;Pyrrhula pyrrhula;0,90
+DEV_001_20261103_063314.wav;2026-11-03 06:33:14;18.0;21.0;Kricka/Amerikansk kricka;Anas crecca;0,32
+DEV_001_20261103_063314.wav;2026-11-03 06:33:14;18.0;21.0;Domherre;Pyrrhula pyrrhula;0,14
+DEV_001_20261103_063314.wav;2026-11-03 06:33:14;24.0;27.0;Domherre;Pyrrhula pyrrhula;0,55
+DEV_001_20261103_063431.wav;2026-11-03 06:34:31;;;(ingen fågel hittad);;
+DEV_001_20261103_063550.wav;2026-11-03 06:35:50;0.0;3.0;Skrattmås;Chroicocephalus ridibundus;0,28
+DEV_001_20261103_063550.wav;2026-11-03 06:35:50;0.0;3.0;Råka;Corvus frugilegus;0,21
+DEV_001_20261103_063550.wav;2026-11-03 06:35:50;15.0;18.0;Skogsduva;Columba oenas;0,22
+DEV_001_20261103_063550.wav;2026-11-03 06:35:50;15.0;18.0;Gråkråka;Corvus cornix;0,13
+DEV_001_20261103_063550.wav;2026-11-03 06:35:50;15.0;18.0;Gröngöling;Picus viridis;0,10
+DEV_001_20261103_063550.wav;2026-11-03 06:35:50;27.0;30.0;Skogssnäppa;Tringa ochropus;0,11
+DEV_001_20261103_063647.wav;2026-11-03 06:36:47;0.0;3.0;Koltrast;Turdus merula;0,11
+DEV_001_20261103_063647.wav;2026-11-03 06:36:47;3.0;6.0;Koltrast;Turdus merula;0,25
+DEV_001_20261103_063647.wav;2026-11-03 06:36:47;18.0;21.0;Koltrast;Turdus merula;0,29
+DEV_001_20261103_063647.wav;2026-11-03 06:36:47;18.0;21.0;Skogssnäppa;Tringa ochropus;0,23
+DEV_001_20261103_063647.wav;2026-11-03 06:36:47;21.0;24.0;Koltrast;Turdus merula;0,13
+DEV_001_20261103_063647.wav;2026-11-03 06:36:47;21.0;24.0;Skogssnäppa;Tringa ochropus;0,11
+DEV_001_20261103_063647.wav;2026-11-03 06:36:47;24.0;27.0;Koltrast;Turdus merula;0,32
+DEV_001_20261103_063647.wav;2026-11-03 06:36:47;27.0;30.0;Skogssnäppa;Tringa ochropus;0,14
+DEV_001_20261103_063647.wav;2026-11-03 06:36:47;33.0;36.0;Skogssnäppa;Tringa ochropus;0,14
+DEV_001_20261103_063647.wav;2026-11-03 06:36:47;33.0;36.0;Koltrast;Turdus merula;0,14
+DEV_001_20261103_063647.wav;2026-11-03 06:36:47;36.0;39.0;Koltrast;Turdus merula;0,14
+DEV_001_20261103_063735.wav;2026-11-03 06:37:35;3.0;6.0;Skogssnäppa;Tringa ochropus;0,30
+DEV_001_20261103_063735.wav;2026-11-03 06:37:35;3.0;6.0;Koltrast;Turdus merula;0,28
+DEV_001_20261103_063735.wav;2026-11-03 06:37:35;6.0;9.0;Skogssnäppa;Tringa ochropus;0,43
+DEV_001_20261103_063735.wav;2026-11-03 06:37:35;6.0;9.0;Koltrast;Turdus merula;0,11
+DEV_001_20261103_063735.wav;2026-11-03 06:37:35;9.0;12.0;Koltrast;Turdus merula;0,56
+DEV_001_20261103_063735.wav;2026-11-03 06:37:35;12.0;15.0;Koltrast;Turdus merula;0,84
+DEV_001_20261103_063735.wav;2026-11-03 06:37:35;18.0;21.0;Koltrast;Turdus merula;0,13
+DEV_001_20261103_063735.wav;2026-11-03 06:37:35;21.0;24.0;Koltrast;Turdus merula;0,37
+DEV_001_20261103_063820.wav;2026-11-03 06:38:20;0.0;3.0;Koltrast;Turdus merula;0,48
+DEV_001_20261103_063820.wav;2026-11-03 06:38:20;6.0;9.0;Björktrast;Turdus pilaris;0,16
+DEV_001_20261103_063820.wav;2026-11-03 06:38:20;6.0;9.0;Bofink;Fringilla coelebs;0,11
+DEV_001_20261103_063820.wav;2026-11-03 06:38:20;18.0;21.0;Koltrast;Turdus merula;0,31
+DEV_001_20261103_063820.wav;2026-11-03 06:38:20;18.0;21.0;Björktrast;Turdus pilaris;0,19
+DEV_001_20261103_063820.wav;2026-11-03 06:38:20;21.0;24.0;Koltrast;Turdus merula;0,20
+DEV_001_20261103_063820.wav;2026-11-03 06:38:20;21.0;24.0;Björktrast;Turdus pilaris;0,19
+DEV_001_20261103_063820.wav;2026-11-03 06:38:20;24.0;27.0;Koltrast;Turdus merula;0,29
+DEV_001_20261103_063820.wav;2026-11-03 06:38:20;33.0;36.0;Björktrast;Turdus pilaris;0,14
+DEV_001_20261103_063942.wav;2026-11-03 06:39:42;;;(ingen fågel hittad);;
+DEV_001_20261103_064047.wav;2026-11-03 06:40:47;;;(ingen fågel hittad);;
+DEV_001_20261103_064216.wav;2026-11-03 06:42:16;18.0;21.0;Blåmes;Cyanistes caeruleus;0,12
+DEV_001_20261103_064300.wav;2026-11-03 06:43:00;;;(ingen fågel hittad);;
+DEV_001_20261103_064429.wav;2026-11-03 06:44:29;;;(ingen fågel hittad);;
+DEV_001_20261103_064653.wav;2026-11-03 06:46:53;6.0;9.0;Skata;Pica pica;0,99
+DEV_001_20261103_064653.wav;2026-11-03 06:46:53;15.0;18.0;Skata;Pica pica;0,98
+DEV_001_20261103_064653.wav;2026-11-03 06:46:53;21.0;24.0;Skata;Pica pica;0,83
+DEV_001_20261103_064653.wav;2026-11-03 06:46:53;36.0;39.0;Skata;Pica pica;0,72
+DEV_001_20261103_064747.wav;2026-11-03 06:47:47;0.0;3.0;Skata;Pica pica;0,92
+DEV_001_20261103_064747.wav;2026-11-03 06:47:47;6.0;9.0;Skata;Pica pica;0,34
+DEV_001_20261103_064747.wav;2026-11-03 06:47:47;12.0;15.0;Skata;Pica pica;0,15
+DEV_001_20261103_064747.wav;2026-11-03 06:47:47;15.0;18.0;Nötskrika;Garrulus glandarius;0,23
+DEV_001_20261103_064747.wav;2026-11-03 06:47:47;15.0;18.0;Skata;Pica pica;0,16
+DEV_001_20261103_064747.wav;2026-11-03 06:47:47;21.0;24.0;Skata;Pica pica;0,59
+DEV_001_20261103_064747.wav;2026-11-03 06:47:47;27.0;30.0;Skata;Pica pica;0,11
+DEV_001_20261103_064848.wav;2026-11-03 06:48:48;0.0;3.0;Skata;Pica pica;0,95
+DEV_001_20261103_064848.wav;2026-11-03 06:48:48;6.0;9.0;Entita;Poecile palustris;0,10
+DEV_001_20261103_064848.wav;2026-11-03 06:48:48;9.0;12.0;Skata;Pica pica;0,20
+DEV_001_20261103_064848.wav;2026-11-03 06:48:48;12.0;15.0;Skata;Pica pica;0,87
+DEV_001_20261103_064848.wav;2026-11-03 06:48:48;18.0;21.0;Skata;Pica pica;0,23
+DEV_001_20261103_064848.wav;2026-11-03 06:48:48;24.0;27.0;Nötskrika;Garrulus glandarius;0,13
+DEV_001_20261103_064848.wav;2026-11-03 06:48:48;30.0;33.0;Gråsiska;Acanthis flammea;0,87
+DEV_001_20261103_064848.wav;2026-11-03 06:48:48;30.0;33.0;Brunsiska;Acanthis cabaret;0,12
+DEV_001_20261103_064848.wav;2026-11-03 06:48:48;33.0;36.0;Knipa;Bucephala clangula;0,11
+DEV_001_20261103_064848.wav;2026-11-03 06:48:48;36.0;39.0;Gråsiska;Acanthis flammea;0,92
+DEV_001_20261103_064938.wav;2026-11-03 06:49:38;6.0;9.0;Gröngöling;Picus viridis;0,10
+DEV_001_20261103_064938.wav;2026-11-03 06:49:38;15.0;18.0;Skata;Pica pica;0,28
+DEV_001_20261103_064938.wav;2026-11-03 06:49:38;15.0;18.0;Blåmes;Cyanistes caeruleus;0,25
+DEV_001_20261103_064938.wav;2026-11-03 06:49:38;27.0;30.0;Skata;Pica pica;0,32
+DEV_001_20261103_064938.wav;2026-11-03 06:49:38;36.0;39.0;Blåmes;Cyanistes caeruleus;0,33
+DEV_001_20261103_065043.wav;2026-11-03 06:50:43;15.0;18.0;Talgoxe;Parus major;0,35
+DEV_001_20261103_065043.wav;2026-11-03 06:50:43;15.0;18.0;Vitryggig hackspett;Dendrocopos leucotos;0,31
+DEV_001_20261103_065217.wav;2026-11-03 06:52:17;3.0;6.0;Domherre;Pyrrhula pyrrhula;0,50
+DEV_001_20261103_065217.wav;2026-11-03 06:52:17;6.0;9.0;Domherre;Pyrrhula pyrrhula;0,12
+DEV_001_20261103_065217.wav;2026-11-03 06:52:17;30.0;33.0;Nötskrika;Garrulus glandarius;0,12
+DEV_001_20261103_065217.wav;2026-11-03 06:52:17;30.0;33.0;Gråkråka;Corvus cornix;0,10
+DEV_001_20261103_065217.wav;2026-11-03 06:52:17;33.0;36.0;Grönsiska;Spinus spinus;0,17
+DEV_001_20261103_065300.wav;2026-11-03 06:53:00;0.0;3.0;Skogsduva;Columba oenas;0,14
+DEV_001_20261103_065300.wav;2026-11-03 06:53:00;9.0;12.0;Björktrast;Turdus pilaris;0,22
+DEV_001_20261103_065300.wav;2026-11-03 06:53:00;18.0;21.0;Talgoxe;Parus major;0,22
+DEV_001_20261103_065300.wav;2026-11-03 06:53:00;27.0;30.0;Blåmes;Cyanistes caeruleus;0,12
+DEV_001_20261103_065300.wav;2026-11-03 06:53:00;33.0;36.0;Vitryggig hackspett;Dendrocopos leucotos;0,17
+DEV_001_20261103_065300.wav;2026-11-03 06:53:00;36.0;39.0;Gröngöling;Picus viridis;0,14
+DEV_001_20261103_065300.wav;2026-11-03 06:53:00;36.0;39.0;Blåmes;Cyanistes caeruleus;0,12
+DEV_001_20261103_065357.wav;2026-11-03 06:53:57;12.0;15.0;Vitryggig hackspett;Dendrocopos leucotos;0,19
+DEV_001_20261103_065357.wav;2026-11-03 06:53:57;15.0;18.0;Bergfink;Fringilla montifringilla;0,63
+DEV_001_20261103_065357.wav;2026-11-03 06:53:57;18.0;21.0;Bergfink;Fringilla montifringilla;0,92
+DEV_001_20261103_065357.wav;2026-11-03 06:53:57;21.0;24.0;Entita;Poecile palustris;0,11
+DEV_001_20261103_065357.wav;2026-11-03 06:53:57;24.0;27.0;Bergfink;Fringilla montifringilla;1,00
+DEV_001_20261103_065357.wav;2026-11-03 06:53:57;27.0;30.0;Bergfink;Fringilla montifringilla;0,12
+DEV_001_20261103_065357.wav;2026-11-03 06:53:57;30.0;33.0;Bergfink;Fringilla montifringilla;0,60
+DEV_001_20261103_065357.wav;2026-11-03 06:53:57;36.0;39.0;Stenknäck;Coccothraustes coccothraustes;0,11
+DEV_001_20261103_065521.wav;2026-11-03 06:55:21;0.0;3.0;Talgoxe;Parus major;0,10
+DEV_001_20261103_065603.wav;2026-11-03 06:56:03;;;(ingen fågel hittad);;
+DEV_001_20261103_065646.wav;2026-11-03 06:56:46;;;(ingen fågel hittad);;
+DEV_001_20261103_065727.wav;2026-11-03 06:57:27;;;(ingen fågel hittad);;
+DEV_001_20261103_065812.wav;2026-11-03 06:58:12;;;(ingen fågel hittad);;
+DEV_001_20261103_065854.wav;2026-11-03 06:58:54;;;(ingen fågel hittad);;
+DEV_001_20261103_065936.wav;2026-11-03 06:59:36;;;(ingen fågel hittad);;
+DEV_001_20261103_070016.wav;2026-11-03 07:00:16;;;(ingen fågel hittad);;
+DEV_001_20261103_070056.wav;2026-11-03 07:00:56;;;(ingen fågel hittad);;
+DEV_001_20261103_070136.wav;2026-11-03 07:01:36;;;(ingen fågel hittad);;
+DEV_001_20261103_070216.wav;2026-11-03 07:02:16;;;(ingen fågel hittad);;
+DEV_001_20261103_070256.wav;2026-11-03 07:02:56;;;(ingen fågel hittad);;
+DEV_001_20261103_070336.wav;2026-11-03 07:03:36;;;(ingen fågel hittad);;
+DEV_001_20261103_070417.wav;2026-11-03 07:04:17;;;(ingen fågel hittad);;
+DEV_001_20261103_070458.wav;2026-11-03 07:04:58;;;(ingen fågel hittad);;
+DEV_001_20261103_070548.wav;2026-11-03 07:05:48;;;(ingen fågel hittad);;
+DEV_001_20261103_070643.wav;2026-11-03 07:06:43;;;(ingen fågel hittad);;
+DEV_001_20261103_070724.wav;2026-11-03 07:07:24;;;(ingen fågel hittad);;
+DEV_001_20261103_070808.wav;2026-11-03 07:08:08;;;(ingen fågel hittad);;
+DEV_001_20261103_070848.wav;2026-11-03 07:08:48;;;(ingen fågel hittad);;
+DEV_001_20261103_070930.wav;2026-11-03 07:09:30;;;(ingen fågel hittad);;
+DEV_001_20261103_071047.wav;2026-11-03 07:10:47;;;(ingen fågel hittad);;
+DEV_001_20261103_071127.wav;2026-11-03 07:11:27;;;(ingen fågel hittad);;
+DEV_001_20261103_071303.wav;2026-11-03 07:13:03;;;(ingen fågel hittad);;
+DEV_001_20261103_071412.wav;2026-11-03 07:14:12;;;(ingen fågel hittad);;
+DEV_001_20261103_071457.wav;2026-11-03 07:14:57;;;(ingen fågel hittad);;
+DEV_001_20261103_071637.wav;2026-11-03 07:16:37;;;(ingen fågel hittad);;
+DEV_001_20261103_071717.wav;2026-11-03 07:17:17;;;(ingen fågel hittad);;
+DEV_001_20261103_071757.wav;2026-11-03 07:17:57;18.0;21.0;Ringduva;Columba palumbus;0,23
+DEV_001_20261103_071850.wav;2026-11-03 07:18:50;;;(ingen fågel hittad);;
+DEV_001_20261103_071949.wav;2026-11-03 07:19:49;;;(ingen fågel hittad);;
+DEV_001_20261103_072106.wav;2026-11-03 07:21:06;;;(ingen fågel hittad);;
+DEV_001_20261103_072211.wav;2026-11-03 07:22:11;;;(ingen fågel hittad);;
+DEV_001_20261103_072305.wav;2026-11-03 07:23:05;;;(ingen fågel hittad);;
+DEV_001_20261103_072348.wav;2026-11-03 07:23:48;;;(ingen fågel hittad);;
+DEV_001_20261103_072429.wav;2026-11-03 07:24:29;;;(ingen fågel hittad);;
+DEV_001_20261103_072508.wav;2026-11-03 07:25:08;30.0;33.0;Stjärtmes;Aegithalos caudatus;0,12
+DEV_001_20261103_072556.wav;2026-11-03 07:25:56;;;(ingen fågel hittad);;
+DEV_001_20261103_072637.wav;2026-11-03 07:26:37;;;(ingen fågel hittad);;
+DEV_001_20261103_072717.wav;2026-11-03 07:27:17;36.0;39.0;Berguv;Bubo bubo;0,30
+DEV_001_20261103_072758.wav;2026-11-03 07:27:58;;;(ingen fågel hittad);;
+DEV_001_20261103_072837.wav;2026-11-03 07:28:37;;;(ingen fågel hittad);;
+DEV_001_20261103_072918.wav;2026-11-03 07:29:18;;;(ingen fågel hittad);;
+DEV_001_20261103_072958.wav;2026-11-03 07:29:58;;;(ingen fågel hittad);;

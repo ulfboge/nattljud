@@ -94,6 +94,12 @@ DOUBTFUL = {
                          "fyndet används.",
     "Coccothraustes coccothraustes": "Stenknäck som lockar mitt i natten är osannolikt. Lyssna på klippen "
                                      "innan fynden används.",
+    # Fågelnätterna 1–3 november
+    "Tringa ochropus": "Skogssnäppan har i regel lämnat Sverige i november, och BirdNETs träffar ligger i gryningen samtidigt med koltrastarnas tunna tsiih-läten. Lyssna på klippen innan fynden används.",
+    "Gallinula chloropus": "Rörhöna i en villaträdgård i november är osannolikt. Lyssna på klippen innan fynden används.",
+    "Motacilla cinerea": "Forsärlan har normalt lämnat Sverige i november, och det är bara ett enstaka segment. Lyssna på klippet innan fyndet används.",
+    "Bubo bubo": "Berguv i Djursholm är osannolikt, och BirdNET ger lätt falsklarm för uv på låga, dova ljud. Lyssna på klippet innan fyndet används.",
+    "Linaria cannabina": "Hämpling som lockar mitt i natten i november är osannolikt. Lyssna på klippet innan fyndet används.",
 }
 
 
