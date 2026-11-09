@@ -21973,6 +21973,136 @@
 "sv":"",
 "parent":473973,
 "iconic":"Insecta"
+},
+"3885":{
+"name":"Tringa ochropus",
+"rank":"species",
+"sv":"Skogssnäppa",
+"parent":3874,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/262067607/medium.jpg",
+"artist":"(c) Gabi Rusu, some rights reserved (CC BY-NC), uploaded by Gabi Rusu",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/262067607"
+},
+"wiki":{
+"extract":"<b>Skogssnäppa</b> (<i>Tringa ochropus</i>) är en liten vadarfågel som tillhör familjen snäppor. Den häckar i våtmarker i barrskogsområden i norra Europa och Asien. Vintertid flyttar den till södra Europa och Asien samt tropiska Afrika. Arten är talrik och tros öka i antal.",
+"url":"https://sv.wikipedia.org/wiki/Skogssnäppa"
+}
+},
+"13688":{
+"name":"Motacilla cinerea",
+"rank":"species",
+"sv":"Forsärla",
+"parent":13686,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/849468/medium.jpg",
+"artist":"(c) kellyr115, some rights reserved (CC BY-NC)",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/849468"
+},
+"wiki":{
+"extract":"<b>Forsärla</b> (<i>Motacilla cinerea</i>) är en fågel i familjen ärlor som förekommer i tempererade delar av Europa och Asien samt i Nordafrika. Som namnet avslöjar häckar den vanligen vid rinnande vattendrag. Kännetecknande i alla dräkter är den exceptionellt långa stjärten. I Sverige etablerade den sig som häckfågel på 1900-talet och har expanderat kraftigt de senaste decennierna. Det globala beståndet anses vara livskraftigt.",
+"url":"https://sv.wikipedia.org/wiki/Forsärla"
+}
+},
+"20307":{
+"name":"Asio otus",
+"rank":"species",
+"sv":"Hornuggla",
+"parent":20306,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/133553640/medium.jpg",
+"artist":"(c) caroline legg, some rights reserved (CC BY)",
+"license":"CC-BY",
+"page":"https://www.inaturalist.org/photos/133553640"
+},
+"wiki":{
+"extract":"<b>Hornuggla</b> (<i>Asio otus</i>) är en fågel tillhörande familjen ugglor. Den häckar i Europa, Asien och Nordamerika. Till största delen är den flyttfågel.",
+"url":"https://sv.wikipedia.org/wiki/Hornuggla"
+}
+},
+"20306":{
+"name":"Asio",
+"rank":"genus",
+"sv":"Hornuggla/jorduggla",
+"parent":19728,
+"iconic":"Aves"
+},
+"145300":{
+"name":"Acanthis flammea",
+"rank":"species",
+"sv":"Gråsiska",
+"parent":144409,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/226173/medium.jpg",
+"artist":"(c) Bill Bouton, some rights reserved (CC BY-NC)",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/226173"
+},
+"wiki":{
+"extract":"<b>Gråsiska</b> (<i>Acanthis flammea</i>) är en siska som tillhör familjen finkar. Den häckar cirkumpolärt på norra halvklotet i tempererat och subarktiskt klimat. Den globala populationen uppvisar tydliga men klinala morfologiska skillnader vilket skapat stora diskussioner vilka populationer som ska ingå i artkomplexet. Sentida studier indikerar att snösiska, som tidigare ofta haft artstatus istället – tillsammans med bland annat brunsiska – bör behandlas som underart till gråsiskan, vilket bland annat BirdLife gör. De väljer även att placera arten...",
+"url":"https://sv.wikipedia.org/wiki/Gråsiska"
+}
+},
+"144409":{
+"name":"Acanthis",
+"rank":"genus",
+"sv":"",
+"parent":9079,
+"iconic":"Aves"
+},
+"201282":{
+"name":"Gallinula chloropus",
+"rank":"species",
+"sv":"Rörhöna",
+"parent":979864,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/638198544/medium.jpg",
+"artist":"(c) Erik Eckstein, some rights reserved (CC BY-NC), uploaded by Erik Eckstein",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/638198544"
+},
+"wiki":{
+"extract":"<b>Rörhöna</b> (<i>Gallinula chloropus</i>) är en fågel i familjen rallar som förekommer i Europa, Asien och Afrika. Den liknar sothönan med huvudsakligen svart fjäderdräkt, men har vita sidor på undre stjärttäckarna och rött på näbb och pannsköld, ej vitt. Rörhönan hittas i våtmarker och vasskantade dammar, åar och sjöar, där den oftast håller sig dold, även om den kan uppträda orädd på vissa platser. Den mycket lika arten amerikansk rörhöna behandlades tidigare som en del av rörhönan,...",
+"url":"https://sv.wikipedia.org/wiki/Rörhöna"
+}
+},
+"979864":{
+"name":"Gallinula",
+"rank":"genus",
+"sv":"",
+"parent":154,
+"iconic":"Aves"
+},
+"558634":{
+"name":"Linaria cannabina",
+"rank":"species",
+"sv":"Hämpling",
+"parent":558423,
+"iconic":"Aves",
+"photo":{
+"src":"https://inaturalist-open-data.s3.amazonaws.com/photos/447125732/medium.jpg",
+"artist":"(c) Samuel Beyertt, some rights reserved (CC BY-NC), uploaded by Samuel Beyertt",
+"license":"CC-BY-NC",
+"page":"https://www.inaturalist.org/photos/447125732"
+},
+"wiki":{
+"extract":"<b>Hämpling</b> (<i>Linaria cannabina</i>) är en fågel inom familjen finkar.",
+"url":"https://sv.wikipedia.org/wiki/Hämpling"
+}
+},
+"558423":{
+"name":"Linaria",
+"rank":"genus",
+"sv":"",
+"parent":9079,
+"iconic":"Aves"
 }
 },
 "names":{
@@ -22081,7 +22211,14 @@
 "Halichoerus grypus":41733,
 "Tachina grossa":423928,
 "Blaps mortisaga":468937,
-"Stictoleptura rubra":53258
+"Stictoleptura rubra":53258,
+"Asio otus":20307,
+"Tringa ochropus":3885,
+"Gallinula chloropus":201282,
+"Motacilla cinerea":13688,
+"Linaria cannabina":558634,
+"Bubo bubo":null,
+"Acanthis flammea":145300
 },
 "dyntaxa":{
 "Tachina grossa":{
@@ -29173,6 +29310,26 @@
 "id":101679,
 "name":"Ptilophora plumigera",
 "sv":"Fjäderbärare"
+},
+"Gallinula":{
+"id":1001475,
+"name":"Gallinula",
+"sv":""
+},
+"Acanthis":{
+"id":6011917,
+"name":"Acanthis",
+"sv":""
+},
+"Linaria":{
+"id":1006156,
+"name":"Linaria",
+"sv":"Sporrar"
+},
+"Ranunculus":{
+"id":1006556,
+"name":"Ranunculus",
+"sv":"Ranunkler"
 }
 }
 }
